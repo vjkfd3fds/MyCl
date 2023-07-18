@@ -22,7 +22,7 @@
 		mail($to, $subject, $txt);
 	} 
 
-	header("Location:  ../../php-project/about.html");
+	header("Location:  ../../php-project/blunder.html");
 	exit;
 
 	
