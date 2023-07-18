@@ -22,7 +22,8 @@
 		mail($to, $subject, $txt);
 	} 
 
-	header("Location:home.html");
+	header("Location:  ../../php-project/about.html");
+	exit;
 
 	
 	
