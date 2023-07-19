@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<style>
+    body {
+        font-family: SFProDisplay-Bold, Helvetica, Arial, sans-serif;
+        font-weight: bold;
+
+    }
+</style>
+
+
+<!-- bootstrap core css -->
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+<!-- fonts style -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+<!-- font awesome style -->
+<link href="css/font-awesome.min.css" rel="stylesheet" />
+
+<!-- Custom styles for this template -->
+<link href="css/style.css" rel="stylesheet" />
+<!-- responsive style -->
+<link href="css/responsive.css" rel="stylesheet" />
+
+<body>
+
+    <header class="bg-light">
+
+        <div class="d-flex justify-content-center pt-3 p-1">
+            <a href="admin.html">
+                <h4 style="font-size: x-large; cursor: pointer; color: black;">my<span
+                        style="font-size: xxx-large ;">c</span>l</h4>
+
+            </a>
+
+
+        </div>
+
+    </header>
+
+
+
+    <section>
+
+        <div class="container">
+
+            <div class="d-flex justify-content-center">
+
+                <div class="card" style="width: 60em; height: 106em;">
+                    <div class="card-body">
+
+
+                        <div class="d-flex justify-content-center mt-1">
+                            <h3
+                                style="font-family: SFProDisplay-Bold, Helvetica, Arial, sans-serif; font-weight: bold;">
+                                Fill your details</h3>
+
+                        </div>
+
+
+                        <div>
+
+                            <form action="#">
+
+                                <div>
+
+                                    <div class="form-group mt-4">
+
+                                        <input type="text" class="form-control" id="exampleInputEmail1"
+                                            aria-describedby="emailHelp" placeholder="Name of University">
+
+                                    </div>
+                                </div>
+
+                                <div>
+
+                                    <div class="form-group mt-4">
+
+                                        <input type="text" class="form-control" id="exampleInputEmail1"
+                                            aria-describedby="emailHelp" placeholder="Name of Institution or College">
+
+                                    </div>
+                                </div>
+
+                                <div>
+
+                                    <label class="ml-1 " style=" font-size: 1.1em;" for="">Place</label>
+                                </div>
+
+                                <div class="d-flex justify-content-center">
+
+                                    <div>
+
+                                        <select class="form-control" style="width: 17.6em;">
+                                            <option>State</option>
+                                        </select>
+                                    </div>
+
+                                    <div>
+
+                                        <select class="form-control" style="width: 17.6em;margin-left: 2em;">
+                                            <option>District</option>
+                                        </select>
+                                    </div>
+
+                                    <div>
+                                        <select class="form-control" style="width: 17.6em; margin-left: 2em;">
+                                            <option>Place</option>
+                                        </select>
+                                    </div>
+
+
+                                </div>
+
+                                <div>
+
+                                    <label class="ml-1 mt-3 " style=" font-size: 1.1em;" for="">Address</label>
+                                </div>
+
+
+                                <div>
+
+                                    <div class="form-group">
+
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                                            placeholder="Address"></textarea>
+                                    </div>
+                                </div>
+
+                                <div>
+
+                                    <label class="ml-1 mt-2 " style=" font-size: 1.1em;" for="">Location</label>
+
+
+                                </div>
+
+                                <div>
+
+                                    <!--Google map-->
+                                    <div id="map-container-google-1" class="z-depth-1-half map-container">
+                                        <iframe
+                                            src="https://maps.google.com/maps?q=manhatan&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                                            frameborder="0" style="border:0; width: 57.2em;" allowfullscreen></iframe>
+                                    </div>
+
+                                    <!--Google Maps-->
+                                </div>
+
+                                <div>
+
+                                    <label class="ml-1 mt-2 " style=" font-size: 1.1em;" for="">Programmes</label>
+
+
+                                </div>
+
+                                <div>
+
+                                    <div style="float: left;">
+
+                                        <button type="button" class="btn " style="border-color: rgb(223, 221, 221);">
+
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                                    value="option1">
+                                                <label class="form-check-label" for="inlineCheckbox1">UG</label>
+                                            </div>
+
+
+                                        </button>
+                                    </div>
+
+
+                                    <div style="float: left;margin-left: 2em;">
+
+                                        <button type="button" class="btn " style="border-color: rgb(223, 221, 221);">
+
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                                    value="option1">
+                                                <label class="form-check-label" for="inlineCheckbox1">PG</label>
+                                            </div>
+
+
+                                        </button>
+                                    </div>
+
+                                    <div style="float: left; margin-left: 2em;">
+
+                                        <button type="button" class="btn " style="border-color: rgb(223, 221, 221);">
+
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                                    value="option1">
+                                                <label class="form-check-label" for="inlineCheckbox1">Diploma</label>
+                                            </div>
+
+
+                                        </button>
+                                    </div>
+
+
+                                    <div style="float: left;margin-left: 2em;">
+
+                                        <button type="button" class="btn " style="border-color: rgb(223, 221, 221);">
+
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                                    value="option1">
+                                                <label class="form-check-label"
+                                                    for="inlineCheckbox1">Engineering</label>
+                                            </div>
+
+
+                                        </button>
+
+
+                                    </div>
+
+                                    <div style="float: left; margin-left: 2em;">
+
+                                        <button type="button" class="btn " style="border-color: rgb(223, 221, 221);">
+
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                                    value="option1">
+                                                <label class="form-check-label" for="inlineCheckbox1">PHD</label>
+                                            </div>
+
+
+                                        </button>
+                                    </div>
+
+                                    <div style="float: left; margin-left: 2em;">
+
+                                        <button type="button" class="btn " style="border-color: rgb(223, 221, 221);">
+
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                                    value="option1">
+                                                <label class="form-check-label" for="inlineCheckbox1">Nursing</label>
+                                            </div>
+
+
+                                        </button>
+                                    </div>
+
+                                    <div style="float: left; margin-left: 2em;">
+
+                                        <button type="button" class="btn "
+                                            style="border-color: rgb(223, 221, 221);width: 7em;">
+
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                                    value="option1">
+                                                <label class="form-check-label" for="inlineCheckbox1">Doctorate</label>
+                                            </div>
+
+
+                                        </button>
+                                    </div>
+
+                                    <div class="d-flex justify-content-center" style="float: left;  margin-top: 1.8em;">
+
+                                        <button type="button" class="btn "
+                                            style="border-color: rgb(223, 221, 221);width: fit-content">
+
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                                    value="option1">
+                                                <label class="form-check-label" for="inlineCheckbox1">Data
+                                                    Science</label>
+                                            </div>
+
+
+                                        </button>
+                                    </div>
+
+                                    <div style="float: left; margin-left: 2em;">
+
+                                        <button type="button" class="btn "
+                                            style="border-color: rgb(223, 221, 221);width: 7em;width: fit-content;margin-top: 1.8em;">
+
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                                    value="option1">
+                                                <label class="form-check-label" for="inlineCheckbox1">Master of
+                                                    arts</label>
+                                            </div>
+
+
+                                        </button>
+                                    </div>
+
+                                    <div style="float: left; margin-left: 2em;">
+
+                                        <button type="button" class="btn "
+                                            style="border-color: rgb(223, 221, 221);width: 7em;width: fit-content;margin-top: 1.8em;">
+
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                                    value="option1">
+                                                <label class="form-check-label" for="inlineCheckbox1">Doctor of
+                                                    Education</label>
+                                            </div>
+
+
+                                        </button>
+                                    </div>
+
+                                    <div style="float: left; margin-left: 2em;">
+
+                                        <button type="button" class="btn "
+                                            style="border-color: rgb(223, 221, 221);width: 7em;width: max-content;margin-top: 1.8em;">
+
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                                    value="option1">
+                                                <label class="form-check-label" for="inlineCheckbox1">Buisiness
+                                                    administration</label>
+                                            </div>
+
+
+                                        </button>
+                                    </div>
+
+                                    <div style="float: left; margin-left: 1em ;margin-top: 1.8em;">
+
+                                        <button type="button" class="btn "
+                                            style="border-color: rgb(223, 221, 221);width: 4em;">
+
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                                    value="option1">
+                                                <label class="form-check-label" for="inlineCheckbox1">BFA</label>
+                                            </div>
+
+
+                                        </button>
+                                    </div>
+
+
+
+
+                                </div>
+
+
+
+
+                                <div>
+
+                                    <label class="ml-1 mt-2 " style=" font-size: 1.1em;" for="">Courses</label>
+
+
+                                </div>
+
+                                <div>
+
+                                    <div style="float: left; margin-left:">
+
+                                        <button type="button" class="btn "
+                                            style="border-color: rgb(223, 221, 221);width: 7em;">
+
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                                    value="option1">
+                                                <label class="form-check-label" for="inlineCheckbox1">CS</label>
+                                            </div>
+
+
+                                        </button>
+                                    </div>
+
+                                    <div style="float: left; margin-left: 3em;">
+
+                                        <button type="button" class="btn "
+                                            style="border-color: rgb(223, 221, 221);width: 7em;">
+
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                                    value="option1">
+                                                <label class="form-check-label" for="inlineCheckbox1">ME</label>
+                                            </div>
+
+
+                                        </button>
+                                    </div>
+
+                                    <div style="float: left; margin-left: 3em;">
+
+                                        <button type="button" class="btn "
+                                            style="border-color: rgb(223, 221, 221);width: 7em;">
+
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                                    value="option1">
+                                                <label class="form-check-label" for="inlineCheckbox1">BE</label>
+                                            </div>
+
+
+                                        </button>
+                                    </div>
+
+
+                                    <div style="float: left; margin-left: 3em;">
+
+                                        <button type="button" class="btn "
+                                            style="border-color: rgb(223, 221, 221);width: 7em;">
+
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                                    value="option1">
+                                                <label class="form-check-label" for="inlineCheckbox1">BBA</label>
+                                            </div>
+
+
+                                        </button>
+                                    </div>
+
+                                    <div style="float: left; margin-left: 3em;">
+
+                                        <button type="button" class="btn "
+                                            style="border-color: rgb(223, 221, 221);width: 7em;">
+
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                                    value="option1">
+                                                <label class="form-check-label" for="inlineCheckbox1">BT</label>
+                                            </div>
+
+
+                                        </button>
+                                    </div>
+
+                                    <div style="float: left; margin-left: 3em;">
+
+                                        <button type="button" class="btn "
+                                            style="border-color: rgb(223, 221, 221);width: 7em;">
+
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                                    value="option1">
+                                                <label class="form-check-label" for="inlineCheckbox1">BL</label>
+                                            </div>
+
+
+                                        </button>
+                                    </div>
+
+
+                                    <div style="float: left; margin-left: ;" class="coursemargiin">
+
+                                        <button type="button" class="btn "
+                                            style="border-color: rgb(223, 221, 221);width: 7em;">
+
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input " type="checkbox" id="inlineCheckbox1"
+                                                    value="option1">
+                                                <label class="form-check-label" for="inlineCheckbox1">BCA</label>
+                                            </div>
+
+
+                                        </button>
+                                    </div>
+
+                                    <div style="float: left; margin-left: 3em;" class="coursemargiin">
+
+                                        <button type="button" class="btn "
+                                            style="border-color: rgb(223, 221, 221);width: 7em;">
+
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                                    value="option1">
+                                                <label class="form-check-label" for="inlineCheckbox1">PS</label>
+                                            </div>
+
+
+                                        </button>
+                                    </div>
+
+                                    <div style="float: left; margin-left: 3em;" class="coursemargiin">
+
+                                        <button type="button" class="btn "
+                                            style="border-color: rgb(223, 221, 221);width: 7em;">
+
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                                    value="option1">
+                                                <label class="form-check-label" for="inlineCheckbox1">CE</label>
+                                            </div>
+
+
+                                        </button>
+                                    </div>
+
+                                    <div style="float: left; margin-left: 3em;" class="coursemargiin">
+
+                                        <button type="button" class="btn "
+                                            style="border-color: rgb(223, 221, 221);width: 7em;">
+
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                                    value="option1">
+                                                <label class="form-check-label" for="inlineCheckbox1">B.Tech</label>
+                                            </div>
+
+
+                                        </button>
+                                    </div>
+
+                                    <div style="float: left; margin-left: 3em;" class="coursemargiin">
+
+                                        <button type="button" class="btn "
+                                            style="border-color: rgb(223, 221, 221);width: 7em;">
+
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                                    value="option1">
+                                                <label class="form-check-label" for="inlineCheckbox1">B.Arch</label>
+                                            </div>
+
+
+                                        </button>
+                                    </div>
+
+                                    <div style="float: left; margin-left: 3em;" class="coursemargiin">
+
+                                        <button type="button" class="btn "
+                                            style="border-color: rgb(223, 221, 221);width: 7em;">
+
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                                    value="option1">
+                                                <label class="form-check-label" for="inlineCheckbox1">Bcom</label>
+                                            </div>
+
+
+                                        </button>
+                                    </div>
+
+                                    <div style="float: left; margin-left: ;" class="coursemargiin">
+
+                                        <button type="button" class="btn "
+                                            style="border-color: rgb(223, 221, 221);width: 7em;">
+
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                                    value="option1">
+                                                <label class="form-check-label" for="inlineCheckbox1">BA</label>
+                                            </div>
+
+
+                                        </button>
+                                    </div>
+
+                                    <div style="float: left; margin-left: 3em;" class="coursemargiin">
+
+                                        <button type="button" class="btn "
+                                            style="border-color: rgb(223, 221, 221);width: 7em;">
+
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                                    value="option1">
+                                                <label class="form-check-label" for="inlineCheckbox1">BSC</label>
+                                            </div>
+
+
+                                        </button>
+                                    </div>
+
+                                    <div style="float: left; margin-left: 3em;" class="coursemargiin">
+
+                                        <button type="button" class="btn "
+                                            style="border-color: rgb(223, 221, 221);width: 7em;">
+
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                                    value="option1">
+                                                <label class="form-check-label" for="inlineCheckbox1">MA</label>
+                                            </div>
+
+
+                                        </button>
+                                    </div>
+
+                                    <div style="float: left; margin-left: 3em;" class="coursemargiin">
+
+                                        <button type="button" class="btn "
+                                            style="border-color: rgb(223, 221, 221);width: 7em;">
+
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                                    value="option1">
+                                                <label class="form-check-label" for="inlineCheckbox1">MSC</label>
+                                            </div>
+
+
+                                        </button>
+                                    </div>
+
+                                    <div style="float: left; margin-left: 3em;" class="coursemargiin">
+
+                                        <button type="button" class="btn "
+                                            style="border-color: rgb(223, 221, 221);width: 7em;">
+
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                                    value="option1">
+                                                <label class="form-check-label" for="inlineCheckbox1">Mcom</label>
+                                            </div>
+
+
+                                        </button>
+                                    </div>
+
+                                    <div style="float: left; margin-left: 3em;" class="coursemargiin">
+
+                                        <button type="button" class="btn "
+                                            style="border-color: rgb(223, 221, 221);width: 7em;">
+
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                                    value="option1">
+                                                <label class="form-check-label" for="inlineCheckbox1">MCA</label>
+                                            </div>
+
+
+                                        </button>
+                                    </div>
+
+                                    <div style="float: left; margin-left:;" class="coursemargiin">
+
+                                        <button type="button" class="btn "
+                                            style="border-color: rgb(223, 221, 221);width: 7em;">
+
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                                    value="option1">
+                                                <label class="form-check-label" for="inlineCheckbox1">MBA</label>
+                                            </div>
+
+
+                                        </button>
+                                    </div>
+
+                                    <div style="float: left; margin-left: 3em;" class="coursemargiin">
+
+                                        <button type="button" class="btn "
+                                            style="border-color: rgb(223, 221, 221);width: 7em;">
+
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                                    value="option1">
+                                                <label class="form-check-label" for="inlineCheckbox1">MBA</label>
+                                            </div>
+
+
+                                        </button>
+                                    </div>
+
+
+                                    <div style="float: left; margin-left: 3em;" class="coursemargiin">
+
+                                        <button type="button" class="btn "
+                                            style="border-color: rgb(223, 221, 221);width: 7em;">
+
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                                    value="option1">
+                                                <label class="form-check-label" for="inlineCheckbox1">MBA</label>
+                                            </div>
+
+
+                                        </button>
+                                    </div>
+
+                                    <div style="float: left; margin-left: 3em; " class="coursemargiin">
+
+                                        <button type="button" class="btn "
+                                            style="border-color: rgb(223, 221, 221);width: 7em;">
+
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                                    value="option1">
+                                                <label class="form-check-label" for="inlineCheckbox1">MBA</label>
+                                            </div>
+
+
+                                        </button>
+                                    </div>
+
+                                    <div style="float: left; margin-left: 3em;" class="coursemargiin">
+
+                                        <button type="button" class="btn "
+                                            style="border-color: rgb(223, 221, 221);width: 7em;">
+
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                                    value="option1">
+                                                <label class="form-check-label" for="inlineCheckbox1">MBA</label>
+                                            </div>
+
+
+                                        </button>
+                                    </div>
+
+                                    <div style="float: left; margin-left: 3em;" class="coursemargiin">
+
+                                        <button type="button" class="btn "
+                                            style="border-color: rgb(223, 221, 221);width: 7em;">
+
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                                    value="option1">
+                                                <label class="form-check-label" for="inlineCheckbox1">MBA</label>
+                                            </div>
+
+
+                                        </button>
+                                    </div>
+
+
+
+
+                                </div>
+
+
+
+                                <div>
+
+                                    <label class=" ml-2 mt-5 text-center " style=" font-size: 1.1em;"
+                                        for="">Seats</label>
+                                </div>
+
+
+                                <div class="d-flex justify-content-center">
+
+                                    <input type="number" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp" placeholder="Total" style="width: 17.6em;">
+
+                                    <input type="number" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp" placeholder="Reserved" style="width: 17.6em;margin-left: 2em;">
+
+
+                                    <input type="number" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp" placeholder="Management" style="width: 17.6em; margin-left: 2em;">
+
+
+                                </div>
+
+
+
+
+
+
+                                <div>
+
+                                    <label class=" ml-2 mt-5 text-center " style=" font-size: 1.1em;" for="">Contact
+                                        info</label>
+                                </div>
+
+
+
+                                <div class="justify-content-center d-flex">
+
+                                    <div class="form-group d-flex justify-content-center" style="width: 30em;">
+
+                                        <input type="email" class="form-control" id="exampleFormControlInput1"
+                                            placeholder="Email address">
+
+
+                                    </div>
+
+
+
+                                    <div class="form-group ml-4" style="width: 30em;">
+
+                                        <input type="tel" class="form-control" id="exampleFormControlInput1"
+                                            placeholder="Mobile number">
+                                    </div>
+
+
+                                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                <div>
+
+                                    <div class="form-group">
+
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="6"
+                                            placeholder="Description" style="margin-top: 2.8em;"></textarea>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="d-flex justify-content-center mt-5">
+
+                                    <button type="submit" class="btn btn-success" style="width: 15em;">Submit</button>
+                                </div>
+
+
+
+                            </form>
+
+
+                        </div>
+
+
+                        <div class="text-center p-4 mt-4">
+                            © 2023 Copyright:
+                            <a class="text-reset fw-bold" href="index.html">my<span
+                                    style="font-size: larger;">C</span>l</a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </section>
+
+
+
+
+
+    <!-- jQery -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="js/bootstrap.js"></script>
+    <!-- custom js -->
+    <script src="js/custom.js"></script>
+
+
+
+
+    <script src="https://kit.fontawesome.com/3cb1958bfd.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
