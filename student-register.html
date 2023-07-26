@@ -61,21 +61,21 @@
 
 
 
-                        <form action="">
+                        <form action="backend-php/student-register.php" method="post">
 
                             <div class="d-flex justify-content-between mr-2">
 
                                 <div class="form-group" style="float: left;">
 
                                     <input type="text" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp" placeholder="Fisrt Name" style="width: 12em;">
+                                        aria-describedby="emailHelp" placeholder="Fisrt Name" style="width: 12em;" name="firstname">
 
                                 </div>
 
                                 <div class="form-group" style="float: left;">
 
                                     <input type="text" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp" placeholder="Last Name" style="width: 12em;">
+                                        aria-describedby="emailHelp" placeholder="Last Name" style="width: 12em;" name="lastname">
 
                                 </div>
                             </div>
@@ -86,7 +86,7 @@
 
                                     <input type="email" type="tel" class="form-control" id="exampleInputEmail1"
                                         aria-describedby="emailHelp" placeholder="Mobile number or Email address"
-                                        style="width: 25em;">
+                                        style="width: 25em;" name="email">
 
                                 </div>
                             </div>
@@ -97,16 +97,16 @@
 
                                 <div class="form-group" style="float: left;">
 
-                                    <input type="text" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp" placeholder="Password" style="width: 12em;">
+                                    <input type="password" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp" placeholder="Password" style="width: 12em;" name="password">
 
                                 </div>
 
                                 <div class="form-group" style="float: left;">
 
-                                    <input type="text" class="form-control" id="exampleInputEmail1"
+                                    <input type="password" class="form-control" id="exampleInputEmail1"
                                         aria-describedby="emailHelp" placeholder="Confirm Password"
-                                        style="width: 12em;">
+                                        style="width: 12em;" name="conform">
 
                                 </div>
                             </div>
@@ -265,7 +265,7 @@
                                     <button class="btn btn-white btn-outline-secondary" style="width: 7.2em; height: 2.2em;">
 
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" name="female">
                                             <label class="form-check-label text-dark" for="flexRadioDefault1">
                                               Female
                                             </label>
@@ -282,7 +282,7 @@
 
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                            <label class="form-check-label text-dark" for="flexRadioDefault1">
+                                            <label class="form-check-label text-dark" for="flexRadioDefault1" name="male">
                                               Male
                                             </label>
                                           </div>
