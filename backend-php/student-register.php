@@ -14,7 +14,7 @@
 
     $sql = "INSERT INTO registerd_users (first_name, last_name, email_adress, password, confirm_password) VALUES ('$firstname', '$lastname', '$email', '$password', '$conform')";
     if ($conn->query($sql) === TRUE) {
-      header('Location: ././home.html');
+      header('Location: ../../php-project/home.html');
     } else {
       echo "Error: " . $sql . "<br>" . $conn->error;
     }
