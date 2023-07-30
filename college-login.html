@@ -13,7 +13,7 @@
   <meta name="description" content="" />
   <meta name="author" content="" />
 
-  <title>Hostit</title>
+  <title>Student login</title>
 
 
   <!-- bootstrap core css -->
@@ -75,72 +75,51 @@
         </nav>
       </div>
     </header>
+    <!-- end header section -->
+
+  </div>
 
 
-  <section class="vh-100" id="student-login" style="background-color: white;" >
+  <section class="vh-100" id="student-login" style="padding: 40px;">
     <div class="container-fluid h-custom">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-md-9 col-lg-6 col-xl-5">
-          <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
-            class="img-fluid" alt="Sample image">
+          <img src="https://ibm.vic.edu.au/public/frontend/assets/img/contact/01.png"
+            alt="Sample image">
         </div>
         <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1 ">
-          <form action="collegehome.html" id="myclform" class="was-validated">
+          <form action="backend-php/" method="post" class="was-validated">
+            <h3 class="text-center " style="padding: 40px;">College Login</h3>
 
-            <h3 class="text-center " style="padding-top: 1em;">College Login</h3>
-            <br>
-            <p class="lead fw-normal mb-0 me-3 text-center ">Sign in with</p>
-            
             <div class="text-center ">
 
-              <i class="fa-brands fa-google btn-lg"></i>
-
-              <i class="fa-brands fa-square-facebook btn-lg"></i>
-
-              
-              
-
-              
-
-                
-                <!--
-
-                  icon div classes---<div class="text-center d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
-                  <p class="lead fw-normal mb-0 me-3 ">Sign in with</p>
 
 
-              <button type="button" class="btn btn-primary btn-floating mx-1">
-                <i class="fab fa-facebook-f"></i>
-              </button>
-  
-              <button type="button" class="btn btn-primary btn-floating mx-1">
-                <i class="fab fa-twitter"></i>
-              </button> 
-  
-              <button type="button" class="btn btn-primary btn-floating mx-1">
-                <i class="fab fa-linkedin-in"></i>
-              </button>
-              -->
+
+
+
+
+
             </div>
-  
-            <div class="divider d-flex align-items-center my-4">
-              <p class="text-center fw-bold mx-3 mb-0">Or</p>
-            </div>
-  
+
             <!-- Email input -->
             <div class="form-outline mb-4">
               <input type="email" type="tel" id="form3Example3" class="form-control form-control-lg"
-                placeholder="Email or Phone" required/>
-              <label class="form-label" style="margin-left: 1em;" for="form3Example3">Enter valid email or phone</label>
+                placeholder="Email address" name="email" required/>
             </div>
-  
+
+            <div class="invalid-feedback">
+
+              Enter valid Email address
+
+            </div>
+
             <!-- Password input -->
             <div class="form-outline mb-3">
               <input type="password" id="form3Example4" class="form-control form-control-lg"
-                placeholder="Enter password" required/>
-              <label class="form-label" style="margin-left: 1em; "for="form3Example4" id="myclpsw">Password</label>
+                placeholder="password" required name="password" />
             </div>
-  
+
             <div class="d-flex justify-content-between align-items-center">
               <!-- Checkbox -->
               <div class="form-check mb-0">
@@ -151,60 +130,149 @@
               </div>
               <a href="forgot-college-password.html" class="text-body">Forgot password?</a>
             </div>
-  
+
             <div class="text-center text-lg-start mt-4 pt-2">
               <button type="submit" class="btn btn-primary btn-lg"
                 style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+
               <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="college-register.html"
                   class="link-danger">Register</a></p>
             </div>
-  
+
+
           </form>
+
+          <!--this is form  ended before-->
+
+
         </div>
       </div>
     </div>
-    
+
   </section>
 
-  <!-- contact section -->
 
+
+
+  <!-- price section -->
   <!--
-  <section class="contact_section layout_padding">
+  <section class="price_section layout_padding">
     <div class="container">
       <div class="heading_container heading_center">
         <h2>
-          Get In Touch
+          Student login
         </h2>
       </div>
-      <div class="row">
-        <div class="col-md-8 col-lg-6 mx-auto">
-          <div class="form_container">
-            <form action="">
-              <div>
-                <input type="text" placeholder="Your Name" />
-              </div>
-              <div>
-                <input type="email" placeholder="Your Email" />
-              </div>
-              <div>
-                <input type="text" placeholder="Your Phone" />
-              </div>
-              <div>
-                <input type="text" class="message-box" placeholder="Message" />
-              </div>
-              <div class="btn_box ">
-                <button>
-                  SEND
-                </button>
-              </div>
-            </form>
+      <div class="price_container ">
+
+        
+        <input class="box" type="text" placeholder="Username or phone number" style="width: 35em;height: 3em;">
+        <input class="" type="text" placeholder="Password" style="width: 300em;height: 3em;">
+        <div class="box">
+          <div class="detail-box">
+            <h2>$ <span>49</span></h2>
+            <h6>
+              Startup
+            </h6>
+            <ul class="price_features">
+              <li>
+                2GB RAM
+              </li>
+              <li>
+                20GB SSD Cloud Storage
+              </li>
+              <li>
+                Weekly Backups
+              </li>
+              <li>
+                DDoS Protection
+              </li>
+              <li>
+                Full Root Access
+              </li>
+              <li>
+                24/7/365 Tech Support
+              </li>
+            </ul>
+          </div>
+          <div class="btn-box">
+            <a href="">
+              See Detail
+            </a>
           </div>
         </div>
-      </div>
+        <div class="box">
+          <div class="detail-box">
+            <h2>$ <span>99</span></h2>
+            <h6>
+              Standard
+            </h6>
+            <ul class="price_features">
+              <li>
+                4GB RAM
+              </li>
+              <li>
+                50GB SSD Cloud Storage
+              </li>
+              <li>
+                Weekly Backups
+              </li>
+              <li>
+                DDoS Protection
+              </li>
+              <li>
+                Full Root Access
+              </li>
+              <li>
+                24/7/365 Tech Support
+              </li>
+            </ul>
+          </div>
+          <div class="btn-box">
+            <a href="">
+              See Detail
+            </a>
+          </div>
+        </div>
+        <div class="box">
+          <div class="detail-box">
+            <h2>$ <span>149</span></h2>
+            <h6>
+              Business
+            </h6>
+            <ul class="price_features">
+              <li>
+                8GB RAM
+              </li>
+              <li>
+                100GB SSD Cloud Storage
+              </li>
+              <li>
+                Weekly Backups
+              </li>
+              <li>
+                DDoS Protection
+              </li>
+              <li>
+                Full Root Access
+              </li>
+              <li>
+                24/7/365 Tech Support
+              </li>
+            </ul>
+          </div>
+          <div class="btn-box">
+            <a href="">
+              See Detail
+            </a>
+          </div>
+        </div>
+      </div><
     </div>
   </section>
--->
-  <!-- end contact section -->
+  !-->
+
+  <!-- price section -->
 
   <!-- info section -->
 
@@ -270,11 +338,11 @@
                 <img src="images/nav-bullet.png" alt="">
                 Services
               </a>
-              <a class="" href="price.html">
+              <a class="active" href="price.html">
                 <img src="images/nav-bullet.png" alt="">
                 Pricing
               </a>
-              <a class="active" href="contact.html">
+              <a class="" href="contact.html">
                 <img src="images/nav-bullet.png" alt="">
                 Contact Us
               </a>
@@ -287,7 +355,8 @@
               Info
             </h4>
             <p>
-              necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful
+              necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin
+              words, combined with a handful
             </p>
           </div>
         </div>
@@ -326,8 +395,12 @@
   <script src="js/bootstrap.js"></script>
   <!-- custom js -->
   <script src="js/custom.js"></script>
+  
 
-  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
+
+
+
+  <script src="https://kit.fontawesome.com/3cb1958bfd.js" crossorigin="anonymous"></script>
 
 
 </body>
