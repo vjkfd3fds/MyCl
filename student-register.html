@@ -6,9 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create an account</title>
 
-
-
-
     <!-- bootstrap core css -->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
 
@@ -25,338 +22,143 @@
 </head>
 
 <body>
-
     <header class="bg-light">
-
         <div class="d-flex justify-content-center pt-3 p-1">
             <a href="student.html">
-                <h4 style="font-size: x-large; cursor: pointer; color: black;">my<span style="font-size: xxx-large ;">c</span>l</h4>
-
+                <h4 style="font-size: x-large; cursor: pointer; color: black;">my<span
+                        style="font-size: xxx-large ;">c</span>l</h4>
             </a>
-            
         </div>
-
     </header>
 
-
-
     <section class="bg-light">
-
         <div class="container">
-
             <div class="d-flex justify-content-center ">
                 <div class="card " style="width: 28rem; height: 34em; margin-top: 2em; border-radius: 0.5em; ">
                     <div class="card-body">
-
                         <div class="d-flex justify-content-center">
                             <h3
                                 style="font-family: SFProDisplay-Bold, Helvetica, Arial, sans-serif; font-weight: bold;">
                                 Create an account</h3>
                         </div>
-
                         <div class="d-flex justify-content-center">
-                            <p style="font-family: SFProDisplay-Bold, Helvetica, Arial, sans-serif;;">sign up,let's begin
+                            <p style="font-family: SFProDisplay-Bold, Helvetica, Arial, sans-serif;">sign up,let's
+                                begin
                             </p>
                         </div>
 
-
-
-                        <form action="backend-php/student-register.php" method="post">
-
+                        <form action="backend-php/student-register.php" method="post" id="signup-form"
+                            onsubmit="return validateForm()">
                             <div class="d-flex justify-content-between mr-2">
-
                                 <div class="form-group" style="float: left;">
-
                                     <input type="text" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp" placeholder="Fisrt Name" style="width: 12em;" name="firstname">
-
+                                        aria-describedby="emailHelp" placeholder="First Name" style="width: 12em;"
+                                        name="firstname">
                                 </div>
-
                                 <div class="form-group" style="float: left;">
-
-                                    <input type="text" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp" placeholder="Last Name" style="width: 12em;" name="lastname">
-
+                                    <input type="text" class="form-control"
+                                        aria-describedby="emailHelp" placeholder="Last Name" style="width: 12em;"
+                                        name="lastname">
                                 </div>
                             </div>
-
 
                             <div>
                                 <div class="form-group">
-
-                                    <input type="email" type="tel" class="form-control" id="exampleInputEmail1"
+                                    <input type="email" class="form-control" id="exampleInputEmail2"
                                         aria-describedby="emailHelp" placeholder="Mobile number or Email address"
                                         style="width: 25em;" name="email">
-
                                 </div>
                             </div>
-
-
 
                             <div class="d-flex justify-content-between mr-2">
-
                                 <div class="form-group" style="float: left;">
-
-                                    <input type="password" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp" placeholder="Password" style="width: 12em;" name="password">
-
+                                    <input type="password" class="form-control" id="exampleInputPassword1"
+                                        aria-describedby="emailHelp" placeholder="Password" style="width: 12em;"
+                                        name="password">
                                 </div>
-
                                 <div class="form-group" style="float: left;">
-
-                                    <input type="password" class="form-control" id="exampleInputEmail1"
+                                    <input type="password" class="form-control" id="exampleInputConfirmPassword1"
                                         aria-describedby="emailHelp" placeholder="Confirm Password"
                                         style="width: 12em;" name="conform">
-
                                 </div>
                             </div>
 
                             <div class="pl-1">
-                                <label style="font-weight: lighter; font-family: SFProDisplay-Bold, Helvetica, Arial, sans-serif;;"" for="">Date of birth</label>
+                                <label
+                                    style="font-weight: lighter; font-family: SFProDisplay-Bold, Helvetica, Arial, sans-serif;;"
+                                    for="">Date of birth</label>
                             </div>
 
-
                             <div class="d-flex justify-content-center">
-
-                                <!--
-                                    <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                      Dropdown button
-                                    </button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                      <a class="dropdown-item" href="#">Action</a>
-                                      <a class="dropdown-item" href="#">Another action</a>
-                                      <a class="dropdown-item" href="#">Something else here</a>
-                                    </div>
-                                  </div>
-                                -->
-
-                                  <div class="dropdown btn  " aria-labelledby="dropdownMenuButton ">
-                                    <select name="" id="" style="width: 7.2em; height: 2.2em;">
+                                <div class="dropdown btn  " aria-labelledby="dropdownMenuButton ">
+                                    <select name="day" style="width: 7.2em; height: 2.2em;">
                                         <option value="">Day</option>
-                                        <option value="">1</option>
-                                        <option value="">2</option>
-                                        <option value="">2</option>
-                                        <option value="">3</option>
-                                        <option value="">4</option>
-                                        <option value="">5</option>
-                                        <option value="">6</option>
-                                        <option value="">7</option>
-                                        <option value="">8</option>
-                                        <option value="">9</option>
-                                        <option value="">10</option>
-                                        <option value="">11</option>
-                                        <option value="">12</option>
-                                        <option value="">13</option>
-                                        <option value="">14</option>
-                                        <option value="">15</option>
-                                        <option value="">16</option>
-                                        <option value="">17</option>
-                                        <option value="">18</option>
-                                        <option value="">19</option>
-                                        <option value="">20</option>
-                                        <option value="">21</option>
-                                        <option value="">22</option>
-                                        <option value="">23</option>
-                                        <option value="">24</option>
-                                        <option value="">25</option>
-                                        <option value="">26</option>
-                                        <option value="">27</option>
-                                        <option value="">28</option>
-                                        <option value="">29</option>
-                                        <option value="">30</option>
+                                        <!-- Add options for the days -->
                                     </select>
-                                  </div>
+                                </div>
 
-
-
-
-                                  <div class="dropdown btn  " aria-labelledby="dropdownMenuButton ">
-                                    <select name="" id="" style="width: 7.2em; height: 2.2em;">
+                                <div class="dropdown btn  " aria-labelledby="dropdownMenuButton ">
+                                    <select name="month" style="width: 7.2em; height: 2.2em;">
                                         <option value="">Month</option>
-                                        <option value="">1</option>
-                                        <option value="">2</option>
-                                        <option value="">2</option>
-                                        <option value="">3</option>
-                                        <option value="">4</option>
-                                        <option value="">5</option>
-                                        <option value="">6</option>
-                                        <option value="">7</option>
-                                        <option value="">8</option>
-                                        <option value="">9</option>
-                                        <option value="">10</option>
-                                        <option value="">11</option>
-                                        <option value="">12</option>
-                                        <option value="">13</option>
-                                        <option value="">14</option>
-                                        <option value="">15</option>
-                                        <option value="">16</option>
-                                        <option value="">17</option>
-                                        <option value="">18</option>
-                                        <option value="">19</option>
-                                        <option value="">20</option>
-                                        <option value="">21</option>
-                                        <option value="">22</option>
-                                        <option value="">23</option>
-                                        <option value="">24</option>
-                                        <option value="">25</option>
-                                        <option value="">26</option>
-                                        <option value="">27</option>
-                                        <option value="">28</option>
-                                        <option value="">29</option>
-                                        <option value="">30</option>
+                                        <!-- Add options for the months -->
                                     </select>
-                                  </div>
+                                </div>
 
-
-
-                                  <div class="dropdown btn  " aria-labelledby="dropdownMenuButton ">
-                                    <select name="" id="" style="width: 7.2em; height: 2.2em;">
+                                <div class="dropdown btn  " aria-labelledby="dropdownMenuButton ">
+                                    <select name="year" style="width: 7.2em; height: 2.2em;">
                                         <option value="">Year</option>
-                                        <option value="">1</option>
-                                        <option value="">2</option>
-                                        <option value="">2</option>
-                                        <option value="">3</option>
-                                        <option value="">4</option>
-                                        <option value="">5</option>
-                                        <option value="">6</option>
-                                        <option value="">7</option>
-                                        <option value="">8</option>
-                                        <option value="">9</option>
-                                        <option value="">10</option>
-                                        <option value="">11</option>
-                                        <option value="">12</option>
-                                        <option value="">13</option>
-                                        <option value="">14</option>
-                                        <option value="">15</option>
-                                        <option value="">16</option>
-                                        <option value="">17</option>
-                                        <option value="">18</option>
-                                        <option value="">19</option>
-                                        <option value="">20</option>
-                                        <option value="">21</option>
-                                        <option value="">22</option>
-                                        <option value="">23</option>
-                                        <option value="">24</option>
-                                        <option value="">25</option>
-                                        <option value="">26</option>
-                                        <option value="">27</option>
-                                        <option value="">28</option>
-                                        <option value="">29</option>
-                                        <option value="">30</option>
+                                        <!-- Add options for the years -->
                                     </select>
-                                  </div>
-
-                                  
-    
-
-
+                                </div>
                             </div>
 
                             <div class="pl-1">
-                                <label style="font-weight: lighter; font-family: SFProDisplay-Bold, Helvetica, Arial, sans-serif;;"" for="">Gender</label>
+                                <label
+                                    style="font-weight: lighter; font-family: SFProDisplay-Bold, Helvetica, Arial, sans-serif;;"
+                                    for="">Gender</label>
                             </div>
-
 
                             <div class="d-flex justify-content-center mr-2">
-
-
                                 <div>
-                                    <button class="btn btn-white btn-outline-secondary" style="width: 7.2em; height: 2.2em;">
-
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" name="female">
-                                            <label class="form-check-label text-dark" for="flexRadioDefault1">
-                                              Female
-                                            </label>
-                                          </div>
-        
-    
-                                    </button>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="gender"
+                                            id="flexRadioDefault1" value="female">
+                                        <label class="form-check-label text-dark" for="flexRadioDefault1">Female</label>
+                                    </div>
                                 </div>
-
-
-
                                 <div style="margin-left: 1.5em;">
-                                    <button class="btn btn-white btn-outline-secondary" style="width: 7.2em; height: 2.2em;">
-
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                            <label class="form-check-label text-dark" for="flexRadioDefault1" name="male">
-                                              Male
-                                            </label>
-                                          </div>
-        
-    
-                                    </button>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="gender"
+                                            id="flexRadioDefault2" value="male">
+                                        <label class="form-check-label text-dark" for="flexRadioDefault2">Male</label>
+                                    </div>
                                 </div>
-
                                 <div style="margin-left: 1.5em;">
-                                    <button class="btn btn-white btn-outline-secondary" style="width: 7.2em; height: 2.2em;">
-
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                            <label class="form-check-label text-dark" for="flexRadioDefault1">
-                                              Other
-                                            </label>
-                                          </div>
-        
-    
-                                    </button>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="gender"
+                                            id="flexRadioDefault3" value="other">
+                                        <label class="form-check-label text-dark" for="flexRadioDefault3">Other</label>
+                                    </div>
                                 </div>
-
                             </div>
 
                             <br>
-
-
-
 
                             <div class="d-flex justify-content-center">
-                                <button type="button" class="btn btn-success">Sign Up</button>
+                                <button type="submit" class="btn btn-success" form="signup-form">Sign Up</button>
                             </div>
 
                             <br>
-
 
                             <div class="d-flex justify-content-center">
                                 <a href="student-login.html">Already have an account? </a>
                             </div>
-
-
-
-
                         </form>
-
-
-
-
-
-
-
                     </div>
-
-
-
                 </div>
-
-
-
-
             </div>
         </div>
     </section>
-
-
-
-
-
-
-
-
-
-
-
 
     <!-- jQery -->
     <script src="js/jquery-3.4.1.min.js"></script>
@@ -365,19 +167,44 @@
     <!-- custom js -->
     <script src="js/custom.js"></script>
 
-
-
-
     <script src="https://kit.fontawesome.com/3cb1958bfd.js" crossorigin="anonymous"></script>
 
+    <script>
+        function validateForm() {
+            var name = document.getElementById("exampleInputEmail1").value;
+            var email = document.getElementById("exampleInputEmail2").value;
+            var password = document.getElementById("exampleInputPassword1").value;
+            var confirmPassword = document.getElementById("exampleInputConfirmPassword1").value;
+
+            if (name.length < 4) {
+                alert("Username should be more than 3 letters.");
+                return false;
+            }
+
+            if (!email.endsWith("@gmail.com")) {
+                alert("Email should end with @gmail.com.");
+                return false;
+            }
+
+            if (name.trim() === "" || email.trim() === "") {
+                alert("Username and Email cannot be empty.");
+                return false;
+            }
+
+            if (password.length < 8) {
+                alert("Password should be more than 8 characters.");
+                return false;
+            }
+
+            if (password !== confirmPassword) {
+                alert("Password and Confirm Password do not match.");
+                return false;
+            }
+
+            // If all conditions are met, the form will be submitted
+            return true;
+        }
+    </script>
 </body>
 
 </html>
-
-<!--<div class="form-group">
-
-                                <input type="email" class="form-control" id="exampleInputEmail1"
-                                    aria-describedby="emailHelp" placeholder="Fisrt Name" style="width: 12em;">
-                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with
-                                    anyone else.</small>
-                            </div>-->
