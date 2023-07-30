@@ -1,31 +1,37 @@
-<?php 
-	
-	$name = $email = $phone = $message = "";
+<?php
+$name = $email = $phone = $message = "";
+$to = 'thushar17223@gmail.com';
 
-	if ($_SERVER['REQUEST_METHOD'] == "POST") {
-		$name = $_POST['name'];
-		$email = $_POST['email'];
-		$phone = $_POST['phone'];
-		$message = $_POST['message'];
-	}
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $message = $_POST['message'];
+}
 
-	//my email
+if (sendEmail($to, "Contact Form Submission", $message)) {
+    echo "Email sent successfully!";
+} else {
+    echo "Failed to send the email.";
+}
 
-	$to = "thushar17223@gmail.com";
-	$subject = "this is an important mail if you ask me!";
+// Send mail function custom-made.
+function sendEmail($to, $subject, $text) {
+    // Sanitize the input to prevent email header injection
+    $to = filter_var($to, FILTER_SANITIZE_EMAIL);
+    $subject = htmlspecialchars($subject, ENT_QUOTES, 'UTF-8');
 
-	$txt = "Name: " . $name . "Email: " . $email . "Phone: " . $phone . "Message: " . $message;
+    // You can customize the email headers based on your requirements
+    $headers = "From: $to\r\n"; // Use $to variable for the sender's email
+    $headers .= "Reply-To: $to\r\n";
+    $headers .= "MIME-Version: 1.0\r\n";
+    $headers .= "Content-Type: text/plain; charset=utf-8\r\n";
 
-	$headers = "From: noreply@demosite.com" . "\r\n" . "CC: somebodyelse@example.com";
-
-	if ($email != NULL) {
-		mail($to, $subject, $txt);
-	} 
-
-	header("Location:  ../../php-project/blunder.html");
-	exit;
-
-	
-	
-
+    // Sending the email
+    if (mail($to, $subject, $text, $headers)) {
+        return true; // Email sent successfully
+    } else {
+        return false; // Failed to send the email
+    }
+}
 ?>
