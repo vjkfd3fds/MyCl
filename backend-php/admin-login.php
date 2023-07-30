@@ -7,7 +7,6 @@
         $email = $_POST['email'];
         $password = $_POST['password'];
 
-        // Use double equal signs (==) for comparison, not single equal sign (=)
         if ($email == 'thushar17223@gmail.com' && $password == 'thushar123') {
             $sql = "SELECT * FROM administration WHERE email = ? AND passwords = ?";
             $stmt = $conn->prepare($sql);
