@@ -20,7 +20,7 @@
 
         if ($result->num_rows === 1) {
             // User exists, redirect to home.html
-            header('Location: ../../php-project/home.html');
+            header('Location: ../../php-project/student-dashboard.html');
             exit();
         } else {
             // User does not exist or wrong credentials
