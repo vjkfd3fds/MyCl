@@ -1,4 +1,5 @@
 <?php 
+    
     include('connect.php');
     $email = $password = "";
     $error = " ";
@@ -32,4 +33,7 @@
             echo "Invalid email or password."; // The credentials do not match the hardcoded values
         }
     } 
+
+
+
 ?>
