@@ -6,7 +6,7 @@
         $email = $_POST['email'];
         $password = $_POST['password'];
 
-        $sql = "SELECT * FROM registerd_users WHERE email_adress = ? AND password = ?";
+        $sql = "SELECT * FROM registered_users WHERE email_address = ? AND passwords = ?";
         $stmt = $conn->prepare($sql);
 
         if (!$stmt) {
@@ -20,7 +20,7 @@
 
         if ($result->num_rows === 1) {
             // User exists, redirect to home.html
-            header('Location: ../../php-project/student-dashboard.html');
+            header('Location: ../../php-project/college-details.html');
             exit();
         } else {
             // User does not exist or wrong credentials

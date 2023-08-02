@@ -30,6 +30,42 @@
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
 
+
+  <!-- Custom styles for the drop-down box -->
+  <style>
+    /* Style for the drop-down box */
+    .nav-item.dropdown {
+      position: relative;
+    }
+
+    .nav-link.dropdown-toggle::after {
+      display: none;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: 1000;
+      display: none;
+      float: left;
+      min-width: 10rem;
+      padding: 0.5rem 0;
+      margin: 0;
+      font-size: 1rem;
+      color: #212529;
+      text-align: left;
+      list-style: none;
+      background-color: #fff;
+      background-clip: padding-box;
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      border-radius: 0.25rem;
+    }
+
+    .nav-item.dropdown:hover .dropdown-menu {
+      display: block;
+    }
+  </style>
 </head>
 
 <body class="sub_page">
@@ -61,18 +97,19 @@
               <li class="nav-item active">
                 <a class="nav-link" href="about.html"> About</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="admin-login.html">Admin</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="student-register.html">Student</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="college-register.html">College</a>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Dashboard
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="admin-login.html">Admin</a>
+                  <a class="dropdown-item" href="student-register.html">Student</a>
+                  <a class="dropdown-item" href="college-register.html">College</a>
+                </div>
               </li>
             </ul>
             <div class="quote_btn-container">
-              </form>
+              <!-- Place any other content here -->
             </div>
           </div>
         </nav>
