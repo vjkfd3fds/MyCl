@@ -6,7 +6,7 @@
         $email = $_POST['email'];
         $password = $_POST['password'];
 
-        $sql = "SELECT * FROM registered_users WHERE email_address = ? AND passwords = ?";
+        $sql = "SELECT * FROM registered_users WHERE email = ? AND password = ?";
         $stmt = $conn->prepare($sql);
 
         if (!$stmt) {
