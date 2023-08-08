@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Poppins:wght@500&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 2rem;
+    background-color: #ffff;
+    width: 100%;
+    padding: 1rem 2rem 0.3rem;
+    position: sticky;
+}
+
+header .logo {
+    left: 0;
+}
+
+header h3 {
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header h3 span{
+    text-transform: uppercase;
+    font-size: 3.2rem;
+    color: red;
+}
+
+header .user-control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    left: 71%;
+}
+
+header .user-control a {
+    color: black;
+    margin: 0 0.6rem;
+    font-size: 1.1rem;
+    position: sticky;
+}
+
+header .nav nav span {
+    cursor: pointer;
+    display: flex;
+    justify-content: end;
+}
+
+header  nav .nav-content a{
+    display: flex;
+    justify-content: end;
+}
+
+header .nav nav .navbar ul,li {
+    display: none
+}
+
+header .nav nav .navbar ul,li.open {
+    display: block;
+    float: none;
+    
+}
+
+header .nav nav .navbar ul,li {
+    margin-top: 0.6rem;
+    list-style: none;
+    color: black;
+    font-size: 1.1rem;
+}
+
+section img {
+    width: 50rem;
+    margin-top: 1rem;
+}
+
+select option {
+    font-size: 1.2rem;
+}
+
+section .search-box input,button{
+    height: 3rem;
+}
