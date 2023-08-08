@@ -8,7 +8,7 @@
         $email = $_POST['email'];
         $password = $_POST['password'];
 
-        if ($email == 'thushar17223@gmail.com.c' && $password == 'thushar123' || $email == 'shafiiq688@gmail.com' && $password == 'shafeek123') {
+        if ($email == 'thushar17223@gmail.com.c' && $password == 'thushar33' || $email == 'shafiiq688@gmail.com' && $password == 'shafeek123') {
             $sql = "SELECT * FROM administration WHERE email = ? AND password = ?";
             $stmt = $conn->prepare($sql);
 
