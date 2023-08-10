@@ -7,7 +7,6 @@
         $institution = $_POST['institution'];
         $state = $_POST['state'];
         $district = $_POST['district'];
-        $city = $_POST['city'];
         $address = $_POST['address'];
         $programs = $_POST['programs'];
         $courses = $_POST['course'];
@@ -18,8 +17,8 @@
         $number = $_POST['phone-number'];
 
 
-        $sql = "INSERT INTO college-details (univeristy, institution, state, district, address, programs, course, email, number, total_seats, reserved_seats, management_seats) 
-        VALUES ('$university', '$institution', '$state', '$district', '$address', '$city', '$programs', '$courses', '$email', '$number', '$totalSeats', '$reserved', '$management')";
+        $sql = "INSERT INTO college_details (university, institution, state, district, address, programs, course, email, number, total_seats, reserved_seats, management_seats)
+        VALUES ('$university', '$institution', '$state', '$district', '$address', '$programs', '$courses', '$email', '$number', '$totalSeats', '$reserved', '$management')";
 
                 
                 if ($conn->query($sql) === TRUE) {
