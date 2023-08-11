@@ -65,6 +65,34 @@
     .nav-item.dropdown:hover .dropdown-menu {
       display: block;
     }
+    .custom-form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .custom-form label {
+            font-weight: bold;
+        }
+        .feedback-list {
+            margin-top: 20px;
+        }
+
+        .feedback-card {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .feedback-card h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .feedback-card p {
+            margin: 0;
+        }
   </style>
 </head>
 
@@ -115,125 +143,62 @@
     <!-- end header section -->
   </div>
 
-  <!-- about section -->
+<?php 
 
-  <section class="about_section layout_padding">
-    <div class="container  ">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="detail-box">
-            <div class="heading_container">
-              <h2>
-                404 ERROR
-              </h2>
-            </div>
-            <p>
-               cannot find the page you're looking for use the navigation buttons to go back to the home page.</p>       
-            </div>
-        </div>
-        <div class="col-md-6 ">
-          <div class="img-box">
-            <img src="images/error.png" alt="" style="padding: 25px;">
-          </div>
-        </div>
+    include('backend-php/connect.php');
+    include('backend-php/feedback.php');
+    
+    ?>
+  <div class="container">
+        <div class="custom-form">
+            <h1 style="text-align: center; padding: 25px;">Feedbacks</h1>
+            <p>Send us some of your after using the website. Feel free to write any thing! you can criticism in any way nothing to hide
+                (i have your ip). </p>
+            <form method="post" action="backend-php/feedback.php">
+                <!-- Name input -->
+                <div class="form-group">
+                    <label for="form4Example1">Name</label>
+                    <input type="text" id="form4Example1" class="form-control" name="name"/>
+                </div>
 
-      </div>
+                <!-- Email input -->
+                <div class="form-group">
+                    <label for="form4Example2">Email address</label>
+                    <input type="email" id="form4Example2" class="form-control" name="email"/>
+                </div>
+
+                <!-- Message input -->
+                <div class="form-group">
+                    <label for="form4Example3">Message</label>
+                    <textarea class="form-control" id="form4Example3" rows="4" name="message"></textarea>
+                </div>
+
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-primary btn-block">Send</button>
+            </form>
+        </div>
     </div>
-  </section>
 
-  <!-- end about section -->
+    <?php 
 
-  <!-- info section -->
+        $sql = "SELECT * FROM feedbacks";
+        $result = $conn->query($sql);
 
-  <section class="info_section layout_padding2">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3">
-          <div class="info_contact">
-            <h4>
-              Address
-            </h4>
-            <div class="contact_link_box">
-              <a href="">
-                <i class="fa fa-map-marker" aria-hidden="true"></i>
-                <span>
-                  Location
-                </span>
-              </a>
-              <a href="">
-                <i class="fa fa-phone" aria-hidden="true"></i>
-                <span>
-                  Call +01 1234567890
-                </span>
-              </a>
-              <a href="">
-                <i class="fa fa-envelope" aria-hidden="true"></i>
-                <span>
-                  demo@gmail.com
-                </span>
-              </a>
-            </div>
-          </div>
-          <div class="info_social">
-            <a href="">
-              <i class="fa fa-facebook" aria-hidden="true"></i>
-            </a>
-            <a href="">
-              <i class="fa fa-twitter" aria-hidden="true"></i>
-            </a>
-            <a href="">
-              <i class="fa fa-linkedin" aria-hidden="true"></i>
-            </a>
-            <a href="">
-              <i class="fa fa-instagram" aria-hidden="true"></i>
-            </a>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="info_link_box">
-            <h4>
-              Links
-            </h4>
-            <div class="info_links">
-              <a class="" href="home.html">
-                <img src="images/nav-bullet.png" alt="">
-                Home
-              </a>
-              <a class="active" href="about.html">
-                <img src="images/nav-bullet.png" alt="">
-                About
-              </a>
-              <a class="" href="contact.html">
-                <img src="images/nav-bullet.png" alt="">
-                Contact Us
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="info_detail">
-            <h4>
-              Info
-            </h4>
-            <p>
-              necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful
-            </p>
-          </div>
-        </div>
-        <div class="col-md-3 mb-0">
-          <h4>
-            Subscribe
-          </h4>
-          <form action="#">
-            <input type="text" placeholder="Enter email" />
-            <button type="submit">
-              Subscribe
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
+        if ($result->num_rows > 0) {
+            echo '<div class="feedback-list">';
+        }
+
+        while ($row = $result->fetch_assoc()) {
+            echo '<div class="feedback-card">';
+            echo '<h3>' . $row["name"] . '</h3>';
+            echo '<p>Email: ' . $row["email"] . '</p>';
+            echo '<p>Message: ' . $row["message"] . '</p>';
+            echo '</div>';
+        }
+        echo '</div>';
+        $conn->close();
+    ?>
+  
 
   <!-- footer section -->
 
