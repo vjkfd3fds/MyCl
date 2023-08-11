@@ -111,12 +111,7 @@
 
                                         <select class="form-control" style="width: 17.6em;margin-left: 2em;" name="district">
                                             <option>District</option>
-                                            <option value="Anantapur">Anantapur</option>
-                                            <option value="Chittoor">Chittoor</option>
-                                            <option value="East Godavari">East Godavari</option>
-                                            <option value="Kamrup">Kamrup</option>
-                                            <option value="Nalbari">Nalbari</option>
-                                            <option value="Dibrugarh">Dibrugarh</option>
+                                            <option><?php echo $optionsHtmls ?></option>
                                         </select>
                                     </div>
 
