@@ -383,7 +383,7 @@
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1" name="cs">
+                                                    value="cs" name="cs">
                                                 <label class="form-check-label" for="inlineCheckbox1">CS</label>
                                             </div>
 
@@ -398,7 +398,7 @@
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1" name="me">
+                                                    value="me" name="me">
                                                 <label class="form-check-label" for="inlineCheckbox1">ME</label>
                                             </div>
 
@@ -413,7 +413,7 @@
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1" name="be">
+                                                    value="be" name="be">
                                                 <label class="form-check-label" for="inlineCheckbox1">BE</label>
                                             </div>
 
@@ -429,7 +429,7 @@
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1" name="bba">
+                                                    value="bba" name="bba">
                                                 <label class="form-check-label" for="inlineCheckbox1">BBA</label>
                                             </div>
 
@@ -444,7 +444,7 @@
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1" name="bt">
+                                                    value="bt" name="bt">
                                                 <label class="form-check-label" for="inlineCheckbox1">BT</label>
                                             </div>
 
@@ -459,7 +459,7 @@
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1" name="bl">
+                                                    value="bl" name="bl">
                                                 <label class="form-check-label" for="inlineCheckbox1">BL</label>
                                             </div>
 
@@ -475,7 +475,7 @@
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input " type="checkbox" id="inlineCheckbox1"
-                                                    value="option1" name="bca">
+                                                    value="bca" name="bca">
                                                 <label class="form-check-label" for="inlineCheckbox1">BCA</label>
                                             </div>
 
@@ -490,7 +490,7 @@
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1" name="ps">
+                                                    value="ps" name="ps">
                                                 <label class="form-check-label" for="inlineCheckbox1">PS</label>
                                             </div>
 
@@ -505,7 +505,7 @@
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1" name="course" name="ce">
+                                                    value="ce" name="course" name="ce">
                                                 <label class="form-check-label" for="inlineCheckbox1">CE</label>
                                             </div>
 
@@ -520,7 +520,7 @@
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1" name="btech">
+                                                    value="btech" name="btech">
                                                 <label class="form-check-label" for="inlineCheckbox1">B.Tech</label>
                                             </div>
 
@@ -535,7 +535,7 @@
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1" name="barch">
+                                                    value="barch" name="barch">
                                                 <label class="form-check-label" for="inlineCheckbox1">B.Arch</label>
                                             </div>
 
@@ -550,7 +550,7 @@
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1"  name="bcome">
+                                                    value="bcom"  name="bcome">
                                                 <label class="form-check-label" for="inlineCheckbox1">Bcom</label>
                                             </div>
 
@@ -565,7 +565,7 @@
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1" name="ba">
+                                                    value="ba" name="ba">
                                                 <label class="form-check-label" for="inlineCheckbox1">BA</label>
                                             </div>
 
@@ -580,7 +580,7 @@
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1" name="bsc">
+                                                    value="bsc" name="bsc">
                                                 <label class="form-check-label" for="inlineCheckbox1">BSC</label>
                                             </div>
 
@@ -595,7 +595,7 @@
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1" name="ma">
+                                                    value="ma" name="ma">
                                                 <label class="form-check-label" for="inlineCheckbox1">MA</label>
                                             </div>
 
@@ -610,7 +610,7 @@
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1" name="msc">
+                                                    value="msc" name="msc">
                                                 <label class="form-check-label" for="inlineCheckbox1">MSC</label>
                                             </div>
 
@@ -625,7 +625,7 @@
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1"  name="mcom">
+                                                    value="mcom"  name="mcom">
                                                 <label class="form-check-label" for="inlineCheckbox1">Mcom</label>
                                             </div>
 
@@ -640,7 +640,7 @@
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1"  name="mca">
+                                                    value="mca"  name="mca">
                                                 <label class="form-check-label" for="inlineCheckbox1">MCA</label>
                                             </div>
 
@@ -655,7 +655,7 @@
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1"  name="mba">
+                                                    value="mba"  name="mba">
                                                 <label class="form-check-label" for="inlineCheckbox1">MBA</label>
                                             </div>
 
