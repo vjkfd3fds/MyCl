@@ -4,6 +4,11 @@
 
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $selectedCourses = '';
+        if (isset($_POST['course']) && is_array($_POST['course'])) {
+            $selectedCourses = implode(', ', array_map('trim', $_POST['course']));
+        }
+        
         $university = $_POST['university'];
         $institution = $_POST['institution'];
         $state = $_POST['state'];
@@ -15,7 +20,6 @@
         $email = $_POST['email'];
         $number = $_POST['phone-number'];
         $programs = '';
-        $courses = '';
         
 
         if (isset($_POST['ug'])) {
@@ -65,8 +69,8 @@
             $programs .= $_POST['bfa'] . ' , ';
         }
     
-        $sql = "INSERT INTO college_details (university, institution, state, district, address, programs, email, number, total_seats, reserved_seats, management_seats)
-        VALUES ('$university', '$institution', '$state', '$district', '$address', '$programs', '$email', '$number', '$totalSeats', '$reserved', '$management')";
+        $sql = "INSERT INTO college_details (university, institution, state, district, address, programs, course, email, number, total_seats, reserved_seats, management_seats)
+        VALUES ('$university', '$institution', '$state', '$district', '$address', '$programs', '$selectedCourses', '$email', '$number', '$totalSeats', '$reserved', '$management')";
 
                 
                 if ($conn->query($sql) === TRUE) {
