@@ -41,8 +41,8 @@
 
     while ($row = $result->fetch_assoc()) {
         echo '<div class="feedback-card">';
-        echo '<h3>' . $row["university"] . '</h3>';
-        echo '<p> institution: ' . $row["institution"] . '</p>';
+        echo '<h3>' . $row["institution"] . '</h3>';
+        echo '<p> university: ' . $row["university"] . '</p>';
         echo '<p> state: ' . $row["state"] . '</p>';
         echo '<p> district: ' . $row["district"] . '</p>';
         echo '<p> address: ' . $row["address"] . '</p>';
@@ -54,6 +54,8 @@
         echo '<p> reserved seats: ' . $row["reserved_seats"] . '</p>';
         echo '<p> management_seats seats: ' . $row["management_seats"] . '</p>';
         echo '</div>';
+        echo '<input type="submit" value="pass">';
+        echo '<input type="submit" value="reject">';
     }
     echo '</div>';
      $conn->close();
