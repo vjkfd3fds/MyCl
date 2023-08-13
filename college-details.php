@@ -69,7 +69,7 @@
 
                         <div>
 
-                            <form action="backend-php/college-details.php" method="post">
+                            <form action="backend-php/college-details-process.php" method="post">
 
                                 <div>
 
@@ -182,7 +182,7 @@
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1" name="programs">
+                                                    value="ug" name="ug">
                                                 <label class="form-check-label" for="inlineCheckbox1">UG</label>
                                             </div>
 
@@ -197,7 +197,7 @@
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1" name="programs">
+                                                    value="pg" name="pg">
                                                 <label class="form-check-label" for="inlineCheckbox1">PG</label>
                                             </div>
 
@@ -211,7 +211,7 @@
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1" name="programs">
+                                                    value="diploma" name="diploma">
                                                 <label class="form-check-label" for="inlineCheckbox1">Diploma</label>
                                             </div>
 
@@ -226,7 +226,7 @@
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1" name="programs">
+                                                    value="engineering" name="engineering">
                                                 <label class="form-check-label"
                                                     for="inlineCheckbox1">Engineering</label>
                                             </div>
@@ -243,7 +243,7 @@
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1" name="programs">
+                                                    value="phd" name="phd">
                                                 <label class="form-check-label" for="inlineCheckbox1">PHD</label>
                                             </div>
 
@@ -257,7 +257,7 @@
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1" name="programs">
+                                                    value="nursing" name="nursing">
                                                 <label class="form-check-label" for="inlineCheckbox1">Nursing</label>
                                             </div>
 
@@ -272,7 +272,7 @@
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1" name="programs">
+                                                    value="doctorate" name="doctorate">
                                                 <label class="form-check-label" for="inlineCheckbox1">Doctorate</label>
                                             </div>
 
@@ -287,7 +287,7 @@
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1" name="programs">
+                                                    value="ds" name="ds">
                                                 <label class="form-check-label" for="inlineCheckbox1">Data
                                                     Science</label>
                                             </div>
@@ -303,7 +303,7 @@
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1" name="programs">
+                                                    value="moa" name="moa">
                                                 <label class="form-check-label" for="inlineCheckbox1">Master of
                                                     arts</label>
                                             </div>
@@ -319,7 +319,7 @@
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1" name="programs">
+                                                    value="doe" name="doe">
                                                 <label class="form-check-label" for="inlineCheckbox1">Doctor of
                                                     Education</label>
                                             </div>
@@ -335,7 +335,7 @@
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1" name="programs">
+                                                    value="ba-1" name="ba-1">
                                                 <label class="form-check-label" for="inlineCheckbox1">Buisiness
                                                     administration</label>
                                             </div>
@@ -351,7 +351,7 @@
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1" name="programs">
+                                                    value="bfa" name="bfa">
                                                 <label class="form-check-label" for="inlineCheckbox1">BFA</label>
                                             </div>
 
@@ -383,7 +383,7 @@
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1" name="course">
+                                                    value="option1" name="cs">
                                                 <label class="form-check-label" for="inlineCheckbox1">CS</label>
                                             </div>
 
@@ -391,14 +391,14 @@
                                         </button>
                                     </div>
 
-                                    <div style="float: left; margin-left: 3em;" name="course">
+                                    <div style="float: left; margin-left: 3em;">
 
                                         <button type="button" class="btn "
                                             style="border-color: rgb(223, 221, 221);width: 7em;">
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1">
+                                                    value="option1" name="me">
                                                 <label class="form-check-label" for="inlineCheckbox1">ME</label>
                                             </div>
 
@@ -413,7 +413,7 @@
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1" name="course">
+                                                    value="option1" name="be">
                                                 <label class="form-check-label" for="inlineCheckbox1">BE</label>
                                             </div>
 
@@ -429,7 +429,7 @@
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1" name="course">
+                                                    value="option1" name="bba">
                                                 <label class="form-check-label" for="inlineCheckbox1">BBA</label>
                                             </div>
 
@@ -444,7 +444,7 @@
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1" name="course">
+                                                    value="option1" name="bt">
                                                 <label class="form-check-label" for="inlineCheckbox1">BT</label>
                                             </div>
 
@@ -459,7 +459,7 @@
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1" name="course">
+                                                    value="option1" name="bl">
                                                 <label class="form-check-label" for="inlineCheckbox1">BL</label>
                                             </div>
 
@@ -475,7 +475,7 @@
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input " type="checkbox" id="inlineCheckbox1"
-                                                    value="option1" name="course">
+                                                    value="option1" name="bca">
                                                 <label class="form-check-label" for="inlineCheckbox1">BCA</label>
                                             </div>
 
@@ -490,7 +490,7 @@
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1">
+                                                    value="option1" name="ps">
                                                 <label class="form-check-label" for="inlineCheckbox1">PS</label>
                                             </div>
 
@@ -505,7 +505,7 @@
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1" name="course">
+                                                    value="option1" name="course" name="ce">
                                                 <label class="form-check-label" for="inlineCheckbox1">CE</label>
                                             </div>
 
@@ -520,7 +520,7 @@
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1" name="course">
+                                                    value="option1" name="btech">
                                                 <label class="form-check-label" for="inlineCheckbox1">B.Tech</label>
                                             </div>
 
@@ -535,7 +535,7 @@
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1" name="course">
+                                                    value="option1" name="barch">
                                                 <label class="form-check-label" for="inlineCheckbox1">B.Arch</label>
                                             </div>
 
@@ -550,7 +550,7 @@
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1"  name="course">
+                                                    value="option1"  name="bcome">
                                                 <label class="form-check-label" for="inlineCheckbox1">Bcom</label>
                                             </div>
 
@@ -565,7 +565,7 @@
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1" name="course">
+                                                    value="option1" name="ba">
                                                 <label class="form-check-label" for="inlineCheckbox1">BA</label>
                                             </div>
 
@@ -580,7 +580,7 @@
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1" name="course">
+                                                    value="option1" name="bsc">
                                                 <label class="form-check-label" for="inlineCheckbox1">BSC</label>
                                             </div>
 
@@ -595,7 +595,7 @@
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1" name="course">
+                                                    value="option1" name="ma">
                                                 <label class="form-check-label" for="inlineCheckbox1">MA</label>
                                             </div>
 
@@ -610,7 +610,7 @@
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1" name="course">
+                                                    value="option1" name="msc">
                                                 <label class="form-check-label" for="inlineCheckbox1">MSC</label>
                                             </div>
 
@@ -625,7 +625,7 @@
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1"  name="course">
+                                                    value="option1"  name="mcom">
                                                 <label class="form-check-label" for="inlineCheckbox1">Mcom</label>
                                             </div>
 
@@ -640,7 +640,7 @@
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1"  name="course">
+                                                    value="option1"  name="mca">
                                                 <label class="form-check-label" for="inlineCheckbox1">MCA</label>
                                             </div>
 
@@ -655,7 +655,7 @@
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                                    value="option1"  name="course">
+                                                    value="option1"  name="mba">
                                                 <label class="form-check-label" for="inlineCheckbox1">MBA</label>
                                             </div>
 
