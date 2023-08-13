@@ -65,8 +65,8 @@
             $programs .= $_POST['bfa'] . ' , ';
         }
     
-        $sql = "INSERT INTO college_details (university, institution, state, district, address, programs, course, email, number, total_seats, reserved_seats, management_seats)
-        VALUES ('$university', '$institution', '$state', '$district', '$address', '$programs', '$courses', '$email', '$number', '$totalSeats', '$reserved', '$management')";
+        $sql = "INSERT INTO college_details (university, institution, state, district, address, programs, email, number, total_seats, reserved_seats, management_seats)
+        VALUES ('$university', '$institution', '$state', '$district', '$address', '$programs', '$email', '$number', '$totalSeats', '$reserved', '$management')";
 
                 
                 if ($conn->query($sql) === TRUE) {
