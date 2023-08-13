@@ -47,7 +47,7 @@
                             </p>
                         </div>
 
-                        <form action="backend-php/college-register.php" method="post" id="signup-form"
+                        <form action="college-register.php" method="post" id="signup-form"
                             onsubmit="return validateForm()">
                             <div class="d-flex justify-content-between mr-2">
                                 <div class="form-group" style="float: left;">
@@ -142,6 +142,39 @@
             </div>
         </div>
     </section>
+    <?php 
+  include('backend-php/connect.php');
+
+  $firstname = $lastname = $email = $password = $dob = "";
+
+  if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $firstname = $_POST['firstname'];
+    $lastname = $_POST['lastname'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $checkingEmail = $_POST['email'];
+
+    $sql = "SELECT * FROM college_users WHERE email = '$checkingEmail'";
+    $result = $conn->query($sql);
+    if (!$result) {
+       echo $conn->error;
+      } else {
+        $rowcount = $result->num_rows;
+        
+        if ($rowcount > 0) {
+          $err = '<script>alert("The email is already in use. Please try another one.")</script>';
+          echo $err;
+        } else {
+          $sql = "INSERT INTO college_users (firstname, lastname, email, password) VALUES ('$firstname', '$lastname', '$email', '$password')";
+          if ($conn->query($sql) === TRUE) {
+            header('Location: ../../php-project/college-login.html');
+          } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+          }
+        }
+      }
+  }
+?>
 
     <!-- jQery -->
     <script src="js/jquery-3.4.1.min.js"></script>
