@@ -13,7 +13,7 @@
   <meta name="description" content="" />
   <meta name="author" content="" />
 
-  <title>Hostit</title>
+  <title>MyCl | Feedback</title>
 
 
   <!-- bootstrap core css -->
