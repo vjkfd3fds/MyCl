@@ -46,9 +46,46 @@
 								begin
 							</p>
 						</div>
+						<?php 
+			include('backend-php/connect.php');
 
+			$firstname = $lastname = $email = $password = $dob = "";
+
+			if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+			$firstname = $_POST['firstname'];
+			$lastname = $_POST['lastname'];
+			$email = $_POST['email'];
+			$password = $_POST['password'];
+			$dob = $_POST['dob'];
+
+		//formatting syntax for date and time
+			$formattedDob = date('Y-m-d', strtotime($_POST['dob']));
+			$checkingEmail = $_POST['email'];
+
+			$sql = "SELECT * FROM registered_users WHERE email = '$checkingEmail'";
+			$result = $conn->query($sql);
+			if (!$result) {
+			echo $conn->error;
+			} else {
+				$rowcount = $result->num_rows;
+				
+			if ($rowcount > 0) {
+			$err = '<script>alert("The email is already in use. Please try another one.")</script>';
+			echo $err;
+			} else {
+			$sql = "INSERT INTO registered_users (firstname, lastname, email, password, dob) VALUES ('$firstname', '$lastname', '$email', '$password', '$formattedDob')";
+			if ($conn->query($sql) === TRUE) {
+				header('Location: ../../php-project/student-login.html');
+			} else {
+				echo "Error: " . $sql . "<br>" . $conn->error;
+			}
+			}
+		}
+	}
+	?>
 						<form action="student-register.php" method="post" id="signup-form"
 							onsubmit="return validateForm()">
+							
 							<div class="d-flex justify-content-between mr-2">
 								<div class="form-group" style="float: left;">
 									<input type="text" class="form-control" id="exampleInputEmail1"
@@ -143,44 +180,6 @@
 			</div>
 		</div>
 	</section>
-
-		<?php 
-			include('backend-php/connect.php');
-
-			$firstname = $lastname = $email = $password = $dob = "";
-
-			if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-			$firstname = $_POST['firstname'];
-			$lastname = $_POST['lastname'];
-			$email = $_POST['email'];
-			$password = $_POST['password'];
-			$dob = $_POST['dob'];
-
-		//formatting syntax for date and time
-			$formattedDob = date('Y-m-d', strtotime($_POST['dob']));
-			$checkingEmail = $_POST['email'];
-
-			$sql = "SELECT * FROM registered_users WHERE email = '$checkingEmail'";
-			$result = $conn->query($sql);
-			if (!$result) {
-			echo $conn->error;
-			} else {
-				$rowcount = $result->num_rows;
-				
-			if ($rowcount > 0) {
-			$err = '<script>alert("The email is already in use. Please try another one.")</script>';
-			echo $err;
-			} else {
-			$sql = "INSERT INTO registered_users (firstname, lastname, email, password, dob) VALUES ('$firstname', '$lastname', '$email', '$password', '$formattedDob')";
-			if ($conn->query($sql) === TRUE) {
-				header('Location: ../../php-project/student-login.html');
-			} else {
-				echo "Error: " . $sql . "<br>" . $conn->error;
-			}
-			}
-		}
-	}
-	?>
 
 
 	<!-- jQery -->

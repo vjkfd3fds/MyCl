@@ -46,6 +46,44 @@
                                 begin
                             </p>
                         </div>
+                        <?php 
+  include('backend-php/connect.php');
+
+  $firstname = $lastname = $email = $password = "";
+
+  if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $firstname = $_POST['firstname'];
+    $lastname = $_POST['lastname'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $checkingEmail = $_POST['email'];
+
+    $sql = "SELECT * FROM college_users WHERE email = '$checkingEmail'";
+    $result = $conn->query($sql);
+    if (!$result) {
+       echo $conn->error;
+      } else {
+        $rowcount = $result->num_rows;
+        
+        if ($rowcount > 0) {
+            $alertMessage = "The email is already in use. Please try another one.";
+        } else {
+          $sql = "INSERT INTO college_users (firstname, lastname, email, password) VALUES ('$firstname', '$lastname', '$email', '$password')";
+          if ($conn->query($sql) === TRUE) {
+            header('Location: ../../php-project/college-login.html');
+          } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+          }
+        }
+      }
+  }
+?>
+
+<?php 
+if (!empty($alertMessage)) {
+    echo '<script>alert("' . $alertMessage . '")</script>';
+  }
+?>
 
                         <form action="college-register.php" method="post" id="signup-form"
                             onsubmit="return validateForm()">
@@ -83,19 +121,8 @@
                                 </div>
                             </div>
 
-                            <div class="pl-1" style="text-align: center;">
-                                <label
-                                    style="font-weight: lighter; font-family: SFProDisplay-Bold, Helvetica, Arial, sans-serif;;"
-                                    for="">Date of birth</label>
-                            </div>
-                            <div class="d-flex justify-content-center">
-                                <div class="form-group" style="width: 10em;">
-                                    <input type="date" class="form-control" name="birthdate" style="height: 2.2em;">
-                                </div>
-                            </div>
 
-
-                            <div class="pl-1" style="text-align: center;">
+                            <div class="pl-1" style="text-align: center; padding: 10px;">
                                 <label
                                     style="font-weight: lighter; font-family: SFProDisplay-Bold, Helvetica, Arial, sans-serif;;"
                                     for="">Gender</label>
@@ -142,39 +169,6 @@
             </div>
         </div>
     </section>
-    <?php 
-  include('backend-php/connect.php');
-
-  $firstname = $lastname = $email = $password = $dob = "";
-
-  if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $firstname = $_POST['firstname'];
-    $lastname = $_POST['lastname'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $checkingEmail = $_POST['email'];
-
-    $sql = "SELECT * FROM college_users WHERE email = '$checkingEmail'";
-    $result = $conn->query($sql);
-    if (!$result) {
-       echo $conn->error;
-      } else {
-        $rowcount = $result->num_rows;
-        
-        if ($rowcount > 0) {
-          $err = '<script>alert("The email is already in use. Please try another one.")</script>';
-          echo $err;
-        } else {
-          $sql = "INSERT INTO college_users (firstname, lastname, email, password) VALUES ('$firstname', '$lastname', '$email', '$password')";
-          if ($conn->query($sql) === TRUE) {
-            header('Location: ../../php-project/college-login.html');
-          } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
-          }
-        }
-      }
-  }
-?>
 
     <!-- jQery -->
     <script src="js/jquery-3.4.1.min.js"></script>
