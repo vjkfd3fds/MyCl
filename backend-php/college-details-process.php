@@ -74,7 +74,7 @@
 
                 
                 if ($conn->query($sql) === TRUE) {
-                    header('Location: ../../php-project/dashboard.php');
+                    header('Location: ../../php-project/success.html');
                 } else {
                     echo "Error: " . $sql . "<br>" . $conn->error;
                 }
