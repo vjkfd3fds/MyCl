@@ -37,13 +37,6 @@ CREATE TABLE IF NOT EXISTS `administration` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
---
--- Dumping data for table `administration`
---
-
-INSERT INTO `administration` (`id`, `email`, `password`) VALUES
-(1, 'thushar17223@gmail.c', 'thushar33'),
-(2, 'shafiiq688@gmail.com', 'shafeek123');
 
 -- --------------------------------------------------------
 
@@ -70,12 +63,7 @@ CREATE TABLE IF NOT EXISTS `college_details` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
---
--- Dumping data for table `college_details`
---
 
-INSERT INTO `college_details` (`id`, `university`, `institution`, `state`, `district`, `address`, `programs`, `course`, `email`, `number`, `total_seats`, `reserved_seats`, `management_seats`, `about`) VALUES
-(1, 'kerala University', 'college of applied science adoor', 'Bihar', 'East Godavari', 'mmmmmmmmmmmmmm', 'ug , pg , diploma , ds , moa , ', 'me, be, ps, ce, bsc, ma', 'shafiiq688@gmail.com', 5555555, 7, 8, 8, '');
 
 -- --------------------------------------------------------
 
@@ -93,14 +81,6 @@ CREATE TABLE IF NOT EXISTS `college_users` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
---
--- Dumping data for table `college_users`
---
-
-INSERT INTO `college_users` (`id`, `firstname`, `lastname`, `email`, `password`) VALUES
-(1, 'nikhhil', 'T', 'shafiiq688@gmail.com', 'thushar33'),
-(2, 'Thushar', 'T', 'ssid88607@gmail.com', 'thushar33'),
-(3, 'Thushar', 'T', 'thushar17223@gmail.com', 'thushar33');
 
 -- --------------------------------------------------------
 
@@ -117,16 +97,7 @@ CREATE TABLE IF NOT EXISTS `feedbacks` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
---
--- Dumping data for table `feedbacks`
---
 
-INSERT INTO `feedbacks` (`id`, `name`, `email`, `message`) VALUES
-(1, 'jay', 'thushar17223@gmail.com', 'very cool website if you ask me lol\r\n'),
-(2, 'Sublime', 'thushar17223@gmail.com', 'very cool'),
-(3, 'jxy', 'c8354270@gmail.com', 'hope this works'),
-(4, 'jxytherealone', 'nikhil.3post@gmail.com', 'Heey man nice website hope this stuffs works very well at the end of the day'),
-(5, 'thushar', 'thushar17223@gmail.c', 'very nice lol');
 
 -- --------------------------------------------------------
 
@@ -145,14 +116,7 @@ CREATE TABLE IF NOT EXISTS `registered_users` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
---
--- Dumping data for table `registered_users`
---
 
-INSERT INTO `registered_users` (`id`, `firstname`, `lastname`, `email`, `password`, `dob`) VALUES
-(1, 'Thushar', 'T', 'ssid88607@gmail.com', 'thushar33', '2023-08-16'),
-(2, 'Thushar', 'T', 'c8354270@gmail.com', 'thushar33', '2023-08-30');
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
