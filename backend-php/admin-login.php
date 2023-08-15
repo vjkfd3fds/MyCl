@@ -23,7 +23,7 @@
 
             if ($result->num_rows === 1) {
                 // User exists, redirect to home.html
-                header('Location: ../../php-project/admin-dashboard.html');
+                header('Location: ../../php-project/admin-dashboard.php');
                 exit();
             } 
 

@@ -36,11 +36,11 @@
         if (isset($_POST['pass'])) {
             echo "Successfully registered their details. Will send them a message.";
         } elseif (isset($_POST['reject'])) {
-            $emailToDelete = $_POST['reject']; 
+            $idToDelete = $_POST['reject']; 
 
-            $sql = "DELETE FROM college_details WHERE email = ?";
+            $sql = "DELETE FROM college_details WHERE id = ?";
             $stmt = $conn->prepare($sql);
-            $stmt->bind_param("s", $emailToDelete);
+            $stmt->bind_param("s", $idToDelete);
             if ($stmt->execute()) {
                 echo '<p>Deleted</p>';
             } else {
@@ -71,7 +71,7 @@
             echo '<p> management_seats seats: ' . $row["management_seats"] . '</p>';
             echo '</div>';
             echo '<form action="dashboard.php" method="post">';
-            echo '<input type="hidden" name="reject" value="' . $row["email"] . '">';
+            echo '<input type="hidden" name="reject" value="' . $row["id"] . '">';
             echo '<input type="submit" value="pass" name="pass">';
             echo '<input type="submit" value="Delete" name="delete_row">';
             echo '</form>';

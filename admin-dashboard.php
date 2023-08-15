@@ -63,7 +63,7 @@
 
                 </a>
 
-                <a href="tickets.html" id="">
+                <a href="dashboard.php" id="">
                     <span class="material-icons-sharp">
                         mail_outline
                     </span>
