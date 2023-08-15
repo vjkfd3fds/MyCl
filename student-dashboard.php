@@ -163,7 +163,7 @@
 
     <!--Seaching box Section Starts-->
     <section>
-        <form action="index.php" metho="post">
+        <form action="" metho="post">
             <div class="container search-box">
                 <h1 style="padding: 20px; font-family: monospace;">Search By Name</h1>
                 <div class="d-flex justify-content-center">
