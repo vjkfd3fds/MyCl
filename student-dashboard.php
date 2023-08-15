@@ -6,7 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyCl | Dashboard</title>
 
+<style>
+     feedback-list {
+            margin-top: 20px;
+        }
 
+        .feedback-card {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .feedback-card h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .feedback-card p {
+            margin: 0;
+        }
+</style>
 
 <!-- bootstrap core css -->
 <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
@@ -122,6 +143,7 @@
                                                 $sql = "SELECT district FROM college_details";
                                                 $result = $conn->query($sql);
                                                 if ($result->num_rows > 0) {
+                                                    echo '<div class="feedback-list">';
                                                     while ($row = $result->fetch_assoc()) { 
                                                         $district = $row['district']; 
                                                         echo "<option value='$district'>$district</option>";
@@ -163,13 +185,13 @@
 
     <!--Seaching box Section Starts-->
     <section>
-        <form action="" metho="post">
+        <form action="student-dashboard.php" method="post">
             <div class="container search-box">
                 <h1 style="padding: 20px; font-family: monospace;">Search By Name</h1>
                 <div class="d-flex justify-content-center">
                     <div class="input-group">
                         <input type="search" class="form-control rounded" placeholder="Search by name of Institution"
-                        aria-label="Search" aria-describedby="search-addon" />
+                        aria-label="Search" aria-describedby="search-addon" name="search"/>
                         <button type="submit" class="btn btn-outline-primary">search</button>
                     </div> 
                 </div>
@@ -178,6 +200,41 @@
     </section>
     <!--End of the Searching Section-->
 
+    <?php 
+        include('backend-php/connect.php');
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $institution = $_POST['search'];
+            $institution = $conn->real_escape_string($institution);
+            $sql = "SELECT * FROM college_details WHERE institution = '$institution'";
+            $result = $conn->query($sql);
+            if ($result->num_rows > 0) {
+                echo '<div class="feedback-list">';
+             while ($row = $result->fetch_assoc()) { 
+                    echo '<div class="feedback-card">';
+                    echo '<h3>' . $row["institution"] . '</h3>';
+                    echo '<p> university: ' . $row["university"] . '</p>';
+                    echo '<p> state: ' . $row["state"] . '</p>';
+                    echo '<p> district: ' . $row["district"] . '</p>';
+                    echo '<p> address: ' . $row["address"] . '</p>';
+                    echo '<p> programs: ' . $row["programs"] . '</p>';
+                    echo '<p> course: ' . $row["course"] . '</p>';
+                    echo '<p> phone number: ' . $row["number"] . '</p>';
+                    echo '<p> email: ' . $row["email"] . '</p>';
+                    echo '<p> total seats: ' . $row["total_seats"] . '</p>';
+                    echo '<p> reserved seats: ' . $row["reserved_seats"] . '</p>';
+                    echo '<p> management_seats seats: ' . $row["management_seats"] . '</p>';
+                    echo '</div>';
+                }
+                echo "</div>";
+            }
+        } else {
+            echo "No results found.";
+        }
+        $conn->close();
+
+    
+    ?>
 
     <!-- jQery -->
     <script src="js/jquery-3.4.1.min.js"></script>
