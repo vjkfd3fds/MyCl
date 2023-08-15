@@ -58,17 +58,17 @@
         while ($row = $result->fetch_assoc()) {
             echo '<div class="feedback-card">';
             echo '<h3>' . $row["institution"] . '</h3>';
-            echo '<p> university: ' . $row["university"] . '</p>';
-            echo '<p> state: ' . $row["state"] . '</p>';
-            echo '<p> district: ' . $row["district"] . '</p>';
-            echo '<p> address: ' . $row["address"] . '</p>';
-            echo '<p> programs: ' . $row["programs"] . '</p>';
-            echo '<p> course: ' . $row["course"] . '</p>';
-            echo '<p> phone number: ' . $row["number"] . '</p>';
-            echo '<p> email: ' . $row["email"] . '</p>';
-            echo '<p> total seats: ' . $row["total_seats"] . '</p>';
-            echo '<p> reserved seats: ' . $row["reserved_seats"] . '</p>';
-            echo '<p> management_seats seats: ' . $row["management_seats"] . '</p>';
+            echo '<p style="font-size: 25px";> university: ' . $row["university"] . '</p>';
+            echo '<p style="font-size: 25px";> state: ' . $row["state"] . '</p>';
+            echo '<p style="font-size: 25px";> district: ' . $row["district"] . '</p>';
+            echo '<p style="font-size: 25px";> address: ' . $row["address"] . '</p>';
+            echo '<p style="font-size: 25px";> programs: ' . $row["programs"] . '</p>';
+            echo '<p style="font-size: 25px";> course: ' . $row["course"] . '</p>';
+            echo '<p style="font-size: 25px";> phone number: ' . $row["number"] . '</p>';
+            echo '<p style="font-size: 25px";> email: ' . $row["email"] . '</p>';
+            echo '<p style="font-size: 25px";> total seats: ' . $row["total_seats"] . '</p>';
+            echo '<p style="font-size: 25px";> reserved seats: ' . $row["reserved_seats"] . '</p>';
+            echo '<p style="font-size: 25px";> management_seats seats: ' . $row["management_seats"] . '</p>';
             echo '</div>';
             echo '<form action="dashboard.php" method="post">';
             echo '<input type="hidden" name="reject" value="' . $row["id"] . '">';
