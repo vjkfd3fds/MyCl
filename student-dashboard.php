@@ -97,37 +97,18 @@
 
                                         <select class="form-control" id="exampleFormControlSelect1"
                                             style="width: 26em;">
-
                                             <option>University</option>
-                                            <option>University of Kerala</option>
-                                            <option>University of Calicut</option>
-                                            <option>Mahatma Gandhi University</option>
-                                            <option>Amal Jyothy College of Engineering </option>
-                                            <option>COchin University of Science and Technology</option>
-                                            <option>APJ Abdul Kalam Technological University</option>
-                                            <option>Indian Institute of Space Science and Technology, Thiruvananthapuram
-                                            </option>
-                                            <option>Kannur University</option>
-                                            <option>Sree Chitra Tirunal Institute for Medical Sciences & Technology
-                                            </option>
-                                            <option>National Institute of Technology, Calicut</option>
-                                            <option>Central University of Kerala</option>
-                                            <option>KAU</option>
-                                            <option>Sree Sankaracharya University of Sanskrit</option>
-                                            <option>Indian Institute of Information Technology (IIIT) Kottayam</option>
-                                            <option>Kerala Kalamandalam</option>
-                                            <option>Indian Institute of Science Education and Research
-                                                Thiruvananthapuram</option>
-                                            <option>Indian Institute Of Management Kozhikode (IIM Kozhikode)</option>
-                                            <option>Indian Institute Of Technology-Palakkad (IIT-Palakkad)</option>
-                                            <option>MAHARAJA'S COLLEGE ERNAKULAM</option>
-                                            <option>Amrita Institute of Medical Sciences and Research Centre</option>
-                                            <option>Jubilee Mission Medical College and Research Institute</option>
-                                            <option>Kerala University of Digital Sciences, Innovation and Technology
-                                                (Digital University Kerala)</option>
-                                            <option>Indian Naval Academy</option>
-                                            <option>Euro Tech Maritime Academy</option>
-
+                                            <?php 
+                                                include('backend-php/connect.php');
+                                                $sql = "SELECT university FROM college_details";
+                                                $result = $conn->query($sql);
+                                                if ($result->num_rows > 0) {
+                                                    while ($row = $result->fetch_assoc()) { 
+                                                        $university = $row['university']; 
+                                                        echo"<option value='$university'>$university</option>";
+                                                    }
+                                                }   
+                                            ?>
                                         </select>
                                     </div>
 
@@ -136,50 +117,25 @@
                                         <select class="form-control" id="exampleFormControlSelect1"
                                             style="width: 26em;">
                                             <option>District</option>
-                                            <option>Thiruvananthapuram</option>
-                                            <option>Kollam</option>
-                                            <option>Pathanamthitta</option>
-                                            <option>Alappuzha </option>
-                                            <option>Kottayam</option>
-                                            <option>Idukki</option>
-                                            <option>Eranakulam</option>
-                                            <option>Thrissur</option>
-                                            <option>Palakkad</option>
-                                            <option>Malappuram</option>
-                                            <option>Kozhikkode</option>
-                                            <option>Wayanad</option>
-                                            <option>Kannur</option>
-                                            <option>Kasargod</option>
+                                            <?php 
+                                                include('backend-php/connect.php');
+                                                $sql = "SELECT district FROM college_details";
+                                                $result = $conn->query($sql);
+                                                if ($result->num_rows > 0) {
+                                                    while ($row = $result->fetch_assoc()) { 
+                                                        $district = $row['district']; 
+                                                        echo "<option value='$district'>$district</option>";
+                                                    }
+                                                }  
+                                            ?>
                                         </select>
                                     </div>
-
+                                    <?php include('backend-php/form-details.php'); ?>
                                     <div class="form-group d-flex justify-content-center ">
                                         <select class="form-control" id="exampleFormControlSelect1"
                                             style="width: 26em;">
                                             <option>Course</option>
-                                            <option>Computer Science</option>
-                                            <option>Bachelor of Business Administration</option>
-                                            <option>Mechanical Engineering</option>
-                                            <option>Bachelor of Computer Application(BCA)</option>
-                                            <option>Bachelor of Technology</option>
-                                            <option>Political science</option>
-                                            <option>Bachelor of Engineering</option>
-                                            <option>Chemical Engineering</option>
-                                            <option>Bachelor of Laws</option>
-                                            <option>Bachelor of Medicine and Bachelor of Surgery</option>
-                                            <option>Bachelor of Economics</option>
-                                            <option>Mechatronics</option>
-                                            <option>Law  BA LLB/LLB</option>
-                                            <option>Bachelor of Commerce(Bcom)</option>
-                                            <option>Bachelor of Medicine (MBBS)</option>
-                                            <option >Bachelor of Computer Science(BSC)</option>
-                                            <option >Bachelor of Arts(BA)</option>
-                                            <option >Bachelor of Business Administration(BBA)</option>
-                                            <option>Master of Commerce(Mcom)</option>
-                                            <option>Master Computer Application(MCA)</option>
-                                            <option >Master of Computer Science(MSC)</option>
-                                            <option >Master of Arts(MA)</option>
-                                            <option >Master of Business Administration(MBA)</option>
+                                            <?php echo $optionsCourses; ?>
                                         </select>
                                     </div>
 
