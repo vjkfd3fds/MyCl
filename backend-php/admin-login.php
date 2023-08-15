@@ -1,15 +1,15 @@
 <?php 
     
     include('connect.php');
-    $email = $password = "";
+    $username = $password = "";
     $error = " ";
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $email = $_POST['email'];
+        $username = $_POST['username'];
         $password = $_POST['password'];
 
-        if ($email == 'thushar17223@gmail.com.c' && $password == 'thushar33' || $email == 'shafiiq688@gmail.com' && $password == 'shafeek123') {
-            $sql = "SELECT * FROM administration WHERE email = ? AND password = ?";
+        if ($username == 'admin' && $password == 'adm123') {
+            $sql = "SELECT * FROM administration WHERE username = ? AND password = ?";
             $stmt = $conn->prepare($sql);
 
             if (!$stmt) {
@@ -17,7 +17,7 @@
                 exit();
             }
 
-            $stmt->bind_param("ss", $email, $password);
+            $stmt->bind_param("ss", $username, $password);
             $stmt->execute();
             $result = $stmt->get_result();
 

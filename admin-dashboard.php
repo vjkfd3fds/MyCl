@@ -31,13 +31,7 @@
             </div>
 
             <div class="sidebar">
-                <a href="#" id="">
-                    <span class="material-icons-sharp">
-                        dashboard
-                    </span>
-                    <h3>Dashboard</h3>
-
-                </a>
+               
 
                 <a href="#" id="">
                     <span class="material-icons-sharp">
@@ -47,13 +41,7 @@
 
                 </a>
 
-                <a href="#" id="">
-                    <span class="material-icons-sharp">
-                        receipt_long
-                    </span>
-                    <h3>History</h3>
-
-                </a>
+                
 
                 <a href="admin-home.html" id="" class="active">
                     <span class="material-icons-sharp">
@@ -68,7 +56,6 @@
                         mail_outline
                     </span>
                     <h3>Tickets</h3>
-                    <span class="message-count">27</span>
                 </a>
 
                 <a href="#" id="">
@@ -94,12 +81,6 @@
                     <h3>Settings</h3>
                 </a>
 
-                <a href="#" id="">
-                    <span class="material-icons-sharp">
-                        add
-                    </span>
-                    <h3>New User</h3>
-                </a>
 
                 <a href="admin-login.html" id="">
                     <span class="material-icons-sharp">
