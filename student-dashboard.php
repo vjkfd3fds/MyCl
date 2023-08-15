@@ -202,40 +202,38 @@
     <!--End of the Searching Section-->
 
     <?php 
-        include('backend-php/connect.php');
+include('backend-php/connect.php');
 
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $institution = $_POST['search'];
-            $institution = $conn->real_escape_string($institution);
-            $sql = "SELECT * FROM college_details WHERE institution = '$institution'";
-            $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                echo '<div class="feedback-list">';
-             while ($row = $result->fetch_assoc()) { 
-                    echo '<div class="feedback-card">';
-                    echo '<h3>' . $row["institution"] . '</h3>';
-                    echo '<p> university: ' . $row["university"] . '</p>';
-                    echo '<p> state: ' . $row["state"] . '</p>';
-                    echo '<p> district: ' . $row["district"] . '</p>';
-                    echo '<p> address: ' . $row["address"] . '</p>';
-                    echo '<p> programs: ' . $row["programs"] . '</p>';
-                    echo '<p> course: ' . $row["course"] . '</p>';
-                    echo '<p> phone number: ' . $row["number"] . '</p>';
-                    echo '<p> email: ' . $row["email"] . '</p>';
-                    echo '<p> total seats: ' . $row["total_seats"] . '</p>';
-                    echo '<p> reserved seats: ' . $row["reserved_seats"] . '</p>';
-                    echo '<p> management_seats seats: ' . $row["management_seats"] . '</p>';
-                    echo '</div>';
-                }
-                echo "</div>";
-            }
-        } else {
-            echo "No results found.";
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $institution = $_POST['search'];
+    $institution = $conn->real_escape_string($institution);
+    $sql = "SELECT * FROM college_details WHERE institution = '$institution'";
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0) {
+        echo '<div class="feedback-list">';
+        while ($row = $result->fetch_assoc()) { 
+            echo '<div class="feedback-card">';
+            echo '<h3>' . $row["institution"] . '</h3>';
+            echo '<p> university: ' . $row["university"] . '</p>';
+            echo '<p> state: ' . $row["state"] . '</p>';
+            echo '<p> district: ' . $row["district"] . '</p>';
+            echo '<p> address: ' . $row["address"] . '</p>';
+            echo '<p> programs: ' . $row["programs"] . '</p>';
+            echo '<p> course: ' . $row["course"] . '</p>';
+            echo '<p> phone number: ' . $row["number"] . '</p>';
+            echo '<p> email: ' . $row["email"] . '</p>';
+            echo '<p> total seats: ' . $row["total_seats"] . '</p>';
+            echo '<p> reserved seats: ' . $row["reserved_seats"] . '</p>';
+            echo '<p> management_seats seats: ' . $row["management_seats"] . '</p>';
+            echo '</div>';
         }
-        $conn->close();
-
-    
-    ?>
+        echo "</div>";
+    } else {
+        echo "No results found.";
+    }
+    $conn->close();
+}
+?>
 
     <!-- jQery -->
     <script src="js/jquery-3.4.1.min.js"></script>
