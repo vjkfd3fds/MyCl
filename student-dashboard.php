@@ -118,7 +118,7 @@
                             <li>Settings</li>
                         </a>
                         <?php
-                            if (isset($_COOKIE['email'])) {
+                            if (isset($_COOKIE['name'])) {
                                 $user_id = $_COOKIE['email'];
                                 // Perform actions that a logged-in user can do
                                 echo '<form method="post" action="student-dashboard.php">
@@ -135,7 +135,7 @@
                                 header("Location: student-login.html"); // Redirect to the login page after logout
                                 exit;
                             }
-?>
+                        ?>
 
                     </ul>
                 </div>

@@ -23,6 +23,7 @@
 
             if ($result->num_rows === 1) {
                 // User exists, redirect to home.html
+                setcookie("username", $username, time() + 3600, "/");
                 header('Location: ../../php-project/admin-dashboard.php');
                 exit();
             } 

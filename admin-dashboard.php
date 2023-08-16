@@ -12,23 +12,12 @@
 
 <body>
 
-    <div class="container" >
+    <div class="container" style="padding: 25px;">
 
         <!-- Sidebar section start  -->
         <aside>
 
-            <div class="toggle">
-                <div class="logo">
-                    <img
-                        src="#">
-                    <h2>shaf<span class="danger">iiq</span> </h2>
-                </div>
-                <div class="close" id="close-btn">
-                    <span class="material-icons-sharp">
-                        close
-                    </span>
-                </div>
-            </div>
+            
 
             <div class="sidebar">
                
@@ -81,13 +70,25 @@
                     <h3>Settings</h3>
                 </a>
 
+    
+                <?php
+                    if (isset($_COOKIE['username'])) {
+                        $user_id = $_COOKIE['username'];
+                        echo '<form method="post" action="admin-dashboard.php">
+                        <input type="submit" name="logout" value="Logout">
+                        </form>';
+                    } else {
+                        header('Location: admin-login.php');
+                        exit;
+                    }
+                    
+                    if (isset($_POST['logout'])) {                        
+                        setcookie("email", "", time() - 3600, "/");
+                        header("Location: admin-login.html");
+                        exit;
+                    }
+                ?>
 
-                <a href="admin-login.html" id="">
-                    <span class="material-icons-sharp">
-                        logout
-                    </span>
-                    <h3>Logout</h3>
-                </a>
             </div>
 
         </aside>
@@ -239,17 +240,6 @@
 
                 </div>
 
-                <div class="profile">
-                    <div class="info">
-                        <p>Hey <b>Shafiiq</b></p>
-                        <small class="text-muted">Admin</small>
-                    </div>
-
-                    <div class="profile-photo">
-                        <img
-                            src="#">
-                    </div>
-                </div>
             </div>
             <!-- End of the nav Section-->
 
