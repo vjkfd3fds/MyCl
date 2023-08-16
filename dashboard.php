@@ -25,7 +25,39 @@
 
         .feedback-card p {
             margin: 0;
+            font-family: monospace;
+            font-size: 15px;
         }
+        /* Style for the result box */
+        .result-box {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Style for heading */
+        .result-heading {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        /* Style for individual feedback card */
+        .feedback-card {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+
+        /* Style for feedback card content */
+        .feedback-content {
+            font-size: 0.9rem;
+        }
+
     </style>
 </head>
 <body>
@@ -54,28 +86,30 @@
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
-        echo '<div class="feedback-list">';
+        echo '<div class="result-box">';
+        echo '<h2 class="result-heading">New requests:</h2>';
         
         while ($row = $result->fetch_assoc()) {
             echo '<div class="feedback-card">';
             echo '<h3>' . $row["institution"] . '</h3>';
-            echo '<p style="font-size: 25px";> university: ' . $row["university"] . '</p>';
-            echo '<p style="font-size: 25px";> state: ' . $row["state"] . '</p>';
-            echo '<p style="font-size: 25px";> district: ' . $row["district"] . '</p>';
-            echo '<p style="font-size: 25px";> address: ' . $row["address"] . '</p>';
-            echo '<p style="font-size: 25px";> programs: ' . $row["programs"] . '</p>';
-            echo '<p style="font-size: 25px";> course: ' . $row["course"] . '</p>';
-            echo '<p style="font-size: 25px";> phone number: ' . $row["number"] . '</p>';
-            echo '<p style="font-size: 25px";> email: ' . $row["email"] . '</p>';
-            echo '<p style="font-size: 25px";> total seats: ' . $row["total_seats"] . '</p>';
-            echo '<p style="font-size: 25px";> reserved seats: ' . $row["reserved_seats"] . '</p>';
-            echo '<p style="font-size: 25px";> management_seats seats: ' . $row["management_seats"] . '</p>';
+            echo '<p style="font-size: 15px";> university: ' . $row["university"] . '</p>';
+            echo '<p style="font-size: 15px";> state: ' . $row["state"] . '</p>';
+            echo '<p style="font-size: 15px";> district: ' . $row["district"] . '</p>';
+            echo '<p style="font-size: 15px";> address: ' . $row["address"] . '</p>';
+            echo '<p style="font-size: 15px";> programs: ' . $row["programs"] . '</p>';
+            echo '<p style="font-size: 15px";> course: ' . $row["course"] . '</p>';
+            echo '<p style="font-size: 15px";> phone number: ' . $row["number"] . '</p>';
+            echo '<p style="font-size: 15px";> email: ' . $row["email"] . '</p>';
+            echo '<p style="font-size: 15px";> total seats: ' . $row["total_seats"] . '</p>';
+            echo '<p style="font-size: 15px";> reserved seats: ' . $row["reserved_seats"] . '</p>';
+            echo '<p style="font-size: 15px";> management_seats seats: ' . $row["management_seats"] . '</p>';
             echo '</div>';
             echo '<form action="dashboard.php" method="post">';
             echo '<input type="hidden" name="reject" value="' . $row["id"] . '">';
             echo '<input type="submit" value="pass" name="pass">';
             echo '<input type="submit" value="Delete" name="delete_row">';
             echo '</form>';
+            echo '</div>';
         }
         
         echo '</div>';
