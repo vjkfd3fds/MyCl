@@ -29,7 +29,7 @@
 
                 
                 if ($conn->query($sql) === TRUE) {
-                    header('Location: ../../php-project/success.html');
+                    header('Location: ../../php-project/college-dashboard.php');
                 } else {
                     echo "Error: " . $sql . "<br>" . $conn->error;
                 }

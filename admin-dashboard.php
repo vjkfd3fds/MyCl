@@ -40,7 +40,7 @@
 
                 </a>
 
-                <a href="dashboard.php" id="">
+                <a href="requests.php" id="">
                     <span class="material-icons-sharp">
                         mail_outline
                     </span>
