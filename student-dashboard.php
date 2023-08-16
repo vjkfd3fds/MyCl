@@ -118,16 +118,13 @@
                             <li>Settings</li>
                         </a>
                         <?php
-                            if (isset($_COOKIE['name'])) {
+                            if (isset($_COOKIE['email'])) {
                                 $user_id = $_COOKIE['email'];
                                 // Perform actions that a logged-in user can do
                                 echo '<form method="post" action="student-dashboard.php">
                                         <input type="submit" name="logout" value="Logout">
                                     </form>';
-                            } else {
-                                header('Location: studetn-login.php');
-                                exit; // Exit the script after redirection
-                            }
+                            } 
 
                             if (isset($_POST['logout'])) {
                                 // Set the expiration time of the cookie to a time in the past to delete it
