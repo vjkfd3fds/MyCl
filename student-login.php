@@ -13,7 +13,7 @@
   <meta name="description" content="" />
   <meta name="author" content="" />
 
-  <title>MyCl | Login</title>
+  <title>MyCl | login</title>
 
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 
@@ -34,10 +34,6 @@
 
   <!-- Custom styles for the drop-down box -->
   <style>
-    section {
-      background-color: #fff;
-    }
-
     /* Style for the drop-down box */
     .nav-item.dropdown {
       position: relative;
@@ -73,53 +69,70 @@
   </style>
 </head>
 
-<body>
+<body class="sub_page">
+
   <div class="hero_area">
-    <!-- header section starts -->
+    <!-- header section strats -->
     <header class="header_section">
       <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg custom_nav-container">
-  <a class="navbar-brand" href="home.html">
-    <h4 style="font-size: x-large; cursor: pointer; color: white;">
-      my
-      <span style="font-size: x-large;">c</span>
-      I
-    </h4>
-  </a>
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="home.php">
+            <h4 style="font-size: x-large; cursor: pointer; color: white;">
+              my
+              <span style="font-size: x-large;">c</span>
+              I
+            </h4>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class=""></span>
-  </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav  ml-auto">
+              <li class="nav-item ">
+                <a class="nav-link" href="home.php">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="about.php"> About</a>
+              </li>
+              
+              <!-- Adding the drop-down box -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Dashboard
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <?php 
+                  if (isset($_COOKIE['username'])) {
+                    $user_id = $_COOKIE['username'];
+                    echo '<a class="dropdown-item" href="admin-dashboard.php">Admin</a>';
+                  } else {
+                    echo '<a class="dropdown-item" href="admin-login.php">Admin</a>';
+                  }
+                  ?>
+                  <?php 
+                  if (isset($_COOKIE['email'])) {
+                    $user_id = $_COOKIE['email'];
+                    echo '<a class="dropdown-item" href="student-dashboard.php">Student</a>';
+                  } else {
+                    echo '<a class="dropdown-item" href="student-register.php">Student</a>';
+                  }
+                  ?>
+                  <a class="dropdown-item" href="college-register.php">College</a>
+                </div>
+              </li>
+              <!-- End of drop-down box -->
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="about.html"> About</a>
-      </li>
-
-      <!-- Adding the drop-down box for Admin, Student, and College options -->
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dashboard
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="admin-login.html">Admin</a>
-          <a class="dropdown-item" href="student-register.php">Student</a>
-          <a class="dropdown-item" href="college-register.php">College</a>
-        </div>
-      </li>
-      <!-- End of drop-down box -->
-
-    </ul>
-  </div>
-</nav>
+            </ul>
+            <div class="quote_btn-container">
+              </form>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
     <!-- end header section -->
-
   </div>
-
 
   <section class="vh-100" id="student-login" style="padding: 40px;">
     <div class="container-fluid h-custom">
@@ -129,11 +142,10 @@
             alt="Sample image">
         </div>
         <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1 ">
-          <form action="backend-php/college-login.php" method="post" class="was-validated">
-            <h3 class="text-center " style="padding: 40px;">College Login</h3>
+          <form action="backend-php/student-login.php" method="post" class="was-validated">
+            <h3 class="text-center " style="padding: 40px;">Students Login</h3>
 
             <div class="text-center ">
-
 
             </div>
 
@@ -163,14 +175,15 @@
                   Remember me
                 </label>
               </div>
-              <a href="forgot-college-password.html" class="text-body">Forgot password?</a>
+              <a href="forgot-student-password.html" class="text-body">Forgot password?</a>
             </div>
 
             <div class="text-center text-lg-start mt-4 pt-2">
               <button type="submit" class="btn btn-primary btn-lg"
                 style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+               
 
-              <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="college-register.php"
+              <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="student-register.php"
                   class="link-danger">Register</a></p>
             </div>
 
@@ -187,9 +200,6 @@
   </section>
 
 
-
-
- 
 
   <!-- info section -->
 
@@ -243,11 +253,11 @@
               Links
             </h4>
             <div class="info_links">
-              <a class="" href="home.html">
+              <a class="" href="home.php">
                 <img src="images/nav-bullet.png" alt="">
                 Home
               </a>
-              <a class="" href="about.html">
+              <a class="" href="about.php">
                 <img src="images/nav-bullet.png" alt="">
                 About
               </a>

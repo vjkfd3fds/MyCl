@@ -105,7 +105,7 @@
 
                 <div id="navbartoggle" class="nav-content">
                     <ul>
-                        <a href="student-dashboard.html">
+                        <a href="home.php">
                             <li>Home</li>
                         </a>
                         <a href="account.php">
@@ -129,7 +129,7 @@
                             if (isset($_POST['logout'])) {
                                 // Set the expiration time of the cookie to a time in the past to delete it
                                 setcookie("email", "", time() - 3600, "/");
-                                header("Location: student-login.html"); // Redirect to the login page after logout
+                                header("Location: student-login.php"); // Redirect to the login page after logout
                                 exit;
                             }
                         ?>
@@ -219,7 +219,7 @@
 
                             <div class="text-center p-4 mt-1">
                                 © 2023 Copyright:
-                                <a class="text-reset fw-bold" href="home.html">my<span
+                                <a class="text-reset fw-bold" href="home.php">my<span
                                         style="font-size: larger;">C</span>l
                                 </a>
                             </div>

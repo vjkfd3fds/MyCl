@@ -746,7 +746,7 @@
 
                         <div class="text-center p-4 mt-4">
                             © 2023 Copyright:
-                            <a class="text-reset fw-bold" href="home.html">my<span
+                            <a class="text-reset fw-bold" href="home.php">my<span
                                     style="font-size: larger;">C</span>l</a>
                         </div>
 

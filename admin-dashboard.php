@@ -77,14 +77,11 @@
                         echo '<form method="post" action="admin-dashboard.php">
                         <input type="submit" name="logout" value="Logout">
                         </form>';
-                    } else {
-                        header('Location: admin-login.php');
-                        exit;
                     }
                     
                     if (isset($_POST['logout'])) {                        
-                        setcookie("email", "", time() - 3600, "/");
-                        header("Location: admin-login.html");
+                        setcookie("username", "", time() - 3600, "/");
+                        header("Location: admin-login.php");
                         exit;
                     }
                 ?>

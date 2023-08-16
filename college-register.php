@@ -24,7 +24,7 @@
 <body>
     <header class="bg-light">
         <div class="d-flex justify-content-center pt-3 p-1">
-            <a href="student.html">
+            <a href="home.php">
                 <h4 style="font-size: x-large; cursor: pointer; color: black;">my<span
                         style="font-size: xxx-large ;">c</span>l</h4>
             </a>
@@ -70,7 +70,7 @@
         } else {
           $sql = "INSERT INTO college_users (firstname, lastname, email, password) VALUES ('$firstname', '$lastname', '$email', '$password')";
           if ($conn->query($sql) === TRUE) {
-            header('Location: ../../php-project/college-login.html');
+            header('Location: ../../php-project/college-login.php');
           } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
           }
@@ -161,7 +161,7 @@ if (!empty($alertMessage)) {
                             <br>
 
                             <div class="d-flex justify-content-center">
-                                <a href="college-login.html">Already have an account? </a>
+                                <a href="college-login.php">Already have an account? </a>
                             </div>
                         </form>
                     </div>

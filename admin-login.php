@@ -13,7 +13,7 @@
   <meta name="description" content="" />
   <meta name="author" content="" />
 
-  <title>MyCl | login</title>
+  <title>MyCl | Admin Login</title>
 
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 
@@ -34,6 +34,10 @@
 
   <!-- Custom styles for the drop-down box -->
   <style>
+    section {
+      background-color: #fff;
+    }
+
     /* Style for the drop-down box */
     .nav-item.dropdown {
       position: relative;
@@ -69,56 +73,67 @@
   </style>
 </head>
 
-<body class="sub_page">
-
+<body>
   <div class="hero_area">
-    <!-- header section strats -->
+    <!-- header section starts -->
     <header class="header_section">
       <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="home.html">
-            <h4 style="font-size: x-large; cursor: pointer; color: white;">
-              my
-              <span style="font-size: x-large;">c</span>
-              I
-            </h4>
-          </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class=""> </span>
-          </button>
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+  <a class="navbar-brand" href="home.php">
+    <h4 style="font-size: x-large; cursor: pointer; color: white;">
+      my
+      <span style="font-size: x-large;">c</span>
+      I
+    </h4>
+  </a>
 
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav  ml-auto">
-              <li class="nav-item ">
-                <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="about.html"> About</a>
-              </li>
-              
-              <!-- Adding the drop-down box -->
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Dashboard
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="admin-login.html">Admin</a>
-                  <a class="dropdown-item" href="student-register.php">Student</a>
-                  <a class="dropdown-item" href="college-register.php">College</a>
-                </div>
-              </li>
-              <!-- End of drop-down box -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class=""></span>
+  </button>
 
-            </ul>
-            <div class="quote_btn-container">
-              </form>
-            </div>
-          </div>
-        </nav>
-      </div>
-    </header>
-    <!-- end header section -->
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="home.php">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="about.php"> About</a>
+      </li>
+
+      <!-- Adding the drop-down box for Admin, Student, and College options -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dashboard
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <?php 
+                  if (isset($_COOKIE['username'])) {
+                    $user_id = $_COOKIE['username'];
+                    echo '<a class="dropdown-item" href="admin-dashboard.php">Admin</a>';
+                  } else {
+                    echo '<a class="dropdown-item" href="admin-login.php">Admin</a>';
+                  }
+                  ?>
+                  <?php 
+                  if (isset($_COOKIE['email'])) {
+                    $user_id = $_COOKIE['email'];
+                    echo '<a class="dropdown-item" href="student-dashboard.php">Student</a>';
+                  } else {
+                    echo '<a class="dropdown-item" href="student-register.php">Student</a>';
+                  }
+                  ?>
+          <a class="dropdown-item" href="college-register.php">College</a>
+        </div>
+      </li>
+      <!-- End of drop-down box -->
+
+    </ul>
   </div>
+</nav>
+    <!-- end header section -->
+
+  </div>
+
 
   <section class="vh-100" id="student-login" style="padding: 40px;">
     <div class="container-fluid h-custom">
@@ -128,8 +143,8 @@
             alt="Sample image">
         </div>
         <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1 ">
-          <form action="backend-php/student-login.php" method="post" class="was-validated">
-            <h3 class="text-center " style="padding: 40px;">Students Login</h3>
+          <form action="backend-php/admin-login.php" method="post" class="was-validated">
+            <h3 class="text-center " style="padding: 40px;">Admin Login</h3>
 
             <div class="text-center ">
 
@@ -137,14 +152,8 @@
 
             <!-- Email input -->
             <div class="form-outline mb-4">
-              <input type="email" type="tel" id="form3Example3" class="form-control form-control-lg"
-                placeholder="Email address" name="email" required/>
-            </div>
-
-            <div class="invalid-feedback">
-
-              Enter valid Email address
-
+              <input type="text" type="tel" id="form3Example3" class="form-control form-control-lg"
+                placeholder="Username" name="username" required/>
             </div>
 
             <!-- Password input -->
@@ -161,16 +170,12 @@
                   Remember me
                 </label>
               </div>
-              <a href="forgot-student-password.html" class="text-body">Forgot password?</a>
+              <a href="forgot-admin-password.html" class="text-body">Forgot password?</a>
             </div>
 
             <div class="text-center text-lg-start mt-4 pt-2">
               <button type="submit" class="btn btn-primary btn-lg"
                 style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
-               
-
-              <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="student-register.php"
-                  class="link-danger">Register</a></p>
             </div>
 
 
@@ -186,6 +191,127 @@
   </section>
 
 
+
+
+  <!-- price section -->
+  <!--
+  <section class="price_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          Student login
+        </h2>
+      </div>
+      <div class="price_container ">
+
+        
+        <input class="box" type="text" placeholder="Username or phone number" style="width: 35em;height: 3em;">
+        <input class="" type="text" placeholder="Password" style="width: 300em;height: 3em;">
+        <div class="box">
+          <div class="detail-box">
+            <h2>$ <span>49</span></h2>
+            <h6>
+              Startup
+            </h6>
+            <ul class="price_features">
+              <li>
+                2GB RAM
+              </li>
+              <li>
+                20GB SSD Cloud Storage
+              </li>
+              <li>
+                Weekly Backups
+              </li>
+              <li>
+                DDoS Protection
+              </li>
+              <li>
+                Full Root Access
+              </li>
+              <li>
+                24/7/365 Tech Support
+              </li>
+            </ul>
+          </div>
+          <div class="btn-box">
+            <a href="">
+              See Detail
+            </a>
+          </div>
+        </div>
+        <div class="box">
+          <div class="detail-box">
+            <h2>$ <span>99</span></h2>
+            <h6>
+              Standard
+            </h6>
+            <ul class="price_features">
+              <li>
+                4GB RAM
+              </li>
+              <li>
+                50GB SSD Cloud Storage
+              </li>
+              <li>
+                Weekly Backups
+              </li>
+              <li>
+                DDoS Protection
+              </li>
+              <li>
+                Full Root Access
+              </li>
+              <li>
+                24/7/365 Tech Support
+              </li>
+            </ul>
+          </div>
+          <div class="btn-box">
+            <a href="">
+              See Detail
+            </a>
+          </div>
+        </div>
+        <div class="box">
+          <div class="detail-box">
+            <h2>$ <span>149</span></h2>
+            <h6>
+              Business
+            </h6>
+            <ul class="price_features">
+              <li>
+                8GB RAM
+              </li>
+              <li>
+                100GB SSD Cloud Storage
+              </li>
+              <li>
+                Weekly Backups
+              </li>
+              <li>
+                DDoS Protection
+              </li>
+              <li>
+                Full Root Access
+              </li>
+              <li>
+                24/7/365 Tech Support
+              </li>
+            </ul>
+          </div>
+          <div class="btn-box">
+            <a href="">
+              See Detail
+            </a>
+          </div>
+        </div>
+      </div><
+    </div>
+  </section>
+  !-->
+
+  <!-- price section -->
 
   <!-- info section -->
 
@@ -239,11 +365,11 @@
               Links
             </h4>
             <div class="info_links">
-              <a class="" href="index.html">
+              <a class="" href="home.php">
                 <img src="images/nav-bullet.png" alt="">
                 Home
               </a>
-              <a class="" href="about.html">
+              <a class="" href="about.php">
                 <img src="images/nav-bullet.png" alt="">
                 About
               </a>

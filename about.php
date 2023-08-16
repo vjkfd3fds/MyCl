@@ -75,7 +75,7 @@
     <header class="header_section">
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="home.html">
+          <a class="navbar-brand" href="home.php">
             <h4 style="font-size: x-large; cursor: pointer; color: white;">
               my
               <span style="font-size: x-large;">c</span>
@@ -89,18 +89,32 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav  ml-auto">
               <li class="nav-item ">
-                <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="home.php">Home <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link" href="about.html"> About</a>
+                <a class="nav-link" href="about.php"> About</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Dashboard
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="admin-login.html">Admin</a>
-                  <a class="dropdown-item" href="student-register.php">Student</a>
+                <?php 
+                  if (isset($_COOKIE['username'])) {
+                    $user_id = $_COOKIE['username'];
+                    echo '<a class="dropdown-item" href="admin-dashboard.php">Admin</a>';
+                  } else {
+                    echo '<a class="dropdown-item" href="admin-login.php">Admin</a>';
+                  }
+                  ?>
+                  <?php 
+                  if (isset($_COOKIE['email'])) {
+                    $user_id = $_COOKIE['email'];
+                    echo '<a class="dropdown-item" href="student-dashboard.php">Student</a>';
+                  } else {
+                    echo '<a class="dropdown-item" href="student-register.php">Student</a>';
+                  }
+                  ?>
                   <a class="dropdown-item" href="college-register.php">College</a>
                 </div>
               </li>
@@ -195,11 +209,11 @@
               Links
             </h4>
             <div class="info_links">
-              <a class="" href="home.html">
+              <a class="" href="home.php">
                 <img src="images/nav-bullet.png" alt="">
                 Home
               </a>
-              <a class="active" href="about.html">
+              <a class="active" href="about.php">
                 <img src="images/nav-bullet.png" alt="">
                 About
               </a>
