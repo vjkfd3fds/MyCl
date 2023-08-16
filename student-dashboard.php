@@ -27,6 +27,39 @@
         .feedback-card p {
             margin: 0;
         }
+        /* Style for the result box */
+        .result-box {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Style for heading */
+        .result-heading {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        /* Style for individual feedback card */
+        .feedback-card {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+
+        /* Style for feedback card content */
+        .feedback-content {
+            font-size: 0.9rem;
+        }
+
+        /* Add your other CSS styles here */
+
+    
 </style>
 
 <!-- bootstrap core css -->
@@ -210,21 +243,23 @@
             $sql = "SELECT * FROM college_details WHERE institution = '$institution'";
             $result = $conn->query($sql);
             if ($result->num_rows > 0) {
-                echo '<div class="feedback-list">';
+
+               echo '<div class="result-box">';
+               echo '<h2 class="result-heading">Search Results:</h2>';
              while ($row = $result->fetch_assoc()) { 
                     echo '<div class="feedback-card">';
                     echo '<h3>' . $row["institution"] . '</h3>';
-                    echo '<p> university: ' . $row["university"] . '</p>';
-                    echo '<p> state: ' . $row["state"] . '</p>';
-                    echo '<p> district: ' . $row["district"] . '</p>';
-                    echo '<p> address: ' . $row["address"] . '</p>';
-                    echo '<p> programs: ' . $row["programs"] . '</p>';
-                    echo '<p> course: ' . $row["course"] . '</p>';
-                    echo '<p> phone number: ' . $row["number"] . '</p>';
-                    echo '<p> email: ' . $row["email"] . '</p>';
-                    echo '<p> total seats: ' . $row["total_seats"] . '</p>';
-                    echo '<p> reserved seats: ' . $row["reserved_seats"] . '</p>';
-                    echo '<p> management_seats seats: ' . $row["management_seats"] . '</p>';
+                    echo '<p style="font-size: 15px; font-family: monospace;"> university: ' . $row["university"] . '</p>';
+                    echo '<p style="font-size: 15px; font-family: monospace;"> state: ' . $row["state"] . '</p>';
+                    echo '<p style="font-size: 15px; font-family: monospace;"> district: ' . $row["district"] . '</p>';
+                    echo '<p style="font-size: 15px; font-family: monospace;"> address: ' . $row["address"] . '</p>';
+                    echo '<p style="font-size: 15px; font-family: monospace;"> programs: ' . $row["programs"] . '</p>';
+                    echo '<p style="font-size: 15px; font-family: monospace;"> course: ' . $row["course"] . '</p>';
+                    echo '<p style="font-size: 15px; font-family: monospace;"> phone number: ' . $row["number"] . '</p>';
+                    echo '<p style="font-size: 15px; font-family: monospace;"> email: ' . $row["email"] . '</p>';
+                    echo '<p style="font-size: 15px; font-family: monospace;"> total seats: ' . $row["total_seats"] . '</p>';
+                    echo '<p style="font-size: 15px; font-family: monospace;"> reserved seats: ' . $row["reserved_seats"] . '</p>';
+                    echo '<p style="font-size: 15px; font-family: monospace;"> management_seats seats: ' . $row["management_seats"] . '</p>';
                     echo '</div>';
                 }
                 echo "</div>";
