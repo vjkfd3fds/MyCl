@@ -145,22 +145,21 @@
                         <div class="card-body">
 
 
-                            <form action="#">
-
+                            <form action="student-dashboard.php" method="post">
                                 <div>
-                                    <div class="form-group d-flex justify-content-center" style="margin-top: 2em;">
+                                    <div class="form-group d-flex justify-content-center" style="margin-top: 2em;" >
 
                                         <select class="form-control" id="exampleFormControlSelect1"
-                                            style="width: 26em;">
+                                            style="width: 26em;" name="university">
                                             <option>University</option>
-                                            <?php 
+                                            <?php                                     
                                                 include('backend-php/connect.php');
                                                 $sql = "SELECT university FROM college_details";
                                                 $result = $conn->query($sql);
                                                 if ($result->num_rows > 0) {
                                                     while ($row = $result->fetch_assoc()) { 
                                                         $university = $row['university']; 
-                                                        echo"<option value='$university'>$university</option>";
+                                                        echo"<option value='$university' >$university</option>";
                                                     }
                                                 }   
                                             ?>
@@ -168,9 +167,10 @@
                                     </div>
 
 
+
                                     <div class="form-group d-flex justify-content-center ">
                                         <select class="form-control" id="exampleFormControlSelect1"
-                                            style="width: 26em;">
+                                            style="width: 26em;" name="district">
                                             <option>District</option>
                                             <?php 
                                                 include('backend-php/connect.php');
@@ -238,6 +238,7 @@
         include('backend-php/connect.php');
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            if(isset($_POST['search'])) {
             $institution = $_POST['search'];
             $institution = $conn->real_escape_string($institution);
             $sql = "SELECT * FROM college_details WHERE institution = '$institution'";
@@ -264,13 +265,53 @@
                 }
                 echo "</div>";
             }
-        } else {
+        } 
+    }else {
             echo "No results found.";
         }
-        $conn->close();
 
     
     ?>
+    <!-- Search using university names -->
+
+     <?php 
+          if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            if (isset($_POST['district']) && isset($_POST['university'])) {
+                $district = $_POST['district'];
+                $university = $_POST['university'];
+                $district = $conn->real_escape_string($district);
+                $university = $conn->real_escape_string($university);
+                $sql = "SELECT * FROM college_details WHERE district = '$district' AND university = '$university'";
+                $result = $conn->query($sql);
+                if ($result->num_rows > 0) {
+                        
+                echo '<div class="result-box">';
+                echo '<h2 class="result-heading">Search Results:</h2>';
+                while ($row = $result->fetch_assoc()) { 
+                    echo '<div class="feedback-card">';
+                    echo '<h3>' . $row["institution"] . '</h3>';
+                    echo '<p style="font-size: 15px; font-family: monospace;"> university: ' . $row["university"] . '</p>';
+                    echo '<p style="font-size: 15px; font-family: monospace;"> state: ' . $row["state"] . '</p>';
+                    echo '<p style="font-size: 15px; font-family: monospace;"> district: ' . $row["district"] . '</p>';
+                    echo '<p style="font-size: 15px; font-family: monospace;"> address: ' . $row["address"] . '</p>';
+                    echo '<p style="font-size: 15px; font-family: monospace;"> programs: ' . $row["programs"] . '</p>';
+                    echo '<p style="font-size: 15px; font-family: monospace;"> course: ' . $row["course"] . '</p>';
+                    echo '<p style="font-size: 15px; font-family: monospace;"> phone number: ' . $row["number"] . '</p>';
+                    echo '<p style="font-size: 15px; font-family: monospace;"> email: ' . $row["email"] . '</p>';
+                    echo '<p style="font-size: 15px; font-family: monospace;"> total seats: ' . $row["total_seats"] . '</p>';
+                    echo '<p style="font-size: 15px; font-family: monospace;"> reserved seats: ' . $row["reserved_seats"] . '</p>';
+                    echo '<p style="font-size: 15px; font-family: monospace;"> management_seats seats: ' . $row["management_seats"] . '</p>';
+                    echo '</div>';
+                }
+                echo "</div>";
+            }
+        } 
+    } 
+
+        $conn->close();
+    ?>
+
+   
 
     <!-- jQery -->
     <script src="js/jquery-3.4.1.min.js"></script>
