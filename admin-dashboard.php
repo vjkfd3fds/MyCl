@@ -8,6 +8,11 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
     <link rel="stylesheet" href="css/admin-home.css" type="text/css">
     <title>Admin page | Responsive</title>
+    <style>
+        .logout,.material-icons-sharp {
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
@@ -74,9 +79,15 @@
                 <?php
                     if (isset($_COOKIE['username'])) {
                         $user_id = $_COOKIE['username'];
-                        echo '<form method="post" action="admin-dashboard.php">
-                        <input type="submit" name="logout" value="Logout">
-                        </form>';
+                        echo '
+                        <a>
+                        <span class="material-icons-sharp">
+                            logout
+                        </span>
+                        <form method="post" action="admin-dashboard.php">
+                        <h3><input type="submit" name="logout" value="Logout" class="logout"></h3>
+                        </form>
+                        </a>';
                     }
                     
                     if (isset($_POST['logout'])) {                        
