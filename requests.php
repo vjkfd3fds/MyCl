@@ -104,7 +104,7 @@
             echo '<p style="font-size: 15px";> reserved seats: ' . $row["reserved_seats"] . '</p>';
             echo '<p style="font-size: 15px";> management_seats seats: ' . $row["management_seats"] . '</p>';
             echo '</div>';
-            echo '<form action="dashboard.php" method="post">';
+            echo '<form action="requests.php" method="post">';
             echo '<input type="hidden" name="reject" value="' . $row["id"] . '">';
             echo '<input type="submit" value="pass" name="pass">';
             echo '<input type="submit" value="Delete" name="delete_row">';
