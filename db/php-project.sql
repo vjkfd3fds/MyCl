@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS `college_details` (
   `programs` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT 'number of programs',
   `course` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT 'number of courses',
   `email` varchar(30) NOT NULL COMMENT 'contact info',
-  `number` int NOT NULL COMMENT 'phone number',
+  `number` int(20) NOT NULL COMMENT 'phone number',
   `total_seats` int NOT NULL COMMENT 'total number of seats',
   `reserved_seats` int NOT NULL COMMENT 'number of reserved seats',
   `management_seats` int NOT NULL COMMENT 'number of reserved seats',
