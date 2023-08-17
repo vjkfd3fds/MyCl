@@ -98,9 +98,15 @@
               
               <!-- Adding the drop-down box -->
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Dashboard
-                </a>
+              <?php
+                  if (isset($_COOKIE['username']) || isset($_COOKIE['email'])) {
+                    echo '<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dashboard </a>';
+                  } else {
+                    echo '<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Login/SignUp </a>';
+                  }
+                ?>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <?php 
                   if (isset($_COOKIE['username'])) {
