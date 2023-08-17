@@ -48,41 +48,40 @@
 							</p>
 						</div>
 						<?php 
-			include('backend-php/connect.php');
+							include('backend-php/connect.php');
 
-			$firstname = $lastname = $email = $password = $dob = "";
+							$firstname = $lastname = $email = $password = $dob = "";
 
-			if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-			$firstname = $_POST['firstname'];
-			$lastname = $_POST['lastname'];
-			$email = $_POST['email'];
-			$password = $_POST['password'];
-			$dob = $_POST['dob'];
+							if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+								$firstname = $_POST['firstname'];
+								$lastname = $_POST['lastname'];
+								$email = $_POST['email'];
+								$password = $_POST['password'];
+								$dob = $_POST['dob'];
+								
+								//formatting syntax for date and time
+								$formattedDob = date('Y-m-d', strtotime($_POST['dob']));
+								$checkingEmail = $_POST['email'];
 
-		//formatting syntax for date and time
-			$formattedDob = date('Y-m-d', strtotime($_POST['dob']));
-			$checkingEmail = $_POST['email'];
-
-			$sql = "SELECT * FROM registered_users WHERE email = '$checkingEmail'";
-			$result = $conn->query($sql);
-			if (!$result) {
-			echo $conn->error;
-			} else {
-				$rowcount = $result->num_rows;
-				
-				if ($rowcount > 0) {
-					echo "<script>alert('The email is already in use. Please try another one.');</script>";
-				} else {
-			$sql = "INSERT INTO registered_users (firstname, lastname, email, password, dob) VALUES ('$firstname', '$lastname', '$email', '$password', '$formattedDob')";
-			if ($conn->query($sql) === TRUE) {
-				header('Location: ../../php-project/student-login.php');
-			} else {
-				echo "Error: " . $sql . "<br>" . $conn->error;
-			}
-			}
-		}
-	}
-	?>
+								$sql = "SELECT * FROM registered_users WHERE email = '$checkingEmail'";
+								$result = $conn->query($sql);
+								if (!$result) { 
+									echo $conn->error;
+								} else {
+									$rowcount = $result->num_rows;
+									if ($rowcount > 0) {
+										echo "<script>alert('The email is already in use. Please try another one.');</script>";
+									} else {
+										$sql = "INSERT INTO registered_users (firstname, lastname, email, password, dob) VALUES ('$firstname', '$lastname', '$email', '$password', '$formattedDob')";
+										if ($conn->query($sql) === TRUE) {
+											header('Location: ../../php-project/student-login.php');
+										} else {
+											echo "Error: " . $sql . "<br>" . $conn->error;
+										}
+									}
+								}
+							}
+						?>
 						<form action="student-register.php" method="post" id="signup-form"
 							onsubmit="return validateForm()">
 							
