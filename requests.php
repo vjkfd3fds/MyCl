@@ -72,7 +72,7 @@
     </style>
 </head>
 <body>
-    <h1>College-Details</h1>
+    <h1 style="font-family: monospace;">College-Details</h1>
     <?php 
     include('backend-php/connect.php');
 
