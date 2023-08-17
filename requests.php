@@ -6,6 +6,17 @@
     <title>Document</title>
     <link rel="icon" href="images/note.png">
     <style>
+        .random-button {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #3498db;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
         feedback-list {
             margin-top: 20px;
         }
@@ -106,8 +117,8 @@
             echo '</div>';
             echo '<form action="requests.php" method="post">';
             echo '<input type="hidden" name="reject" value="' . $row["id"] . '">';
-            echo '<input type="submit" value="pass" name="pass">';
-            echo '<input type="submit" value="Delete" name="delete_row">';
+            echo '<input type="submit" value="pass" name="pass" class="random-button">';
+            echo '<input type="submit" value="Delete" name="delete_row" class="random-button">';
             echo '</form>';
             echo '</div>';
         }
