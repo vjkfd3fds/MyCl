@@ -278,17 +278,6 @@
             </div>
           </div>
         </div>
-        <div class="col-md-3">
-          <div class="info_detail">
-            <h4>
-              Info
-            </h4>
-            <p>
-              necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin
-              words, combined with a handful
-            </p>
-          </div>
-        </div>
         <div class="col-md-3 mb-0">
           <h4>
             Subscribe
@@ -308,14 +297,7 @@
 
 
   <!-- footer section -->
-  <footer class="footer_section">
-    <div class="container">
-      <p>
-        &copy; <span id="displayYear"></span> All Rights Reserved By
-        <a href="https://html.design/">Free Html Templates</a>
-      </p>
-    </div>
-  </footer>
+ 
   <!-- footer section -->
 
   <!-- jQery -->
