@@ -269,35 +269,34 @@
         include('backend-php/connect.php');
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            if(isset($_POST['search'])) {
-            $institution = $_POST['search'];
-            $institution = $conn->real_escape_string($institution);
-            $sql = "SELECT * FROM college_details WHERE institution = '$institution'";
-            $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-
-               echo '<div class="result-box">';
-               echo '<h2 class="result-heading">Search Results:</h2>';
-             while ($row = $result->fetch_assoc()) { 
-                    echo '<div class="feedback-card">';
-                    echo '<h3>' . $row["institution"] . '</h3>';
-                    echo '<p style="font-size: 15px; font-family: monospace;"> university: ' . $row["university"] . '</p>';
-                    echo '<p style="font-size: 15px; font-family: monospace;"> state: ' . $row["state"] . '</p>';
-                    echo '<p style="font-size: 15px; font-family: monospace;"> district: ' . $row["district"] . '</p>';
-                    echo '<p style="font-size: 15px; font-family: monospace;"> address: ' . $row["address"] . '</p>';
-                    echo '<p style="font-size: 15px; font-family: monospace;"> programs: ' . $row["programs"] . '</p>';
-                    echo '<p style="font-size: 15px; font-family: monospace;"> course: ' . $row["course"] . '</p>';
-                    echo '<p style="font-size: 15px; font-family: monospace;"> phone number: ' . $row["number"] . '</p>';
-                    echo '<p style="font-size: 15px; font-family: monospace;"> email: ' . $row["email"] . '</p>';
-                    echo '<p style="font-size: 15px; font-family: monospace;"> total seats: ' . $row["total_seats"] . '</p>';
-                    echo '<p style="font-size: 15px; font-family: monospace;"> reserved seats: ' . $row["reserved_seats"] . '</p>';
-                    echo '<p style="font-size: 15px; font-family: monospace;"> management_seats seats: ' . $row["management_seats"] . '</p>';
-                    echo '</div>';
-                }
-                echo "</div>";
-            }
-        } 
-    }else {
+			if(isset($_POST['search'])) {
+				$institution = $_POST['search'];
+            	$institution = $conn->real_escape_string($institution);
+            	$sql = "SELECT * FROM college_details WHERE institution = '$institution'";
+            	$result = $conn->query($sql);
+            	if ($result->num_rows > 0) {
+					echo '<div class="result-box">';
+					echo '<h2 class="result-heading">Search Results:</h2>';
+					while ($row = $result->fetch_assoc()) { 
+						echo '<div class="feedback-card">';
+                    	echo '<h3>' . $row["institution"] . '</h3>';
+                    	echo '<p style="font-size: 15px; font-family: monospace;"> university: ' . $row["university"] . '</p>';
+                    	echo '<p style="font-size: 15px; font-family: monospace;"> state: ' . $row["state"] . '</p>';
+                    	echo '<p style="font-size: 15px; font-family: monospace;"> district: ' . $row["district"] . '</p>';
+                    	echo '<p style="font-size: 15px; font-family: monospace;"> address: ' . $row["address"] . '</p>';
+                    	echo '<p style="font-size: 15px; font-family: monospace;"> programs: ' . $row["programs"] . '</p>';
+                    	echo '<p style="font-size: 15px; font-family: monospace;"> course: ' . $row["course"] . '</p>';
+                    	echo '<p style="font-size: 15px; font-family: monospace;"> phone number: ' . $row["number"] . '</p>';
+                    	echo '<p style="font-size: 15px; font-family: monospace;"> email: ' . $row["email"] . '</p>';
+                    	echo '<p style="font-size: 15px; font-family: monospace;"> total seats: ' . $row["total_seats"] . '</p>';
+                    	echo '<p style="font-size: 15px; font-family: monospace;"> reserved seats: ' . $row["reserved_seats"] . '</p>';
+                    	echo '<p style="font-size: 15px; font-family: monospace;"> management_seats seats: ' . $row["management_seats"] . '</p>';
+                    	echo '</div>';
+               		}
+					echo "</div>";
+            	}
+        	} 
+   		}else {
             echo "No results found.";
         }
 

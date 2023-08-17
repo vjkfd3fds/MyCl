@@ -66,7 +66,7 @@
         $rowcount = $result->num_rows;
         
         if ($rowcount > 0) {
-            $alertMessage = "The email is already in use. Please try another one.";
+            echo "<script>alert('The email is already in use. Please try another one.');</script>";
         } else {
           $sql = "INSERT INTO college_users (firstname, lastname, email, password) VALUES ('$firstname', '$lastname', '$email', '$password')";
           if ($conn->query($sql) === TRUE) {
@@ -79,11 +79,6 @@
   }
 ?>
 
-<?php 
-if (!empty($alertMessage)) {
-    echo '<script>alert("' . $alertMessage . '")</script>';
-  }
-?>
 
                         <form action="college-register.php" method="post" id="signup-form"
                             onsubmit="return validateForm()">

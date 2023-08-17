@@ -70,10 +70,9 @@
 			} else {
 				$rowcount = $result->num_rows;
 				
-			if ($rowcount > 0) {
-			$err = '<script>alert("The email is already in use. Please try another one.")</script>';
-			echo $err;
-			} else {
+				if ($rowcount > 0) {
+					echo "<script>alert('The email is already in use. Please try another one.');</script>";
+				} else {
 			$sql = "INSERT INTO registered_users (firstname, lastname, email, password, dob) VALUES ('$firstname', '$lastname', '$email', '$password', '$formattedDob')";
 			if ($conn->query($sql) === TRUE) {
 				header('Location: ../../php-project/student-login.php');
