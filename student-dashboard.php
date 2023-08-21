@@ -294,11 +294,11 @@
                     	echo '</div>';
                		}
 					echo "</div>";
-            	}
+            	} else {
+                    echo "No results found.";
+                }
         	} 
-   		}else {
-            echo "No results found.";
-        }
+   		}
 
     
     ?>
