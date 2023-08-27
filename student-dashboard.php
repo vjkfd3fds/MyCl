@@ -296,12 +296,12 @@
 
      <?php 
           if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            if (isset($_POST['district']) && isset($_POST['university'])) {
-                $district = $_POST['district'];
+            if (isset($_POST['institution']) && isset($_POST['university'])) {
+                $institution = $_POST['institution'];
                 $university = $_POST['university'];
-                $district = $conn->real_escape_string($district);
+                $institution = $conn->real_escape_string($institution);
                 $university = $conn->real_escape_string($university);
-                $sql = "SELECT * FROM college_details WHERE district = '$district' AND university = '$university'";
+                $sql = "SELECT * FROM college_details WHERE institution = '$institution' AND university = '$university'";
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0) {
                         
