@@ -191,17 +191,17 @@
 
                                     <div class="form-group d-flex justify-content-center ">
                                         <select class="form-control" id="exampleFormControlSelect1"
-                                            style="width: 26em;" name="district">
+                                            style="width: 26em;" name="institution">
                                             <option>Colleges</option>
                                             <?php 
                                                 include('backend-php/connect.php');
-                                                $sql = "SELECT district FROM college_details";
+                                                $sql = "SELECT institution FROM college_details";
                                                 $result = $conn->query($sql);
                                                 if ($result->num_rows > 0) {
                                                     echo '<div class="feedback-list">';
                                                     while ($row = $result->fetch_assoc()) { 
-                                                        $district = $row['district']; 
-                                                        echo "<option value='$district'>$district</option>";
+                                                        $institution = $row['institution']; 
+                                                        echo "<option value='$institution'>$institution</option>";
                                                     }
                                                 }  
                                             ?>
