@@ -179,21 +179,11 @@
                             <form action="student-dashboard.php" method="post">
                                 <div>
                                     <div class="form-group d-flex justify-content-center" style="margin-top: 2em;" >
-
+                                    <?php include('backend-php/form-details.php'); ?>
                                         <select class="form-control" id="exampleFormControlSelect1"
                                             style="width: 26em;" name="university">
                                             <option>University</option>
-                                            <?php                                     
-                                                include('backend-php/connect.php');
-                                                $sql = "SELECT university FROM college_details";
-                                                $result = $conn->query($sql);
-                                                if ($result->num_rows > 0) {
-                                                    while ($row = $result->fetch_assoc()) { 
-                                                        $university = $row['university']; 
-                                                        echo"<option value='$university' >$university</option>";
-                                                    }
-                                                }   
-                                            ?>
+                                            <?php echo $optionsUniversities; ?>
                                         </select>
                                     </div>
 
@@ -202,7 +192,7 @@
                                     <div class="form-group d-flex justify-content-center ">
                                         <select class="form-control" id="exampleFormControlSelect1"
                                             style="width: 26em;" name="district">
-                                            <option>District</option>
+                                            <option>Colleges</option>
                                             <?php 
                                                 include('backend-php/connect.php');
                                                 $sql = "SELECT district FROM college_details";
@@ -334,7 +324,7 @@
                     echo '</div>';
                 }
                 echo "</div>";
-            }
+            } 
         } 
     } 
 

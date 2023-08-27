@@ -28,6 +28,16 @@
     foreach ($courses as $course) {
         $optionsCourses .= "<option value='$course'>$course</option>";
     }
+
+    #universities
+
+    $universityFile = "../php-project/details/university.txt";
+    $univerities = file($universityFile, FILE_IGNORE_NEW_LINES);
+
+    $optionsUniversities = "";
+    foreach($univerities as $university) {
+        $optionsUniversities .= "<option value='$university'>$university</option>";
+    }
    
     
 ?>
