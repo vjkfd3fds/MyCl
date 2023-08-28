@@ -25,23 +25,7 @@
                     Password: <input type="text" name="password" value="<?php echo $row['password'];?>" readonly>  <br/> <br/>
                     Date Of Birth: <input type="text" name="dob" value="<?php echo $row['dob'];?>" readonly>  <br/> <br/>
                 </form>
-                <form method="post">
-                    <input type="text" name="firstname" placeholder="Enter the new first name">
-                    <button type="submit">Update</button>
-                </form>
-
-                    <?php 
-                        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-                            $firstname = $_POST['firstname'];
-                            $email = $_COOKIE['email'];
-                            $sql = "UPDATE registered_users SET firstname = ? WHERE email = ?";
-                            $stmt = $conn->prepare($sql);
-                            $stmt->bind_param("ss", $firstname, $email);
-                            $stmt->execute();
-                            // Close the prepared statement
-                            $stmt->close();
-                        }
-                    ?>
+                <a href="update.php">Update these things cause why not</a>
             <?php
             } else {
                 echo "No user found.";
