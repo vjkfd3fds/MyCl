@@ -6,11 +6,11 @@
     <title>MyCl | User Account</title>
 </head>
 <body>
-    <?php 
+<?php 
         include('backend-php/connect.php');
 
-        if (isset($_COOKIE['email'])) {
-            $email = $_COOKIE['email'];
+        if (isset($_COOKIE['id'])) {
+            $email = $_COOKIE['id'];
             $sql = "SELECT firstname, lastname, email, password, dob FROM registered_users WHERE email = '$email'";
             $result = $conn->query($sql);
             

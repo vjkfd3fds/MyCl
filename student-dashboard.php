@@ -113,8 +113,8 @@
                 <a href="">Programmes</a>
                 <a href="">Courses</a>
                 <?php
-                            if (isset($_COOKIE['email'])) {
-                                $user_id = $_COOKIE['email'];
+                            if (isset($_COOKIE['id'])) {
+                                $user_id = $_COOKIE['id'];
                                 // Perform actions that a logged-in user can do
                                 echo '<a>
                                 <form method="post" action="student-dashboard.php">
@@ -125,7 +125,7 @@
 
                             if (isset($_POST['logout'])) {
                                 // Set the expiration time of the cookie to a time in the past to delete it
-                                setcookie("email", "", time() - 3600, "/");
+                                setcookie("id", "", time() - 3600, "/");
                                 header("Location: student-login.php"); // Redirect to the login page after logout
                                 exit;
                             }
