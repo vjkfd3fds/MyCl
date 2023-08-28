@@ -21,7 +21,7 @@
 
         if ($result->num_rows === 1) {
             // User exists, redirect to home.html
-            setcookie("id", $id, time() + 3600, "/");
+            setcookie("email", $email, time() + 3600, "/");
             header('Location: ../../php-project/student-dashboard.php');
             exit();
         } else {

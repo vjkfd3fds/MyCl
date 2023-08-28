@@ -59,7 +59,7 @@
         .logout-button {
     /* Add your desired styling for the logout button here */
         background-color: transparent;
-        color: #black;
+        color: black;
         font-size: 15px;
         border: none;
         padding: 20x 20px;
@@ -67,9 +67,7 @@
     }
 
     /* Apply the same styling to the other navigation links */
-    #navbartoggle .nav-content ul a li {
-        /* Your navigation item styling */
-    }
+    
 
 
         /* Add your other CSS styles here */
@@ -113,8 +111,8 @@
                 <a href="">Programmes</a>
                 <a href="">Courses</a>
                 <?php
-                            if (isset($_COOKIE['id'])) {
-                                $user_id = $_COOKIE['id'];
+                            if (isset($_COOKIE['email'])) {
+                                $user_id = $_COOKIE['email'];
                                 // Perform actions that a logged-in user can do
                                 echo '<a>
                                 <form method="post" action="student-dashboard.php">
@@ -125,7 +123,7 @@
 
                             if (isset($_POST['logout'])) {
                                 // Set the expiration time of the cookie to a time in the past to delete it
-                                setcookie("id", "", time() - 3600, "/");
+                                setcookie("email", "", time() - 3600, "/");
                                 header("Location: student-login.php"); // Redirect to the login page after logout
                                 exit;
                             }
