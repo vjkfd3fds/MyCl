@@ -16,7 +16,7 @@
             $result = $conn->query($sql);
             
             if ($result->num_rows > 0) {
-                $row = $result->fetch_assoc(); 
+                $row = $result->fetch_assoc();
     ?>          
                 <form method="post" action="account.php">
                     First Name: <input type="text" name="firstname" value="<?php echo $row['firstname'];?>" readonly>  <br/> <br/>
