@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyCl | User Account</title>
+    <style>
+        
+    </style>
 </head>
 <body>
     <?php 
@@ -25,7 +28,9 @@
                     Password: <input type="text" name="password" value="<?php echo $row['password'];?>" readonly>  <br/> <br/>
                     Date Of Birth: <input type="text" name="dob" value="<?php echo $row['dob'];?>" readonly>  <br/> <br/>
                 </form>
-                <a href="update.php">Update these things cause why not</a>
+                <div class="update-container">
+                    <a href="update.php" class="update-button">Update</a>
+                </div>
             <?php
             } else {
                 echo "No user found.";
