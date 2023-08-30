@@ -7,9 +7,10 @@
 </head>
 <body>
 <form method="post">
-    <input type="text" name="firstname" placeholder="Enter the new first name"> <br/> <br/> 
-    <input type="text" name="lastname" placeholder="Enter the new last name"> <br/> <br/> 
-    <input type="text" name="password" placeholder="Enter the new password"> <br/> <br/> 
+    New first name: <input type="text" name="firstname" placeholder="Enter the new first name"> <br/> <br/> 
+    New last name: <input type="text" name="lastname" placeholder="Enter the new last name"> <br/> <br/> 
+    New password: <input type="text" name="password" placeholder="Enter the new password"> <br/> <br/> 
+    Confirm new password: <input type="text" name="confirm" placeholder="re-enter the new password"> <br/><br/>
     
     <button type="submit">Update</button>
 </form>
