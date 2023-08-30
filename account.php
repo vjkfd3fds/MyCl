@@ -15,7 +15,7 @@
             text-decoration: none;
             border: none; 
             background-color: #007bff; 
-            color: white
+            color: white; 
             padding: 10px 20px; 
             border-radius: 4px; 
             cursor: pointer; ;
