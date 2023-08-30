@@ -6,6 +6,16 @@
     <title>Document</title>
 </head>
 <body>
-    <p>Your application has been send wait for the response from the admin</p>
+<form method="post" action="">
+    <input type="submit" name="logout" value="Logout">
+</form>
+<?php
+    if (isset($_POST['logout'])) {
+        setcookie("email", $email, time() - 3600, "/");
+        header('Location: ../../php-project/college-login.php');
+        exit();
+    }
+?>
+
 </body>
 </html>
