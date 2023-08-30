@@ -5,7 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyCl | User Account</title>
     <style>
-        
+        .update-container {
+            text-align: left;
+            background-color: none;
+            padding: 50px;
+
+        }
+        .update-button {
+            text-decoration: none;
+            border: none; 
+            background-color: #007bff; 
+            color: white; 
+            padding: 10px 20px; 
+            border-radius: 4px; 
+            cursor: pointer; ;
+        }
     </style>
 </head>
 <body>
