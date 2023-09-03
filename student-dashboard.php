@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyCl | Dashboard</title>
 
+
 <style>
      feedback-list {
             margin-top: 20px;
@@ -279,6 +280,11 @@
                     	echo '<p style="font-size: 15px; font-family: monospace;"> total seats: ' . $row["total_seats"] . '</p>';
                     	echo '<p style="font-size: 15px; font-family: monospace;"> reserved seats: ' . $row["reserved_seats"] . '</p>';
                     	echo '<p style="font-size: 15px; font-family: monospace;"> management_seats seats: ' . $row["management_seats"] . '</p>';
+                        echo '<div class="btn-box">';
+                        echo '<a href="about.php" class="btn-1">';
+                        echo 'Read More';
+                        echo '</a>';
+                        echo '</div>';
                     	echo '</div>';
                		}
 					echo "</div>";
@@ -325,6 +331,7 @@
             } 
         } 
     } 
+
 
         $conn->close();
     ?>
