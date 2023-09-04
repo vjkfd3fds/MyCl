@@ -10,10 +10,6 @@
         $sql = "SELECT * FROM registered_users WHERE email = ? AND password = ?";
         $stmt = $conn->prepare($sql);
 
-        if (!$stmt) {
-            echo "Error: " . $conn->error;
-            exit();
-        }
 
         $stmt->bind_param("ss", $email, $password);
         $stmt->execute();
