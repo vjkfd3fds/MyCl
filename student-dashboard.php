@@ -291,7 +291,9 @@
                     echo '</div>';
                 }
                 echo "</div>";
-            } 
+            } else {
+                echo "No results found.";
+            }
         } 
     } 
 
