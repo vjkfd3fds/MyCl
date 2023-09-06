@@ -326,7 +326,7 @@
                     echo '<p style="font-size: 15px; font-family: monospace;"> reserved seats: ' . $row["reserved_seats"] . '</p>';
                     echo '<p style="font-size: 15px; font-family: monospace;"> management_seats seats: ' . $row["management_seats"] . '</p>';
                     echo '<div class="btn-box">';
-                    echo '<a href="about.php" class="btn-1">';
+                    echo '<a href="details.php?institution=' . urlencode($row["institution"]) . '&university=' . urlencode($row["university"]) . '" class="btn-1">';
                     echo 'Read More';
                     echo '</a>';
                     echo '</div>';
