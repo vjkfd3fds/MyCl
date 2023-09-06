@@ -189,21 +189,11 @@
 
 
                                     <div class="form-group d-flex justify-content-center ">
-                                        <select class="form-control" id="exampleFormControlSelect1"
-                                            style="width: 26em;" name="institution">
-                                            <option>Colleges</option>
-                                            <?php 
-                                                include('backend-php/connect.php');
-                                                $sql = "SELECT institution FROM college_details";
-                                                $result = $conn->query($sql);
-                                                if ($result->num_rows > 0) {
-                                                    echo '<div class="feedback-list">';
-                                                    while ($row = $result->fetch_assoc()) { 
-                                                        $institution = $row['institution']; 
-                                                        echo "<option value='$institution'>$institution</option>";
-                                                    }
-                                                }  
-                                            ?>
+                                    <?php include('backend-php/form-details.php');?>
+                                        <select class="form-control" id="exampleFormControlSelect1" style="width: 26em;" name="state">
+                                            <option>States</option>
+                                            <?php echo $optionsHtml; ?>
+
                                         </select>
                                     </div>
                                     <div class="d-flex justify-content-center mt-5">
@@ -259,17 +249,6 @@
 					while ($row = $result->fetch_assoc()) { 
 						echo '<div class="feedback-card">';
                     	echo '<h3>' . $row["institution"] . '</h3>';
-                    	echo '<p style="font-size: 15px; font-family: monospace;"> university: ' . $row["university"] . '</p>';
-                    	echo '<p style="font-size: 15px; font-family: monospace;"> state: ' . $row["state"] . '</p>';
-                    	echo '<p style="font-size: 15px; font-family: monospace;"> district: ' . $row["district"] . '</p>';
-                    	echo '<p style="font-size: 15px; font-family: monospace;"> address: ' . $row["address"] . '</p>';
-                    	echo '<p style="font-size: 15px; font-family: monospace;"> programs: ' . $row["programs"] . '</p>';
-                    	echo '<p style="font-size: 15px; font-family: monospace;"> course: ' . $row["course"] . '</p>';
-                    	echo '<p style="font-size: 15px; font-family: monospace;"> phone number: ' . $row["number"] . '</p>';
-                    	echo '<p style="font-size: 15px; font-family: monospace;"> email: ' . $row["email"] . '</p>';
-                    	echo '<p style="font-size: 15px; font-family: monospace;"> total seats: ' . $row["total_seats"] . '</p>';
-                    	echo '<p style="font-size: 15px; font-family: monospace;"> reserved seats: ' . $row["reserved_seats"] . '</p>';
-                    	echo '<p style="font-size: 15px; font-family: monospace;"> management_seats seats: ' . $row["management_seats"] . '</p>';
                         echo '<div class="btn-box">';
                         echo '<a href="details.php?institution=' . urlencode($row["institution"]) . '" class="btn-1">';
                         echo 'Read More';
@@ -290,12 +269,12 @@
 
      <?php 
           if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            if (isset($_POST['institution']) && isset($_POST['university'])) {
-                $institution = $_POST['institution'];
+            if (isset($_POST['state']) && isset($_POST['university'])) {
+                $state = $_POST['state'];
                 $university = $_POST['university'];
-                $institution = $conn->real_escape_string($institution);
+                $state = $conn->real_escape_string($state);
                 $university = $conn->real_escape_string($university);
-                $sql = "SELECT * FROM college_details WHERE institution = '$institution' AND university = '$university'";
+                $sql = "SELECT * FROM college_details WHERE state = '$state' AND university = '$university'";
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0) {
                         
@@ -304,19 +283,8 @@
                 while ($row = $result->fetch_assoc()) { 
                     echo '<div class="feedback-card">';
                     echo '<h3>' . $row["institution"] . '</h3>';
-                    echo '<p style="font-size: 15px; font-family: monospace;"> university: ' . $row["university"] . '</p>';
-                    echo '<p style="font-size: 15px; font-family: monospace;"> state: ' . $row["state"] . '</p>';
-                    echo '<p style="font-size: 15px; font-family: monospace;"> district: ' . $row["district"] . '</p>';
-                    echo '<p style="font-size: 15px; font-family: monospace;"> address: ' . $row["address"] . '</p>';
-                    echo '<p style="font-size: 15px; font-family: monospace;"> programs: ' . $row["programs"] . '</p>';
-                    echo '<p style="font-size: 15px; font-family: monospace;"> course: ' . $row["course"] . '</p>';
-                    echo '<p style="font-size: 15px; font-family: monospace;"> phone number: ' . $row["number"] . '</p>';
-                    echo '<p style="font-size: 15px; font-family: monospace;"> email: ' . $row["email"] . '</p>';
-                    echo '<p style="font-size: 15px; font-family: monospace;"> total seats: ' . $row["total_seats"] . '</p>';
-                    echo '<p style="font-size: 15px; font-family: monospace;"> reserved seats: ' . $row["reserved_seats"] . '</p>';
-                    echo '<p style="font-size: 15px; font-family: monospace;"> management_seats seats: ' . $row["management_seats"] . '</p>';
                     echo '<div class="btn-box">';
-                    echo '<a href="details.php?institution=' . urlencode($row["institution"]) . '&university=' . urlencode($row["university"]) . '" class="btn-1">';
+                    echo '<a href="details.php?institution=' . urlencode($row["institution"]) . '" class="btn-1">';
                     echo 'Read More';
                     echo '</a>';
                     echo '</div>';
