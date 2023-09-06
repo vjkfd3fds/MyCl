@@ -206,16 +206,7 @@
                                             ?>
                                         </select>
                                     </div>
-                                    <?php include('backend-php/form-details.php'); ?>
-                                    <div class="form-group d-flex justify-content-center ">
-                                        <select class="form-control" id="exampleFormControlSelect1"
-                                            style="width: 26em;">
-                                            <option>Course</option>
-                                            <?php echo $optionsCourses; ?>
-                                        </select>
-                                    </div>
-
-
+                                    
                                     <div class="d-flex justify-content-center mt-5">
                                         <button type="submit" class="btn btn-success"
                                             style="width: 15em;">Submit</button>
