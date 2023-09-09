@@ -114,6 +114,10 @@
             echo '<p style="font-size: 15px";> reserved seats: ' . $row["reserved_seats"] . '</p>';
             echo '<p style="font-size: 15px";> management_seats seats: ' . $row["management_seats"] . '</p>';
             echo '<p style="font-size: 15px";> description: ' . $row["about"] . '</p>';
+            echo '<h2> Certificate</h6>';
+            ?>
+            <img src="../../php-project/uploads/<?php echo $row['certificate']; ?>">
+            <?php
             echo '</div>';
             echo '<form action="requests.php" method="post">';
             echo '<input type="hidden" name="reject" value="' . $row["id"] . '">';
