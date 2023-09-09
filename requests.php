@@ -69,6 +69,13 @@
             font-size: 0.9rem;
         }
 
+        .imgLOL {
+            width: 400px;
+            height: 400px;
+            margin-left: 500px; /* Keep this as it is if you want horizontal spacing. */
+            margin-top: -20%; /* Move the image to the top. */
+        }
+
     </style>
 </head>
 <body>
@@ -114,9 +121,8 @@
             echo '<p style="font-size: 15px";> reserved seats: ' . $row["reserved_seats"] . '</p>';
             echo '<p style="font-size: 15px";> management_seats seats: ' . $row["management_seats"] . '</p>';
             echo '<p style="font-size: 15px";> description: ' . $row["about"] . '</p>';
-            echo '<h2> Certificate</h6>';
             ?>
-            <img src="../../php-project/uploads/<?php echo $row['certificate']; ?>">
+            <img src="../../php-project/uploads/<?php echo $row['certificate']; ?>"class="imgLOL">
             <?php
             echo '</div>';
             echo '<form action="requests.php" method="post">';
