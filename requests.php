@@ -72,7 +72,7 @@
     </style>
 </head>
 <body>
-    <h1 style="font-family: monospace;">College-Details</h1>
+    <h1 style="font-family: monospace;">New-Requests</h1>
     <?php 
     include('backend-php/connect.php');
 
@@ -98,7 +98,6 @@
 
     if ($result->num_rows > 0) {
         echo '<div class="result-box">';
-        echo '<h2 class="result-heading">New requests:</h2>';
         
         while ($row = $result->fetch_assoc()) {
             echo '<div class="feedback-card">';
@@ -114,6 +113,7 @@
             echo '<p style="font-size: 15px";> total seats: ' . $row["total_seats"] . '</p>';
             echo '<p style="font-size: 15px";> reserved seats: ' . $row["reserved_seats"] . '</p>';
             echo '<p style="font-size: 15px";> management_seats seats: ' . $row["management_seats"] . '</p>';
+            echo '<p style="font-size: 15px";> description: ' . $row["about"] . '</p>';
             echo '</div>';
             echo '<form action="requests.php" method="post">';
             echo '<input type="hidden" name="reject" value="' . $row["id"] . '">';
