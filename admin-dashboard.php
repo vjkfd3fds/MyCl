@@ -112,16 +112,23 @@
                     <div class="status">
                         <div class="info">
                             <h3>Institutions</h3>
-                            <h1>65,9834</h1>
-                        </div>
-                        <div class="progresss">
-                            <svg>
-                                <circle cx="38" cy="38" r="36"></circle>
-                            </svg>
+                            <?php 
+                            include('backend-php/connect.php');
+                            $sql = "SELECT COUNT(*) FROM college_users";
 
-                            <div class="percentage">
-                                <p>+81%</p>
-                            </div>
+                            $result = $conn->query($sql);
+                            if ($result === false) {
+                                echo $conn->error;
+                            } else {
+                                $row = $result->fetch_row();
+                                $count = $row[0];
+                            }
+                            if ($count === 0) {
+                                echo '<h1> No Accounts are created';
+                            } else {
+                                echo "<h1 style='text: align: center;'>" . $count . "</h1>";
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -129,17 +136,24 @@
                 <div class="visits">
                     <div class="status">
                         <div class="info">
-                            <h3>Site Visists</h3>
-                            <h1>34,9324</h1>
-                        </div>
-                        <div class="progresss">
-                            <svg>
-                                <circle cx="38" cy="38" r="36"></circle>
-                            </svg>
+                            <h3>User Accounts</h3>
+                            <?php 
+                            include('backend-php/connect.php');
+                            $sql = "SELECT COUNT(*) FROM registered_users";
 
-                            <div class="percentage">
-                                <p>+41%</p>
-                            </div>
+                            $result = $conn->query($sql);
+                            if ($result === false) {
+                                echo $conn->error;
+                            } else {
+                                $row = $result->fetch_row();
+                                $count = $row[0];
+                            }
+                            if ($count === 0) {
+                                echo '<h1> No Accounts are created';
+                            } else {
+                                echo "<h1 style='text: align: center;'>" . $count . "</h1>";
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>
