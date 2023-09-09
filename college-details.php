@@ -732,6 +732,43 @@
                                     </div>
                                 </div>
 
+                                <div class="form-group">
+
+                                        <input type="file" name="uploadfile">
+                                </div>
+                                <?php 
+
+                                    include('connect.php');
+                                    if (isset($_POST['submit'])) {
+                                
+                                        $filename = $_FILES["uploadfile"]["name"];
+                                        $tempname = $_FILES["uploadfile"]["tmp_name"];
+                                        $folder = "./uploads/" . $filename;
+                                    
+                                        $sql = "SELECT * FROM college_users WHERE images = '$filename'";
+                                        $result = $conn->query($sql);
+                                        if ($result->num_rows > 0) {
+                                            echo "this already exists";
+                                        }  else {
+                                    
+                                            // Get all the submitted data from the form
+                                            $sql = "INSERT INTO college_users (images) VALUES ('$filename')";
+                                    
+                                            // Execute query
+                                            $conn->query($sql);
+                                    
+                                            // Now let's move the uploaded image into the folder: image
+                                            if (move_uploaded_file($tempname, $folder)) {
+                                                echo "<h3>  Image uploaded successfully!</h3>";
+                                                header('Location: ' . $_SERVER['PHP_SELF']);
+                                            } else {
+                                                echo "<h3>  Failed to upload image!</h3>";
+                                            }
+                                        }
+                                    }
+   
+                                ?>
+
 
 
                                 <div class="d-flex justify-content-center mt-5">
