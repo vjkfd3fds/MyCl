@@ -19,6 +19,7 @@
         $management = intval($_POST['management']);
         $email = $_POST['email'];
         $number = $_POST['phone-number'];
+        $about = $_POST['about'];
         $programs = '';
         if (isset($_POST['programs']) && is_array($_POST['programs'])) {
             $programs = implode(', ', array_map('trim', $_POST['programs']));
@@ -36,8 +37,8 @@
             if ($result->num_rows > 0) {
                 echo "already exists";
             }
-            $sql = "INSERT INTO college_details (university, institution, state, district, address, programs, course, email, number, total_seats, reserved_seats, management_seats, certificate)
-            VALUES ('$university', '$institution', '$state', '$district', '$address', '$programs', '$selectedCourses', '$email', '$number', '$totalSeats', '$reserved', '$management', '$filename')";
+            $sql = "INSERT INTO college_details (university, institution, state, district, address, programs, course, email, number, total_seats, reserved_seats, management_seats, about, certificate)
+            VALUES ('$university', '$institution', '$state', '$district', '$address', '$programs', '$selectedCourses', '$email', '$number', '$totalSeats', '$reserved', '$management', '$about', '$filename')";
             
             if (move_uploaded_file($tempname, $folder) && $conn->query($sql) === TRUE) {
                 header('Location: home.php');

@@ -728,7 +728,7 @@
                                     <div class="form-group">
 
                                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="6"
-                                            placeholder="Description" style="margin-top: 2.8em;"></textarea>
+                                            placeholder="Description" style="margin-top: 2.8em;" name="about"></textarea>
                                     </div>
                                 </div>
 
