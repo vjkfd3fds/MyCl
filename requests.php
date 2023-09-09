@@ -73,7 +73,7 @@
             width: 400px;
             height: 400px;
             margin-left: 500px; /* Keep this as it is if you want horizontal spacing. */
-            margin-top: -20%; /* Move the image to the top. */
+            margin-top: -16%; /* Move the image to the top. */
         }
 
     </style>
