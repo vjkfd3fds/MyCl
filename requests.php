@@ -125,7 +125,6 @@
         
         echo '</div>';
     }
-
     $conn->close();
 ?>
 
