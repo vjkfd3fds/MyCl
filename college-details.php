@@ -70,7 +70,7 @@
 
                         <div>
 
-                            <form action="backend-php/college-details-process.php" method="post">
+                            <form action="backend-php/college-details-process.php" method="post" enctype="multipart/form-data"> 
 
                                 <div>
 
@@ -736,38 +736,6 @@
 
                                         <input type="file" name="uploadfile">
                                 </div>
-                                <?php 
-
-                                    include('backend-php/connect.php');
-                                    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                                
-                                        $filename = $_FILES["uploadfile"]["name"];
-                                        $tempname = $_FILES["uploadfile"]["tmp_name"];
-                                        $folder = "./uploads/" . $filename;
-                                    
-                                        $sql = "SELECT * FROM college_users WHERE certificate = '$filename'";
-                                        $result = $conn->query($sql);
-                                        if ($result->num_rows > 0) {
-                                            echo "this already exists";
-                                        }  else {
-                                    
-                                            // Get all the submitted data from the form
-                                            $sql = "INSERT INTO college_users (certificate) VALUES ('$filename')";
-                                    
-                                            // Execute query
-                                            $conn->query($sql);
-                                    
-                                            // Now let's move the uploaded image into the folder: image
-                                            if (move_uploaded_file($tempname, $folder)) {
-                                                echo "<h3>  Image uploaded successfully!</h3>";
-                                                header('Location: ' . $_SERVER['PHP_SELF']);
-                                            } else {
-                                                echo "<h3>  Failed to upload image!</h3>";
-                                            }
-                                        }
-                                    }
-   
-                                ?>
 
 
 

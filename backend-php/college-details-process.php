@@ -25,19 +25,22 @@
         }
         $filename = $_FILES["uploadfile"]["name"];
         $tempname = $_FILES["uploadfile"]["tmp_name"];
-        $folder = "./uploads/" . $filename;
+        $folder = "../uploads/" . $filename;
 
         
-        $sql = "SELECT * FROM college_users WHERE certificate = '$filename'";
+        $sql = "SELECT * FROM college_details WHERE certificate = '$filename'";
         $result = $conn->query($sql);
-        if ($result->num_rows > 0) {
-            echo "this already exists";
+        if ($result === false) {
+            echo $conn->error;
         }  else {
+            if ($result->num_rows > 0) {
+                echo "already exists";
+            }
             $sql = "INSERT INTO college_details (university, institution, state, district, address, programs, course, email, number, total_seats, reserved_seats, management_seats, certificate)
             VALUES ('$university', '$institution', '$state', '$district', '$address', '$programs', '$selectedCourses', '$email', '$number', '$totalSeats', '$reserved', '$management', '$filename')";
             
             if (move_uploaded_file($tempname, $folder) && $conn->query($sql) === TRUE) {
-                header('Location: ' . $_SERVER['PHP_SELF']);
+                header('Location: home.php');
             } else {
             }
         }
