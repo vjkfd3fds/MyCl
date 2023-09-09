@@ -284,7 +284,7 @@
                     echo '<div class="feedback-card">';
                     echo '<h3>' . $row["institution"] . '</h3>';
                     echo '<div class="btn-box">';
-                    echo '<a href="details.php?institution=' . urlencode($row["institution"]) . '" class="btn-1">';
+                    echo '<a href="details.php?institution=' . urlencode($row["university"]) . '" class="btn-1">';
                     echo 'Read More';
                     echo '</a>';
                     echo '</div>';
