@@ -739,20 +739,20 @@
                                 <?php 
 
                                     include('backend-php/connect.php');
-                                    if (isset($_POST['submit'])) {
+                                    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 
                                         $filename = $_FILES["uploadfile"]["name"];
                                         $tempname = $_FILES["uploadfile"]["tmp_name"];
                                         $folder = "./uploads/" . $filename;
                                     
-                                        $sql = "SELECT * FROM college_users WHERE images = '$filename'";
+                                        $sql = "SELECT * FROM college_users WHERE certificate = '$filename'";
                                         $result = $conn->query($sql);
                                         if ($result->num_rows > 0) {
                                             echo "this already exists";
                                         }  else {
                                     
                                             // Get all the submitted data from the form
-                                            $sql = "INSERT INTO college_users (images) VALUES ('$filename')";
+                                            $sql = "INSERT INTO college_users (certificate) VALUES ('$filename')";
                                     
                                             // Execute query
                                             $conn->query($sql);

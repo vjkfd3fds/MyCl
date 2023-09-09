@@ -23,15 +23,23 @@
         if (isset($_POST['programs']) && is_array($_POST['programs'])) {
             $programs = implode(', ', array_map('trim', $_POST['programs']));
         }
-    
-        $sql = "INSERT INTO college_details (university, institution, state, district, address, programs, course, email, number, total_seats, reserved_seats, management_seats)
-        VALUES ('$university', '$institution', '$state', '$district', '$address', '$programs', '$selectedCourses', '$email', '$number', '$totalSeats', '$reserved', '$management')";
+        $filename = $_FILES["uploadfile"]["name"];
+        $tempname = $_FILES["uploadfile"]["tmp_name"];
+        $folder = "./uploads/" . $filename;
 
-                
-                if ($conn->query($sql) === TRUE) {
-                    header('Location: ../../php-project/college-dashboard.php');
-                } else {
-                    echo "Error: " . $sql . "<br>" . $conn->error;
-                }
+        
+        $sql = "SELECT * FROM college_users WHERE certificate = '$filename'";
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            echo "this already exists";
+        }  else {
+            $sql = "INSERT INTO college_details (university, institution, state, district, address, programs, course, email, number, total_seats, reserved_seats, management_seats, certificate)
+            VALUES ('$university', '$institution', '$state', '$district', '$address', '$programs', '$selectedCourses', '$email', '$number', '$totalSeats', '$reserved', '$management', '$filename')";
+            
+            if (move_uploaded_file($tempname, $folder) && $conn->query($sql) === TRUE) {
+                header('Location: ' . $_SERVER['PHP_SELF']);
+            } else {
+            }
+        }
     }
 ?>
