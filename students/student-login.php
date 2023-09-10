@@ -8,7 +8,7 @@
   <!-- Mobile Metas -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <!-- Site Metas -->
-  <link rel="icon" href="images/note.png">
+  <link rel="icon" href="../images/note.png">
   <meta name="keywords" content="" />
   <meta name="description" content="" />
   <meta name="author" content="" />
@@ -18,18 +18,18 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 
   <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
 
   <!-- fonts style -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 
   <!-- font awesome style -->
-  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <link href="../css/font-awesome.min.css" rel="stylesheet" />
 
   <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
+  <link href="../css/style.css" rel="stylesheet" />
   <!-- responsive style -->
-  <link href="css/responsive.css" rel="stylesheet" />
+  <link href="../css/responsive.css" rel="stylesheet" />
 
 
   <!-- Custom styles for the drop-down box -->
