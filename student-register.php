@@ -7,25 +7,25 @@
 	<title>MyCl | Register</title>
 
 	<!-- bootstrap core css -->
-	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
-	<link rel="icon" href="../images/note.png">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+	<link rel="icon" href="images/note.png">
 
 	<!-- fonts style -->
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 
 	<!-- font awesome style -->
-	<link href="../css/font-awesome.min.css" rel="stylesheet" />
+	<link href="css/font-awesome.min.css" rel="stylesheet" />
 
 	<!-- Custom styles for this template -->
-	<link href="../css/style.css" rel="stylesheet" />
+	<link href="css/style.css" rel="stylesheet" />
 	<!-- responsive style -->
-	<link href="../css/responsive.css" rel="stylesheet" />
+	<link href="css/responsive.css" rel="stylesheet" />
 </head>
 
 <body>
 	<header class="bg-light">
 		<div class="d-flex justify-content-center pt-3 p-1">
-			<a href="../home.php">
+			<a href="home.php">
 				<h4 style="font-size: x-large; cursor: pointer; color: black;">my<span
 						style="font-size: xxx-large ;">c</span>l</h4>
 			</a>
@@ -48,7 +48,7 @@
 							</p>
 						</div>
 						<?php 
-							include('../backend-php/connect.php');
+							include('backend-php/connect.php');
 
 							$firstname = $lastname = $email = $password = $dob = "";
 
@@ -74,7 +74,7 @@
 									} else {
 										$sql = "INSERT INTO registered_users (firstname, lastname, email, password, dob) VALUES ('$firstname', '$lastname', '$email', '$password', '$formattedDob')";
 										if ($conn->query($sql) === TRUE) {
-											header('Location: ../../php-project/student-login.php');
+											header('Location: ../php-project/students/student-login.php');
 										} else {
 											echo "Error: " . $sql . "<br>" . $conn->error;
 										}
