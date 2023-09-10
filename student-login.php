@@ -110,8 +110,8 @@
                   }
                   ?>
                   <?php 
-                  if (isset($_COOKIE['email'])) {
-                    $user_id = $_COOKIE['email'];
+                  if (isset($_COOKIE['id'])) {
+                    $user_id = $_COOKIE['id'];
                     echo '<a class="dropdown-item" href="student-dashboard.php">Student</a>';
                   } else {
                     echo '<a class="dropdown-item" href="student-register.php">Student</a>';
@@ -148,7 +148,7 @@
 
             </div>
 
-            <!-- Email input -->
+            <!-- id input -->
             <div class="form-outline mb-4">
               <input type="email" type="tel" id="form3Example3" class="form-control form-control-lg"
                 placeholder="Email address" name="email" required/>

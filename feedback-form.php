@@ -135,8 +135,8 @@
                   }
                   ?>
                   <?php 
-                  if (isset($_COOKIE['email'])) {
-                    $user_id = $_COOKIE['email'];
+                  if (isset($_COOKIE['id'])) {
+                    $user_id = $_COOKIE['id'];
                     echo '<a class="dropdown-item" href="student-dashboard.php">Student</a>';
                   } else {
                     echo '<a class="dropdown-item" href="student-register.php">Student</a>';
