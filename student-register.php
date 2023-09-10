@@ -48,43 +48,46 @@
 							</p>
 						</div>
 						<?php 
-							include('backend-php/connect.php');
-
-							$firstname = $lastname = $email = $password = $dob = "";
-
+						include('backend-php/connect.php');
 							if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 								$firstname = $_POST['firstname'];
 								$lastname = $_POST['lastname'];
 								$email = $_POST['email'];
 								$password = $_POST['password'];
 								$dob = $_POST['dob'];
-								$profile = $_POST['uploadfile'];
-								
-								//formatting syntax for date and time
+							
+								// Formatting syntax for date and time
 								$formattedDob = date('Y-m-d', strtotime($_POST['dob']));
 								$checkingEmail = $_POST['email'];
-								$filename = $_FILES["uploadfile"]["name"];
-								$tempname = $_FILES["uploadfile"]["tmp_name"];
-								$folder = "profile/" . $filename;
-
+							
+								// Use the correct file input name "uploadfile"
+								if (isset($_FILES["uploadfile"])) {
+									$filename = $_FILES["uploadfile"]["name"];
+									$tempname = $_FILES["uploadfile"]["tmp_name"];
+									$folder = "profile/" . $filename;
+								}
+							
 								$sql = "SELECT * FROM registered_users WHERE email = '$checkingEmail'";
 								$result = $conn->query($sql);
-								if (!$result) { 
+								if (!$result) {
 									echo $conn->error;
 								} else {
 									$rowcount = $result->num_rows;
 									if ($rowcount > 0) {
 										echo "<script>alert('The email is already in use. Please try another one.');</script>";
 									} else {
-										$sql = "INSERT INTO registered_users (firstname, lastname, email, password, dob, profile) VALUES ('$firstname', '$lastname', '$email', '$password', '$formattedDob', '$profile')";
-										if ($conn->query($sql) === TRUE) {
+										$sql = "INSERT INTO registered_users (firstname, lastname, email, password, dob, profile) VALUES ('$firstname', '$lastname', '$email', '$password', 
+																									'$formattedDob', '$filename')";
+										if (move_uploaded_file($tempname, $folder) && $conn->query($sql) === TRUE) {
 											header('Location: ../php-project/student-login.php');
 										} else {
 											echo "Error: " . $sql . "<br>" . $conn->error;
 										}
 									}
 								}
+								$conn->close();
 							}
+							
 						?>
 						<form action="student-register.php" method="post" id="signup-form"
 							onsubmit="return validateForm()" enctype="multipart/form-data">
@@ -165,7 +168,6 @@
 									</div>
 								</div>
 							</div>
-							<br>
 							<input type="file" name="uploadfile">
 
 							<br>
