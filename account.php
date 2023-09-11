@@ -14,7 +14,6 @@
     <link rel="icon" href="images/note.png">
     <title>MyCl | Account</title>
 </head>
-
 <?php 
     include('backend-php/connect.php');
     if (isset($_COOKIE['id'])) {
