@@ -57,6 +57,12 @@
     $email = $_POST['email'];
     $password = $_POST['password'];
     $checkingEmail = $_POST['email'];
+    if (isset($_FILES["uploadfile"])) {
+        $filename = $_FILES["uploadfile"]["name"];
+        $tempname = $_FILES["uploadfile"]["tmp_name"];
+        $folder = "college-profile/" . $filename;
+    }
+
 
     $sql = "SELECT * FROM college_users WHERE email = '$checkingEmail'";
     $result = $conn->query($sql);
@@ -68,8 +74,8 @@
         if ($rowcount > 0) {
             echo "<script>alert('The email is already in use. Please try another one.');</script>";
         } else {
-          $sql = "INSERT INTO college_users (firstname, lastname, email, password) VALUES ('$firstname', '$lastname', '$email', '$password')";
-          if ($conn->query($sql) === TRUE) {
+          $sql = "INSERT INTO college_users (firstname, lastname, email, password, profile) VALUES ('$firstname', '$lastname', '$email', '$password', '$filename')";
+          if ($conn->query($sql) === TRUE && move_uploaded_file($tempname, $folder)) {
             header('Location: ../../php-project/college-login.php');
           } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
@@ -81,7 +87,7 @@
 
 
                         <form action="college-register.php" method="post" id="signup-form"
-                            onsubmit="return validateForm()">
+                            onsubmit="return validateForm()" enctype="multipart/form-data">
                             <div class="d-flex justify-content-between mr-2">
                                 <div class="form-group" style="float: left;">
                                     <input type="text" class="form-control" id="exampleInputEmail1"
@@ -146,6 +152,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <input type="file" name="uploadfile">
 
                             <br>
 
