@@ -14,6 +14,7 @@
     <link rel="icon" href="images/note.png">
     <title>MyCl | Account</title>
 </head>
+<body>
 <?php 
     include('backend-php/connect.php');
     if (isset($_COOKIE['id'])) {
@@ -22,11 +23,14 @@
         $result = $conn->query($sql);
         if ($row = $result->fetch_assoc()) {
             echo '<div class="nav-bar">';
-            echo '<h1 style="font-family: monospace; margin-top: 20px;"> Welcome ' . $row['firstname'] . '<h1>';
+            echo '<h1 style="font-family: monospace; margin-top: 20px;"> Welcome ' . $row['firstname'] . '</h1>';
             ?>
             <img class="no-class" src="profile/<?php echo $row['profile']; ?>"
             <?php
             echo '</div>';
         }
     }
+    ?>
 ?>
+</body>
+
