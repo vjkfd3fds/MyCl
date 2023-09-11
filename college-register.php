@@ -49,7 +49,6 @@
                         <?php 
   include('backend-php/connect.php');
 
-  $firstname = $lastname = $email = $password = "";
 
   if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $firstname = $_POST['firstname'];
