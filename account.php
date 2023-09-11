@@ -10,6 +10,20 @@
             display: flex; 
             justify-content: flex-end;
         }
+
+        .input-types {
+            text-align: center;
+            margin-top: 10%;
+        }
+
+        .input-1, .input-2, .input-3, .input-4 {
+            font-size: 20px;
+        }
+
+        .heading {
+            text-align: center;
+            font-family: monospace;
+        }
     </style>
     <link rel="icon" href="images/note.png">
     <title>MyCl | Account</title>
@@ -33,6 +47,7 @@
     ?>
     <form action="" method="POST"> <br> <br>
     <div class="input-types">
+        <h1 class="heading">User Info</h1>
         <input type="text" name="firstname" class="input-1"> <br> <br>
         <input type="text" name="lastname" class="input-2"> <br> <br>
         <input type="text" name="email" class="input-3"> <br> <br>
