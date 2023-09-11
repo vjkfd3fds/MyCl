@@ -48,10 +48,12 @@
     <form action="" method="POST"> <br> <br>
     <div class="input-types">
         <h1 class="heading">User Info</h1>
-        <input type="text" name="firstname" class="input-1"> <br> <br>
-        <input type="text" name="lastname" class="input-2"> <br> <br>
-        <input type="text" name="email" class="input-3"> <br> <br>
-        <input type="text" name="password" class="input-4">
+        
+        <?php echo "<input type='text' name='firstname' class='input-1' readonly placeholder= " .$row['firstname']  . ">";?>   <br> <br>
+        <?php echo '<input type="text" name="lastname" class="input-2" readonly placeholder=' . $row['lastname'] . '>';?> <br> <br>
+        <?php echo '<input type="text" name="email" class="input-3" readonly placeholder='. $row['email'] . '>';?> <br> <br>
+        <?php echo '<input type="text" name="password" class="input-3" readonly placeholder='. $row['password'] . '>';?> <br> <br>
+        <input type="button" value="Update">
     </div>  
     </form>
 </body>
