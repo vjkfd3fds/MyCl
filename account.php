@@ -12,13 +12,21 @@
         }
 
         .input-types {
-            text-align: center;
-            margin-top: 10%;
+            text-align: center; 
+            margin-top: 5%;
         }
 
-        .input-1, .input-2, .input-3, .input-4 {
-            font-size: 20px;
+        .input-1, .input-2, .input-3, .input-4, .update-btn {
+            font-size: 25px;
         }
+        
+        .update-btn {
+            border-radius: 1px;
+            height: 60px;
+            background-color: transparent;
+            cursor: pointer;
+        }
+
 
         .heading {
             text-align: center;
@@ -38,14 +46,11 @@
         if ($row = $result->fetch_assoc()) {
             echo '<div class="nav-bar">';
             echo '<h1 style="font-family: monospace; margin-top: 20px;"> Welcome ' . $row['firstname'] . '</h1>';
-            ?>
-            <img class="no-class" src="profile/<?php echo $row['profile']; ?>">
-            <?php
             echo '</div>';
         }
     }
     ?>
-    <form action="" method="POST"> <br> <br>
+    <form action="account.php" method="POST"> <br> <br>
     <div class="input-types">
         <h1 class="heading">User Info</h1>
         
@@ -53,7 +58,9 @@
         <?php echo '<input type="text" name="lastname" class="input-2" readonly placeholder=' . $row['lastname'] . '>';?> <br> <br>
         <?php echo '<input type="text" name="email" class="input-3" readonly placeholder='. $row['email'] . '>';?> <br> <br>
         <?php echo '<input type="text" name="password" class="input-3" readonly placeholder='. $row['password'] . '>';?> <br> <br>
-        <input type="button" value="Update">
+        <div class="btn">
+            <input type="button" value="Update" class="update-btn" name="button">
+        </div>
     </div>  
     </form>
 </body>
