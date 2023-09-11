@@ -18,7 +18,7 @@
             $id = $row['id'];
             // User exists, redirect to home.html
             setcookie("id", $id, time() + 3600, "/");
-            header('Location: ../../php-project/students/student-dashboard.php');
+            header('Location: ../../php-project/student-dashboard.php');
             exit();
         } else {
             // User does not exist or wrong credentials
