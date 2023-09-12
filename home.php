@@ -177,7 +177,7 @@
                       College Searching Method
                     </h1>
                     <p>
-                      Search.io is a comprehensive online platform designed to assist students in finding their ideal colleges and universities.  </p>
+                      MyCl is a comprehensive online platform designed to assist students in finding their ideal colleges and universities.  </p>
                     <div class="btn-box">
                       <a href="about.php" class="btn-1">
                       Read More
@@ -210,7 +210,7 @@
                       College Searching Method
                     </h1>
                     <p>
-                      Search.io is a comprehensive online platform designed to assist students in finding their ideal colleges and universities.  </p>
+                      MyCl.io is a comprehensive online platform designed to assist students in finding their ideal colleges and universities.  </p>
                     <div class="btn-box">
                       <a href="about.php" class="btn-1">
                         Read More
