@@ -18,6 +18,7 @@
 
         .input-1, .input-2, .input-3, .input-4, .update-btn {
             font-size: 25px;
+            font-family: monospace;
         }
         
         .update-btn {
@@ -46,6 +47,9 @@
         if ($row = $result->fetch_assoc()) {
             echo '<div class="nav-bar">';
             echo '<h1 style="font-family: monospace; margin-top: 20px;"> Welcome ' . $row['firstname'] . '</h1>';
+            ?>
+            <img class="no-class" src="profile/<?php echo $row['profile']; ?>" alt="">
+            <?php 
             echo '</div>';
         }
     }
