@@ -17,3 +17,19 @@
 .addr {
     font-family: monospace;
 }
+
+.images {
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+    margin-right: 0;
+    margin-left: 45%;
+}
+.sub-1, .sub-2, .sub-3 {
+    border: 1px solid black;
+    width: 500px;
+    height: 90px;
+}
+.image-container {
+    display: flex;
+}
