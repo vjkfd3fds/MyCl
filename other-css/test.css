@@ -25,11 +25,14 @@
     margin-right: 0;
     margin-left: 45%;
 }
-.sub-1, .sub-2, .sub-3 {
-    border: 1px solid black;
-    width: 500px;
-    height: 90px;
+
+.description {
+    font-family: monospace;
+    text-align: left;
 }
-.image-container {
-    display: flex;
+
+.desc {
+    margin-left: 0;
+    margin-right: 60%;
+    border: 1px solid black;
 }
