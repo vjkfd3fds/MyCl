@@ -65,6 +65,16 @@
         <div class="btn">
             <input type="button" value="Update" class="update-btn" name="button">
         </div>
+
+        <?php 
+            include('backend-php/connect.php');
+            if ($_SERVER['REQUST_METHOD'] === 'POST') {
+                $name = $_POST['firstname'];
+                $last = $_POST['lastname'];
+                $email = $_POST['email'];
+                $password = $_POST['password'];
+            }
+        ?>
     </div>  
     </form>
 </body>
