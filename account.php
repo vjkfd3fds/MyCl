@@ -55,27 +55,17 @@
     }
     ?>
     <form action="account.php" method="POST"> <br> <br>
-    <div class="input-types">
-        <h1 class="heading">User Info</h1>
+        <div class="input-types">
+            <h1 class="heading">User Info</h1>
         
-        <?php echo "<input type='text' name='firstname' class='input-1' readonly placeholder= " .$row['firstname']  . ">";?>   <br> <br>
-        <?php echo '<input type="text" name="lastname" class="input-2" readonly placeholder=' . $row['lastname'] . '>';?> <br> <br>
-        <?php echo '<input type="text" name="email" class="input-3" readonly placeholder='. $row['email'] . '>';?> <br> <br>
-        <?php echo '<input type="text" name="password" class="input-3" readonly placeholder='. $row['password'] . '>';?> <br> <br>
-        <div class="btn">
-            <input type="button" value="Update" class="update-btn" name="button">
-        </div>
-
-        <?php 
-            include('backend-php/connect.php');
-            if ($_SERVER['REQUST_METHOD'] === 'POST') {
-                $name = $_POST['firstname'];
-                $last = $_POST['lastname'];
-                $email = $_POST['email'];
-                $password = $_POST['password'];
-            }
-        ?>
-    </div>  
+            <?php echo "<input type='text' name='firstname' class='input-1' readonly placeholder= " .$row['firstname']  . ">";?>   <br> <br>
+            <?php echo '<input type="text" name="lastname" class="input-2" readonly placeholder=' . $row['lastname'] . '>';?> <br> <br>
+            <?php echo '<input type="text" name="email" class="input-3" readonly placeholder='. $row['email'] . '>';?> <br> <br>
+            <?php echo '<input type="text" name="password" class="input-3" readonly placeholder='. $row['password'] . '>';?> <br> <br>
+            <div class="btn">
+                <input type="button" value="Update" class="update-btn" name="button">
+            </div>
+        </div>  
     </form>
 </body>
 
