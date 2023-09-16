@@ -8,7 +8,7 @@
         $email = $_POST['email'];
         $message = $_POST['message'];
 
-        $stmt = $conn->prepare("INSERT INTO feedbacks (name, email, message) VALUES (? ? ?)");
+        $stmt = $conn->prepare("INSERT INTO feedbacks (name, email, message) VALUES (?, ?, ?)");
         $stmt->bind_param("sss", $name, $email, $message);
         if ($stmt->execute() === TRUE) {
           header('Location: ../../php-project/feedback-form.php');
@@ -18,4 +18,4 @@
 
         $conn->close();
     }
-?>s
+?>
