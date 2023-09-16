@@ -8,13 +8,13 @@
         $email = $_POST['email'];
         $message = $_POST['message'];
 
-        $sql = "INSERT INTO feedbacks (name, email, message) VALUES ('$name', '$email', '$message')";
-
-        if ($conn->query($sql) === TRUE) {
-            header('Location: ../../php-project/feedback-form.php');
-          } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
-          }
+        $stmt = $conn->prepare("INSERT INTO feedbacks (name, email, message) VALUES (? ? ?)");
+        $stmt->bind_param("sss", $name, $email, $message);
+        if ($stmt->execute() === TRUE) {
+          header('Location: ../../php-project/feedback-form.php');
+        } else {
+          echo "error: " . $conn->error;
+        }
 
         $conn->close();
     }
