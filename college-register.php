@@ -47,44 +47,45 @@
                             </p>
                         </div>
                         <?php 
-  include('backend-php/connect.php');
-
-
-  if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $firstname = $_POST['firstname'];
-    $lastname = $_POST['lastname'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $checkingEmail = $_POST['email'];
-    if (isset($_FILES["uploadfile"])) {
-        $filename = $_FILES["uploadfile"]["name"];
-        $tempname = $_FILES["uploadfile"]["tmp_name"];
-        $folder = "college-profile/" . $filename;
-    }
-
-
-    $sql = "SELECT * FROM college_users WHERE email = '$checkingEmail'";
-    $result = $conn->query($sql);
-    if (!$result) {
-       echo $conn->error;
-      } else {
-        $rowcount = $result->num_rows;
-        
-        if ($rowcount > 0) {
-            echo "<script>alert('The email is already in use. Please try another one.');</script>";
-        } else {
-          $sql = "INSERT INTO college_users (firstname, lastname, email, password, profile) VALUES ('$firstname', '$lastname', '$email', '$password', '$filename')";
-          if ($conn->query($sql) === TRUE && move_uploaded_file($tempname, $folder)) {
-            header('Location: ../../php-project/college-login.php');
-          } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
-          }
-        }
-      }
-  }
-?>
-
-
+						include('backend-php/connect.php');
+							if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+								$firstname = $_POST['firstname'];
+								$lastname = $_POST['lastname'];
+								$email = $_POST['email'];
+								$password = $_POST['password'];
+							
+								// Formatting syntax for date and time
+								$checkingEmail = $_POST['email'];
+							
+								// Use the correct file input name "uploadfile"
+								if (isset($_FILES["uploadfile"])) {
+									$filename = $_FILES["uploadfile"]["name"];
+									$tempname = $_FILES["uploadfile"]["tmp_name"];
+									$folder = "college-profile/" . $filename;
+								}
+							
+								$sql = "SELECT * FROM college_users WHERE email = '$checkingEmail'";
+								$result = $conn->query($sql);
+								if (!$result) {
+									echo $conn->error;
+								} else {
+									$rowcount = $result->num_rows;
+									if ($rowcount > 0) {
+										echo "<script>alert('The email is already in use. Please try another one.');</script>";
+									} else {
+										$sql = "INSERT INTO college_users (firstname, lastname, email, password, profile) VALUES ('$firstname', '$lastname', '$email', '$password', 
+																									 '$filename')";
+										if (move_uploaded_file($tempname, $folder) && $conn->query($sql) === TRUE) {
+											header('Location: ../php-project/college-details.php');
+										} else {
+											echo "Error: " . $sql . "<br>" . $conn->error;
+										}
+									}
+								}
+								$conn->close();
+							}
+							
+						?>
                         <form action="college-register.php" method="post" id="signup-form"
                             onsubmit="return validateForm()" enctype="multipart/form-data">
                             <div class="d-flex justify-content-between mr-2">
