@@ -22,6 +22,7 @@ if (isset($_GET['institution'])) {
         echo '<h2 class="result-heading">College Details:</h2>';
         while ($row = $result->fetch_assoc()) { 
             echo '<div class="feedback-card">';
+            echo '<p style="font-size: 15px; font-family: monospace;"> college name: ' . $row["institution"] . '</p>';
             echo '<p style="font-size: 15px; font-family: monospace;"> university: ' . $row["university"] . '</p>';
             echo '<p style="font-size: 15px; font-family: monospace;"> state: ' . $row["state"] . '</p>';
             echo '<p style="font-size: 15px; font-family: monospace;"> district: ' . $row["district"] . '</p>';
