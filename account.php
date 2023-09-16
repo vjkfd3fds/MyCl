@@ -63,9 +63,14 @@
             <?php echo '<input type="text" name="email" class="input-3" readonly placeholder='. $row['email'] . '>';?> <br> <br>
             <?php echo '<input type="text" name="password" class="input-3" readonly placeholder='. $row['password'] . '>';?> <br> <br>
             <div class="btn">
-                <input type="button" value="Update" class="update-btn" name="button">
+                <input type="submit" value="Update" class="update-btn" name="button">
             </div>
         </div>  
     </form>
+    <?php 
+       if (isset($_POST['button'])) {
+        echo '<script> alert("this is working if you ask me lol"); </script>';
+       }
+    ?>
 </body>
 
