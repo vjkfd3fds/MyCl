@@ -506,7 +506,7 @@ Firstly, I must commend the design of the website. The overall layout and aesthe
     </div>
   </section>
   <!-- end client section -->
-
+                
   <!-- contact section -->
   <section class="contact_section layout_padding-bottom">
     <div class="container">
@@ -518,7 +518,7 @@ Firstly, I must commend the design of the website. The overall layout and aesthe
       <div class="row">
         <div class="col-md-8 col-lg-6 mx-auto">
           <div class="form_container">
-            <form action="backend-php/contact-redirect.php" method="post">
+            <form action="backend-php/contact.php" method="post">
               <div>
                 <input type="text" placeholder="Your Name" name="name" />
               </div>
@@ -531,10 +531,8 @@ Firstly, I must commend the design of the website. The overall layout and aesthe
               <div>
                 <input type="text" class="message-box" placeholder="Message" name="message"/>
               </div>
-              <div class="btn_box ">
-                <button>
-                  SEND
-                </button>
+              <div class="btn_box">
+                  <input type="submit" name="contact" class="button">
               </div>
             </form>
           </div>
@@ -542,6 +540,8 @@ Firstly, I must commend the design of the website. The overall layout and aesthe
       </div>
     </div>
   </section>
+  
+ 
 
   <!-- end contact section -->
 
