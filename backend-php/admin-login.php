@@ -34,7 +34,5 @@
             echo "Invalid email or password."; // The credentials do not match the hardcoded values
         }
     } 
-
-
-
+    
 ?>
