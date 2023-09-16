@@ -20,7 +20,7 @@
                     <div class="card fat">
                         <div class="card-body">
                             <h4 class="card-title">Forgot Password</h4>
-                            <form method="POST" class="my-login-validation" novalidate="">
+                            <form method="POST" class="my-login-validation" action="<?php $_SERVER['PHP_SELF']; ?>">
                                 <div class="form-group">
                                     <label for="email">E-Mail Address</label>
                                     <input id="email" type="email" class="form-control" name="email" value="" required autofocus>

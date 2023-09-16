@@ -542,6 +542,7 @@ Firstly, I must commend the design of the website. The overall layout and aesthe
       </div>
     </div>
   </section>
+
   <!-- end contact section -->
 
   <!-- info section -->
