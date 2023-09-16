@@ -129,7 +129,7 @@
                 <?php 
                   if (isset($_COOKIE['username'])) {
                     $user_id = $_COOKIE['username'];
-                    echo '<a class="dropdown-item" href="admin-dashboard.php">Admin</a>';
+                    echo '<a class="dropdown-item" href="admin-dashboard.php">Admin Dashboard</a>';
                   } else {
                     echo '<a class="dropdown-item" href="admin-login.php">Admin</a>';
                   }
@@ -137,7 +137,7 @@
                   <?php 
                   if (isset($_COOKIE['id'])) {
                     $user_id = $_COOKIE['id'];
-                    echo '<a class="dropdown-item" href="student-dashboard.php">Student</a>';
+                    echo '<a class="dropdown-item" href="student-dashboard.php">Student Dashboard</a>';
                   } else {
                     echo '<a class="dropdown-item" href="student-register.php">Student</a>';
                   }
