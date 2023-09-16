@@ -216,6 +216,8 @@
             // If all conditions are met, the form will be submitted
             return true;
         }
+
+
     </script>
 </body>
 
