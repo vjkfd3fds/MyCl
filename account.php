@@ -69,7 +69,7 @@
     </form>
     <?php 
        if (isset($_POST['button'])) {
-        echo '<script> alert("this is working if you ask me lol"); </script>';
+        echo "<input type='text' name='firstname' class='input-1' placeholder= " .$row['firstname']  . ">";
        }
     ?>
 </body>
