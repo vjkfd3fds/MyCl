@@ -144,7 +144,7 @@
                       College Searching Method
                     </h1>
                     <p>
-                      My College is a comprehensive online platform designed to assist students in finding their ideal colleges and universities.  </p>
+                      MyCl is a comprehensive online platform designed to assist students in finding their ideal colleges and universities.  </p>
                     <div class="btn-box">
                       <a href="about.php" class="btn-1">
                         Read More
@@ -210,7 +210,7 @@
                       College Searching Method
                     </h1>
                     <p>
-                      MyCl.io is a comprehensive online platform designed to assist students in finding their ideal colleges and universities.  </p>
+                      MyCl is a comprehensive online platform designed to assist students in finding their ideal colleges and universities.  </p>
                     <div class="btn-box">
                       <a href="about.php" class="btn-1">
                         Read More
@@ -423,7 +423,7 @@
                       </div>
                       <p>
                         the college comparison tool was incredibly helpful. It allowed me to select multiple colleges and view a side-by-side comparison of their key features, such as acceptance rates and student-faculty ratios. This feature made it much easier for me to make informed decisions and weigh the pros and cons of each college.
-                        Overall, I want to express my appreciation for the attractive design and user-friendly functionality of your website. It has made my college search experience more enjoyable and efficient. Keep up the great work!
+                        Overall, I want to express my appreciation for the attractive design and user-friendly functionality of your website. It has made MyCl search experience more enjoyable and efficient. Keep up the great work!
                       </p>
                     </div>
                   </div>
