@@ -6,7 +6,7 @@
         $email = $_POST['email'];
         $password = $_POST['password'];
 
-        $sql = "SELECT * FROM college_users WHERE email = ? AND password = ?";
+        $sql = "SELECT id, email, password FROM college_users WHERE email = ? AND password = ?";
         $stmt = $conn->prepare($sql);
 
         if (!$stmt) {
@@ -19,8 +19,9 @@
         $result = $stmt->get_result();
 
         if ($result->num_rows === 1) {
-            // User exists, redirect to home.html
-            setcookie("email", $email, time() + 3600, "/");
+            $rows = $result->fetch_assoc();
+            $id = $rows['id'];
+            setcookie("id", $id, time() + 3600, "/");
             header('Location: ../../php-project/college-dashboard.php');
             exit();
         } else {
