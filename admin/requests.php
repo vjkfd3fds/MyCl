@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyCl | Requests</title>
-    <link rel="icon" href="images/note.png">
+    <link rel="icon" href="../images/note.png">
     <style>
         .random-button {
         display: inline-block;
@@ -81,7 +81,7 @@
 <body>
     <h1 style="font-family: monospace;">New-Requests</h1>
     <?php 
-    include('backend-php/connect.php');
+    include('../backend-php/connect.php');
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (isset($_POST['pass'])) {
