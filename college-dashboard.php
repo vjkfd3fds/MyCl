@@ -8,8 +8,5 @@
     <link rel="stylesheet" href="other-css/college-dashboard.css">
 </head>
 <body>
-    <section class="section-1">
-        <p>Hello</p>
-    </section>
 </body>
 </html>
