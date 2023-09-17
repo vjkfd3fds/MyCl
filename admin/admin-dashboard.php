@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="images/note.png">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
-    <link rel="stylesheet" href="css/admin-home.css" type="text/css">
+    <link rel="stylesheet" href="../css/admin-home.css" type="text/css">
     <title>Admin page | Responsive</title>
     <style>
         .logout,.material-icons-sharp {
@@ -113,7 +113,7 @@
                         <div class="info">
                             <h3>Institutions</h3>
                             <?php 
-                            include('backend-php/connect.php');
+                            include('../backend-php/connect.php');
                             $sql = "SELECT COUNT(*) FROM college_users";
 
                             $result = $conn->query($sql);
@@ -138,7 +138,7 @@
                         <div class="info">
                             <h3>User Accounts</h3>
                             <?php 
-                            include('backend-php/connect.php');
+                            include('../backend-php/connect.php');
                             $sql = "SELECT COUNT(*) FROM registered_users";
 
                             $result = $conn->query($sql);
