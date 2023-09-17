@@ -79,7 +79,7 @@
 										$sql = "INSERT INTO registered_users (firstname, lastname, email, password, dob, profile) VALUES ('$firstname', '$lastname', '$email', '$password', 
 																									'$formattedDob', '$filename')";
 										if (move_uploaded_file($tempname, $folder) && $conn->query($sql) === TRUE) {
-											header('Location: ../php-project/student-login.php');
+											header('Location: student-login.php');
 										} else {
 											echo "Error: " . $sql . "<br>" . $conn->error;
 										}
@@ -89,7 +89,7 @@
 							}
 							
 						?>
-						<form action="../backend-php/student-login.php" method="post" id="signup-form"
+						<form action="student-register.php" method="post" id="signup-form"
 							onsubmit="return validateForm()" enctype="multipart/form-data">
 							
 							<div class="d-flex justify-content-between mr-2">
