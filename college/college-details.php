@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyCl | Details form</title>
-    <link rel="icon" href="images/note.png">
+    <link rel="icon" href="../images/note.png">
 </head>
 
 
@@ -19,18 +19,18 @@
 
 
 <!-- bootstrap core css -->
-<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
 
 <!-- fonts style -->
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 
 <!-- font awesome style -->
-<link href="css/font-awesome.min.css" rel="stylesheet" />
+<link href="../css/font-awesome.min.css" rel="stylesheet" />
 
 <!-- Custom styles for this template -->
-<link href="css/style.css" rel="stylesheet" />
+<link href="../css/style.css" rel="stylesheet" />
 <!-- responsive style -->
-<link href="css/responsive.css" rel="stylesheet" />
+<link href="../css/responsive.css" rel="stylesheet" />
 
 <body>
 
@@ -70,7 +70,7 @@
 
                         <div>
 
-                            <form action="backend-php/college-details-process.php" method="post" enctype="multipart/form-data"> 
+                            <form action="../backend-php/college-details-process.php" method="post" enctype="multipart/form-data"> 
 
                                 <div>
 
@@ -100,7 +100,7 @@
                                 <div class="d-flex justify-content-center">
 
                                     <div>
-                                        <?php include('backend-php/form-details.php'); ?>
+                                        <?php include('../backend-php/form-details.php'); ?>
                                         
                                         <select class="form-control" style="width: 17.6em;" name="state">
                                             <option>State</option>

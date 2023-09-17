@@ -41,7 +41,7 @@
             VALUES ('$university', '$institution', '$state', '$district', '$address', '$programs', '$selectedCourses', '$email', '$number', '$totalSeats', '$reserved', '$management', '$about', '$filename')";
             
             if (move_uploaded_file($tempname, $folder) && $conn->query($sql) === TRUE) {
-                header('Location: ../../php-project/home.php');
+                header('Location: ../../php-project/college/college-dashboard.php');
             } else {
             }
         }

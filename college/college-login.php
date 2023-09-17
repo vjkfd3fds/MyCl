@@ -8,7 +8,7 @@
   <!-- Mobile Metas -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <!-- Site Metas -->
-  <link rel="icon" href="images/note.png">
+  <link rel="icon" href="../images/note.png">
   <meta name="keywords" content="" />
   <meta name="description" content="" />
   <meta name="author" content="" />
@@ -18,7 +18,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 
   <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
 
   <!-- fonts style -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -27,9 +27,9 @@
   <link href="css/font-awesome.min.css" rel="stylesheet" />
 
   <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
+  <link href="../css/style.css" rel="stylesheet" />
   <!-- responsive style -->
-  <link href="css/responsive.css" rel="stylesheet" />
+  <link href="../css/responsive.css" rel="stylesheet" />
 
 
   <!-- Custom styles for the drop-down box -->
@@ -79,7 +79,7 @@
     <header class="header_section">
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom_nav-container">
-  <a class="navbar-brand" href="home.php">
+  <a class="navbar-brand" href="../home.php">
     <h4 style="font-size: x-large; cursor: pointer; color: white;">
       my
       <span style="font-size: x-large;">c</span>
@@ -94,10 +94,10 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="home.php">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="../home.php">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="about.php"> About</a>
+        <a class="nav-link" href="../about.php"> About</a>
       </li>
 
       <!-- Adding the drop-down box for Admin, Student, and College options -->
@@ -108,17 +108,17 @@
           <?php 
                   if (isset($_COOKIE['username'])) {
                     $user_id = $_COOKIE['username'];
-                    echo '<a class="dropdown-item" href="admin/admin-dashboard.php">Admin Dashboard</a>';
+                    echo '<a class="dropdown-item" href="../admin/admin-dashboard.php">Admin Dashboard</a>';
                   } else {
-                    echo '<a class="dropdown-item" href="admin/admin-login.php">Admin</a>';
+                    echo '<a class="dropdown-item" href="../admin/admin-login.php">Admin</a>';
                   }
                   ?>
                   <?php 
                   if (isset($_COOKIE['id'])) {
                     $user_id = $_COOKIE['id'];
-                    echo '<a class="dropdown-item" href="students/student-dashboard.php">Student Dashboard</a>';
+                    echo '<a class="dropdown-item" href="../students/student-dashboard.php">Student Dashboard</a>';
                   } else {
-                    echo '<a class="dropdown-item" href="students/student-register.php">Student</a>';
+                    echo '<a class="dropdown-item" href="../students/student-register.php">Student</a>';
                   }
                   ?>
           <a class="dropdown-item" href="college-register.php">College</a>
@@ -142,7 +142,7 @@
             alt="Sample image">
         </div>
         <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1 ">
-          <form action="backend-php/college-login.php" method="post" class="was-validated">
+          <form action="../backend-php/college-login.php" method="post" class="was-validated">
             <h3 class="text-center " style="padding: 40px;">College Login</h3>
 
             <div class="text-center ">
@@ -251,16 +251,16 @@
               Links
             </h4>
             <div class="info_links">
-              <a class="" href="home.php">
-                <img src="images/nav-bullet.png" alt="">
+              <a class="" href="../home.php">
+                <img src="../images/nav-bullet.png" alt="">
                 Home
               </a>
-              <a class="" href="about.php">
-                <img src="images/nav-bullet.png" alt="">
+              <a class="" href="../about.php">
+                <img src="../images/nav-bullet.png" alt="">
                 About
               </a>
-              <a class="" href="feedback-form.php">
-                <img src="images/nav-bullet.png" alt="">
+              <a class="" href="../feedback-form.php">
+                <img src="../images/nav-bullet.png" alt="">
                 Feedback
               </a>
             </div>

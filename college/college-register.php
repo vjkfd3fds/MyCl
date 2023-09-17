@@ -7,24 +7,24 @@
     <title>MyCl | Register</title>
 
     <!-- bootstrap core css -->
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-    <link rel="icon" href="images/note.png">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+    <link rel="icon" href="../images/note.png">
     <!-- fonts style -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 
     <!-- font awesome style -->
-    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../css/font-awesome.min.css" rel="stylesheet" />
 
     <!-- Custom styles for this template -->
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="../css/style.css" rel="stylesheet" />
     <!-- responsive style -->
-    <link href="css/responsive.css" rel="stylesheet" />
+    <link href="../css/responsive.css" rel="stylesheet" />
 </head>
 
 <body>
     <header class="bg-light">
         <div class="d-flex justify-content-center pt-3 p-1">
-            <a href="home.php">
+            <a href="../home.php">
                 <h4 style="font-size: x-large; cursor: pointer; color: black;">my<span
                         style="font-size: xxx-large ;">c</span>l</h4>
             </a>
@@ -47,7 +47,7 @@
                             </p>
                         </div>
                         <?php 
-						include('backend-php/connect.php');
+						include('../backend-php/connect.php');
 							if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 								$firstname = $_POST['firstname'];
 								$lastname = $_POST['lastname'];
@@ -61,7 +61,7 @@
 								if (isset($_FILES["uploadfile"])) {
 									$filename = $_FILES["uploadfile"]["name"];
 									$tempname = $_FILES["uploadfile"]["tmp_name"];
-									$folder = "college-profile/" . $filename;
+									$folder = "../college-profile/" . $filename;
 								}
 							
 								$sql = "SELECT * FROM college_users WHERE email = '$checkingEmail'";
@@ -76,7 +76,7 @@
 										$sql = "INSERT INTO college_users (firstname, lastname, email, password, profile) VALUES ('$firstname', '$lastname', '$email', '$password', 
 																									 '$filename')";
 										if (move_uploaded_file($tempname, $folder) && $conn->query($sql) === TRUE) {
-											header('Location: ../php-project/college-details.php');
+											header('Location: ../college/college-login.php');
 										} else {
 											echo "Error: " . $sql . "<br>" . $conn->error;
 										}
