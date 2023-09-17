@@ -77,23 +77,23 @@
 </style>
 
 <!-- bootstrap core css -->
-<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-<link rel="icon" href="images/note.png">
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+<link rel="icon" href="../images/note.png">
 
 <!-- fonts style -->
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 
 <!-- font awesome style -->
-<link href="css/font-awesome.min.css" rel="stylesheet" />
+<link href="../css/font-awesome.min.css" rel="stylesheet" />
 
 <!-- Custom styles for this template -->
-<link href="css/style.css" rel="stylesheet" />
+<link href="../css/style.css" rel="stylesheet" />
 <!-- responsive style -->
-<link href="css/responsive.css" rel="stylesheet" />
+<link href="../css/responsive.css" rel="stylesheet" />
 
 
 <!--google fonts and icon css  and student css file-->
-<link rel="stylesheet" href="css/student.css">
+<link rel="stylesheet" href="../css/student.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
@@ -137,7 +137,7 @@
 
                 <div id="navbartoggle" class="nav-content">
                     <ul>
-                        <a href="home.php">
+                        <a href="../home.php">
                             <li>Home</li>
                         </a>
                         <a href="account.php">
@@ -165,7 +165,7 @@
             <div class="row">
 
                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 d-flex justify-content-center">
-                    <img src="images/draw2.webp" alt="">
+                    <img src="../images/draw2.webp" alt="">
                 </div>
 
 
@@ -178,7 +178,7 @@
                             <form action="student-dashboard.php" method="post">
                                 <div>
                                     <div class="form-group d-flex justify-content-center" style="margin-top: 2em;" >
-                                    <?php include('backend-php/form-details.php'); ?>
+                                    <?php include('../backend-php/form-details.php'); ?>
                                         <select class="form-control" id="exampleFormControlSelect1"
                                             style="width: 26em;" name="university">
                                             <option>University</option>
@@ -189,7 +189,7 @@
 
 
                                     <div class="form-group d-flex justify-content-center ">
-                                    <?php include('backend-php/form-details.php');?>
+                                    <?php include('../backend-php/form-details.php');?>
                                         <select class="form-control" id="exampleFormControlSelect1" style="width: 26em;" name="state">
                                             <option>States</option>
                                             <?php echo $optionsHtml; ?>
@@ -235,7 +235,7 @@
     <!--End of the Searching Section-->
 
     <?php 
-        include('backend-php/connect.php');
+        include('../backend-php/connect.php');
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			if(isset($_POST['search'])) {
@@ -304,15 +304,15 @@
    
 
     <!-- jQery -->
-    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="../js/jquery-3.4.1.min.js"></script>
     <!-- bootstrap js -->
-    <script src="js/bootstrap.js"></script>
+    <script src="../js/bootstrap.js"></script>
     <!-- custom js -->
-    <script src="js/custom.js"></script>
+    <script src="../js/custom.js"></script>
     <!--Icons js-->
     <script src="https://kit.fontawesome.com/3cb1958bfd.js" crossorigin="anonymous"></script>
 
-    <script src="js/student.js"></script>
+    <script src="../js/student.js"></script>
 
 </body>
 

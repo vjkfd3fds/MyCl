@@ -1,5 +1,5 @@
 <?php 
-include('backend-php/connect.php');
+include('../backend-php/connect.php');
 
 if (isset($_GET['institution'])) {
     $institution = $conn->real_escape_string($_GET['institution']);

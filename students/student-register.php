@@ -7,19 +7,19 @@
 	<title>MyCl | Register</title>
 
 	<!-- bootstrap core css -->
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-	<link rel="icon" href="images/note.png">
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+	<link rel="icon" href="../images/note.png">
 
 	<!-- fonts style -->
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 
 	<!-- font awesome style -->
-	<link href="css/font-awesome.min.css" rel="stylesheet" />
+	<link href="../css/font-awesome.min.css" rel="stylesheet" />
 
 	<!-- Custom styles for this template -->
-	<link href="css/style.css" rel="stylesheet" />
+	<link href="../css/style.css" rel="stylesheet" />
 	<!-- responsive style -->
-	<link href="css/responsive.css" rel="stylesheet" />
+	<link href="../css/responsive.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -48,7 +48,7 @@
 							</p>
 						</div>
 						<?php 
-						include('backend-php/connect.php');
+						include('../backend-php/connect.php');
 							if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 								$firstname = $_POST['firstname'];
 								$lastname = $_POST['lastname'];
@@ -64,7 +64,7 @@
 								if (isset($_FILES["uploadfile"])) {
 									$filename = $_FILES["uploadfile"]["name"];
 									$tempname = $_FILES["uploadfile"]["tmp_name"];
-									$folder = "profile/" . $filename;
+									$folder = "../profile/" . $filename;
 								}
 							
 								$sql = "SELECT * FROM registered_users WHERE email = '$checkingEmail'";
@@ -89,7 +89,7 @@
 							}
 							
 						?>
-						<form action="student-register.php" method="post" id="signup-form"
+						<form action="../backend-php/student-login.php" method="post" id="signup-form"
 							onsubmit="return validateForm()" enctype="multipart/form-data">
 							
 							<div class="d-flex justify-content-between mr-2">
@@ -190,11 +190,11 @@
 
 
 	<!-- jQery -->
-	<script src="js/jquery-3.4.1.min.js"></script>
+	<script src="../js/jquery-3.4.1.min.js"></script>
 	<!-- bootstrap js -->
-	<script src="js/bootstrap.js"></script>
+	<script src="../js/bootstrap.js"></script>
 	<!-- custom js -->
-	<script src="js/custom.js"></script>
+	<script src="../js/custom.js"></script>
 
 	<script src="https://kit.fontawesome.com/3cb1958bfd.js" crossorigin="anonymous"></script>
 

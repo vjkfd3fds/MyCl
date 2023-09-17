@@ -116,9 +116,9 @@
                   <?php 
                   if (isset($_COOKIE['id'])) {
                     $user_id = $_COOKIE['id'];
-                    echo '<a class="dropdown-item" href="../student-dashboard.php">Student Dashboard</a>';
+                    echo '<a class="dropdown-item" href="../students/student-dashboard.php">Student Dashboard</a>';
                   } else {
-                    echo '<a class="dropdown-item" href="../student-register.php">Student</a>';
+                    echo '<a class="dropdown-item" href="../students/student-register.php">Student</a>';
                   }
                   ?>
           <a class="dropdown-item" href="../college-register.php">College</a>

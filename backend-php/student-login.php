@@ -20,7 +20,7 @@
                 $row = $result->fetch_assoc();
                 $id = $row['id'];
                 setcookie("id", $id, time() + 3600, "/");
-                header('Location: ../../php-project/student-dashboard.php');
+                header('Location: ../../php-project/students/student-dashboard.php');
                 exit();
             } else {
                 echo "Invalid email or password.";

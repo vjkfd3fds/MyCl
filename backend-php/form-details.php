@@ -2,7 +2,7 @@
 
 <?php 
     #States
-    $statesFile = "../php-project/details/states.txt";
+    $statesFile = "../details/states.txt";
     $states = file($statesFile, FILE_IGNORE_NEW_LINES);
   
 
@@ -12,7 +12,7 @@
     }
 
     #districts
-    $districtFile = "../php-project/details/district.txt";
+    $districtFile = "../details/district.txt";
     $districts = file($districtFile, FILE_IGNORE_NEW_LINES);
 
     $optionsHtmls = "";
@@ -21,7 +21,7 @@
     }
 
     #Courses
-    $courseFile = "../php-project/details/courses.txt";
+    $courseFile = "../details/courses.txt";
     $courses = file($courseFile, FILE_IGNORE_NEW_LINES);
 
     $optionsCourses = "";
@@ -31,7 +31,7 @@
 
     #universities
 
-    $universityFile = "../php-project/details/university.txt";
+    $universityFile = "../details/university.txt";
     $univerities = file($universityFile, FILE_IGNORE_NEW_LINES);
 
     $optionsUniversities = "";
