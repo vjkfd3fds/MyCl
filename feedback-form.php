@@ -129,9 +129,9 @@
                 <?php 
                   if (isset($_COOKIE['username'])) {
                     $user_id = $_COOKIE['username'];
-                    echo '<a class="dropdown-item" href="admin-dashboard.php">Admin Dashboard</a>';
+                    echo '<a class="dropdown-item" href="admin/admin-dashboard.php">Admin Dashboard</a>';
                   } else {
-                    echo '<a class="dropdown-item" href="admin-login.php">Admin</a>';
+                    echo '<a class="dropdown-item" href="admin/admin-login.php">Admin</a>';
                   }
                   ?>
                   <?php 

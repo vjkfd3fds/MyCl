@@ -79,7 +79,7 @@
     <header class="header_section">
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom_nav-container">
-  <a class="navbar-brand" href="home.php">
+  <a class="navbar-brand" href="../home.php">
     <h4 style="font-size: x-large; cursor: pointer; color: white;">
       my
       <span style="font-size: x-large;">c</span>
@@ -121,7 +121,7 @@
                     echo '<a class="dropdown-item" href="../student-register.php">Student</a>';
                   }
                   ?>
-          <a class="dropdown-item" href="college-register.php">College</a>
+          <a class="dropdown-item" href="../college-register.php">College</a>
         </div>
       </li>
       <!-- End of drop-down box -->
@@ -240,16 +240,16 @@
               Links
             </h4>
             <div class="info_links">
-              <a class="" href="home.php">
-                <img src="images/nav-bullet.png" alt="">
+              <a class="" href="../home.php">
+                <img src="../images/nav-bullet.png" alt="">
                 Home
               </a>
-              <a class="" href="about.php">
-                <img src="images/nav-bullet.png" alt="">
+              <a class="" href="../about.php">
+                <img src="../images/nav-bullet.png" alt="">
                 About
               </a>
-              <a class="" href="feedback-form.php">
-                <img src="images/nav-bullet.png" alt="">
+              <a class="" href="../feedback-form.php">
+                <img src="../images/nav-bullet.png" alt="">
                 Feedback
               </a>
             </div>
