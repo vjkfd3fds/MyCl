@@ -1,4 +1,10 @@
 <?php 
+    if (!$_COOKIE['id']) {
+        header('Location: ../home.php');
+    }
+?>
+
+<?php 
 include('../backend-php/connect.php');
 
 if (isset($_GET['institution'])) {

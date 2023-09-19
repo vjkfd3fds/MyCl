@@ -1,3 +1,10 @@
+<?php 
+    if (!$_COOKIE['id']) {
+        header('Location: ../home.php');
+        exit;
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
