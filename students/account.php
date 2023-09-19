@@ -39,7 +39,7 @@
 </head>
 <body>
 <?php 
-    include('backend-php/connect.php');
+    include('../backend-php/connect.php');
     if (isset($_COOKIE['id'])) {
         $user_id = $_COOKIE['id'];
         $sql = "SELECT * FROM registered_users WHERE id = '$user_id'";
@@ -48,7 +48,7 @@
             echo '<div class="nav-bar">';
             echo '<h1 style="font-family: monospace; margin-top: 20px;"> Welcome ' . $row['firstname'] . '</h1>';
             ?>
-            <img class="no-class" src="profile/<?php echo $row['profile']; ?>" alt="">
+            <img class="no-class" src="../profile/<?php echo $row['profile']; ?>" alt="">
             <?php 
             echo '</div>';
         }
@@ -69,7 +69,9 @@
     </form>
     <?php 
        if (isset($_POST['button'])) {
+        echo '<div class="input-types">';
         echo "<input type='text' name='firstname' class='input-1' placeholder= " .$row['firstname']  . ">";
+        echo '</div>';
        }
     ?>
 </body>
