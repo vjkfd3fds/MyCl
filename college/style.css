@@ -1,0 +1,66 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Style the navigation bar */
+header {
+    background-color: #007BFF;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.user-info {
+    font-weight: bold;
+}
+
+/* Style the sidebar */
+aside {
+    background-color: #333;
+    color: #fff;
+    width: 250px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    box-shadow: 2px 0px 4px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar h2 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: #1E90FF; /* Dodger Blue color */
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin-bottom: 10px;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.sidebar a:hover {
+    color: #F00; /* Red color on hover */
+}
+
+/* Style the main content area */
+.content {
+    margin-left: 270px;
+    padding: 20px;
+}

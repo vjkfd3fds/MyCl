@@ -6,7 +6,7 @@
         $email = $_POST['email'];
         $password = $_POST['password'];
 
-        $sql = "SELECT id, email, password FROM college_users WHERE email = ? AND password = ?";
+        $sql = "SELECT cid, email, password FROM college_users WHERE email = ? AND password = ?";
         $stmt = $conn->prepare($sql);
 
         if (!$stmt) {
@@ -20,8 +20,8 @@
 
         if ($result->num_rows === 1) {
             $rows = $result->fetch_assoc();
-            $id = $rows['id'];
-            setcookie("id", $id, time() + 3600, "/");
+            $cid = $rows['cid'];
+            setcookie("cid", $cid, time() + 3600, "/");
             header('Location: ../../php-project/college/college-dashboard.php');
             exit();
         } else {

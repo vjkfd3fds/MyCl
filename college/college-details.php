@@ -1,3 +1,9 @@
+<?php 
+    if (!isset($_COOKIE['cid'])) {
+        header('Location: ../home.php');
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
