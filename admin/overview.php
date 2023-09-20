@@ -31,25 +31,32 @@
 </head>
 <body>
     <h1>User Accounts</h1>
-    <table>
-        <tr>
-            <th>Email</th>
-            <th>Username</th>
-            <th>Profile Picture</th>
-        </tr>
+    <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
+        <table>
+            <tr>
+                <th>Email</th>
+                <th>Username</th>
+                <th>Profile Picture</th>
+            </tr>
 
-        <?php 
-            while ($row = $result->fetch_assoc()) {
-                echo "<tr>";
-                echo "<td>" . $row['email'] . "</td>";
-                echo "<td>" . $row['firstname'] . "</td>";
-        ?>
-        <td> <img witdth="100" height="100" src="../profile/<?php echo $row['profile']; ?>" alt=""> </td>
-        <?php
+            <?php 
+                while ($row = $result->fetch_assoc()) {
+                    echo "<tr>";
+                    echo "<td>" . $row['email'] . "</td>";
+                    echo "<td>" . $row['firstname'] . "</td>";
+            ?>
+            <td> <img witdth="100" height="100" src="../profile/<?php echo $row['profile']; ?>" alt=""> </td>
+            <?php
+            echo "<td><input type='submit' name='delete'> </td>"; 
+            }
+            ?>
+        </table>
+    </form>
+    <?php 
+        if (isset($_POST['delete'])) {
+            echo "<script>console.log('Hello LOL'); </script>";
         }
-        ?>
-    </table>
-
+    ?>
     <?php 
 
         $stmt = $conn->prepare("SELECT * FROM college_users");
