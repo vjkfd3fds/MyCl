@@ -14,19 +14,6 @@
     <link rel="icon" href="../images/note.png">
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <header>
-        <div class="navbar">
-            <div class="user-info">Logged in as: <span id="username">John Doe</span></div>
-            <div class="nav-buttons">
-                <button id="logoutButton">Logout</button>
-                <label class="switch">
-                    <input type="checkbox" id="darkModeToggle">
-                    <span class="slider"></span>
-                </label>
-            </div>
-        </div>
-    </header>
 
     <!-- Main Content -->
     <main>
@@ -47,27 +34,5 @@
             <!-- Your content goes here -->
         </section>
     </main>
-    <script>
-        // Get elements
-const darkModeToggle = document.getElementById('darkModeToggle');
-const body = document.body;
-const username = document.getElementById('username');
-const logoutButton = document.getElementById('logoutButton');
-
-// Event listeners
-darkModeToggle.addEventListener('change', () => {
-    if (darkModeToggle.checked) {
-        body.classList.add('dark-mode');
-    } else {
-        body.classList.remove('dark-mode');
-    }
-});
-
-logoutButton.addEventListener('click', () => {
-    // Implement logout functionality here
-    alert('Logged out'); // Replace with actual logout code
-});
-
-    </script>
 </body>
 </html>

@@ -114,7 +114,13 @@
                     echo '<a class="dropdown-item" href="students/student-register.php">Student</a>';
                   }
                   ?>
-                  <a class="dropdown-item" href="college/college-register.php">College</a>
+                  <?php 
+                  if (isset($_COOKIE['cid'])) {
+                      echo '<a class="dropdown-item" href="college/college-dashboard.php">College Dashboard</a>';
+                  } else {
+                    echo '<a class="dropdown-item" href="college/college-register.php">College</a>';
+                  }  
+                  ?>
                 </div>
               </li>
             </ul>
