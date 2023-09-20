@@ -21,6 +21,11 @@
         td, th, tr, table {
             border: 1px solid black;
             border-collapse: collapse;
+            font-family: monospace;
+        }
+
+        h1 {
+            font-family: monospace;
         }
     </style>
 </head>
@@ -45,6 +50,32 @@
         ?>
     </table>
 
+    <?php 
+
+        $stmt = $conn->prepare("SELECT * FROM college_users");
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+    ?>
+    <h1>College Accounts</h1>
+    <table>
+        <tr>
+            <th>Email</th>
+            <th>Username</th>
+            <th>Profile Picture</th>
+        </tr>
+
+        <?php 
+            while ($row = $result->fetch_assoc()) {
+                echo "<tr>";
+                echo "<td>" . $row['email'] . "</td>";
+                echo "<td>" . $row['firstname'] . "</td>";
+        ?>
+        <td> <img witdth="100" height="100" src="../college-profile/<?php echo $row['profile']; ?>" alt=""> </td>
+        <?php
+        }
+        ?>
+    </table>
     
 </body>
 </html>
