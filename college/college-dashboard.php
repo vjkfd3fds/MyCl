@@ -33,6 +33,22 @@
         <!-- Content Area -->
         <section class="content">
             <!-- Your content goes here -->
+
+        <?php 
+            include('../backend-php/connect.php');
+            if (isset($_COOKIE['cid'])) {
+                $stmt = $conn->prepare("SELECT * FROM college_users WHERE cid = ?");
+                $stmt->bind_param("s", $cid);
+                $stmt->execute();
+                $result = $stmt->get_result();
+                if ($row = $result->fetch_assoc()) {
+                    echo "<script>console.log('email: " . $row['email'] . "');</script>";
+                } else {
+                    echo "<script> console.log('no data found'); </script>";
+                }
+    
+            }
+        ?>
         </section>
     </main>
 </body>
