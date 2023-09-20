@@ -1,21 +1,13 @@
-<?php 
-    if (!isset($_COOKIE['cid'])) {
-        header('Location: ../home.php');
-    }
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyCl | Dashboard</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="../images/note.png">
+    <title>MyCl | Settings</title>
+    <link rel="icon" href="../images/note.png" />
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-    <!-- Main Content -->
     <main>
         <!-- Sidebar -->
         <aside>
@@ -24,7 +16,7 @@
                 <ul>
                     <li><a href="college-dashboard.php">Dashboard</a></li>
                     <li><a href="profile.php">Profile</a></li>
-                    <li><a href="settings.php">Settings</a></li>
+                    <li><a href="#">Settings</a></li>
                     <li><a href="insight.php">Insights</a></li>
                 </ul>
             </div>
