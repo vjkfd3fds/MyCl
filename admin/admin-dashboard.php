@@ -10,7 +10,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="images/note.png">
+    <link rel="icon" href="../images/note.png">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
     <link rel="stylesheet" href="../css/admin-home.css" type="text/css">
     <title>Admin page | Responsive</title>
@@ -58,7 +58,7 @@
                     <h3>Tickets</h3>
                 </a>
 
-                <a href="#" id="">
+                <a href="overview.php" id="">
                     <span class="material-icons-sharp">
                         inventory
                     </span>
@@ -190,21 +190,21 @@
                 <div class="user-list">
 
                     <div class="user">
-                        <img src="images/bill.webp"
+                        <img src="../images/bill.webp"
                             alt="">
                         <h2>Bill gates</h2>
                         <p>54 mins ago</p>
                     </div>
 
                     <div class="user">
-                        <img src="images/client.jpg"
+                        <img src="../images/client.jpg"
                             alt="">
                         <h2>Christophor</h2>
                         <p>5 mins ago</p>
                     </div>
 
                     <div class="user">
-                        <img src="images/elon.jpg"
+                        <img src="../images/elon.jpg"
                             alt="">
                         <h2>Elon musk</h2>
                         <p>Active 1 hour ago</p>
@@ -256,18 +256,6 @@
                     </span>
                 </button>
 
-                <div class="dark-mode">
-
-                    <span class="material-icons-sharp active">
-                        light_mode
-                    </span>
-
-                    <span class="material-icons-sharp ">
-                        dark_mode
-                    </span>
-
-                </div>
-
             </div>
             <!-- End of the nav Section-->
 
@@ -276,7 +264,18 @@
                     <img src="#"
                         alt="">
                     <h2>Shafiiq</h2>
-                    <p>Head of the Programme</p>
+                    <p>Head of the Programmer</p>
+                    <img src="../profile/ba927ff34cd961ce2c184d47e8ead9f6.jpg">
+                </div>
+            </div>
+
+            <div class="user-profile">
+                <div class="logo">
+                    <img src="#"
+                        alt="">
+                    <h2>Thushar</h2>
+                    <p>Head of the Programmer</p>
+                    <img src="../profile/cffa83ebe67a00b3dfead14ce35060e9.png" alt="">
                 </div>
             </div>
 
