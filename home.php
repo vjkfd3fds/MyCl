@@ -587,13 +587,13 @@ Firstly, I must commend the design of the website. The overall layout and aesthe
             <a href="">
               <i class="fa fa-facebook" aria-hidden="true"></i>
             </a>
-            <a href="">
+            <a href="https://twitter.com/jxytherealone">
               <i class="fa fa-twitter" aria-hidden="true"></i>
             </a>
             <a href="">
               <i class="fa fa-linkedin" aria-hidden="true"></i>
             </a>
-            <a href="">
+            <a href="https://instagram.com/jxyxanyy">
               <i class="fa fa-instagram" aria-hidden="true"></i>
             </a>
           </div>
