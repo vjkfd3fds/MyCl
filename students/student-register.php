@@ -81,9 +81,11 @@
 										if (move_uploaded_file($tempname, $folder) && $conn->query($sql) === TRUE) {
 											header('Location: student-login.php');
 										} else {
-											echo "Error: " . $sql . "<br>" . $conn->error;
+											// Log the error message
+											error_log("Error: " . $sql . "<br>" . $conn->error);
+
 										}
-									}
+									}	
 								}
 								$conn->close();
 							}
