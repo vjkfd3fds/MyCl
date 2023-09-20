@@ -13,7 +13,7 @@
     <link rel="icon" href="../images/note.png">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
     <link rel="stylesheet" href="../css/admin-home.css" type="text/css">
-    <title>Admin page | Responsive</title>
+    <title>Admin page | Dashboard</title>
     <style>
         .logout,.material-icons-sharp {
             cursor: pointer;
@@ -74,7 +74,7 @@
 
                 </a>
 
-                <a href="#" id="">
+                <a href="settings.php" id="">
                     <span class="material-icons-sharp">
                         settings
                     </span>
