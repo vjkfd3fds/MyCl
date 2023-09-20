@@ -27,6 +27,16 @@
         h1 {
             font-family: monospace;
         }
+
+        input {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        input:hover {
+            text-decoration: underline black;
+        }
     </style>
 </head>
 <body>
@@ -34,6 +44,7 @@
     <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
         <table>
             <tr>
+                <th>User Id</th>
                 <th>Email</th>
                 <th>Username</th>
                 <th>Profile Picture</th>
@@ -42,21 +53,16 @@
             <?php 
                 while ($row = $result->fetch_assoc()) {
                     echo "<tr>";
+                    echo "<td>" . $row["id"] . "</td>";
                     echo "<td>" . $row['email'] . "</td>";
                     echo "<td>" . $row['firstname'] . "</td>";
             ?>
             <td> <img witdth="100" height="100" src="../profile/<?php echo $row['profile']; ?>" alt=""> </td>
             <?php
-            echo "<td><input type='submit' name='delete'> </td>"; 
             }
             ?>
         </table>
     </form>
-    <?php 
-        if (isset($_POST['delete'])) {
-            echo "<script>console.log('Hello LOL'); </script>";
-        }
-    ?>
     <?php 
 
         $stmt = $conn->prepare("SELECT * FROM college_users");
@@ -65,24 +71,29 @@
 
     ?>
     <h1>College Accounts</h1>
-    <table>
-        <tr>
-            <th>Email</th>
-            <th>Username</th>
-            <th>Profile Picture</th>
-        </tr>
+    <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
+        <table>
+            <tr>
+                <th>College Id</th>
+                <th>Email</th>
+                <th>Username</th>
+                <th >Profile Picture</th>
+            </tr>
 
-        <?php 
-            while ($row = $result->fetch_assoc()) {
-                echo "<tr>";
-                echo "<td>" . $row['email'] . "</td>";
-                echo "<td>" . $row['firstname'] . "</td>";
-        ?>
-        <td> <img witdth="100" height="100" src="../college-profile/<?php echo $row['profile']; ?>" alt=""> </td>
-        <?php
-        }
-        ?>
-    </table>
+            <?php 
+                while ($row = $result->fetch_assoc()) {
+                    echo "<tr>";
+                    echo "<td>" . $row["cid"] . "</td>";
+                    echo "<td>" . $row['email'] . "</td>";
+                    echo "<td>" . $row['firstname'] . "</td>";
+            ?>
+            <td> <img witdth="100" height="100" src="../college-profile/<?php echo $row['profile']; ?>" alt=""> </td>
+            <?php
+
+            }
+            ?>
+        </table>
+    </form>
     
 </body>
 </html>
