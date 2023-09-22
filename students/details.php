@@ -80,6 +80,16 @@ if (isset($_GET['institution'])) {
             padding: 10px;
             border: 1px solid #ccc;
         }
+
+        .image-gallery {
+            text-align: center;
+        }
+
+        .image-gallery img {
+            max-width: 100%;
+            height: auto;
+            margin: 10px;
+        }
     </style>
 </head>
 <body>
@@ -91,20 +101,33 @@ if (isset($_GET['institution'])) {
 
         // Display college details
         echo '<div class="college-details">';
-        echo '<img src="' . $collegeDetails['image'] . '" alt="College Image">';
-        echo '<h2>' . $row['university'] . ' - ' . $collegeDetails['college'] . '</h2>';
-        echo '<p>' . $collegeDetails['description'] . '</p>';
-        echo '<p><strong>State:</strong> ' . $collegeDetails['state'] . '</p>';
-        echo '<p><strong>District:</strong> ' . $collegeDetails['district'] . '</p>';
-        echo '<p><strong>Address:</strong> ' . $collegeDetails['address'] . '</p>';
-        echo '<p><strong>Programs:</strong> ' . $collegeDetails['programs'] . '</p>';
-        echo '<p><strong>Courses:</strong> ' . $collegeDetails['courses'] . '</p>';
+        #echo '<img src="' . $collegeDetails['image'] . '" alt="College Image">';
+        echo '<h2>' . $row['university'] . ' - ' . $row['institution'] . '</h2>';
+        echo '<p>' . $row['about'] . '</p>';
+        echo '<p><strong>State:</strong> ' . $row['state'] . '</p>';
+        echo '<p><strong>District:</strong> ' . $row['district'] . '</p>';
+        echo '<p><strong>Address:</strong> ' . $row['address'] . '</p>';
+        echo '<p><strong>Programs:</strong> ' . $row['programs'] . '</p>';
+        echo '<p><strong>Courses:</strong> ' . $row['course'] . '</p>';
         echo '</div>';
         ?>
 
         <div class="contact-info">
-            <p><strong>Contact Email:</strong> <?php echo $collegeDetails['email']; ?></p>
-            <p><strong>Total Seats:</strong> <?php echo $collegeDetails['seats']; ?></p>
+            <p><strong>Contact Email:</strong> <?php echo $row['email']; ?></p>
+            <p><strong>Phone Number:</strong> <?php echo $row['number']; ?></p>
+            <p><strong>Total Seats:</strong> <?php echo $row['total_seats']; ?></p>
+            <p><strong>Reserved Seats:</strong> <?php echo $row['reserved_seats']; ?></p>
+            <p><strong>Management Seats:</strong> <?php echo $row['management_seats']; ?></p>
+        </div>
+
+        <div class="image-gallery">
+            <h2>Images</h2>
+            <?php
+            // Loop through images and display them
+            foreach ($collegeDetails['images'] as $image) {
+                echo '<img src="' . $image . '" alt="College Image">';
+            }
+            ?>
         </div>
     </div>
 </body>
