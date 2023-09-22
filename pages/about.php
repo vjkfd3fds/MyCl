@@ -8,7 +8,7 @@
   <!-- Mobile Metas -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <!-- Site Metas -->
-  <link rel="icon" href="images/note.png">
+  <link rel="icon" href="../images/note.png">
   <meta name="keywords" content="" />
   <meta name="description" content="" />
   <meta name="author" content="" />
@@ -17,18 +17,18 @@
 
 
   <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
 
   <!-- fonts style -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 
   <!-- font awesome style -->
-  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <link href="../css/font-awesome.min.css" rel="stylesheet" />
 
   <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
+  <link href="../css/style.css" rel="stylesheet" />
   <!-- responsive style -->
-  <link href="css/responsive.css" rel="stylesheet" />
+  <link href="../css/responsive.css" rel="stylesheet" />
 
 
   <!-- Custom styles for the drop-down box -->
@@ -101,24 +101,24 @@
                 <?php 
                   if (isset($_COOKIE['username'])) {
                     $user_id = $_COOKIE['username'];
-                    echo '<a class="dropdown-item" href="admin/admin-dashboard.php">Admin Dashboard</a>';
+                    echo '<a class="dropdown-item" href="../admin/admin-dashboard.php">Admin Dashboard</a>';
                   } else {
-                    echo '<a class="dropdown-item" href="admin/admin-login.php">Admin</a>';
+                    echo '<a class="dropdown-item" href="../admin/admin-login.php">Admin</a>';
                   }
                   ?>
                   <?php 
                   if (isset($_COOKIE['id'])) {
                     $user_id = $_COOKIE['id'];
-                    echo '<a class="dropdown-item" href="students/student-dashboard.php">Student Dashboard</a>';
+                    echo '<a class="dropdown-item" href="../students/student-dashboard.php">Student Dashboard</a>';
                   } else {
-                    echo '<a class="dropdown-item" href="students/student-register.php">Student</a>';
+                    echo '<a class="dropdown-item" href="../students/student-register.php">Student</a>';
                   }
                   ?>
                   <?php 
                   if (isset($_COOKIE['cid'])) {
-                      echo '<a class="dropdown-item" href="college/college-dashboard.php">College Dashboard</a>';
+                      echo '<a class="dropdown-item" href="../college/college-dashboard.php">College Dashboard</a>';
                   } else {
-                    echo '<a class="dropdown-item" href="college/college-register.php">College</a>';
+                    echo '<a class="dropdown-item" href="../college/college-register.php">College</a>';
                   }  
                   ?>
                 </div>
@@ -152,7 +152,7 @@
         </div>
         <div class="col-md-6 ">
           <div class="img-box">
-            <img src="images/about-img.png" alt="">
+            <img src="../images/about-img.png" alt="">
           </div>
         </div>
 
@@ -215,15 +215,15 @@
             </h4>
             <div class="info_links">
               <a class="" href="home.php">
-                <img src="images/nav-bullet.png" alt="">
+                <img src="../images/nav-bullet.png" alt="">
                 Home
               </a>
               <a class="active" href="about.php">
-                <img src="images/nav-bullet.png" alt="">
+                <img src="../images/nav-bullet.png" alt="">
                 About
               </a>
               <a class="" href="feedback-form.php">
-                <img src="images/nav-bullet.png" alt="">
+                <img src="../images/nav-bullet.png" alt="">
                 Feedback
               </a>
             </div>
@@ -247,11 +247,11 @@
   <!-- footer section -->
 
   <!-- jQery -->
-  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="../js/jquery-3.4.1.min.js"></script>
   <!-- bootstrap js -->
-  <script src="js/bootstrap.js"></script>
+  <script src="../js/bootstrap.js"></script>
   <!-- custom js -->
-  <script src="js/custom.js"></script>
+  <script src="../js/custom.js"></script>
 
 
 </body>

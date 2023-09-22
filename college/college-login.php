@@ -79,7 +79,7 @@
     <header class="header_section">
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom_nav-container">
-  <a class="navbar-brand" href="../home.php">
+  <a class="navbar-brand" href="../pages/home.php">
     <h4 style="font-size: x-large; cursor: pointer; color: white;">
       my
       <span style="font-size: x-large;">c</span>
@@ -94,10 +94,10 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="../home.php">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="../pages/home.php">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="../about.php"> About</a>
+        <a class="nav-link" href="../pages/about.php"> About</a>
       </li>
 
       <!-- Adding the drop-down box for Admin, Student, and College options -->
@@ -251,15 +251,15 @@
               Links
             </h4>
             <div class="info_links">
-              <a class="" href="../home.php">
+              <a class="" href="../pages/home.php">
                 <img src="../images/nav-bullet.png" alt="">
                 Home
               </a>
-              <a class="" href="../about.php">
+              <a class="" href="../pages/about.php">
                 <img src="../images/nav-bullet.png" alt="">
                 About
               </a>
-              <a class="" href="../feedback-form.php">
+              <a class="" href="../pages/feedback-form.php">
                 <img src="../images/nav-bullet.png" alt="">
                 Feedback
               </a>

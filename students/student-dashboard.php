@@ -1,6 +1,6 @@
 <?php 
     if (!$_COOKIE['id']) {
-        header('Location: ../home.php');
+        header('Location: ../pages/home.php');
         exit;
     }
 ?>
@@ -144,7 +144,7 @@
 
                 <div id="navbartoggle" class="nav-content">
                     <ul>
-                        <a href="../home.php">
+                        <a href="../pages/home.php">
                             <li>Home</li>
                         </a>
                         <a href="account.php">

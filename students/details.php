@@ -1,6 +1,6 @@
 <?php 
     if (!$_COOKIE['id']) {
-        header('Location: ../home.php');
+        header('Location: ../pages/home.php');
     }
 ?>
 
