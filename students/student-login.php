@@ -76,7 +76,7 @@
     <header class="header_section">
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="../home.php">
+          <a class="navbar-brand" href="../pages/home.php">
             <h4 style="font-size: x-large; cursor: pointer; color: white;">
               my
               <span style="font-size: x-large;">c</span>
