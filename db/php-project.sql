@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Aug 16, 2023 at 12:02 PM
+-- Generation Time: Sep 22, 2023 at 04:38 PM
 -- Server version: 8.0.31
 -- PHP Version: 8.0.26
 
@@ -61,20 +61,22 @@ CREATE TABLE IF NOT EXISTS `college_details` (
   `programs` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT 'number of programs',
   `course` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT 'number of courses',
   `email` varchar(30) NOT NULL COMMENT 'contact info',
-  `number` int(20) NOT NULL COMMENT 'phone number',
+  `number` int NOT NULL COMMENT 'phone number',
   `total_seats` int NOT NULL COMMENT 'total number of seats',
   `reserved_seats` int NOT NULL COMMENT 'number of reserved seats',
   `management_seats` int NOT NULL COMMENT 'number of reserved seats',
   `about` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT 'something about the college',
+  `certificate` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `college_details`
 --
 
-INSERT INTO `college_details` (`id`, `university`, `institution`, `state`, `district`, `address`, `programs`, `course`, `email`, `number`, `total_seats`, `reserved_seats`, `management_seats`, `about`) VALUES
-(1, 'kerala University', 'college of applied science adoor', 'Maharashtra', 'Kurnool', 'very cool address', 'pg, diploma, engineering, phd, nursing, doe, ba-1', 'me,be,bba,ps,ce,btech,bsc,ma,msc', 'thushar17223@gmail.c', 2147483647, 7, 7, 6, '');
+INSERT INTO `college_details` (`id`, `university`, `institution`, `state`, `district`, `address`, `programs`, `course`, `email`, `number`, `total_seats`, `reserved_seats`, `management_seats`, `about`, `certificate`) VALUES
+(11, 'kerala University', 'college of applied science adoor', 'Bihar', 'Anantapur', 'vvvvv', 'ug, pg, moa', 'ME,PS,BSC', 'c8354270@gmail.com', 2147483647, 10, 5, 6, 'vvvvvvvvvvvv', 'ba927ff34cd961ce2c184d47e8ead9f6.jpg'),
+(12, 'kerala University', 'college of applied science adoor', 'Bihar', 'Anantapur', 'vvvvv', 'ug, pg, moa', 'ME,PS,BSC', 'c8354270@gmail.com', 2147483647, 10, 5, 6, 'vvvvvvvvvvvv', 'ba927ff34cd961ce2c184d47e8ead9f6.jpg');
 
 -- --------------------------------------------------------
 
@@ -84,20 +86,21 @@ INSERT INTO `college_details` (`id`, `university`, `institution`, `state`, `dist
 
 DROP TABLE IF EXISTS `college_users`;
 CREATE TABLE IF NOT EXISTS `college_users` (
-  `id` int NOT NULL AUTO_INCREMENT,
+  `cid` int NOT NULL AUTO_INCREMENT,
   `firstname` varchar(20) NOT NULL,
   `lastname` varchar(10) NOT NULL,
   `email` varchar(30) NOT NULL,
   `password` varchar(100) NOT NULL,
-  PRIMARY KEY (`id`)
+  `profile` varchar(100) NOT NULL,
+  PRIMARY KEY (`cid`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `college_users`
 --
 
-INSERT INTO `college_users` (`id`, `firstname`, `lastname`, `email`, `password`) VALUES
-(1, 'Thushar', 'T', 'ssid88607@gmail.com', 'thushar33');
+INSERT INTO `college_users` (`cid`, `firstname`, `lastname`, `email`, `password`, `profile`) VALUES
+(1, 'Thushar', 'T', 'thushar17223@gmail.com', 'password', '3892bdfe777b2bd94a46854f713441ed.jpg');
 
 -- --------------------------------------------------------
 
@@ -112,19 +115,18 @@ CREATE TABLE IF NOT EXISTS `feedbacks` (
   `email` varchar(25) NOT NULL,
   `message` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `feedbacks`
 --
 
 INSERT INTO `feedbacks` (`id`, `name`, `email`, `message`) VALUES
-(1, 'jay', 'thushar17223@gmail.com', 'very cool website if you ask me lol\r\n'),
-(2, 'Sublime', 'thushar17223@gmail.com', 'very cool'),
-(3, 'jxy', 'c8354270@gmail.com', 'hope this works'),
-(4, 'jxytherealone', 'nikhil.3post@gmail.com', 'Heey man nice website hope this stuffs works very well at the end of the day'),
-(5, 'thushar', 'thushar17223@gmail.c', 'very nice lol'),
-(6, 'jay', 'nikhil.3post@gmail.com', 'Yay feedback go brrrrrrrrrr');
+(1, 'jxy', 'thushar17223@gmail.com', 'Very cool website if you ask me LOL'),
+(2, 'jay', 'ssid88607@gmail.com', 'Very cool thing if you ask me'),
+(3, 'jay', 'ssid88607@gmail.com', 'Very cool website if you ask me'),
+(4, 'thushar', 'c8354270@gmail.com', 'ffff'),
+(5, 'Sublime', 'thusharthualsipillai@gmai', 'fffffffff');
 
 -- --------------------------------------------------------
 
@@ -140,17 +142,16 @@ CREATE TABLE IF NOT EXISTS `registered_users` (
   `email` varchar(30) NOT NULL,
   `password` varchar(30) NOT NULL,
   `dob` date NOT NULL,
+  `profile` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `registered_users`
 --
 
-INSERT INTO `registered_users` (`id`, `firstname`, `lastname`, `email`, `password`, `dob`) VALUES
-(1, 'Thushar', 'T', 'ssid88607@gmail.com', 'thushar33', '2023-08-16'),
-(2, 'Thushar', 'T', 'c8354270@gmail.com', 'thushar33', '2023-08-30'),
-(3, 'jxytherealone', 'vdsjk', 'shafiiq688@gmail.com', 'thushar33', '2023-08-08');
+INSERT INTO `registered_users` (`id`, `firstname`, `lastname`, `email`, `password`, `dob`, `profile`) VALUES
+(1, 'Little Neji', 'i', 'thushar17223@gmail.com', 'password', '2023-09-06', '3892bdfe777b2bd94a46854f713441ed.jpg');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
