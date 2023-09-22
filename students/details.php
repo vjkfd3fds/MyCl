@@ -33,7 +33,8 @@ if (isset($_GET['institution'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>College Details</title>
+    <title>MyCl | College Details</title>
+    <link rel="icon" href="../images/note.png">
     <style>
         /* Add your CSS styles here */
         body {

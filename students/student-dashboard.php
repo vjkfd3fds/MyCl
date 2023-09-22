@@ -150,7 +150,7 @@
                         <a href="account.php">
                             <li>Account</li>
                         </a>
-                        <a href="dashboard.html">
+                        <a href="saved.php">
                             <li>Wishlists</li>
                         </a>
                         <a href="#">

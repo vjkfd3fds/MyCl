@@ -171,8 +171,7 @@
   <div class="container">
         <div class="custom-form">
             <h1 style="text-align: center; padding: 25px;">Feedbacks</h1>
-            <p>Send us some of your after using the website. Feel free to write any thing! you can criticism in any way nothing to hide
-                (i have your ip). </p>
+            <p>Post your feedbacks about the website and the colleges.</p>
             <form method="post" action="backend-php/feedback.php">
                 <!-- Name input -->
                 <div class="form-group">
