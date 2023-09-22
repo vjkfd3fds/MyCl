@@ -14,7 +14,7 @@
         $stmt->execute();
         $result = $stmt->get_result();
         if ($result->num_rows === 0) {
-            echo '<script>This user does not exists</script>';
+            echo 'This user does not exists';
         } else {
             if ($result->num_rows === 1) {
                 $row = $result->fetch_assoc();
