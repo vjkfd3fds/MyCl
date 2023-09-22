@@ -140,7 +140,6 @@ if (isset($_GET['institution'])) {
                     }
                 }
 
-                // Close the statement
                 $stmt->close();
             ?>
 
