@@ -42,7 +42,9 @@ if (isset($_GET['institution'])) {
             padding: 0;
             background-color: #f5f5f5;
         }
-
+        h1, p, h2 {
+            font-family: monospace;
+        }
         .container {
             max-width: 800px;
             margin: 0 auto;
@@ -53,6 +55,8 @@ if (isset($_GET['institution'])) {
 
         h1 {
             text-align: center;
+            font-size: 36px;
+            margin-bottom: 20px;
         }
 
         .college-details {
@@ -62,17 +66,15 @@ if (isset($_GET['institution'])) {
             background-color: #fff;
         }
 
-        .college-details img {
-            max-width: 100%;
-            height: auto;
-        }
-
         .college-details h2 {
+            font-size: 28px;
             margin-top: 0;
         }
 
         .college-details p {
+            font-size: 18px;
             margin: 0;
+            line-height: 1.5;
         }
 
         .contact-info {
@@ -81,8 +83,18 @@ if (isset($_GET['institution'])) {
             border: 1px solid #ccc;
         }
 
+        .contact-info p {
+            font-size: 18px;
+            margin: 0;
+            line-height: 1.5;
+        }
+
         .image-gallery {
             text-align: center;
+        }
+
+        .image-gallery h2 {
+            font-size: 24px;
         }
 
         .image-gallery img {
@@ -93,37 +105,36 @@ if (isset($_GET['institution'])) {
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>College Details</h1>
-        
-        <?php
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+        <div class="container">
+            <h1>College Details</h1>
+            
+            <?php
+            echo '<div class="college-details">';
+            echo '<h2>' . $row['university'] . ' - ' . $row['institution'] . '</h2>';
+            echo '<p>' . $row['about'] . '</p>';
+            echo '<p><strong>State:</strong> ' . $row['state'] . '</p>';
+            echo '<p><strong>District:</strong> ' . $row['district'] . '</p>';
+            echo '<p><strong>Address:</strong> ' . $row['address'] . '</p>';
+            echo '<p><strong>Programs:</strong> ' . $row['programs'] . '</p>';
+            echo '<p><strong>Courses:</strong> ' . $row['course'] . '</p>';
+            echo '</div>';
+            ?>
 
+            <div class="contact-info">
+                <h2>Contact Information</h2>
+                <p><strong>Email:</strong> <?php echo $row['email']; ?></p>
+                <p><strong>Phone Number:</strong> <?php echo $row['number']; ?></p>
+                <p><strong>Total Seats:</strong> <?php echo $row['total_seats']; ?></p>
+                <p><strong>Reserved Seats:</strong> <?php echo $row['reserved_seats']; ?></p>
+                <p><strong>Management Seats:</strong> <?php echo $row['management_seats']; ?></p>
+            </div>
 
-        echo '<div class="college-details">';
-        #echo '<img src="' . $collegeDetails['image'] . '" alt="College Image">';
-        echo '<h2>' . $row['university'] . ' - ' . $row['institution'] . '</h2>';
-        echo '<p>' . $row['about'] . '</p>';
-        echo '<p><strong>State:</strong> ' . $row['state'] . '</p>';
-        echo '<p><strong>District:</strong> ' . $row['district'] . '</p>';
-        echo '<p><strong>Address:</strong> ' . $row['address'] . '</p>';
-        echo '<p><strong>Programs:</strong> ' . $row['programs'] . '</p>';
-        echo '<p><strong>Courses:</strong> ' . $row['course'] . '</p>';
-        echo '</div>';
-        ?>
-
-        <div class="contact-info">
-            <p><strong>Contact Email:</strong> <?php echo $row['email']; ?></p>
-            <p><strong>Phone Number:</strong> <?php echo $row['number']; ?></p>
-            <p><strong>Total Seats:</strong> <?php echo $row['total_seats']; ?></p>
-            <p><strong>Reserved Seats:</strong> <?php echo $row['reserved_seats']; ?></p>
-            <p><strong>Management Seats:</strong> <?php echo $row['management_seats']; ?></p>
+            <div class="image-gallery">
+                <h2>Images</h2>
+                <img src="../uploads/<?php echo $row['certificate']; ?>" alt="College Certificate">
+            </div>
         </div>
-
-        <div class="image-gallery">
-            <h2>Images</h2>
-            <img src="../uploads/<?php echo $row['certificate']; ?>" alt="" >
-        </div>
-    </div>
+    </form>
 </body>
 </html>
-
