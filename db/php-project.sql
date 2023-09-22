@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 22, 2023 at 04:38 PM
+-- Generation Time: Sep 22, 2023 at 04:40 PM
 -- Server version: 8.0.31
 -- PHP Version: 8.0.26
 
@@ -68,15 +68,7 @@ CREATE TABLE IF NOT EXISTS `college_details` (
   `about` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT 'something about the college',
   `certificate` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Dumping data for table `college_details`
---
-
-INSERT INTO `college_details` (`id`, `university`, `institution`, `state`, `district`, `address`, `programs`, `course`, `email`, `number`, `total_seats`, `reserved_seats`, `management_seats`, `about`, `certificate`) VALUES
-(11, 'kerala University', 'college of applied science adoor', 'Bihar', 'Anantapur', 'vvvvv', 'ug, pg, moa', 'ME,PS,BSC', 'c8354270@gmail.com', 2147483647, 10, 5, 6, 'vvvvvvvvvvvv', 'ba927ff34cd961ce2c184d47e8ead9f6.jpg'),
-(12, 'kerala University', 'college of applied science adoor', 'Bihar', 'Anantapur', 'vvvvv', 'ug, pg, moa', 'ME,PS,BSC', 'c8354270@gmail.com', 2147483647, 10, 5, 6, 'vvvvvvvvvvvv', 'ba927ff34cd961ce2c184d47e8ead9f6.jpg');
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -93,14 +85,7 @@ CREATE TABLE IF NOT EXISTS `college_users` (
   `password` varchar(100) NOT NULL,
   `profile` varchar(100) NOT NULL,
   PRIMARY KEY (`cid`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Dumping data for table `college_users`
---
-
-INSERT INTO `college_users` (`cid`, `firstname`, `lastname`, `email`, `password`, `profile`) VALUES
-(1, 'Thushar', 'T', 'thushar17223@gmail.com', 'password', '3892bdfe777b2bd94a46854f713441ed.jpg');
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -144,14 +129,7 @@ CREATE TABLE IF NOT EXISTS `registered_users` (
   `dob` date NOT NULL,
   `profile` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Dumping data for table `registered_users`
---
-
-INSERT INTO `registered_users` (`id`, `firstname`, `lastname`, `email`, `password`, `dob`, `profile`) VALUES
-(1, 'Little Neji', 'i', 'thushar17223@gmail.com', 'password', '2023-09-06', '3892bdfe777b2bd94a46854f713441ed.jpg');
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
