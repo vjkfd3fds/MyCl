@@ -172,7 +172,7 @@
         <div class="custom-form">
             <h1 style="text-align: center; padding: 25px;">Feedbacks</h1>
             <p>Post your feedbacks about the website and the colleges.</p>
-            <form method="post" action="backend-php/feedback.php">
+            <form method="post" action="../backend-php/feedback.php">
                 <!-- Name input -->
                 <div class="form-group">
                     <label for="form4Example1">Name</label>
