@@ -121,7 +121,29 @@ if (isset($_GET['institution'])) {
 
         <div class="image-gallery">
             <h2>Images</h2>
-            <img src="../uploads/<?php echo $row['certificate']; ?>" alt="" >
+            <?php 
+                include_once '../backend-php/connect.php';
+
+                $sql = "SELECT id FROM college_details";
+                $result = $conn->query($sql);
+
+                while ($row = $result->fetch_assoc()) {
+                    $id = $row['id'];
+                    
+                    $stmt = $conn->prepare("SELECT * FROM images WHERE college_id = ?");
+                    $stmt->bind_param("s", $id);
+                    $stmt->execute();
+                    $resultImages = $stmt->get_result(); 
+
+                    while ($rows = $resultImages->fetch_assoc()) {
+                        echo '<img src="../uploads/' . $rows['image_name'] . '" alt="" >';
+                    }
+                }
+
+                // Close the statement
+                $stmt->close();
+            ?>
+
         </div>
     </div>
 </body>
