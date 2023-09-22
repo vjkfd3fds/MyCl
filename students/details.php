@@ -134,21 +134,10 @@ if (isset($_GET['institution'])) {
                 <h2>Images</h2>
                 <img src="../uploads/<?php echo $row['certificate']; ?>" alt="College Certificate">
             </div>
-            <input type="submit" value="Save" name="save">
+
         </div>
     </form>
 
-    <?php 
-        if (isset($_POST['submit'])) {
-            $data = array(
-                'university: ' => $row['university'],
-                'institution: ' => $row['instution']
-            );
 
-            $encodedData = json_encode($data);
-            setcookie('user_data', $encodedData, time() + 3600, '/'); 
-        }
-    
-    ?>
 </body>
 </html>
