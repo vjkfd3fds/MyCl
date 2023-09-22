@@ -37,24 +37,13 @@
             if ($result->num_rows > 0) {
                 echo "already exists";
             }
-
             $sql = "INSERT INTO college_details (university, institution, state, district, address, programs, course, email, number, total_seats, reserved_seats, management_seats, about, certificate)
-                    VALUES ('$university', '$institution', '$state', '$district', '$address', '$programs', '$selectedCourses', '$email', '$number', '$totalSeats', '$reserved', '$management', '$about', '$filename')";
-            if ($conn->query($sql) === TRUE) {
-                // Get the auto-generated college_id from the "college details" table
-                $college_id = $conn->insert_id;
-        
-                // Insert data into the "images" table, associating it with the college
-                $sql = "INSERT INTO images (image_name, college_id)
-                VALUES ('$filename', '$college_id')";
-        
-                if (move_uploaded_file($tempname, $folder) && $conn->query($sql) === TRUE) {
-                    header('Location: ../../php-project/college/college-dashboard.php'); 
-                } else {
-                    echo $conn->error;
-                }
+            VALUES ('$university', '$institution', '$state', '$district', '$address', '$programs', '$selectedCourses', '$email', '$number', '$totalSeats', '$reserved', '$management', '$about', '$filename')";
+            
+            if (move_uploaded_file($tempname, $folder) && $conn->query($sql) === TRUE) {
+                header('Location: ../../php-project/college/college-dashboard.php');
+            } else {
             }
         }
-        $conn->close();
     }
 ?>
