@@ -27,6 +27,20 @@
                     <li><a href="settings.php">Settings</a></li>
                     <li><a href="insight.php">Insights</a></li>
                 </ul>
+                <form method="post" action="college-dashboard.php">
+                    <ul>
+                    <li><button type="submit" name="logout">Logout</button></li>
+                    </ul>
+                    </form>
+                <?php
+
+                            if (isset($_POST['logout'])) {
+                                // Set the expiration time of the cookie to a time in the past to delete it
+                                setcookie("cid", "", time() - 3600, "/");
+                                header("Location: college-login.php"); // Redirect to the login page after logout
+                                exit;
+                            }
+                        ?>
             </div>
         </aside>
 
@@ -49,6 +63,7 @@
     
             }
         ?>
+
         </section>
     </main>
 </body>
