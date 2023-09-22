@@ -102,16 +102,6 @@ CREATE TABLE IF NOT EXISTS `feedbacks` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
---
--- Dumping data for table `feedbacks`
---
-
-INSERT INTO `feedbacks` (`id`, `name`, `email`, `message`) VALUES
-(1, 'jxy', 'thushar17223@gmail.com', 'Very cool website if you ask me LOL'),
-(2, 'jay', 'ssid88607@gmail.com', 'Very cool thing if you ask me'),
-(3, 'jay', 'ssid88607@gmail.com', 'Very cool website if you ask me'),
-(4, 'thushar', 'c8354270@gmail.com', 'ffff'),
-(5, 'Sublime', 'thusharthualsipillai@gmai', 'fffffffff');
 
 -- --------------------------------------------------------
 
