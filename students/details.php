@@ -97,9 +97,8 @@ if (isset($_GET['institution'])) {
         <h1>College Details</h1>
         
         <?php
-        // Replace this with your PHP code to fetch and loop through college details
 
-        // Display college details
+
         echo '<div class="college-details">';
         #echo '<img src="' . $collegeDetails['image'] . '" alt="College Image">';
         echo '<h2>' . $row['university'] . ' - ' . $row['institution'] . '</h2>';
@@ -122,12 +121,7 @@ if (isset($_GET['institution'])) {
 
         <div class="image-gallery">
             <h2>Images</h2>
-            <?php
-            // Loop through images and display them
-            foreach ($collegeDetails['images'] as $image) {
-                echo '<img src="' . $image . '" alt="College Image">';
-            }
-            ?>
+            <img src="../uploads/<?php echo $row['certificate']; ?>" alt="" >
         </div>
     </div>
 </body>
