@@ -34,7 +34,7 @@
             font-family: monospace;
         }
     </style>
-    <link rel="icon" href="images/note.png">
+    <link rel="icon" href="../images/note.png">
     <title>MyCl | Account</title>
 </head>
 <body>
@@ -58,21 +58,32 @@
         <div class="input-types">
             <h1 class="heading">User Info</h1>
         
-            <?php echo "<input type='text' name='firstname' class='input-1' readonly placeholder= " .$row['firstname']  . ">";?>   <br> <br>
-            <?php echo '<input type="text" name="lastname" class="input-2" readonly placeholder=' . $row['lastname'] . '>';?> <br> <br>
-            <?php echo '<input type="text" name="email" class="input-3" readonly placeholder='. $row['email'] . '>';?> <br> <br>
-            <?php echo '<input type="text" name="password" class="input-3" readonly placeholder='. $row['password'] . '>';?> <br> <br>
+            <?php echo "<input type='text' name='firstname' class='input-1' value= " .$row['firstname']  . ">";?>   <br> <br>
+            <?php echo '<input type="text" name="lastname" class="input-2" value=' . $row['lastname'] . '>';?> <br> <br>
+            <?php echo '<input type="text" name="email" class="input-3" value='. $row['email'] . '>';?> <br> <br>
+            <?php echo '<input type="text" name="password" class="input-3" value='. $row['password'] . '>';?> <br> <br>
             <div class="btn">
                 <input type="submit" value="Update" class="update-btn" name="button">
             </div>
         </div>  
     </form>
-    <?php 
-       if (isset($_POST['button'])) {
-        echo '<div class="input-types">';
-        echo "<input type='text' name='firstname' class='input-1' placeholder= " .$row['firstname']  . ">";
-        echo '</div>';
-       }
-    ?>
 </body>
 
+<?php 
+    include('../backend-php/connect.php');
+
+    if (isset($_POST['button'])) {
+        $firstname = $_POST['firstname'];
+        $lastname = $_POST['lastname'];
+        $email = $_POST['email'];
+        $sql = "SELECT * FROM registered_users";
+        $result = $conn->query($sql);
+        $row = $result->fetch_assoc();
+        $id  = $row['id'];
+
+        $stmt = $conn->prepare("UPDATE firstname = ?, lastname = ?, email = ? WHERE id = ?");
+        $stmt->bind_param("ssss", $firstname, $lastname, $email, $id);
+        $stmt->execute();
+    }
+
+?>
