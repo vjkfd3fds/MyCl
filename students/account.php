@@ -54,7 +54,7 @@
         }
     }
     ?>
-    <form action="account.php" method="POST"> <br> <br>
+    <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST"> <br> <br>
         <div class="input-types">
             <h1 class="heading">User Info</h1>
         
