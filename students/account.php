@@ -77,11 +77,13 @@
         $lastname = $_POST['lastname'];
         $email = $_POST['email'];
         $sql = "SELECT * FROM registered_users";
-        $result = $conn->query($sql);
+        $stmt1 = $conn->prepare($sql);
+        $stmt1->execute();
+        $result = $stmt1->get_result();
         $row = $result->fetch_assoc();
         $id  = $row['id'];
 
-        $stmt = $conn->prepare("UPDATE firstname = ?, lastname = ?, email = ? WHERE id = ?");
+        $stmt = $conn->prepare("UPDATE registered_users SET firstname = ?, lastname = ?, email = ? WHERE id = ?");
         $stmt->bind_param("ssss", $firstname, $lastname, $email, $id);
         $stmt->execute();
     }
