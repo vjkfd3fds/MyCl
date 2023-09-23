@@ -264,8 +264,8 @@
                     <img src="#"
                         alt="">
                     <h2>Shafiiq</h2>
-                    <p>Head of the Programmer</p>
-                    <img src="../profile/ba927ff34cd961ce2c184d47e8ead9f6.jpg">
+                    <p>Frontend Developer</p>
+                    <img src="admin-images/shafeek.jpg" alt="">
                 </div>
             </div>
 
@@ -273,9 +273,9 @@
                 <div class="logo">
                     <img src="#"
                         alt="">
-                    <h2>Thushar</h2>
-                    <p>Head of the Programmer</p>
-                    <img src="../profile/cffa83ebe67a00b3dfead14ce35060e9.png" alt="">
+                    <h2>Jxy</h2>
+                    <p>Backend Developer</p>
+                    <img src="admin-images/jxy.jpg" alt="">
                 </div>
             </div>
 
