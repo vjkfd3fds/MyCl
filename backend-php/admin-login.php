@@ -1,8 +1,6 @@
 <?php 
     
     include('connect.php');
-    $username = $password = "";
-    $error = " ";
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $username = $_POST['username'];
