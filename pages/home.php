@@ -271,7 +271,7 @@
         <div class="col-md-6 col-lg-4">
           <div class="box ">
             <div class="img-box">
-              <img src="images/s1.png" alt="">
+              <img src="../images/s1.png" alt="">
             </div>
             <div class="detail-box">
               <h4>
@@ -286,7 +286,7 @@
         <div class="col-md-6 col-lg-4">
           <div class="box ">
             <div class="img-box">
-              <img src="images/s2.png" alt="">
+              <img src="../images/s2.png" alt="">
             </div>
             <div class="detail-box">
               <h4>
@@ -301,7 +301,7 @@
         <div class="col-md-6 col-lg-4 ">
           <div class="box ">
             <div class="img-box">
-              <img src="images/s3.png" alt="">
+              <img src="../images/s3.png" alt="">
             </div>
             <div class="detail-box">
               <h4>
@@ -316,7 +316,7 @@
         <div class="col-md-6 col-lg-4">
           <div class="box ">
             <div class="img-box">
-              <img src="images/s4.png" alt="">
+              <img src="../images/s4.png" alt="">
             </div>
             <div class="detail-box">
               <h4>
@@ -331,7 +331,7 @@
         <div class="col-md-6 col-lg-4">
           <div class="box ">
             <div class="img-box">
-              <img src="images/s5.png" alt="">
+              <img src="../images/s5.png" alt="">
             </div>
             <div class="detail-box">
               <h4>
@@ -345,7 +345,7 @@
         <div class="col-md-6 col-lg-4">
           <div class="box ">
             <div class="img-box">
-              <img src="images/s6.png" alt="">
+              <img src="../images/s6.png" alt="">
             </div>
             <div class="detail-box">
               <h4>
@@ -383,7 +383,7 @@
         </div>
         <div class="col-md-6 ">
           <div class="img-box">
-            <img src="images/about-img.png" alt="">
+            <img src="../images/about-img.png" alt="">
           </div>
         </div>
 
@@ -414,7 +414,7 @@
                 <div class="col-md-10 mx-auto">
                   <div class="box">
                     <div class="img-box">
-                      <img src="images/bill.webp" alt="">
+                      <img src="../images/bill.webp" alt="">
                     </div>
                     <div class="detail-box">
                       <div class="client_info">
@@ -444,7 +444,7 @@
                 <div class="col-md-10 mx-auto">
                   <div class="box">
                     <div class="img-box">
-                      <img src="images/elon.jpg" alt="">
+                      <img src="../images/elon.jpg" alt="">
                     </div>
                     <div class="detail-box">
                       <div class="client_info">
@@ -473,7 +473,7 @@
                 <div class="col-md-10 mx-auto">
                   <div class="box">
                     <div class="img-box">
-                      <img src="images/mark.cms" alt="">
+                      <img src="../images/mark.cms" alt="">
                     </div>
                     <div class="detail-box">
                       <div class="client_info">
