@@ -170,7 +170,7 @@
 									</div>
 								</div>
 							</div>
-							<input type="file" name="uploadfile">
+							<input type="file" name="uploadfile" required>
 
 							<br>
 
