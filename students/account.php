@@ -33,6 +33,16 @@
             text-align: center;
             font-family: monospace;
         }
+        .a-1 {
+            text-decoration: none; 
+            font-size: 20px; 
+            font-family: monospace; 
+            color: black;
+        }
+
+        .a-1:hover {
+            text-decoration: underline;
+        }
     </style>
     <link rel="icon" href="../images/note.png">
     <title>MyCl | Account</title>
@@ -61,7 +71,7 @@
             <?php echo "<input type='text' name='firstname' class='input-1' value= " .$row['firstname']  . ">";?>   <br> <br>
             <?php echo '<input type="text" name="lastname" class="input-2" value=' . $row['lastname'] . '>';?> <br> <br>
             <?php echo '<input type="text" name="email" class="input-3" value='. $row['email'] . '>';?> <br> <br>
-            <?php echo '<input type="text" name="password" class="input-3" value='. $row['password'] . '>';?> <br> <br>
+            <a class="a-1" href="update-password.php">Update password</a> <br><br>
             <div class="btn">
                 <input type="submit" value="Update" class="update-btn" name="button">
             </div>

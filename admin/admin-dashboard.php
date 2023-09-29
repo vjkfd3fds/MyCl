@@ -62,7 +62,7 @@
                     <span class="material-icons-sharp">
                         inventory
                     </span>
-                    <h3>Over view</h3>
+                    <h3>Overview</h3>
 
                 </a>
 
