@@ -100,17 +100,17 @@
   <div class="container">
         <div class="custom-form">
             <h1 style="text-align: center; padding: 25px;">Update Password</h1>
-            <form method="post" action="../backend-php/feedback.php">
+            <form method="post" onsubmit="return validate();">
                 <!-- Name input -->
                 <div class="form-group">
                     <label for="form4Example1">New password</label>
-                    <input type="text" id="form4Example1" class="form-control" name="name"/>
+                    <input type="password" id="password1" class="form-control" name="name"/>
                 </div>
 
                 <!-- Email input -->
                 <div class="form-group">
                     <label for="form4Example2">Confirm password</label>
-                    <input type="email" id="form4Example2" class="form-control" name="email"/>
+                    <input type="password" id="password2" class="form-control" name="email"/>
                 </div>
 
                 <!-- Submit button -->
@@ -129,7 +129,23 @@
   <script src="../js/bootstrap.js"></script>
   <!-- custom js -->
   <script src="../js/custom.js"></script>
+  <!-- custom js -->
+  <script>
+    function validate() {
+      var password = document.getElementById("password1").value;
+      var confirmPassword = document.getElementById("password2").value;
 
+      if (password !== confirmPassword) {
+        alert('passwords does not match');
+        return false;
+      } else if (password.length < 8) {
+        alert('password should be more than 8 characters');
+        return false;
+      }
+
+      return true;
+    }
+  </script>
 
 </body>
 

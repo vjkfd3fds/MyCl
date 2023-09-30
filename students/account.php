@@ -14,7 +14,6 @@
         .input-types {
             text-align: center; 
             margin-top: 5%;
-            bordder
         }
 
         .input-1, .input-2, .input-3, .input-4, .update-btn {

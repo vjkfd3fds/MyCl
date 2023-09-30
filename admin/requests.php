@@ -91,7 +91,7 @@
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (isset($_POST['pass'])) {
-            echo "Successfully registered their details. Will send them a message.";
+            echo "<script> alert('Successfully registered their details. Will send them a message.');</script>";
         } elseif (isset($_POST['reject'])) {
             $idToDelete = $_POST['reject']; 
 
@@ -143,8 +143,6 @@
     }
     $conn->close();
 ?>
-
-
 
 </body>
 </html>
