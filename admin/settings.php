@@ -1,4 +1,9 @@
+<?php 
+  if (!isset($_COOKIE['username'])) {
+    header('Location: ../pages/home.php');
+  }
 
+?>
 <?php 
   include('../backend-php/connect.php');
 
