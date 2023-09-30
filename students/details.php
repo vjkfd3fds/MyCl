@@ -205,7 +205,10 @@ if (isset($_GET['institution'])) {
                     </div>
                     <div class="input-group flex-nowrap">
                         <span class="input-group-text" id="addon-wrapping">@</span>
-                        <input type="text" class="form-control" placeholder="Comment" aria-label="Username" aria-describedby="addon-wrapping">
+                    <input name="email" type="email" class="form-control" placeholder="Comment" aria-label="Username" aria-describedby="addon-wrapping">
+                        Message:
+                        <span class="input-group-text" id="addon-wrapping">@</span>
+                        <input name="message" type="text" class="form-control" placeholder="Comment" aria-label="Username" aria-describedby="addon-wrapping">
                     </div>
                 </div>
                 <div class="modal-footer">
