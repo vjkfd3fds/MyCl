@@ -1,3 +1,33 @@
+
+<?php 
+  include('../backend-php/connect.php');
+
+  if (isset($_POST['update'])) {
+    $password = $_POST['password'];
+    $sql1 = "SELECT * FROM administration";
+    $stmt = $conn->prepare($sql1);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $row = $result->fetch_assoc();
+    $username = $row['username'];
+
+
+    $sql = "UPDATE administration SET password = ? WHERE username = ?";
+
+    $stmt1 = $conn->prepare($sql);
+    $stmt1->bind_param('ss', $password, $username);
+    if ($stmt1->execute() === TRUE) {
+      echo '<script>alert("successfull updated the password");</script>';
+    } else {
+      echo 'something went wrong' . $conn->error;
+    }
+
+    $conn->close();
+    $stmt1->close();
+  }
+
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -100,17 +130,17 @@
   <div class="container">
         <div class="custom-form">
             <h1 style="text-align: center; padding: 25px;">Update Password</h1>
-            <form method="post" onsubmit="return validate();">
+            <form method="post" action = '<?php echo $_SERVER['PHP_SELF']; ?>' onsubmit="return validate();">
                 <!-- Name input -->
                 <div class="form-group">
                     <label for="form4Example1">New password</label>
-                    <input type="password" id="password1" class="form-control" name="name"/>
+                    <input type="password" id="password1" class="form-control" name="password"/>
                 </div>
 
                 <!-- Email input -->
                 <div class="form-group">
                     <label for="form4Example2">Confirm password</label>
-                    <input type="password" id="password2" class="form-control" name="email"/>
+                    <input type="password" id="password2" class="form-control" name="password1"/>
                 </div>
 
                 <!-- Submit button -->
