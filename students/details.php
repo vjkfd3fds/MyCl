@@ -145,7 +145,7 @@ if (isset($_GET['institution'])) {
     </style>
 </head>
 <body>
-    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
         <div class="container">
             <h1>College Details</h1>
             
@@ -205,15 +205,12 @@ if (isset($_GET['institution'])) {
                     </div>
                     <div class="input-group flex-nowrap">
                         <span class="input-group-text" id="addon-wrapping">@</span>
-                    <input name="email" type="email" class="form-control" placeholder="Comment" aria-label="Username" aria-describedby="addon-wrapping">
-                        Message:
-                        <span class="input-group-text" id="addon-wrapping">@</span>
                         <input name="message" type="text" class="form-control" placeholder="Comment" aria-label="Username" aria-describedby="addon-wrapping">
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary" name="lol">Submit</button>
                 </div>
                 </div>
             </div>
@@ -221,6 +218,26 @@ if (isset($_GET['institution'])) {
             </div>
         </div>
     </form>
+<?php
+    if (isset($_POST['lol'])) {
+    $institution = $_POST['institution']; // Get the institution name from the form
+    $stars = $_POST['rate'];
+    $comment = $_POST['message'];
+
+    // Prepare the SQL statement to insert the review data
+    $sql = "INSERT INTO reviews (institution, stars, comments) VALUES (?, ?, ?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param('sss', $institution, $stars, $comment);
+
+    // Execute the SQL statement
+    if ($stmt->execute()) {
+        echo '<script>alert("Successfully added your review");</script>';
+    } else {
+        echo '<script>alert("Error adding your review");</script>';
+    }
+}
+
+?>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
