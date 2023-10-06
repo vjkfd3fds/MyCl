@@ -76,7 +76,7 @@
 							       <div class="item p-3">
 								        <div class="row gx-2 justify-content-between align-items-center">
 									        <div class="col-auto">
-										       <img class="profile-image" src="assets/images/profiles/profile-1.png" alt="">
+										       <img class="profile-image" src="../college-profile/<?php echo $row['profile'];?>" alt="">
 									        </div><!--//col-->
 									        <div class="col">
 										        <div class="info"> 
@@ -157,7 +157,7 @@
 					    </div><!--//app-utility-item-->
 			            
 			            <div class="app-utility-item app-user-dropdown dropdown">
-				            <a class="dropdown-toggle" id="user-dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><img src="assets/images/user.png" alt="user profile"></a>
+				            <a class="dropdown-toggle" id="user-dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><img src="../college-profile/<?php echo $row['profile'];?>" alt="user profile"></a>
 				            <ul class="dropdown-menu" aria-labelledby="user-dropdown-toggle">
 								<li><a class="dropdown-item" href="account.html">Account</a></li>
 								<li><a class="dropdown-item" href="settings.html">Settings</a></li>
