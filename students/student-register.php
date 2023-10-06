@@ -57,7 +57,7 @@
 								$dob = $_POST['dob'];
 							
 								// Formatting syntax for date and time
-								$formattedDob = date('Y-m-d', strtotime($_POST['dob']));$formattedDob = date('Y-m-d', strtotime($_POST['dob']));
+								$formattedDob = date('Y-m-d', strtotime($_POST['dob']));
 								$checkingEmail = $_POST['email'];
 							
 								// Use the correct file input name "uploadfile"
