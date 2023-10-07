@@ -16,7 +16,7 @@
 <!DOCTYPE html>
 <html lang="en"> 
 <head>
-    <title>Portal - Bootstrap 5 Admin Dashboard Template For Developers</title>
+	<title>MyCl | Dashboard</title>
     
     <!-- Meta -->
     <meta charset="utf-8">
@@ -25,7 +25,7 @@
     
     <meta name="description" content="Portal - Bootstrap 5 Admin Dashboard Template For Developers">
     <meta name="author" content="Xiaoying Riley at 3rd Wave Media">    
-    <link rel="shortcut icon" href="favicon.ico"> 
+    <link rel="shortcut icon" href="../images/note.png"> 
     
     <!-- FontAwesome JS-->
     <script defer src="assets/plugins/fontawesome/js/all.min.js"></script>
@@ -60,9 +60,28 @@
 				            <a class="dropdown-toggle" id="user-dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><img src="../college-profile/<?php echo $row['profile'];?>" alt="user profile"></a>
 				            <ul class="dropdown-menu" aria-labelledby="user-dropdown-toggle">
 								<li><a class="dropdown-item" href="account.php">Account</a></li>
+								<?php
+									if (isset($_COOKIE['cid'])) {
+										$user_id = $_COOKIE['cid'];
+										// Perform actions that a logged-in user can do
+										echo '<a>
+										<form method="post" action="index.php">
+												<li><hr class="dropdown-divider"></li>
+												<input type="submit" name="logout" value="Logout" class="logout-button">
+											</form>
+											</a>';
+									} 
+
+									if (isset($_POST['logout'])) {
+										// Set the expiration time of the cookie to a time in the past to delete it
+										setcookie("cid", "", time() - 3600, "/");
+										header("Location: college-login.php"); // Redirect to the login page after logout
+										exit;
+									}
+								?>
 						
-								<li><hr class="dropdown-divider"></li>
-								<li><a class="dropdown-item" href="login.php">Log Out</a></li>
+								
+								
 							</ul>
 			            </div><!--//app-user-dropdown--> 
 		            </div><!--//app-utilities-->
@@ -128,7 +147,7 @@
 					        </a><!--//nav-link-->
 					        <div id="submenu-1" class="collapse submenu submenu-1" data-bs-parent="#menu-accordion">
 						        <ul class="submenu-list list-unstyled">
-							        <li class="submenu-item"><a class="submenu-link" href="notifications.php">Notifications</a></li>
+							        
 							        <li class="submenu-item"><a class="submenu-link" href="account.php">Account</a></li>
 							        
 						        </ul>

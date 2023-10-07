@@ -16,7 +16,7 @@
 <!DOCTYPE html>
 <html lang="en"> 
 <head>
-    <title>Portal - Bootstrap 5 Admin Dashboard Template For Developers</title>
+    <title>MyCl | College Dashboard</title>
     
     <!-- Meta -->
     <meta charset="utf-8">
@@ -133,7 +133,7 @@
 					        </a><!--//nav-link-->
 					        <div id="submenu-1" class="collapse submenu submenu-1" data-bs-parent="#menu-accordion">
 						        <ul class="submenu-list list-unstyled">
-							        <li class="submenu-item"><a class="submenu-link" href="notifications.php">Notifications</a></li>
+							        
 							        <li class="submenu-item"><a class="submenu-link" href="account.php">Account</a></li>
 							        
 							        
