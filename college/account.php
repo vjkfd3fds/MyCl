@@ -352,6 +352,8 @@
     <!-- Page Specific JS -->
     <script src="assets/js/app.js"></script> 
 
+	<!--Custom JS-->
+	
 </body>
 </html> 
 
