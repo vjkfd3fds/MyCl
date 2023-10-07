@@ -14,6 +14,30 @@
 ?>
 
 
+<?php 
+
+	if (isset($_POST['manage'])) {
+		if (isset($_COOKIE['cid'])) {
+			$cid = $_COOKIE['cid'];
+		}
+
+		$firstname = $_POST['firstname'];
+		$lastname = $_POST['lastname'];
+		$email = $_POST['email'];
+
+		$sql = "UPDATE college_users SET firstname = ?, lastname = ?, email = ? WHERE cid = ?";
+		$stmt = $conn->prepare($sql);
+		if ($stmt->execute() === TRUE) {
+			echo '<script>alert("Successfully updated your info");</script>';
+		} else {
+			$conn->error;
+			$stmt->error;
+		}
+		$conn->close();
+		$stmt->close();
+	}
+?>
+
 <!DOCTYPE html>
 <html lang="en"> 
 <head>
@@ -33,6 +57,12 @@
     
     <!-- App CSS -->  
     <link id="theme-style" rel="stylesheet" href="assets/css/portal.css">
+	<style>
+		input {
+			border: none;
+			outline: none;
+		}
+	</style>
 
 </head> 
 
@@ -208,7 +238,7 @@
 										<div class="row justify-content-between align-items-center">
 											<div class="col-auto">
 												<div class="item-label"><strong>First Name</strong></div>
-												<input type="text" class="item-data" value="<?php echo $row['firstname']; ?>">
+												<input type="text" class="item-data" value="<?php echo $row['firstname']; ?>" name="firstname">
 											</div><!--//col-->
 											
 										</div><!--//row-->
@@ -217,7 +247,7 @@
 										<div class="row justify-content-between align-items-center">
 											<div class="col-auto">
 												<div class="item-label"><strong>Last Name</strong></div>
-												<input type="text" class="item-data" value="<?php echo $row['lastname']; ?>" >
+												<input type="text" class="item-data" value="<?php echo $row['lastname']; ?>" name="lastname">
 											</div><!--//col-->
 											<!--//col-->
 										</div><!--//row-->
@@ -226,7 +256,7 @@
 										<div class="row justify-content-between align-items-center">
 											<div class="col-auto">
 												<div class="item-label"><strong>Email</strong></div>
-												<input type="text" class="item-data" value="<?php echo $row['email'];?>">
+												<input type="text" class="item-data" value="<?php echo $row['email'];?>" name="email">
 											</div><!--//col-->
 											<!--//col-->
 										</div><!--//row-->
@@ -234,7 +264,7 @@
 								
 								</div><!--//app-card-body-->
 								<div class="app-card-footer p-4 mt-auto">
-									<input type="submit" class="btn app-btn-secondary" value="Manage Profile">
+									<input type="submit" class="btn app-btn-secondary" value="Manage Profile" name="manage">
 								</div><!--//app-card-footer-->
 							
 							</div>
