@@ -221,7 +221,7 @@
 		    <div class="container-xl">
 			    
 			    <h1 class="app-page-title">My Account</h1>
-				<form action="account.php" method="post">
+				<form action="account.php" method="post" onsubmit="validate();">
 					<div class="row gy-4">
 						<div class="col-12 col-lg-6">
 							<div class="app-card app-card-account shadow-sm d-flex flex-column align-items-start">
@@ -314,7 +314,7 @@
 										<div class="row justify-content-between align-items-center">
 											<div class="col-auto">
 												<div class="item-label"><strong>Password</strong></div>
-												<input type="password" class="item-data" value="<?php echo $row['password'];?>">
+												<input type="password" id="password" class="item-data" value="<?php echo $row['password'];?>">
 											</div><!--//col-->
 											<!--//col-->
 										</div><!--//row-->
@@ -323,7 +323,7 @@
 										<div class="row justify-content-between align-items-center">
 											<div class="col-auto">
 												<div class="item-label"><strong>Confirm Password</strong></div>
-												<input type="password" class="item-data" value="">
+												<input type="password" id="c" class="item-data" value="">
 											</div><!--//col-->
 										<!--//col-->
 										</div><!--//row-->
@@ -353,6 +353,24 @@
     <script src="assets/js/app.js"></script> 
 
 	<!--Custom JS-->
+
+	<script>
+		function validate(){
+			let password = document.getElementById('password').value;
+			let confirm = document.getElementById('c').value;
+
+			if (password !=confirm) {
+				alert('passwords are not same');
+				return false;
+			}
+
+			if (password.length < 8) {
+				alert('password should be more than 8 characters');
+				return false;
+			}
+			return true;
+		}
+	</script>
 	
 </body>
 </html> 
