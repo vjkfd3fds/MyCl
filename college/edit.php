@@ -14,46 +14,7 @@
 ?>
 
 
-<?php 
-    include_once "../backend-php/connect.php";
 
-    if (isset($_POST['manage'])) {
-        if (isset($_COOKIE['cid'])) {
-            $cid = $_COOKIE['cid'];
-        }
-
-        $firstname = $_POST['firstname'];
-        $lastname = $_POST['lastname'];
-        $email = $_POST['email'];
-
-        
-        $checkSql = "SELECT * FROM college_users WHERE email = ?";
-        $checkStmt = $conn->prepare($checkSql);
-        $checkStmt->bind_param("s", $email);
-        $checkStmt->execute();
-        $checkResult = $checkStmt->get_result();
-
-        if ($checkResult->num_rows > 0) {
-            echo '<script>alert("This email already exists");</script>';
-            $checkStmt->close();
-        } else {
-            
-            $updateSql = "UPDATE college_users SET firstname = ?, lastname = ?, email = ? WHERE cid = ?";
-            $updateStmt = $conn->prepare($updateSql);
-            $updateStmt->bind_param("ssss", $firstname, $lastname, $email, $cid);
-            
-            if ($updateStmt->execute() === TRUE) {
-                echo '<script>alert("Successfully updated your info");</script>';
-            } else {
-                echo "Error: " . $updateStmt->error;
-            }
-            
-            $updateStmt->close();
-        }
-
-        $conn->close();
-    }
-?>
 
 
 <!DOCTYPE html>

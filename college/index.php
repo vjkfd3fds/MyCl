@@ -149,6 +149,7 @@
 						        <ul class="submenu-list list-unstyled">
 							        
 							        <li class="submenu-item"><a class="submenu-link" href="account.php">Account</a></li>
+									<li class="submenu-item"><a class="submenu-link" href="edit.php">Edit Details</a></li>
 							        
 						        </ul>
 					        </div>
