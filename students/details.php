@@ -218,24 +218,6 @@ if (isset($_GET['institution'])) {
             </div>
         </div>
     </form>
-<?php
-    if (isset($_POST['lol'])) {
-    $institution = $_POST['institution']; // Get the institution name from the form
-    $stars = $_POST['rate'];
-    $comment = $_POST['message'];
-
-    // Prepare the SQL statement to insert the review data
-    $sql = "INSERT INTO reviews (institution, stars, comments) VALUES (?, ?, ?)";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param('sss', $institution, $stars, $comment);
-
-    // Execute the SQL statement
-    if ($stmt->execute()) {
-        echo '<script>alert("Successfully added your review");</script>';
-    } else {
-        echo '<script>alert("Error adding your review");</script>';
-    }
-}
 
 ?>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
