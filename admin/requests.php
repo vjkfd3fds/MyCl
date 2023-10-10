@@ -4,6 +4,10 @@
     }
 ?>
 
+<?php 
+    include_once '../backend-php/connect.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -88,23 +92,6 @@
     <h1 style="font-family: monospace;">New-Requests</h1>
     <?php 
     include('../backend-php/connect.php');
-
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        if (isset($_POST['pass'])) {
-            echo "<script> alert('Successfully registered their details. Will send them a message.');</script>";
-        } elseif (isset($_POST['reject'])) {
-            $idToDelete = $_POST['reject']; 
-
-            $sql = "DELETE FROM college_details WHERE id = ?";
-            $stmt = $conn->prepare($sql);
-            $stmt->bind_param("s", $idToDelete);
-            if ($stmt->execute()) {
-                echo '<p>Deleted</p>';
-            } else {
-                echo '<p>Error deleting record</p>';
-            }
-        }
-    }
 
     $sql = "SELECT * FROM college_details";
     $result = $conn->query($sql);
