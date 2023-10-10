@@ -1,4 +1,4 @@
-<?php error_reporting(0); ?>
+
 
 <?php 
     if (!$_COOKIE['id']) {
@@ -247,37 +247,44 @@
         include('../backend-php/connect.php');
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-			if(isset($_POST['search'])) {
-				$institution = $_POST['search'];
-            	$institution = $conn->real_escape_string($institution);
-            	$sql = "SELECT * FROM college_details WHERE institution = '$institution'";
-            	$result = $conn->query($sql);
-                $row = $result->fetch_assoc();
-                if ($row['status'] == 'unverified') {
-                    echo '<script> alert("That univerisity/college is not yet verified.");</script>';
-                }
-            	if ($result->num_rows > 0) {
-					echo '<div class="result-box">';
-					echo '<h2 class="result-heading">Search Results:</h2>';
-					while ($row = $result->fetch_assoc()) { 
-						echo '<div class="feedback-card">';
-                    	echo '<h3>' . $row["institution"] . '</h3>';
+            if(isset($_POST['search'])) {
+                $institution = $_POST['search'];
+                $institution = $conn->real_escape_string($institution);
+                $sql = "SELECT * FROM college_details WHERE institution = '$institution'";
+                $result = $conn->query($sql);
+                $unverifiedFound = false;
+                
+                 if ($result->num_rows > 0) {
+                    echo '<div class="result-box">';
+                    echo '<h2 class="result-heading">Search Results:</h2>';
+                    
+                    while ($row = $result->fetch_assoc()) { 
+                        echo '<div class="feedback-card">';
+                        echo '<h3>' . $row["institution"] . '</h3>';
                         echo '<div class="btn-box">';
                         echo '<a href="details.php?institution=' . urlencode($row["institution"]) . '" class="btn-1">';
                         echo 'Read More';
                         echo '</a>';
                         echo '</div>';
-                    	echo '</div>';
-               		}
-					echo "</div>";
-            	} else {
+                        echo '</div>';
+                        if ($row['status'] == 'unverified') {
+                            $unverifiedFound = true;
+                        }
+                    }
+                    
+                    echo "</div>";
+                    
+                        if ($unverifiedFound) {
+                            echo '<script> alert("One or more universities/colleges are not yet verified.");</script>';
+                        }
+                } else {
                     echo "No results found.";
                 }
-        	} 
-   		}
+                
+            } 
+        }
+?>
 
-    
-    ?>
     <!-- Search using university names -->
 
      <?php 
