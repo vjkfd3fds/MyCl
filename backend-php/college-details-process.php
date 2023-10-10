@@ -8,6 +8,10 @@
         if (isset($_POST['course']) && is_array($_POST['course'])) {
             $selectedCourses = implode(',', array_map('trim', $_POST['course']));
         }
+
+        if (isset($_COOKIE['cid'])) {
+            $cid = $_COOKIE['cid'];
+        }
         
         $university = $_POST['university'];
         $institution = $_POST['institution'];
@@ -41,7 +45,7 @@
             VALUES ('$university', '$institution', '$state', '$district', '$address', '$programs', '$selectedCourses', '$email', '$number', '$totalSeats', '$reserved', '$management', '$about', '$filename')";
             
             if (move_uploaded_file($tempname, $folder) && $conn->query($sql) === TRUE) {
-                header('Location: ../../php-project/college/college-dashboard.php');
+                header('Location: ../../php-project/college/index.php');
             } else {
             }
         }
