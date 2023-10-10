@@ -123,7 +123,7 @@
                   if (isset($_COOKIE['cid'])) {
                       echo '<a class="dropdown-item" href="../college/index.php">College Dashboard</a>';
                   } else {
-                    echo '<a class="dropdown-item" href="../college/index.php">College</a>';
+                    echo '<a class="dropdown-item" href="../college/college-register.php">College</a>';
                   }  
                   ?>
                     </div>

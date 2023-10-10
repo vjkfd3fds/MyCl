@@ -738,15 +738,19 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group">
-
-                                        <input type="file" name="uploadfile">
+                                <div class="d-flex justify-content-center mt-5">
+                                    Upload the certificate: &NegativeThinSpace; &NegativeThinSpace;<input type="file" name="uploadfile">
                                 </div>
 
 
 
                                 <div class="d-flex justify-content-center mt-5">
                                     <button type="submit" class="btn btn-success" style="width: 15em;">Submit</button>
+                                </div>
+
+                                <div class="form-group">
+                                    <a style="color: black;"class="d-flex justify-content-center mt-5" href="index.php">
+                                        Go back to home if you already submitted your data</a>
                                 </div>
 
                             </form>

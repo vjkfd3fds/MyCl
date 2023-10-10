@@ -112,8 +112,25 @@
 				            <ul class="dropdown-menu" aria-labelledby="user-dropdown-toggle">
 								<li><a class="dropdown-item" href="account.php">Account</a></li>
 								
-								<li><hr class="dropdown-divider"></li>
-								<li><a class="dropdown-item" href="login.php">Log Out</a></li>
+								<?php
+									if (isset($_COOKIE['cid'])) {
+										$user_id = $_COOKIE['cid'];
+										// Perform actions that a logged-in user can do
+										echo '<a>
+										<form method="post" action="index.php">
+												<li><hr class="dropdown-divider"></li>
+												<input type="submit" name="logout" value="Logout" class="logout-button">
+											</form>
+											</a>';
+									} 
+
+									if (isset($_POST['logout'])) {
+										// Set the expiration time of the cookie to a time in the past to delete it
+										setcookie("cid", "", time() - 3600, "/");
+										header("Location: college-login.php"); // Redirect to the login page after logout
+										exit;
+									}
+								?>
 							</ul>
 			            </div><!--//app-user-dropdown--> 
 		            </div><!--//app-utilities-->
@@ -180,7 +197,7 @@
 						        <ul class="submenu-list list-unstyled">
 							        
 							        <li class="submenu-item"><a class="submenu-link active" href="account.php">Account</a></li>
-									<li class="submenu-item"><a class="submenu-link active" href="edit.php">Edit Details</a></li>
+									<li class="submenu-item"><a class="submenu-link" href="edit.php">Edit Details</a></li>
 							        
 							        
 						        </ul>
