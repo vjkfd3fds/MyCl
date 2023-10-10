@@ -71,9 +71,10 @@
     <!-- App CSS -->  
     <link id="theme-style" rel="stylesheet" href="assets/css/portal.css">
 	<style>
-		input {
+		input[type='text'] {
 			border: none;
 			outline: none;
+			width: 300%;
 		}
 	</style>
 
