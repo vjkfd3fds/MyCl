@@ -22,7 +22,7 @@
             $rows = $result->fetch_assoc();
             $cid = $rows['cid'];
             setcookie("cid", $cid, time() + 3600, "/");
-            header('Location: ../../php-project/college/college-details-process.php');
+            header('Location: ../../php-project/college/college-details.php');
             exit();
         } else {
             // User does not exist or wrong credentials

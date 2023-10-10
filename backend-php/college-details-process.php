@@ -41,8 +41,8 @@
             if ($result->num_rows > 0) {
                 echo "already exists";
             }
-            $sql = "INSERT INTO college_details (university, institution, state, district, address, programs, course, email, number, total_seats, reserved_seats, management_seats, about, certificate)
-            VALUES ('$university', '$institution', '$state', '$district', '$address', '$programs', '$selectedCourses', '$email', '$number', '$totalSeats', '$reserved', '$management', '$about', '$filename')";
+            $sql = "INSERT INTO college_details (cid, university, institution, state, district, address, programs, course, email, number, total_seats, reserved_seats, management_seats, about, certificate)
+            VALUES ('$cid', '$university', '$institution', '$state', '$district', '$address', '$programs', '$selectedCourses', '$email', '$number', '$totalSeats', '$reserved', '$management', '$about', '$filename')";
             
             if (move_uploaded_file($tempname, $folder) && $conn->query($sql) === TRUE) {
                 header('Location: ../../php-project/college/index.php');
