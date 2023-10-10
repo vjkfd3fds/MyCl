@@ -6,6 +6,16 @@
 
 <?php 
     include_once '../backend-php/connect.php';
+
+    if (isset($_POST['pass'])) {
+        $sql1 = "SELECT * FROM college_details";
+        $result = $conn->query($sql1);
+        $row = $result->fetch_assoc();
+        $cid = $row['cid'];
+
+        $sql = "UPDATE college_details SET status = 'verified' WHERE cid = '$cid'";
+        $result1 = $conn->query($sql);
+    } 
 ?>
 
 <!DOCTYPE html>
