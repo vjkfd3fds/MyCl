@@ -1,3 +1,5 @@
+<?php error_reporting(0); ?>
+
 <?php 
     if (!$_COOKIE['id']) {
         header('Location: ../pages/home.php');
@@ -250,6 +252,10 @@
             	$institution = $conn->real_escape_string($institution);
             	$sql = "SELECT * FROM college_details WHERE institution = '$institution'";
             	$result = $conn->query($sql);
+                $row = $result->fetch_assoc();
+                if ($row['status'] == 'unverified') {
+                    echo '<script> alert("That univerisity/college is not yet verified.");</script>';
+                }
             	if ($result->num_rows > 0) {
 					echo '<div class="result-box">';
 					echo '<h2 class="result-heading">Search Results:</h2>';
