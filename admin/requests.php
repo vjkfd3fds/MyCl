@@ -132,7 +132,7 @@
             <?php
             echo '</div>';
             echo '<form action="requests.php" method="post">';
-            echo '<input type="hidden" name="reject" value="' . $row["id"] . '">';
+            echo '<input type="hidden" name="reject" value="' . $row["cid"] . '">';
             echo '<input type="submit" value="pass" name="pass" class="random-button">';
             echo '<input type="submit" value="Delete" name="delete_row" class="random-button">';
             echo '</form>';

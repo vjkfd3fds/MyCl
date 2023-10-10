@@ -55,7 +55,7 @@
                     <span class="material-icons-sharp">
                         mail_outline
                     </span>
-                    <h3>New Requests</h3>
+                    <h3>Requests</h3>
                 </a>
 
                 <a href="overview.php" id="">
