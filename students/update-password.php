@@ -100,17 +100,17 @@
   <div class="container">
         <div class="custom-form">
             <h1 style="text-align: center; padding: 25px;">Update Password</h1>
-            <form method="post" action="update-password.php">
+            <form method="post" action="update-password.php" onsubmit="return validate();">
                 <!-- Name input -->
                 <div class="form-group">
                     <label for="form4Example1">New password</label>
-                    <input type="text" id="form4Example1" class="form-control" name="current"/>
+                    <input type="text" id="form4Example1" class="form-control" name="newpass" id="newpass"/>
                 </div>
 
                 <!-- Email input -->
                 <div class="form-group">
                     <label for="form4Example2">Confirm password</label>
-                    <input type="text" id="form4Example2" class="form-control" name="newpass"/>
+                    <input type="text" id="form4Example2" class="form-control" name="con" id="con"/>
                 </div>
 
                 <!-- Submit button -->
@@ -122,20 +122,16 @@
     <?php 
         include('../backend-php/connect.php');
 
-        if (isset($_POST['update'])) {
-            $current = $_POST['current'];
-            $newpass = $_POST['newpass'];
-            $sql = "SELECT * FROM registerered_users";
-            $stmt1 = $conn->prepare($sql);
-            $stmt1->execute();
-            $result = $stmt1->get_result();
-            $row = $result->fetch_assoc();
-            $id = $row['id'];
+        if (isset($_POST['update']) && isset($_COOKIE['id'])) {
+          $id = $_COOKIE['id'];
+          $new = $_POST['newpass'];
+          $con = $_POST['con'];
 
-            $stmt = $conn->prepare("UPDATE registered_users SET password = ? WHERE id = ?");
-            $stmt->bind_param("ss", $password, $id);
-            $stmt->execute();
-
+          $sql = "UPDATE registered_users SET password = ? WHERE id = ?";
+          $stmt = $conn->prepare($sql);
+          $stmt->bind_param("ss", $new, $id);
+          $stmt->execute();
+          header('Location: update-password.php');
         }
     ?>
   <!-- footer section -->
@@ -149,10 +145,10 @@
 
   <script>
     function validate() {
-        current = getElementByName('current').value;
-        newpass = getElementByName('newpass').value;
+        current = document.getElementById('con').value;
+        newpass = document.getElementById('newpass').value;
 
-        if (current == newpass) {
+        if (current !== newpass) {
             alert('both are not same');
             return false;
         }
