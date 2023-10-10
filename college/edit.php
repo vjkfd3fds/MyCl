@@ -3,7 +3,7 @@
 	if (isset($_COOKIE['cid'])) {
 		$cid = $_COOKIE['cid'];
 
-		$sql = "SELECT * FROM college_users WHERE cid = ?";
+		$sql = "SELECT * FROM college_details WHERE cid = ?";
 		$stmt = $conn->prepare($sql);
 		$stmt->bind_param("s", $cid);
 		$stmt->execute();
@@ -69,7 +69,7 @@
 			            <!--//app-utility-item-->
 			            
 			            <div class="app-utility-item app-user-dropdown dropdown">
-				            <a class="dropdown-toggle" id="user-dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><img class="profile-image" src="../college-profile/<?php echo $row['profile'];?>" alt=""></a>
+				            <a class="dropdown-toggle" id="user-dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><img class="profile-image" src="../college-profile/<?php echo $row['certificate'];?>" alt=""></a>
 				            <ul class="dropdown-menu" aria-labelledby="user-dropdown-toggle">
 								<li><a class="dropdown-item" href="account.php">Account</a></li>
 								
@@ -215,7 +215,7 @@
 										<div class="row justify-content-between align-items-center">
 											<div class="col-auto">
 												<div class="item-label"><strong>University</strong></div>
-												<input type="text" class="item-data" value="<?php echo $row['firstname']; ?>" name="firstname">
+												<input type="text" class="item-data" value="<?php echo $row['university']; ?>" name="firstname">
 											</div><!--//col-->
 											
 										</div><!--//row-->
@@ -223,8 +223,8 @@
 									<div class="item border-bottom py-3">
 										<div class="row justify-content-between align-items-center">
 											<div class="col-auto">
-												<div class="item-label"><strong>Last Name</strong></div>
-												<input type="text" class="item-data" value="<?php echo $row['lastname']; ?>" name="lastname">
+												<div class="item-label"><strong>Institution</strong></div>
+												<input type="text" class="item-data" value="<?php echo $row['institution']; ?>" name="lastname">
 											</div><!--//col-->
 											<!--//col-->
 										</div><!--//row-->
@@ -238,6 +238,87 @@
 											<!--//col-->
 										</div><!--//row-->
 									</div><!--//item-->
+									<div class="item border-bottom py-3">
+										<div class="row justify-content-between align-items-center">
+											<div class="col-auto">
+												<div class="item-label"><strong>State</strong></div>
+												<input type="text" class="item-data" value="<?php echo $row['state']; ?>" name="lastname">
+											</div><!--//col-->
+											<!--//col-->
+										</div><!--//row-->
+									</div>
+									<div class="item border-bottom py-3">
+										<div class="row justify-content-between align-items-center">
+											<div class="col-auto">
+												<div class="item-label"><strong>District</strong></div>
+												<input type="text" class="item-data" value="<?php echo $row['district']; ?>" name="lastname">
+											</div><!--//col-->
+											<!--//col-->
+										</div><!--//row-->
+									</div>
+									<div class="item border-bottom py-3">
+										<div class="row justify-content-between align-items-center">
+											<div class="col-auto">
+												<div class="item-label"><strong>Address</strong></div>
+												<input type="text" class="item-data" value="<?php echo $row['address']; ?>" name="lastname">
+											</div><!--//col-->
+											<!--//col-->
+										</div><!--//row-->
+									</div>
+									<div class="item border-bottom py-3">
+										<div class="row justify-content-between align-items-center">
+											<div class="col-auto">
+												<div class="item-label"><strong>Courses</strong></div>
+												<input type="text" class="item-data" value="<?php echo $row['course']; ?>" name="lastname">
+											</div><!--//col-->
+											<!--//col-->
+										</div><!--//row-->
+									</div>
+									<div class="item border-bottom py-3">
+										<div class="row justify-content-between align-items-center">
+											<div class="col-auto">
+												<div class="item-label"><strong>Phone Number</strong></div>
+												<input type="text" class="item-data" value="<?php echo $row['number']; ?>" name="lastname">
+											</div><!--//col-->
+											<!--//col-->
+										</div><!--//row-->
+									</div>
+									<div class="item border-bottom py-3">
+										<div class="row justify-content-between align-items-center">
+											<div class="col-auto">
+												<div class="item-label"><strong>Total Seats</strong></div>
+												<input type="text" class="item-data" value="<?php echo $row['total_seats']; ?>" name="lastname">
+											</div><!--//col-->
+											<!--//col-->
+										</div><!--//row-->
+									</div>
+									<div class="item border-bottom py-3">
+										<div class="row justify-content-between align-items-center">
+											<div class="col-auto">
+												<div class="item-label"><strong>Reserved Seats</strong></div>
+												<input type="text" class="item-data" value="<?php echo $row['reserved_seats']; ?>" name="lastname">
+											</div><!--//col-->
+											<!--//col-->
+										</div><!--//row-->
+									</div>
+									<div class="item border-bottom py-3">
+										<div class="row justify-content-between align-items-center">
+											<div class="col-auto">
+												<div class="item-label"><strong>Management Seats</strong></div>
+												<input type="text" class="item-data" value="<?php echo $row['management_seats']; ?>" name="lastname">
+											</div><!--//col-->
+											<!--//col-->
+										</div><!--//row-->
+									</div>
+									<div class="item border-bottom py-3">
+										<div class="row justify-content-between align-items-center">
+											<div class="col-auto">
+												<div class="item-label"><strong>Description</strong></div>
+												<input type="text" class="item-data" value="<?php echo $row['about']; ?>" name="lastname">
+											</div><!--//col-->
+											<!--//col-->
+										</div><!--//row-->
+									</div>
 								
 								</div><!--//app-card-body-->
 								<div class="app-card-footer p-4 mt-auto">
