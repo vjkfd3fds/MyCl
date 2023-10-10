@@ -180,6 +180,7 @@
 						        <ul class="submenu-list list-unstyled">
 							        
 							        <li class="submenu-item"><a class="submenu-link active" href="account.php">Account</a></li>
+									<li class="submenu-item"><a class="submenu-link active" href="edit.php">Edit Details</a></li>
 							        
 							        
 						        </ul>

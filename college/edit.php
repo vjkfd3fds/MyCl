@@ -13,6 +13,40 @@
 
 ?>
 
+<?php 
+	if (isset($_POST['manage'])) {
+		$university = $_POST['university'];
+		$institution = $_POST['institution'];
+		$state = $_POST['state'];
+		$district = $_POST['district'];
+		$address = $_POST['address'];
+		$programs = $_POST['programs'];
+		$course = $_POST['course'];
+		$email = $_POST['email'];
+		$number = $_POST['number'];
+		$total_seats = $_POST['total_seats'];
+		$reserved_seats = $_POST['reserved_seats'];
+		$management_seats = $_POST['management_seats'];
+		$about = $_POST['about'];
+
+		$sql = "UPDATE college_details SET university = ?, institution = ?, state = ?, district = ?, address = ?, programs = ?, course = ?,
+					email = ?, number = ?, total_seats = ?, reserved_seats = ?, management_seats = ?, about = ?";
+
+		$stmt = $conn->prepare($sql);
+		$stmt->bind_param("sssssssssssss", $university, $institution, $state, $district, $address, $programs, $course, $email, $number, $total_seats, 
+							$reserved_seats, $management_seats, $about);
+		
+		if ($stmt->execute() === TRUE) {
+			header('Location: edit.php');
+			echo '<script>alert("successfully updated "); </script>';
+			exit();
+		} else {
+			echo 'Something occured' . $conn->error . '<br>' . $stmt->error;
+		}
+		$conn->error;
+		$stmt->error;
+	}
+?>
 
 
 
@@ -183,7 +217,7 @@
 		    <div class="container-xl">
 			    
 			    <h1 class="app-page-title">My Account</h1>
-				<form action="account.php" method="post" onsubmit="validate();">
+				<form action="edit.php" method="post" onsubmit="validate();">
 					<div class="row gy-4">
 						<div class="col-12 col-lg-6">
 							<div class="app-card app-card-account shadow-sm d-flex flex-column align-items-start">
@@ -200,7 +234,7 @@
 											
 										</div><!--//col-->
 										<div class="col-auto">
-											<h4 class="app-card-title">Profile</h4>
+											<h4 class="app-card-title">Edit Details</h4>
 										</div><!--//col-->
 									</div><!--//row-->
 								</div><!--//app-card-header-->
@@ -215,7 +249,7 @@
 										<div class="row justify-content-between align-items-center">
 											<div class="col-auto">
 												<div class="item-label"><strong>University</strong></div>
-												<input type="text" class="item-data" value="<?php echo $row['university']; ?>" name="firstname">
+												<input type="text" class="item-data" value="<?php echo $row['university']; ?>" name="university">
 											</div><!--//col-->
 											
 										</div><!--//row-->
@@ -224,7 +258,7 @@
 										<div class="row justify-content-between align-items-center">
 											<div class="col-auto">
 												<div class="item-label"><strong>Institution</strong></div>
-												<input type="text" class="item-data" value="<?php echo $row['institution']; ?>" name="lastname">
+												<input type="text" class="item-data" value="<?php echo $row['institution']; ?>" name="institution">
 											</div><!--//col-->
 											<!--//col-->
 										</div><!--//row-->
@@ -242,7 +276,7 @@
 										<div class="row justify-content-between align-items-center">
 											<div class="col-auto">
 												<div class="item-label"><strong>State</strong></div>
-												<input type="text" class="item-data" value="<?php echo $row['state']; ?>" name="lastname">
+												<input type="text" class="item-data" value="<?php echo $row['state']; ?>" name="state">
 											</div><!--//col-->
 											<!--//col-->
 										</div><!--//row-->
@@ -251,7 +285,7 @@
 										<div class="row justify-content-between align-items-center">
 											<div class="col-auto">
 												<div class="item-label"><strong>District</strong></div>
-												<input type="text" class="item-data" value="<?php echo $row['district']; ?>" name="lastname">
+												<input type="text" class="item-data" value="<?php echo $row['district']; ?>" name="district">
 											</div><!--//col-->
 											<!--//col-->
 										</div><!--//row-->
@@ -260,7 +294,7 @@
 										<div class="row justify-content-between align-items-center">
 											<div class="col-auto">
 												<div class="item-label"><strong>Address</strong></div>
-												<input type="text" class="item-data" value="<?php echo $row['address']; ?>" name="lastname">
+												<input type="text" class="item-data" value="<?php echo $row['address']; ?>" name="address">
 											</div><!--//col-->
 											<!--//col-->
 										</div><!--//row-->
@@ -269,7 +303,7 @@
 										<div class="row justify-content-between align-items-center">
 											<div class="col-auto">
 												<div class="item-label"><strong>Courses</strong></div>
-												<input type="text" class="item-data" value="<?php echo $row['course']; ?>" name="lastname">
+												<input type="text" class="item-data" value="<?php echo $row['course']; ?>" name="course">
 											</div><!--//col-->
 											<!--//col-->
 										</div><!--//row-->
@@ -278,7 +312,7 @@
 										<div class="row justify-content-between align-items-center">
 											<div class="col-auto">
 												<div class="item-label"><strong>Phone Number</strong></div>
-												<input type="text" class="item-data" value="<?php echo $row['number']; ?>" name="lastname">
+												<input type="text" class="item-data" value="<?php echo $row['number']; ?>" name="number">
 											</div><!--//col-->
 											<!--//col-->
 										</div><!--//row-->
@@ -287,7 +321,7 @@
 										<div class="row justify-content-between align-items-center">
 											<div class="col-auto">
 												<div class="item-label"><strong>Total Seats</strong></div>
-												<input type="text" class="item-data" value="<?php echo $row['total_seats']; ?>" name="lastname">
+												<input type="text" class="item-data" value="<?php echo $row['total_seats']; ?>" name="total_seats">
 											</div><!--//col-->
 											<!--//col-->
 										</div><!--//row-->
@@ -296,7 +330,7 @@
 										<div class="row justify-content-between align-items-center">
 											<div class="col-auto">
 												<div class="item-label"><strong>Reserved Seats</strong></div>
-												<input type="text" class="item-data" value="<?php echo $row['reserved_seats']; ?>" name="lastname">
+												<input type="text" class="item-data" value="<?php echo $row['reserved_seats']; ?>" name="reserved_seats">
 											</div><!--//col-->
 											<!--//col-->
 										</div><!--//row-->
@@ -305,7 +339,7 @@
 										<div class="row justify-content-between align-items-center">
 											<div class="col-auto">
 												<div class="item-label"><strong>Management Seats</strong></div>
-												<input type="text" class="item-data" value="<?php echo $row['management_seats']; ?>" name="lastname">
+												<input type="text" class="item-data" value="<?php echo $row['management_seats']; ?>" name="management_seats">
 											</div><!--//col-->
 											<!--//col-->
 										</div><!--//row-->
@@ -314,7 +348,7 @@
 										<div class="row justify-content-between align-items-center">
 											<div class="col-auto">
 												<div class="item-label"><strong>Description</strong></div>
-												<input type="text" class="item-data" value="<?php echo $row['about']; ?>" name="lastname">
+												<input type="text" class="item-data" value="<?php echo $row['about']; ?>" name="about">
 											</div><!--//col-->
 											<!--//col-->
 										</div><!--//row-->
@@ -322,7 +356,7 @@
 								
 								</div><!--//app-card-body-->
 								<div class="app-card-footer p-4 mt-auto">
-									<input type="submit" class="btn app-btn-secondary" value="Manage Profile" name="manage">
+									<input type="submit" class="btn app-btn-secondary" value="Manage Details" name="manage">
 								</div><!--//app-card-footer-->
 							
 							</div>
@@ -344,24 +378,6 @@
     <script src="assets/js/app.js"></script> 
 
 	<!--Custom JS-->
-
-	<script>
-		function validate(){
-			let password = document.getElementById('password').value;
-			let confirm = document.getElementById('c').value;
-
-			if (password !=confirm) {
-				alert('passwords are not same');
-				return false;
-			}
-
-			if (password.length < 8) {
-				alert('password should be more than 8 characters');
-				return false;
-			}
-			return true;
-		}
-	</script>
 	
 </body>
 </html> 
