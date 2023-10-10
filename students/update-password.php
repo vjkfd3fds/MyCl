@@ -1,3 +1,19 @@
+<?php 
+        include('../backend-php/connect.php');
+
+        if (isset($_POST['update']) && isset($_COOKIE['id'])) {
+          $id = $_COOKIE['id'];
+          $new = $_POST['newpass'];
+          $con = $_POST['con'];
+
+          $sql = "UPDATE registered_users SET password = ? WHERE id = ?";
+          $stmt = $conn->prepare($sql);
+          $stmt->bind_param("ss", $new, $id);
+          $stmt->execute();
+          header('Location: update-password.php');
+        }
+    ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -119,21 +135,7 @@
         </div>
     </div>
 
-    <?php 
-        include('../backend-php/connect.php');
 
-        if (isset($_POST['update']) && isset($_COOKIE['id'])) {
-          $id = $_COOKIE['id'];
-          $new = $_POST['newpass'];
-          $con = $_POST['con'];
-
-          $sql = "UPDATE registered_users SET password = ? WHERE id = ?";
-          $stmt = $conn->prepare($sql);
-          $stmt->bind_param("ss", $new, $id);
-          $stmt->execute();
-          header('Location: update-password.php');
-        }
-    ?>
   <!-- footer section -->
 
   <!-- jQery -->
@@ -145,15 +147,16 @@
 
   <script>
     function validate() {
-        current = document.getElementById('con').value;
-        newpass = document.getElementById('newpass').value;
+      var current = document.getElementById('con').value;
+      var newpass = document.getElementById('newpass').value;
 
-        if (current !== newpass) {
-            alert('both are not same');
-            return false;
-        }
-        return true;
+      if (current !== newpass) {
+        alert('Both passwords are not the same');
+        return false;
+      }
+      return true;
     }
+
   </script>
 
 
