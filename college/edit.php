@@ -29,12 +29,13 @@
 		$management_seats = $_POST['management_seats'];
 		$about = $_POST['about'];
 
-		$sql = "UPDATE college_details SET university = ?, institution = ?, state = ?, district = ?, address = ?, programs = ?, course = ?,
-					email = ?, number = ?, total_seats = ?, reserved_seats = ?, management_seats = ?, about = ?";
+		$sql = "UPDATE college_details SET university = ?, institution = ?, state = ?, district = ?, address = ?, 	  programs = ?, course = ?,
+				email = ?, number = ?, total_seats = ?, reserved_seats = ?, management_seats = ?, about = ?";
 
 		$stmt = $conn->prepare($sql);
-		$stmt->bind_param("sssssssssssss", $university, $institution, $state, $district, $address, $programs, $course, $email, $number, $total_seats, 
-							$reserved_seats, $management_seats, $about);
+		$stmt->bind_param("sssssssssssss", $university, $institution, $state, $district, $address, $programs, 
+			$course, $email, $number, $total_seats, 
+			$reserved_seats, $management_seats, $about);
 		
 		if ($stmt->execute() === TRUE) {
 			header('Location: edit.php');
