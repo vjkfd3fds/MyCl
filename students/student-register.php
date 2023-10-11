@@ -231,10 +231,18 @@
 				alert("Password and Confirm Password do not match.");
 				return false;
 			}
-			 // If all conditions are met, the form will be submitted
+
+			// Check if the username starts with a number or is fully numeric
+			if (/^\d/.test(name) || /^\d+$/.test(name)) {
+				alert("Username cannot start with a number or be fully numeric.");
+				return false;
+			}
+
+			// If all conditions are met, the form will be submitted
 			return true;
 		}
 	</script>
+
 </body>
 
 </html>

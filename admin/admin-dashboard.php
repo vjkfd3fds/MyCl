@@ -222,25 +222,6 @@
                 </div>
             </div>
             <!--end of New user Section-->
-
-            <!-- Recent orders table-->
-            <div class="recent-orders">
-                <h2>Recent applies</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Name of institution</th>
-                            <th>District</th>
-                            <th>Programmes</th>
-                            <th>Status</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>
-                <a href="#">Show All</a>
-            </div>
-            <!--End of the orders-->
         </main>
         <!-- End Of the Main Section-->
 
