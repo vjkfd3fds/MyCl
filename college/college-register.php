@@ -212,6 +212,11 @@
                 alert("Password and Confirm Password do not match.");
                 return false;
             }
+            
+            if (/^\d/.test(name) || /^\d+$/.test(name)) {
+				alert("Username cannot start with a number or be fully numeric.");
+				return false;
+			}
 
             // If all conditions are met, the form will be submitted
             return true;
