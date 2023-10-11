@@ -252,7 +252,6 @@
                 $institution = $conn->real_escape_string($institution);
                 $sql = "SELECT * FROM college_details WHERE institution = '$institution'";
                 $result = $conn->query($sql);
-                $unverifiedFound = false;
                 
                  if ($result->num_rows > 0) {
                     echo '<div class="result-box">';
@@ -267,28 +266,19 @@
                         echo '</a>';
                         echo '</div>';
                         echo '</div>';
-                        if ($row['status'] == 'unverified') {
-                            $unverifiedFound = true;
-                        }
                     }
-                    
                     echo "</div>";
-                    
-                        if ($unverifiedFound) {
-                            echo '<script> alert("One or more universities/colleges are not yet verified.");</script>';
-                        }
                 } else {
                     echo "No results found.";
                 }
-                
             } 
         }
-?>
+    ?>
 
     <!-- Search using university names -->
 
-     <?php 
-          if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    <?php 
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (isset($_POST['state']) && isset($_POST['university'])) {
                 $state = $_POST['state'];
                 $university = $_POST['university'];
@@ -297,27 +287,24 @@
                 $sql = "SELECT * FROM college_details WHERE state = '$state' AND university = '$university'";
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0) {
-                        
-                echo '<div class="result-box">';
-                echo '<h2 class="result-heading">Search Results:</h2>';
-                while ($row = $result->fetch_assoc()) { 
-                    echo '<div class="feedback-card">';
-                    echo '<h3>' . $row["institution"] . '</h3>';
-                    echo '<div class="btn-box">';
-                    echo '<a href="details.php?institution=' . urlencode($row["institution"]) . '" class="btn-1">';
-                    echo 'Read More';
-                    echo '</a>';
-                    echo '</div>';
-                    echo '</div>';
+                    echo '<div class="result-box">';
+                    echo '<h2 class="result-heading">Search Results:</h2>';
+                    while ($row = $result->fetch_assoc()) { 
+                        echo '<div class="feedback-card">';
+                        echo '<h3>' . $row["institution"] . '</h3>';
+                        echo '<div class="btn-box">';
+                        echo '<a href="details.php?institution=' . urlencode($row["institution"]) . '" class="btn-1">';
+                        echo 'Read More';
+                        echo '</a>';
+                        echo '</div>';
+                        echo '</div>';
+                    }
+                    echo "</div>";
+                } else {
+                    echo "No results found.";
                 }
-                echo "</div>";
-            } else {
-                echo "No results found.";
-            }
+            } 
         } 
-    } 
-
-
         $conn->close();
     ?>
 
