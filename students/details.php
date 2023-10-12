@@ -1,19 +1,3 @@
-<?php
-    // Check if the institution parameter is in the URL.
-    if (isset($_GET['institution'])) {
-        $institution = $_GET['institution'];
-    }
-
-    // Check if the user is not logged i
-        if (!empty($institution)) {
-            $url = 'details.php?institution=' . $institution;
-            // Repeat for other parameters.
-            header('Location: ' . $url);
-            exit;
-        }
-    
-?>
-
 
 
 <?php 
