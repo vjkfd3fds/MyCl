@@ -1,31 +1,37 @@
-<?php 
-    if (!$_COOKIE['id']) {
-        header('Location: ../pages/home.php');
+<?php
+    // Check if the institution parameter is in the URL.
+    if (isset($_GET['institution'])) {
+        $institution = $_GET['institution'];
     }
+
+    // Check if the user is not logged i
+        if (!empty($institution)) {
+            $url = 'details.php?institution=' . $institution;
+            // Repeat for other parameters.
+            header('Location: ' . $url);
+            exit;
+        }
+    
 ?>
 
+
+
 <?php 
-include('../backend-php/connect.php');
+include_once '../backend-php/connect.php';
 
-if (isset($_GET['institution'])) {
-    $institution = $conn->real_escape_string($_GET['institution']);
-    $sql = "SELECT * FROM college_details WHERE institution = '$institution'";
-    
-    if (isset($_GET['university'])) {
-        $university = $conn->real_escape_string($_GET['university']);
-        $sql .= " AND university = '$university'";
+    if (isset($_POST['lol'])) {
+        $stars = $conn->real_escape_string($_POST['rate']);
+        $comment = $conn->real_escape_string($_POST['message']);
+
+        $sql = "INSERT INTO review (institution, comments, stars) VALUES ('$institution', '$comment', '$stars')";
+
+        if ($conn->query($sql) === TRUE) {
+            echo '<script>alert("succesfully send your feedback");</script>';
+        } else {
+            echo 'something went wrong' . $conn->error;
+        }
     }
 
-    if (isset($_GET['state'])) {
-        $state = $conn->real_escape_string($_GET['state']);
-        $sql .= " AND state = '$state'";
-    }
-
-    $result = $conn->query($sql);
-    $row = $result->fetch_assoc();
-} else {
-    echo "Search parameters are required.";
-}
 ?>
 
 <!DOCTYPE html>
@@ -150,15 +156,36 @@ if (isset($_GET['institution'])) {
             <h1>College Details</h1>
             
             <?php
-            echo '<div class="college-details">';
-            echo '<h2>' . $row['university'] . ' - ' . $row['institution'] . '</h2>';
-            echo '<p>' . $row['about'] . '</p>';
-            echo '<p><strong>State:</strong> ' . $row['state'] . '</p>';
-            echo '<p><strong>District:</strong> ' . $row['district'] . '</p>';
-            echo '<p><strong>Address:</strong> ' . $row['address'] . '</p>';
-            echo '<p><strong>Programs:</strong> ' . $row['programs'] . '</p>';
-            echo '<p><strong>Courses:</strong> ' . $row['course'] . '</p>';
-            echo '</div>';
+
+                if (isset($_GET['institution'])) {
+                    $institution = $conn->real_escape_string($_GET['institution']);
+                    $sql = "SELECT * FROM college_details WHERE institution = '$institution'";
+                    
+                    if (isset($_GET['university'])) {
+                        $university = $conn->real_escape_string($_GET['university']);
+                        $sql .= " AND university = '$university'";
+                    }
+
+                    if (isset($_GET['state'])) {
+                        $state = $conn->real_escape_string($_GET['state']);
+                        $sql .= " AND state = '$state'";
+                    }
+
+                    $result = $conn->query($sql);
+                    $row = $result->fetch_assoc();
+                } else {
+                    echo "Search parameters are required.";
+                }
+
+                echo '<div class="college-details">';
+                echo '<h2>' . $row['university'] . ' - ' . $row['institution'] . '</h2>';
+                echo '<p>' . $row['about'] . '</p>';
+                echo '<p><strong>State:</strong> ' . $row['state'] . '</p>';
+                echo '<p><strong>District:</strong> ' . $row['district'] . '</p>';
+                echo '<p><strong>Address:</strong> ' . $row['address'] . '</p>';
+                echo '<p><strong>Programs:</strong> ' . $row['programs'] . '</p>';
+                echo '<p><strong>Courses:</strong> ' . $row['course'] . '</p>';
+                echo '</div>';
             ?>
 
             <div class="contact-info">
@@ -213,7 +240,7 @@ if (isset($_GET['institution'])) {
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary" name="lol">Submit</button>
+                            <input type="submit" class="btn btn-primary" name="lol" value="Submit">
                         </div>
                     </div>
                 </div>
