@@ -1,3 +1,5 @@
+<?php error_reporting(E_ALL); ?>
+
 <?php 
 	include_once "../backend-php/connect.php";
 	if (isset($_COOKIE['cid'])) {
@@ -49,6 +51,31 @@
 	}
 ?>
 
+<?php 
+	if (isset($_POST['manage'])) {
+		$uploads = $_FILES["uploadfile"];
+		$sql = "INSERT INTO images (image_id, image_name) VALUES (?, ?)";
+		$stmt = $conn->prepare($sql);
+		$stmt->bind_param("ss", $cid, $filename);
+
+		for ($i = 0; $i < count($uploads["tmp_name"]); $i++) {
+		    $filename = $uploads["name"][$i];
+		    $tempname = $uploads["tmp_name"][$i];
+		    $folder = "./uploads/" . $filename;
+
+		    if (move_uploaded_file($tempname, $folder)) {
+		        if ($stmt->execute() === TRUE) {
+		            echo "<h3>Image uploaded successfully!</h3>";
+		        } else {
+		            echo "Failed to insert image information into the database: " . $stmt->error;
+		        }
+		    } else {
+		        echo "<h3>Failed to upload image!</h3>";
+		    }
+		}
+	}
+
+?>
 
 
 
@@ -236,7 +263,7 @@
 		    <div class="container-xl">
 			    
 			    <h1 class="app-page-title">My Account</h1>
-				<form action="edit.php" method="post" onsubmit="validate();">
+				<form action="edit.php" method="post" onsubmit="validate();" enctype="multipart/form-data>
 					<div class="row gy-4">
 						<div class="col-12 col-lg-6">
 							<div class="app-card app-card-account shadow-sm d-flex flex-column align-items-start">
@@ -385,7 +412,7 @@
 										<div class="row justify-content-between align-items-center">
 											<div class="col-auto">
 												<div class="item-label"><strong>Upload Images</strong></div>
-												<input type="file" class="item-data"name="uploadfile" multiple>
+												<input type="file" class="item-data"name="uploadfile[]" multiple>
 											</div><!--//col-->
 											<!--//col-->
 										</div><!--//row-->
