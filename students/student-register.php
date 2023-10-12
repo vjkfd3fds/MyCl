@@ -170,25 +170,18 @@
 									</div>
 								</div>
 							</div>
-							<div class="pl-1" style="text-align: center;">
-								<label
-									style="font-weight: lighter; font-family: SFProDisplay-Bold, Helvetica, Arial, sans-serif; 
-									margin-top: 20px;"
-									for="">Upload Picture</label>
-							</div>
+							<br>
 							<div class="d-flex justify-content-center">
 								<div class="form-group" style="width: 10em;">
 									<input type="file" name="uploadfile" required>
 								</div>
 							</div>
 
-							<br>
+							
 
 							<div class="d-flex justify-content-center">
 								<button type="submit" class="btn btn-success" form="signup-form">Sign Up</button>
 							</div>
-
-							<br>
 
 							<div class="d-flex justify-content-center">
 								<a href="student-login.php">Already have an account? </a>
