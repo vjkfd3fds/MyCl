@@ -172,7 +172,8 @@
 							</div>
 							<div class="pl-1" style="text-align: center;">
 								<label
-									style="font-weight: lighter; font-family: SFProDisplay-Bold, Helvetica, Arial, sans-serif;;"
+									style="font-weight: lighter; font-family: SFProDisplay-Bold, Helvetica, Arial, sans-serif; 
+									margin-top: 20px;"
 									for="">Upload Picture</label>
 							</div>
 							<div class="d-flex justify-content-center">
