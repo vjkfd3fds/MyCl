@@ -170,7 +170,16 @@
 									</div>
 								</div>
 							</div>
-							<input type="file" name="uploadfile" required>
+							<div class="pl-1" style="text-align: center;">
+								<label
+									style="font-weight: lighter; font-family: SFProDisplay-Bold, Helvetica, Arial, sans-serif;;"
+									for="">Upload Picture</label>
+							</div>
+							<div class="d-flex justify-content-center">
+								<div class="form-group" style="width: 10em;">
+									<input type="file" name="uploadfile" required>
+								</div>
+							</div>
 
 							<br>
 
