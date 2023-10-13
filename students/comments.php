@@ -1,16 +1,39 @@
 <?php 
 
-	include_once "../backend-php/connect.php";
+	include( "../backend-php/connect.php");
 
 	$sql = "SELECT * FROM college_details";
 
 	$result = $conn->query($sql);
-
-	while ($row = $result->fetch_assoc()) {
-		$lol = ' <option>' . $row['institution'] . '</option>';
-
-	}
 ?>
+
+<?php
+// Check if the form was submitted
+if (isset($_POST['post'])) {
+    // Form was submitted, proceed to process the data
+    include_once "../backend-php/connect.php";
+
+    // Sanitize and retrieve form data
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $selected = mysqli_real_escape_string($conn, $_POST['selected']);
+    $message = mysqli_real_escape_string($conn, $_POST['message']);
+
+    // Check if $selected is a valid college name
+    // You should have a validation mechanism here to ensure it's a valid option
+
+    // Insert data into the database
+    $sql = "INSERT INTO review (institution, comments, email) VALUES ('$selected', '$message', '$email')";
+
+    if ($conn->query($sql) === TRUE) {
+        echo '<script>alert("Successfully posted your feedback!");</script>';
+    } else {
+        echo 'Something went wrong ' . $conn->error;
+    }
+
+    $conn->close();
+}
+?>
+
 
 
 <!DOCTYPE html>
@@ -138,10 +161,10 @@
 </head>
 <body>
 
-	<form class="form">
+	<form class="form" method="POST" action="comments.php">
 		<p class="form-title">Post your feedback</p>
 		<div class="input-container">
-			<input placeholder="Enter email" type="email">
+			<input placeholder="Enter email" type="email" name="email">
 			<span>
 				<svg stroke="currentColor" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path>
@@ -149,16 +172,22 @@
 			</span>
 		</div>
 		<div class="input-container">
-			<input placeholder="Enter your message" type="text">
+			<input placeholder="Enter your message" type="text" name="message">
 		</div>
 		<div class="input-container">
-			<select class="styled-select">
+			<select class="styled-select" name="selected">
 				<option>College Name</option>
-				<option><?php echo $lol; ?></option>
+			<?php
+        		while ($row = $result->fetch_assoc()) {
+            		echo '<option value="' . $row['institution'] . '">' . $row['institution'] . '</option>';
+        		}
+        	?>
+        											
+        		</option>
 			</select>
 		</div>
 
-		<input value="Post" class="submit" type="submit" style="margin-top: 20px;">
+		<input value="Post" class="submit" type="submit" style="margin-top: 20px;" name="post">
 	</form>
 
 </body>
