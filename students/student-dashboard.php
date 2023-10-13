@@ -74,6 +74,10 @@
         cursor: pointer;
     }
 
+    li: hover {
+        text-decoration: underline;
+    }
+
     /* Apply the same styling to the other navigation links */
     
 
@@ -118,6 +122,7 @@
                 <a href="">Institutions</a>
                 <a href="">Programmes</a>
                 <a href="">Courses</a>
+
                 <?php
                             if (isset($_COOKIE['id'])) {
                                 $user_id = $_COOKIE['id'];
@@ -155,6 +160,9 @@
                         </a>
                         <a href="#">
                             <li>Settings</li>
+                        </a>
+                        <a href="comments.php">
+                            <li>Feedback</li>
                         </a>
 
                     </ul>
@@ -316,6 +324,7 @@
     <script src="../js/custom.js"></script>
     <!--Icons js-->
     <script src="https://kit.fontawesome.com/3cb1958bfd.js" crossorigin="anonymous"></script>
+
 
     <script src="../js/student.js"></script>
 
