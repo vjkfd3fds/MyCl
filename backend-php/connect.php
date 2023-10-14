@@ -1,3 +1,3 @@
 <?php
-$conn = mysqli_connect("localhost", "root", "",  "php-project");
+$conn = mysqli_connect("localhost", "root", "",  "MyCl");
 ?>
