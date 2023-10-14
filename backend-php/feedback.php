@@ -11,7 +11,7 @@
         $stmt = $conn->prepare("INSERT INTO feedbacks (name, email, message) VALUES (?, ?, ?)");
         $stmt->bind_param("sss", $name, $email, $message);
         if ($stmt->execute() === TRUE) {
-          header('Location: ../../php-project/pages/feedback-form.php');
+          header('Location: ../../MyCl/pages/feedback-form.php');
         } else {
           echo "error: " . $conn->error;
         }

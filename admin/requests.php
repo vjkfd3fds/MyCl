@@ -125,7 +125,7 @@
             echo '<p style="font-size: 15px";> management_seats seats: ' . $row["management_seats"] . '</p>';
             echo '<p style="font-size: 15px";> description: ' . $row["about"] . '</p>';
             ?>
-            <img src="../../php-project/uploads/<?php echo $row['certificate']; ?>"class="imgLOL">
+            <img src="../../MyCl/uploads/<?php echo $row['certificate']; ?>"class="imgLOL">
             <?php
             echo '</div>';
             echo '<form action="requests.php" method="post">';

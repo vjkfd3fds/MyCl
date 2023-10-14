@@ -47,7 +47,7 @@
                 '$email', '$number', '$totalSeats', '$reserved', '$management', '$about', '$filename', 'unverfied')";
             
             if (move_uploaded_file($tempname, $folder) && $conn->query($sql) === TRUE) {
-                header('Location: ../../php-project/college/index.php');
+                header('Location: ../../MyCl/college/index.php');
             } else {
             }
         }
