@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 22, 2023 at 04:40 PM
+-- Generation Time: Oct 14, 2023 at 04:55 AM
 -- Server version: 8.0.31
 -- PHP Version: 8.0.26
 
@@ -18,10 +18,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `php-project`
+-- Database: `mycl`
 --
-CREATE DATABASE IF NOT EXISTS `php-project` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
-USE `php-project`;
+CREATE DATABASE IF NOT EXISTS `mycl` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
+USE `mycl`;
 
 -- --------------------------------------------------------
 
@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `administration` (
 --
 
 INSERT INTO `administration` (`id`, `username`, `password`) VALUES
-(1, 'admin', 'adm123');
+(1, 'admin', 'hopethisworks');
 
 -- --------------------------------------------------------
 
@@ -52,7 +52,7 @@ INSERT INTO `administration` (`id`, `username`, `password`) VALUES
 
 DROP TABLE IF EXISTS `college_details`;
 CREATE TABLE IF NOT EXISTS `college_details` (
-  `id` int NOT NULL AUTO_INCREMENT COMMENT 'unique id',
+  `cid` int NOT NULL COMMENT 'It''s a thing ig',
   `university` varchar(100) NOT NULL COMMENT 'name of the university',
   `institution` varchar(100) NOT NULL COMMENT 'name of the institution',
   `state` varchar(100) NOT NULL COMMENT 'name of the state',
@@ -67,8 +67,16 @@ CREATE TABLE IF NOT EXISTS `college_details` (
   `management_seats` int NOT NULL COMMENT 'number of reserved seats',
   `about` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT 'something about the college',
   `certificate` varchar(100) NOT NULL,
-  PRIMARY KEY (`id`)
+  `status` varchar(20) NOT NULL,
+  PRIMARY KEY (`cid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `college_details`
+--
+
+INSERT INTO `college_details` (`cid`, `university`, `institution`, `state`, `district`, `address`, `programs`, `course`, `email`, `number`, `total_seats`, `reserved_seats`, `management_seats`, `about`, `certificate`, `status`) VALUES
+(3, 'Meghalaya Univerisity', 'Institute of Human Resources Development', 'Kerala', 'Krishna', 'ttttttttttttttttttt', 'ug, diploma, engineering, phd, nursing, ds, moa, doe, ba-1', 'BE,BBA,PS,CE,BTECH', 'shafiiq688@gmail.com', 5555555, 12, 6, 8, 'ccccccccc', '6ab8664655e969c05f9895766961ff68.jpg', 'unverfied');
 
 -- --------------------------------------------------------
 
@@ -85,7 +93,16 @@ CREATE TABLE IF NOT EXISTS `college_users` (
   `password` varchar(100) NOT NULL,
   `profile` varchar(100) NOT NULL,
   PRIMARY KEY (`cid`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `college_users`
+--
+
+INSERT INTO `college_users` (`cid`, `firstname`, `lastname`, `email`, `password`, `profile`) VALUES
+(1, 'VeryCoolUsername', 'T', 'thushar17223@gmail.c', 'password', 'ba927ff34cd961ce2c184d47e8ead9f6.jpg'),
+(2, 'Thushar', 'T', 'c8354270@gmail.com', 'password', 'ba927ff34cd961ce2c184d47e8ead9f6.jpg'),
+(3, 'nikhhil', 'T', 'nikhil.3post@gmail.com', 'password', '6ab8664655e969c05f9895766961ff68.jpg');
 
 -- --------------------------------------------------------
 
@@ -100,8 +117,34 @@ CREATE TABLE IF NOT EXISTS `feedbacks` (
   `email` varchar(25) NOT NULL,
   `message` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
+-- Dumping data for table `feedbacks`
+--
+
+INSERT INTO `feedbacks` (`id`, `name`, `email`, `message`) VALUES
+(1, 'jxy', 'thushar17223@gmail.com', 'Very cool website if you ask me LOL'),
+(2, 'jay', 'ssid88607@gmail.com', 'Very cool thing if you ask me'),
+(3, 'jay', 'ssid88607@gmail.com', 'Very cool website if you ask me'),
+(4, 'thushar', 'c8354270@gmail.com', 'ffff'),
+(5, 'Sublime', 'thusharthualsipillai@gmai', 'fffffffff'),
+(6, 'shaffek', 'shafiiq688@gmail.com', 'kjhkjhkjjk'),
+(7, 'Thushar', 'ssid88607@gmail.com', 'Very cool stuff'),
+(8, 'thushar', 'ssid88607@gmail.com', 'feedbacks'),
+(9, 'vinayak', 'ssid88607@gmail.com', 'i\'m gay\r\n');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `images`
+--
+
+DROP TABLE IF EXISTS `images`;
+CREATE TABLE IF NOT EXISTS `images` (
+  `image_id` int NOT NULL,
+  `image_name` int NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -119,6 +162,28 @@ CREATE TABLE IF NOT EXISTS `registered_users` (
   `dob` date NOT NULL,
   `profile` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `registered_users`
+--
+
+INSERT INTO `registered_users` (`id`, `firstname`, `lastname`, `email`, `password`, `dob`, `profile`) VALUES
+(1, 'HopeThisWorks', 'TheRealOne', 'thushar17223@gmail.com', 'Doesthiswork', '2023-09-26', '3892bdfe777b2bd94a46854f713441ed.jpg'),
+(2, 'nikhhil', 'therealone', 'ssid88607@gmail.com', 'Doesthisworkdd', '2023-09-12', '3892bdfe777b2bd94a46854f713441ed.jpg'),
+(3, 'nikhhil', 'therealone', 'shafiiq688@gmail.com', 'password', '2023-10-10', '6ab8664655e969c05f9895766961ff68.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `review`
+--
+
+DROP TABLE IF EXISTS `review`;
+CREATE TABLE IF NOT EXISTS `review` (
+  `institution` int NOT NULL,
+  `comments` int NOT NULL,
+  `em` int NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 COMMIT;
 
