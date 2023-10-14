@@ -1,23 +1,3 @@
-
-
-<?php 
-include_once '../backend-php/connect.php';
-
-    if (isset($_POST['lol'])) {
-        $stars = $conn->real_escape_string($_POST['rate']);
-        $comment = $conn->real_escape_string($_POST['message']);
-
-        $sql = "INSERT INTO review (institution, comments, stars) VALUES ('$institution', '$comment', '$stars')";
-
-        if ($conn->query($sql) === TRUE) {
-            echo '<script>alert("succesfully send your feedback");</script>';
-        } else {
-            echo 'something went wrong' . $conn->error;
-        }
-    }
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -10,7 +10,12 @@
 		$stmt->bind_param("s", $cid);
 		$stmt->execute();
 		$result = $stmt->get_result();
-		$row = $result->fetch_assoc();
+		if ($result->num_rows > 0) {
+			$row = $result->fetch_assoc();
+		} else {
+			echo '<script>alert("You didn\'t fill the form.");</script>';
+    		echo '<script>window.location.href = "college-details.php";</script>';
+		}
 	}
 
 ?>
