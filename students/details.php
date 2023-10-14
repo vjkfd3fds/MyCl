@@ -1,3 +1,6 @@
+<?php
+    include_once '../backend-php/connect.php'; 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
