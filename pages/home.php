@@ -619,17 +619,6 @@ Firstly, I must commend the design of the website. The overall layout and aesthe
             </div>
           </div>
         </div>
-        <div class="col-md-3 mb-0">
-          <h4>
-            Subscribe
-          </h4>
-          <form action="#">
-            <input type="text" placeholder="Enter email" />
-            <button type="submit">
-              Subscribe
-            </button>
-          </form>
-        </div>
       </div>
     </div>
   </section>
