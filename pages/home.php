@@ -376,7 +376,7 @@
               </h2>
             </div>
             <p>
-              At myCollege, we've curated a comprehensive database of colleges and universities from around the world. Whether you're looking for a local institution or considering studying abroad, our extensive collection of educational institutions is here to help you explore your options. <a href="about.php">
+              At MyCollege, we've curated a comprehensive database of colleges and universities from around the world. Whether you're looking for a local institution or considering studying abroad, our extensive collection of educational institutions is here to help you explore your options. <a href="about.php">
               Read More
             </a>
           </div>
