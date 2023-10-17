@@ -19,6 +19,47 @@
         .logout,.material-icons-sharp {
             cursor: pointer;
         }
+        .user-card-heading {
+            text-align: center;
+            margin-bottom: 20px; /* Add space below the heading */
+        }
+        /* Style for the user card container */
+        .user-card-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        /* Style for individual user cards */
+        .user-card {
+            width: 200px; /* Adjust the width as needed */
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+        }
+
+        /* Style for user avatars within user cards */
+        .avatar-container {
+            width: 80px; /* Adjust the width and height to create a circle */
+            height: 80px;
+            background-color: #f0f0f0; /* Background color for the circle */
+            border-radius: 50%; /* Create a circle by setting border-radius to 50% */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px; /* Center the circle */
+        }
+
+        .avatar-container img {
+            max-width: 100%;
+            border-radius: 50%; /* Ensure the image is also a circle */
+        }
+
+        /* Additional styles for the user card text (e.g., first name) */
+        h2 {
+            margin: 10px 0;
+        }
+
     </style>
 </head>
 
@@ -186,18 +227,21 @@
             <!-- End of Analists-->
 
             <!-- New users Section start-->
+            <h1 style="margin-top: 20px;">New Users</h1>
             <?php
                 include_once '../backend-php/connect.php';
                 $sql = "SELECT * FROM registered_users";
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0) {
-                    echo '<div class="user-card-container">'; // Start user card container
+                    echo '<div class="user-card-container">';
 
                     while ($row = $result->fetch_assoc()) {
-                        echo '<div class="user-card">'; // Start user card
+                        echo '<div class="user-card">'; 
                         echo '<h2>' . $row['firstname'] . '</h2>';
                         echo '<div class="avatar-container">';
-                        echo '<img src="../images/bill.webp" alt="">'; // Avatar image
+                        ?>
+                        <img src="../profile/<?php echo $row['profile']; ?>" alt="">
+                        <?php 
                         echo '</div>';
                         echo '</div>'; // End user card
                     }
