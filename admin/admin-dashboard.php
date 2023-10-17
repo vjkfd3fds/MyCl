@@ -4,6 +4,7 @@
     }
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -185,42 +186,26 @@
             <!-- End of Analists-->
 
             <!-- New users Section start-->
-            <div class="new-user">
-                <h2>New Users</h2>
-                <div class="user-list">
+            <?php
+                include_once '../backend-php/connect.php';
+                $sql = "SELECT * FROM registered_users";
+                $result = $conn->query($sql);
+                if ($result->num_rows > 0) {
+                    echo '<div class="user-card-container">'; // Start user card container
 
-                    <div class="user">
-                        <img src="../images/bill.webp"
-                            alt="">
-                        <h2>Bill gates</h2>
-                        <p>54 mins ago</p>
-                    </div>
+                    while ($row = $result->fetch_assoc()) {
+                        echo '<div class="user-card">'; // Start user card
+                        echo '<h2>' . $row['firstname'] . '</h2>';
+                        echo '<div class="avatar-container">';
+                        echo '<img src="../images/bill.webp" alt="">'; // Avatar image
+                        echo '</div>';
+                        echo '</div>'; // End user card
+                    }
 
-                    <div class="user">
-                        <img src="../images/client.jpg"
-                            alt="">
-                        <h2>Christophor</h2>
-                        <p>5 mins ago</p>
-                    </div>
+                    echo '</div>'; // End user card container
+                }
+            ?>
 
-                    <div class="user">
-                        <img src="../images/elon.jpg"
-                            alt="">
-                        <h2>Elon musk</h2>
-                        <p>Active 1 hour ago</p>
-                    </div>
-
-                    <div class="user">
-                        <img src="https://w7.pngwing.com/pngs/100/522/png-transparent-computer-icons-plus-and-minus-signs-symbol-plus-miscellaneous-cross-sign-thumbnail.png"
-                            alt="">
-                        <h2>More</h2>
-                        <p>New user</p>
-                    </div>
-
-
-
-                </div>
-            </div>
             <!--end of New user Section-->
         </main>
         <!-- End Of the Main Section-->
