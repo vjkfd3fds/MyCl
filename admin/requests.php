@@ -7,14 +7,20 @@
 <?php 
     include_once '../backend-php/connect.php';
 
-    if (isset($_POST['pass'])) {
-        $sql1 = "SELECT * FROM college_details";
-        $result = $conn->query($sql1);
-        $row = $result->fetch_assoc();
-        $cid = $row['cid'];
+    $sql1 = "SELECT * FROM college_details";
+    $result = $conn->query($sql1);
+    $row = $result->fetch_assoc();
+    $cid = $row['cid'];
 
+    if (isset($_POST['pass'])) {
         $sql = "UPDATE college_details SET status = 'verified' WHERE cid = '$cid'";
         $result1 = $conn->query($sql);
+        echo '<script>alert("Operation successfull!!");</script>';
+
+    } else if (isset($_POST['reject'])) {
+        $sql2 = "UPDATE college_details SET status = 'rejected' WHERE cid = '$cid'";
+        $result2 = $conn->query($sql2);
+        echo '<script>alert("Operation Successfull!!");</script>';
     } 
 ?>
 
@@ -131,7 +137,7 @@
             echo '<form action="requests.php" method="post">';
             echo '<input type="hidden" name="reject" value="' . $row["cid"] . '">';
             echo '<input type="submit" value="pass" name="pass" class="random-button">';
-            echo '<input type="submit" value="Delete" name="delete_row" class="random-button">';
+            echo '<input type="submit" value="Delete" name="reject" class="random-button">';
             echo '</form>';
             echo '</div>';
         }
