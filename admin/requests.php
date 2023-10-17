@@ -115,31 +115,35 @@
     if ($result->num_rows > 0) {
         echo '<div class="result-box">';
         
-        while ($row = $result->fetch_assoc()) {
-            echo '<div class="feedback-card">';
-            echo '<h3>' . $row["institution"] . '</h3>';
-            echo '<p style="font-size: 15px";> university: ' . $row["university"] . '</p>';
-            echo '<p style="font-size: 15px";> state: ' . $row["state"] . '</p>';
-            echo '<p style="font-size: 15px";> district: ' . $row["district"] . '</p>';
-            echo '<p style="font-size: 15px";> address: ' . $row["address"] . '</p>';
-            echo '<p style="font-size: 15px";> programs: ' . $row["programs"] . '</p>';
-            echo '<p style="font-size: 15px";> course: ' . $row["course"] . '</p>';
-            echo '<p style="font-size: 15px";> phone number: ' . $row["number"] . '</p>';
-            echo '<p style="font-size: 15px";> email: ' . $row["email"] . '</p>';
-            echo '<p style="font-size: 15px";> total seats: ' . $row["total_seats"] . '</p>';
-            echo '<p style="font-size: 15px";> reserved seats: ' . $row["reserved_seats"] . '</p>';
-            echo '<p style="font-size: 15px";> management_seats seats: ' . $row["management_seats"] . '</p>';
-            echo '<p style="font-size: 15px";> description: ' . $row["about"] . '</p>';
-            ?>
-            <img src="../../MyCl/uploads/<?php echo $row['certificate']; ?>"class="imgLOL">
-            <?php
-            echo '</div>';
-            echo '<form action="requests.php" method="post">';
-            echo '<input type="hidden" name="reject" value="' . $row["cid"] . '">';
-            echo '<input type="submit" value="pass" name="pass" class="random-button">';
-            echo '<input type="submit" value="Delete" name="reject" class="random-button">';
-            echo '</form>';
-            echo '</div>';
+        while ($row = $result->fetch_assoc() ) {
+            if ($row['status'] == 'unverified') {
+                echo '<div class="feedback-card">';
+                echo '<h3>' . $row["institution"] . '</h3>';
+                echo '<p style="font-size: 15px";> university: ' . $row["university"] . '</p>';
+                echo '<p style="font-size: 15px";> state: ' . $row["state"] . '</p>';
+                echo '<p style="font-size: 15px";> district: ' . $row["district"] . '</p>';
+                echo '<p style="font-size: 15px";> address: ' . $row["address"] . '</p>';
+                echo '<p style="font-size: 15px";> programs: ' . $row["programs"] . '</p>';
+                echo '<p style="font-size: 15px";> course: ' . $row["course"] . '</p>';
+                echo '<p style="font-size: 15px";> phone number: ' . $row["number"] . '</p>';
+                echo '<p style="font-size: 15px";> email: ' . $row["email"] . '</p>';
+                echo '<p style="font-size: 15px";> total seats: ' . $row["total_seats"] . '</p>';
+                echo '<p style="font-size: 15px";> reserved seats: ' . $row["reserved_seats"] . '</p>';
+                echo '<p style="font-size: 15px";> management_seats seats: ' . $row["management_seats"] . '</p>';
+                echo '<p style="font-size: 15px";> description: ' . $row["about"] . '</p>';
+                ?>
+                <img src="../../MyCl/certificate/<?php echo $row['certificate']; ?>"class="imgLOL">
+                <?php
+                echo '</div>';
+                echo '<form action="requests.php" method="post">';
+                echo '<input type="hidden" name="reject" value="' . $row["cid"] . '">';
+                echo '<input type="submit" value="pass" name="pass" class="random-button">';
+                echo '<input type="submit" value="Delete" name="reject" class="random-button">';
+                echo '</form>';
+                echo '</div>';
+            } else {
+                echo 'No data found';
+            }
         }
         
         echo '</div>';

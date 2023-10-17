@@ -30,7 +30,7 @@
         }
         $filename = $_FILES["uploadfile"]["name"];
         $tempname = $_FILES["uploadfile"]["tmp_name"];
-        $folder = "../uploads/" . $filename;
+        $folder = "../certificate/" . $filename;
 
         
         $sql = "SELECT * FROM college_details WHERE certificate = '$filename'";
@@ -44,7 +44,7 @@
             $sql = "INSERT INTO college_details (cid, university, institution, state, district, address, programs, course, 
                 email, number, total_seats, reserved_seats, management_seats, about, certificate, status)
             VALUES ('$cid', '$university', '$institution', '$state', '$district', '$address', '$programs', '$selectedCourses', 
-                '$email', '$number', '$totalSeats', '$reserved', '$management', '$about', '$filename', 'unverfied')";
+                '$email', '$number', '$totalSeats', '$reserved', '$management', '$about', '$filename', 'unverified')";
             
             if (move_uploaded_file($tempname, $folder) && $conn->query($sql) === TRUE) {
                 header('Location: ../../MyCl/college/index.php');
