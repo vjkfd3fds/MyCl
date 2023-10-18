@@ -229,7 +229,7 @@
 										<thead>
 											<tr>
 												<th class="cell">Id</th>
-												<th class="cell">Institution</th>
+												<th class="cell">University</th>
 												<th class="cell">College</th>
 												<th class="cell">Status</th>
 											</tr>
@@ -237,8 +237,8 @@
 										<tbody>
 											<tr>
 												<td class="cell"><?php echo $row1['cid']; ?></td>
-												<td class="cell"><span class="truncate"><?php echo $row1['institution']; ?></span></td>
-												<td class="cell">John Sanders</td>
+												<td class="cell"><span class="truncate"><?php echo $row1['university']; ?></span></td>
+												<td class="cell"><?php echo $row1['institution']; ?></td>
 												<td class="cell"><span class="badge bg-success"><?php echo $row1['status']; ?></span></td>
 											</tr>
 		
@@ -251,15 +251,6 @@
 			    </div>
 		    </div><!--//container-fluid-->
 	    </div><!--//app-content-->
-	    
-	    <footer class="app-footer">
-		    <div class="container text-center py-3">
-		         <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
-            <small class="copyright">Designed with <span class="sr-only">love</span><i class="fas fa-heart" style="color: #fb866a;"></i> by <a class="app-link" href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>
-		       
-		    </div>
-	    </footer><!--//app-footer-->
-	    
     </div><!--//app-wrapper-->    					
 
  

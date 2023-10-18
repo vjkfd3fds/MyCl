@@ -131,6 +131,21 @@
                 <h2>Images</h2>
                 <img src="../uploads/<?php echo $row['certificate']; ?>" alt="College Certificate">
             </div>
+            <?php 
+                include('../backend-php/connect.php');
+                if (isset($_GET['institution'])) {
+                    $institution = $_GET['institution'];
+                    $sql1 = "SELECT * FROM review WHERE institution = '$institution'";
+
+                    $result->query($sql1);
+                    $row1 = $result->fetch_assoc();
+
+                    echo $row1['comments'];
+                }
+            ?>
+            <div class="image-gallery">
+                <h2>Comments</h2>
+            </div>
         </div>
     </form>
 </body>

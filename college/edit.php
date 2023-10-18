@@ -64,7 +64,7 @@
 		for ($i = 0; $i < count($uploads["tmp_name"]); $i++) {
 		    $filename = $uploads["name"][$i];
 		    $tempname = $uploads["tmp_name"][$i];
-		    $folder = "../uploads/" . $filename;
+		    $folder = "../college-image/" . $filename;
 
 		    if (move_uploaded_file($tempname, $folder)) {
 		        if ($stmt->execute() === TRUE) {

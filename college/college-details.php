@@ -43,7 +43,7 @@
     <header class="bg-light">
 
         <div class="d-flex justify-content-center pt-3 p-1">
-            <a href="home.html">
+            <a href="../pages/home.php">
                 <h4 style="font-size: x-large; cursor: pointer; color: black;">my<span
                         style="font-size: xxx-large ;">c</span>l</h4>
 
@@ -166,9 +166,9 @@
 
                                     <!--Google map-->
                                     <div id="map-container-google-1" class="z-depth-1-half map-container">
-                                        <iframe
-                                            src="https://maps.google.com/maps?q=manhatan&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                                            frameborder="0" style="border:0; width: 57.2em;" allowfullscreen></iframe>
+                                        <div id="map" style="width: 500px; height: 300px;"></div>
+                                            <input type="hidden" id="latitude" name="latitude">
+                                            <input type="hidden" id="longitude" name="longitude">
                                     </div>
 
                                     <!--Google Maps-->
@@ -789,6 +789,24 @@
 
 
     <script src="https://kit.fontawesome.com/3cb1958bfd.js" crossorigin="anonymous"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBd57m4lz9HTA57EJ1Ro6jngOH4W_B-1DU&libraries=places"></script>
+    <script>
+         var map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: -34.397, lng: 150.644},
+            zoom: 8
+        });
+
+        // Listen for click events on the map
+        map.addEventListener('click', () => {
+            // Get latitude and longitude from the clicked location
+            var lat = event.latLng.lat();
+            var lng = event.latLng.lng();
+
+            // Update hidden input fields
+            document.getElementById('latitude').value = lat;
+            document.getElementById('longitude').value = lng;
+        });
+    </script>
 
 </body>
 

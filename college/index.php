@@ -154,22 +154,7 @@
 						        </ul>
 					        </div>
 					    </li><!--//nav-item-->
-				
-					   
-					    <!--//nav-item-->
-					    
-					    <li class="nav-item">
-					        <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-					        <a class="nav-link" href="help.php">
-						        <span class="nav-icon">
-						        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-question-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-  <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-  <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"/>
-</svg>
-						         </span>
-		                         <span class="nav-link-text">Help</span>
-					        </a><!--//nav-link-->
-					    </li><!--//nav-item-->					    
+					    <!--//nav-item-->					    
 				    </ul><!--//app-menu-->
 			    </nav><!--//app-nav-->
 			    <div class="app-sidepanel-footer">
@@ -327,157 +312,8 @@
 			    </div><!--//row-->
 			    <div class="row g-4 mb-4">
 				    <div class="col-12 col-lg-6">
-				        <div class="app-card app-card-progress-list h-100 shadow-sm">
-					        <div class="app-card-header p-3">
-						        <div class="row justify-content-between align-items-center">
-							        <div class="col-auto">
-						                <h4 class="app-card-title">Progress</h4>
-							        </div><!--//col-->
-							        <div class="col-auto">
-								        <div class="card-header-action">
-									        <a href="#">All projects</a>
-								        </div><!--//card-header-actions-->
-							        </div><!--//col-->
-						        </div><!--//row-->
-					        </div><!--//app-card-header-->
-					        <div class="app-card-body">
-							    <div class="item p-3">
-								    <div class="row align-items-center">
-									    <div class="col">
-										    <div class="title mb-1 ">Project lorem ipsum dolor sit amet</div>
-										    <div class="progress">
-  <div class="progress-bar bg-success" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
-									    </div><!--//col-->
-									    <div class="col-auto">
-										    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-  <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
-</svg>
-									    </div><!--//col-->
-								    </div><!--//row-->
-								    <a class="item-link-mask" href="#"></a>
-							    </div><!--//item-->
-							    
-							    
-							     <div class="item p-3">
-								    <div class="row align-items-center">
-									    <div class="col">
-										    <div class="title mb-1 ">Project duis aliquam et lacus quis ornare</div>
-										    <div class="progress">
-  <div class="progress-bar bg-success" role="progressbar" style="width: 34%;" aria-valuenow="34" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
-									    </div><!--//col-->
-									    <div class="col-auto">
-										    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-  <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
-</svg>
-									    </div><!--//col-->
-								    </div><!--//row-->
-								    <a class="item-link-mask" href="#"></a>
-							    </div><!--//item-->
-							    
-							    <div class="item p-3">
-								    <div class="row align-items-center">
-									    <div class="col">
-										    <div class="title mb-1 ">Project sed tempus felis id lacus pulvinar</div>
-										    <div class="progress">
-  <div class="progress-bar bg-success" role="progressbar" style="width: 68%;" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
-									    </div><!--//col-->
-									    <div class="col-auto">
-										    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-  <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
-</svg>
-									    </div><!--//col-->
-								    </div><!--//row-->
-								    <a class="item-link-mask" href="#"></a>
-							    </div><!--//item-->
-							    
-							    <div class="item p-3">
-								    <div class="row align-items-center">
-									    <div class="col">
-										    <div class="title mb-1 ">Project sed tempus felis id lacus pulvinar</div>
-										    <div class="progress">
-  <div class="progress-bar bg-success" role="progressbar" style="width: 52%;" aria-valuenow="52" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
-									    </div><!--//col-->
-									    <div class="col-auto">
-										    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-  <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
-</svg>
-									    </div><!--//col-->
-								    </div><!--//row-->
-								    <a class="item-link-mask" href="#"></a>
-							    </div><!--//item-->
-		
-					        </div><!--//app-card-body-->
-				        </div><!--//app-card-->
 			        </div><!--//col-->
 			        <div class="col-12 col-lg-6">
-				        <div class="app-card app-card-stats-table h-100 shadow-sm">
-					        <div class="app-card-header p-3">
-						        <div class="row justify-content-between align-items-center">
-							        <div class="col-auto">
-						                <h4 class="app-card-title">Stats List</h4>
-							        </div><!--//col-->
-							        <div class="col-auto">
-								        <div class="card-header-action">
-									        <a href="#">View report</a>
-								        </div><!--//card-header-actions-->
-							        </div><!--//col-->
-						        </div><!--//row-->
-					        </div><!--//app-card-header-->
-					        <div class="app-card-body p-3 p-lg-4">
-						        <div class="table-responsive">
-							        <table class="table table-borderless mb-0">
-										<thead>
-											<tr>
-												<th class="meta">Source</th>
-												<th class="meta stat-cell">Views</th>
-												<th class="meta stat-cell">Today</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td><a href="#">google.com</a></td>
-												<td class="stat-cell">110</td>
-												<td class="stat-cell">
-													<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-up text-success" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-									  <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
-									</svg> 
-									                30%
-									            </td>
-											</tr>
-											<tr>
-												<td><a href="#">getbootstrap.com</a></td>
-												<td class="stat-cell">67</td>
-												<td class="stat-cell">23%</td>
-											</tr>
-											<tr>
-												<td><a href="#">w3schools.com</a></td>
-												<td class="stat-cell">56</td>
-												<td class="stat-cell">
-													<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-down text-danger" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-									  <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
-									</svg>
-												    20%
-											    </td>
-											</tr>
-											<tr>
-												<td><a href="#">javascript.com </a></td>
-												<td class="stat-cell">24</td>
-												<td class="stat-cell">-</td>
-											</tr>
-											<tr>
-												<td><a href="#">github.com </a></td>
-												<td class="stat-cell">17</td>
-												<td class="stat-cell">15%</td>
-											</tr>
-										</tbody>
-									</table>
-						        </div><!--//table-responsive-->
-					        </div><!--//app-card-body-->
-				        </div><!--//app-card-->
 			        </div><!--//col-->
 			    </div><!--//row-->
 			    <div class="row g-4 mb-4">
@@ -565,16 +401,7 @@
 			    </div><!--//row-->
 			    
 		    </div><!--//container-fluid-->
-	    </div><!--//app-content-->
-	    
-	    <footer class="app-footer">
-		    <div class="container text-center py-3">
-		         <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
-            <small class="copyright">Designed with <span class="sr-only">love</span><i class="fas fa-heart" style="color: #fb866a;"></i> by <a class="app-link" href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>
-		       
-		    </div>
-	    </footer><!--//app-footer-->
-	    
+	    </div><!--//app-content--><!--//app-footer-->
     </div><!--//app-wrapper-->    					
 
  
