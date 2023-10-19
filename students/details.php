@@ -78,6 +78,27 @@
             height: auto;
             margin: 10px;
         }
+
+
+    .review-card {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 10px 0;
+        background-color: #f9f9f9;
+    }
+
+    .review-card h3 {
+        color: #333;
+        font-size: 16px;
+        margin: 0;
+    }
+
+    .review-card p {
+        color: #777;
+        font-size: 14px;
+        margin: 0;
+    }
     </style>
 </head>
 <body>
@@ -142,7 +163,10 @@
                         $result = $conn->query($sql1);
                         
                         while ($row1 = $result->fetch_assoc()) {
-                            echo $row1['comments'];
+                            echo '<div class="review-card">';
+                            echo '<h3>Email: ' . $row1['email'] . '</h3>';
+                            echo '<p>Comments: ' . $row1['comments'] . '</p>';
+                            echo '</div>';
                         }
                     }
                 ?>
