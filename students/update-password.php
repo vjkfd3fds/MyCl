@@ -10,7 +10,8 @@
           $stmt = $conn->prepare($sql);
           $stmt->bind_param("ss", $new, $id);
           $stmt->execute();
-          header('Location: update-password.php');
+          echo '<script>alert("Succesfully updated your password"); </script>';
+          echo '<script> window.location.href="student-dashboard.php"; </script>';
         }
     ?>
 

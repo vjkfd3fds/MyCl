@@ -26,7 +26,7 @@ if (isset($_POST['post'])) {
 
     if ($conn->query($sql) === TRUE) {
         echo '<script>alert("Successfully posted your feedback!");</script>';
-        echo '<script> window.href="student-dashboard.php"</script>';
+        echo '<script> window.location.href="student-dashboard.php"</script>';
     } else {
         echo 'Something went wrong ' . $conn->error;
     }

@@ -1,24 +1,3 @@
-<?php 
-	include('../backend-php/connect.php');
-
-	if (isset($_POST['submit'])) {
-		$email = $_POST['email'];
-
-		$sql = "SELECT * FROM registered_users INNER JOIN college_users ON registered_users.email = 
-		college_users.email WHERE registered_users.email = '$email'";
-		$result = $conn->query($sql);
-		if ($result->num_rows > 0) {
-			echo '<script>alert("email exists and it worked")</script>';
-		} else {
-			echo '<script>alert("Nothing found lets go");</script>';
-		}
-	} else {
-		$conn->error;
-	}
-
-?>
-
-<?php echo $_SERVER['REQUEST_METHOD']?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -87,10 +66,12 @@
 									$filename = $_FILES["uploadfile"]["name"];
 									$tempname = $_FILES["uploadfile"]["tmp_name"];
 									$folder = "../profile/" . $filename;
-								}
-							
+								} 
 								$sql = "SELECT * FROM registered_users WHERE email = '$checkingEmail'";
+				
 								$result = $conn->query($sql);
+								
+
 								if (!$result) {
 									echo $conn->error;
 								} else {
