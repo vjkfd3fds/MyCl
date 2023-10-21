@@ -82,7 +82,7 @@
 							</ul>
 			            </div><!--//app-user-dropdown--> 
 		            </div><!--//app-utilities-->
-		        </div><!--//row-->
+		        </div>
 	            </div><!--//app-header-content-->
 	        </div><!--//container-fluid-->
         </div><!--//app-header-inner-->
@@ -192,10 +192,10 @@
 					     <div class="page-utilities">
 						    <div class="row g-2 justify-content-start justify-content-md-end 	 align-items-center">
 							 
-						    </div><!--//row-->
+						    </div>
 					    </div><!--//table-utilities-->
-				    </div><!--//col-auto-->
-			    </div><!--//row-->
+				    </div>
+			    </div>
 			   
 				
 				<div class="tab-content" id="orders-table-tab-content">
