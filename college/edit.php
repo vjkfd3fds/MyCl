@@ -14,7 +14,13 @@
 			echo '<script>alert("You didn\'t fill the form.");</script>';
     		echo '<script>window.location.href = "college-details.php";</script>';
 		}
+
+		if ($row['status'] == 'unverified') {
+			echo '<script>alert("You\'re not verified yet which means you cannot edit your details until the admin approves.");</script>';
+    		echo '<script>window.location.href = "index.php";</script>';
+		}
 	}
+	
 
 ?>
 
