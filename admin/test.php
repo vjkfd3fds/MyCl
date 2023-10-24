@@ -22,10 +22,8 @@
                 $stmt->bind_param("ss", $action, $user_id);
                 $stmt->execute();
             }
-            echo '<script>alert("Operation successful!");</script>';
-        } else {
-            echo '<script>alert("No users selected!");</script>';
-        }
+            echo '<script>alert("Operation successful! Will notify them");</script>';
+        } 
     }
 ?>
 
@@ -148,9 +146,7 @@
                 echo '<input type="submit" value="Reject" name="reject" class="random-button">';
                 echo '</form>';
                 echo '</div>';
-            } else {
-                echo 'No data found';
-            }
+            } 
         }
         
     }
