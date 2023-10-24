@@ -277,7 +277,7 @@
                         }
 
                         echo "</div>";
-                    } elseif ($row['status'] == 'unverified' || $row['status'] == 'rejected') {
+                    } else if ($row['status'] == 'unverified' || $row['status'] == 'rejected') {
                         echo '<script>alert("This college is not verified yet.");</script>';
                         echo '<script>window.location="student-dashboard.php";</script>';
                     }
@@ -300,25 +300,33 @@
                 $university = $conn->real_escape_string($university);
                 $sql = "SELECT * FROM college_details WHERE state = '$state' AND university = '$university'";
                 $result = $conn->query($sql);
-                if ($result->num_rows > 0) {
-                    echo '<div class="result-box">';
-                    echo '<h2 class="result-heading">Search Results:</h2>';
-                    while ($row = $result->fetch_assoc()) { 
-                        echo '<div class="feedback-card">';
-                        echo '<h3>' . $row["institution"] . '</h3>';
-                        echo '<div class="btn-box">';
-                        echo '<a href="details.php?institution=' . urlencode($row["institution"]) . '" class="btn-1">';
-                        echo 'Read More';
-                        echo '</a>';
-                        echo '</div>';
-                        echo '</div>';
-                    }
+                $row = $result->fetch_assoc();
+                if ($row) {
+                    if ($row['status'] == 'verified') {
+                        echo '<div class="result-box">';
+                        echo '<h2 class="result-heading">Search Results:</h2>';
+
+                        while ($row) {
+                            echo '<div class="feedback-card">';
+                            echo '<h3>' . $row["institution"] . '</h3>';
+                            echo '<div class="btn-box">';
+                            echo '<a href="details.php?institution=' . urlencode($row["institution"]) . '" class="btn-1">';
+                            echo 'Read More';
+                            echo '</a>';
+                            echo '</div>';
+                            echo '</div>';
+                            $row = $result->fetch_assoc(); // Fetch the next row
+                        }
                     echo "</div>";
-                } else {
-                    echo "No results found.";
+                } else if ($row['status'] == 'unverified' || $row['status'] == 'rejected') {
+                    echo '<script>alert("This college is not verified yet or it is rejected by the admins for providing wrong data.");</script>';
+                    echo '<script>window.location="student-dashboard.php";</script>';
                 }
-            } 
-        } 
+            } else {
+                echo "No results found.";
+            }
+        }
+    } 
         $conn->close();
     ?>
 

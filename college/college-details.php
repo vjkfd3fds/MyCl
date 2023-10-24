@@ -157,25 +157,6 @@
 
                                 <div>
 
-                                    <label class="ml-1 mt-2 " style=" font-size: 1.1em;" for="">Location</label>
-
-
-                                </div>
-
-                                <div>
-
-                                    <!--Google map-->
-                                    <div id="map-container-google-1" class="z-depth-1-half map-container">
-                                        <div id="map" style="width: 500px; height: 300px;"></div>
-                                            <input type="hidden" id="latitude" name="latitude">
-                                            <input type="hidden" id="longitude" name="longitude">
-                                    </div>
-
-                                    <!--Google Maps-->
-                                </div>
-
-                                <div>
-
                                     <label class="ml-1 mt-2 " style=" font-size: 1.1em;" for="">Programmes</label>
 
 
@@ -776,37 +757,13 @@
 
 
 
-
-
     <!-- jQery -->
     <script src="js/jquery-3.4.1.min.js"></script>
     <!-- bootstrap js -->
     <script src="js/bootstrap.js"></script>
     <!-- custom js -->
     <script src="js/custom.js"></script>
-
-
-
-
     <script src="https://kit.fontawesome.com/3cb1958bfd.js" crossorigin="anonymous"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBd57m4lz9HTA57EJ1Ro6jngOH4W_B-1DU&libraries=places"></script>
-    <script>
-         var map = new google.maps.Map(document.getElementById('map'), {
-            center: {lat: -34.397, lng: 150.644},
-            zoom: 8
-        });
-
-        // Listen for click events on the map
-        map.addEventListener('click', () => {
-            // Get latitude and longitude from the clicked location
-            var lat = event.latLng.lat();
-            var lng = event.latLng.lng();
-
-            // Update hidden input fields
-            document.getElementById('latitude').value = lat;
-            document.getElementById('longitude').value = lng;
-        });
-    </script>
 
 </body>
 
