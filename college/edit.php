@@ -15,8 +15,8 @@
     		echo '<script>window.location.href = "college-details.php";</script>';
 		}
 
-		if ($row['status'] == 'unverified') {
-			echo '<script>alert("You\'re not verified yet which means you cannot edit your details until the admin approves.");</script>';
+		if ($row['status'] == 'unverified' || $row['status'] == 'rejected') {
+			echo '<script>alert("If you cannot access this page it means either you\'re rejected or not yet verified by the admin.");</script>';
     		echo '<script>window.location.href = "index.php";</script>';
 		}
 	}

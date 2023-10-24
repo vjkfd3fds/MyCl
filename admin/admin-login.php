@@ -8,7 +8,7 @@
   <!-- Mobile Metas -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <!-- Site Metas -->
-  <link rel="icon" href="images/note.png">
+  <link rel="icon" href="../images/note.png">
   <meta name="keywords" content="" />
   <meta name="description" content="" />
   <meta name="author" content="" />

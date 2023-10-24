@@ -83,7 +83,7 @@
                                     <div class="form-group mt-4">
 
                                         <input type="text" class="form-control" id="exampleInputEmail1"
-                                            aria-describedby="emailHelp" placeholder="Name of University" name="university">
+                                            aria-describedby="emailHelp" placeholder="Name of University" name="university" required>
 
                                     </div>
                                 </div>
@@ -93,7 +93,7 @@
                                     <div class="form-group mt-4">
 
                                         <input type="text" class="form-control" id="exampleInputEmail1"
-                                            aria-describedby="emailHelp" placeholder="Name of Institution or College" name="institution">
+                                            aria-describedby="emailHelp" placeholder="Name of Institution or College" name="institution" required>
 
                                     </div>
                                 </div>
@@ -116,14 +116,14 @@
 
                                     <div>
 
-                                        <select class="form-control" style="width: 17.6em;margin-left: 2em;" name="district">
+                                        <select class="form-control" style="width: 17.6em;margin-left: 2em;" name="district " required>
                                             <option>District</option>
                                             <option><?php echo $optionsHtmls ?></option>
                                         </select>
                                     </div>
 
                                     <div>
-                                        <select class="form-control" style="width: 17.6em; margin-left: 2em;" name="city">
+                                        <select class="form-control" style="width: 17.6em; margin-left: 2em;" name="city" required>
                                             <option>City</option>
                                             <option value="Anantapur">Anantapur, Andhra Pradesh</option>
                                             <option value="Hindupur">Hindupur, Andhra Pradesh</option>
@@ -151,27 +151,8 @@
                                     <div class="form-group">
 
                                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-                                            placeholder="Address" name="address"></textarea>
+                                            placeholder="Address" name="address" required></textarea>
                                     </div>
-                                </div>
-
-                                <div>
-
-                                    <label class="ml-1 mt-2 " style=" font-size: 1.1em;" for="">Location</label>
-
-
-                                </div>
-
-                                <div>
-
-                                    <!--Google map-->
-                                    <div id="map-container-google-1" class="z-depth-1-half map-container">
-                                        <div id="map" style="width: 500px; height: 300px;"></div>
-                                            <input type="hidden" id="latitude" name="latitude">
-                                            <input type="hidden" id="longitude" name="longitude">
-                                    </div>
-
-                                    <!--Google Maps-->
                                 </div>
 
                                 <div>
@@ -185,7 +166,7 @@
 
                                     <div style="float: left;">
 
-                                        <button type="button" class="btn " style="border-color: rgb(223, 221, 221);">
+                                        <button type="button" class="btn " style="border-color: rgb(223, 221, 221);" >
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
@@ -683,14 +664,14 @@
                                 <div class="d-flex justify-content-center">
 
                                     <input type="number" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp" placeholder="Total" style="width: 17.6em;" name="totalseats">
+                                        aria-describedby="emailHelp" placeholder="Total" style="width: 17.6em;" name="totalseats" required>
 
                                     <input type="number" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp" placeholder="Reserved" style="width: 17.6em;margin-left: 2em;" name="reserved">
+                                        aria-describedby="emailHelp" placeholder="Reserved" style="width: 17.6em;margin-left: 2em;" name="reserved" required>
 
 
                                     <input type="number" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp" placeholder="Management" style="width: 17.6em; margin-left: 2em;" name="management">
+                                        aria-describedby="emailHelp" placeholder="Management" style="width: 17.6em; margin-left: 2em;" name="management" required>
 
 
                                 </div>
@@ -713,7 +694,7 @@
                                     <div class="form-group d-flex justify-content-center" style="width: 30em;">
 
                                         <input type="text" class="form-control" id="exampleFormControlInput1"
-                                            placeholder="Email address" name="email">
+                                            placeholder="Email address" name="email" required>
 
 
                                     </div>
@@ -723,7 +704,7 @@
                                     <div class="form-group ml-4" style="width: 30em;">
 
                                         <input type="tel" class="form-control" id="exampleFormControlInput1"
-                                            placeholder="Mobile number" name="phone-number">
+                                            placeholder="Mobile number" name="phone-number" required>
                                     </div>
 
 
@@ -734,12 +715,12 @@
                                     <div class="form-group">
 
                                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="6"
-                                            placeholder="Description" style="margin-top: 2.8em;" name="about"></textarea>
+                                            placeholder="Description" style="margin-top: 2.8em;" name="about" required></textarea>
                                     </div>
                                 </div>
 
                                 <div class="d-flex justify-content-center mt-5">
-                                    Upload the certificate: &NegativeThinSpace; &NegativeThinSpace;<input type="file" name="uploadfile">
+                                    Upload the certificate: &NegativeThinSpace; &NegativeThinSpace;<input type="file" name="uploadfile" required>
                                 </div>
 
 
@@ -776,37 +757,13 @@
 
 
 
-
-
     <!-- jQery -->
     <script src="js/jquery-3.4.1.min.js"></script>
     <!-- bootstrap js -->
     <script src="js/bootstrap.js"></script>
     <!-- custom js -->
     <script src="js/custom.js"></script>
-
-
-
-
     <script src="https://kit.fontawesome.com/3cb1958bfd.js" crossorigin="anonymous"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBd57m4lz9HTA57EJ1Ro6jngOH4W_B-1DU&libraries=places"></script>
-    <script>
-         var map = new google.maps.Map(document.getElementById('map'), {
-            center: {lat: -34.397, lng: 150.644},
-            zoom: 8
-        });
-
-        // Listen for click events on the map
-        map.addEventListener('click', () => {
-            // Get latitude and longitude from the clicked location
-            var lat = event.latLng.lat();
-            var lng = event.latLng.lng();
-
-            // Update hidden input fields
-            document.getElementById('latitude').value = lat;
-            document.getElementById('longitude').value = lng;
-        });
-    </script>
 
 </body>
 
