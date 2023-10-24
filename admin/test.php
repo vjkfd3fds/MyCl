@@ -7,21 +7,26 @@
 <?php 
     include_once '../backend-php/connect.php';
 
-    $sql1 = "SELECT * FROM college_details";
-    $result = $conn->query($sql1);
-    $row = $result->fetch_assoc();
-    $institution = $row['institution'];
+    if (isset($_POST['pass']) || isset($_POST['reject'])) {
+        if (isset($_POST['pass'])) {
+            $action = 'verified';
+        } else {
+            $action = 'rejected';
+        }
 
-    if (isset($_POST['pass'])) {
-        $sql = "UPDATE college_details SET status = 'verified' WHERE institution = '$institution'";
-        $result1 = $conn->query($sql);
-        echo '<script>alert("Operation successfull!!");</script>';
-
-    } else if (isset($_POST['reject'])) {
-        $sql2 = "UPDATE college_details SET status = 'rejected' WHERE cid = '$institution'";
-        $result2 = $conn->query($sql2);
-        echo '<script>alert("Operation Successfull!!");</script>';
-    } 
+        // Loop through the submitted user IDs and update the status for each user
+        if(isset($_POST['user_ids']) && is_array($_POST['user_ids'])){
+            foreach($_POST['user_ids'] as $user_id){
+                $sql = "UPDATE college_details SET status = ? WHERE cid = ?";
+                $stmt = $conn->prepare($sql);
+                $stmt->bind_param("ss", $action, $user_id);
+                $stmt->execute();
+            }
+            echo '<script>alert("Operation successful!");</script>';
+        } else {
+            echo '<script>alert("No users selected!");</script>';
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -115,7 +120,9 @@
     if ($result->num_rows > 0) {
         echo '<div class="result-box">';
         
-        while ($row = $result->fetch_assoc() ) {
+        echo '<form action="requests.php" method="post">';
+        
+        while ($row = $result->fetch_assoc()) {
             if ($row['status'] == 'unverified') {
                 echo '<div class="feedback-card">';
                 echo '<h3>' . $row["institution"] . '</h3>';
@@ -134,10 +141,11 @@
                 ?>
                 <img src="../../MyCl/certificate/<?php echo $row['certificate']; ?>"class="imgLOL">
                 <?php
+
+                echo '<input type="hidden" name="user_ids[]" value="' . $row['cid'] . '">';
                 echo '</div>';
-                echo '<form action="requests.php" method="post">';
-                echo '<input type="submit" value="pass" name="pass" class="random-button">';
-                echo '<input type="submit" value="Delete" name="reject" class="random-button">';
+                echo '<input type="submit" value="Accept" name="pass" class="random-button">';
+                echo '<input type="submit" value="Reject" name="reject" class="random-button">';
                 echo '</form>';
                 echo '</div>';
             } else {
@@ -145,7 +153,6 @@
             }
         }
         
-        echo '</div>';
     }
     $conn->close();
 ?>
