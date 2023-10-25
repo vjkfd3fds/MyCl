@@ -23,6 +23,7 @@
                 $stmt->execute();
             }
             echo '<script>alert("Operation successful! Will notify them");</script>';
+            echo '<script>document.window.href="admin-dashboard.php";</script>';
         } 
     }
 ?>
