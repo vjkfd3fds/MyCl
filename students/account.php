@@ -69,6 +69,9 @@
 
         $stmt = $conn->prepare("UPDATE registered_users SET firstname = ?, lastname = ?, email = ? WHERE id = ?");
         $stmt->bind_param("ssss", $firstname, $lastname, $email, $id);
-        $stmt->execute();
+        if ($stmt->execute() === TRUE) {
+            echo '<script>alert("Successfully updated your profile");</script>';
+            echo '<script>document.location.href="account.php";</script>';
+        }
     }
 ?>

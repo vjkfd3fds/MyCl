@@ -121,13 +121,13 @@
                 <!-- Name input -->
                 <div class="form-group">
                     <label for="form4Example1">New password</label>
-                    <input type="text" id="form4Example1" class="form-control" name="newpass" id="newpass"/>
+                    <input type="password" class="form-control" name="newpass" id="newpass"/>
                 </div>
 
                 <!-- Email input -->
                 <div class="form-group">
                     <label for="form4Example2">Confirm password</label>
-                    <input type="text" id="form4Example2" class="form-control" name="con" id="con"/>
+                    <input type="password" class="form-control" name="con" id="con"/>
                 </div>
 
                 <!-- Submit button -->
@@ -147,16 +147,21 @@
   <script src="../js/custom.js"></script>
 
   <script>
-    function validate() {
-      var current = document.getElementById('con').value;
-      var newpass = document.getElementById('newpass').value;
+     function validate() {
+            var newpass = document.getElementById('newpass').value;
+            var con = document.getElementById('con').value;
 
-      if (current !== newpass) {
-        alert('Both passwords are not the same');
-        return false;
-      }
-      return true;
-    }
+            if (newpass !== con) {
+                alert('Passwords do not match.');
+                return false;
+            }
+
+            if (newpass.length < 8) {
+                alert('Password should be at least 8 characters long.');
+                return false;
+            }
+            return true;
+        }
 
   </script>
 
