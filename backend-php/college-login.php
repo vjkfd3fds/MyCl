@@ -22,7 +22,8 @@
             $rows = $result->fetch_assoc();
             $cid = $rows['cid'];
             setcookie("cid", $cid, time() + 3600, "/");
-            header('Location: ../../MyCl/college/college-details.php');
+            echo '<script>alert("Successfully logged into your account");</script>';
+			echo '<script>document.location.href="../../MyCl/college/college-details.php";</script>';
             exit();
         } else {
             // User does not exist or wrong credentials

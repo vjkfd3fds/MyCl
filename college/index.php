@@ -24,7 +24,12 @@
 
     $sql2 = "SELECT count(*) AS review_count FROM review WHERE institution = '$institution'";
     $result2 = $conn->query($sql2);
-    $row2 = $result2->fetch_assoc();
+
+	if ($result2->num_rows > 0) {
+		$row2 = $result2->fetch_assoc();
+ 	} else {
+		echo 'no data found';
+	}
 }
 ?>
 

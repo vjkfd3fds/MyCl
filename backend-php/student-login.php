@@ -20,7 +20,8 @@
                 $row = $result->fetch_assoc();
                 $id = $row['id'];
                 setcookie("id", $id, time() + 3600, "/");
-                header('Location: ../../MyCl/students/student-dashboard.php');
+                echo '<script>alert("Successfully logged into your account");</script>';
+				echo '<script>document.location.href="../../MyCl/students/student-dashboard.php";</script>';
                 exit();
             } else {
                 echo "Invalid email or password.";

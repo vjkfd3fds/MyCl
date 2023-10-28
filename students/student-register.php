@@ -82,7 +82,8 @@
 										$sql = "INSERT INTO registered_users (firstname, lastname, email, password, dob, profile) VALUES ('$firstname', '$lastname', '$email', '$password', 
 																									'$formattedDob', '$filename')";
 										if (move_uploaded_file($tempname, $folder) && $conn->query($sql) === TRUE) {
-											header('Location: student-login.php');
+											echo '<script>alert("Successfully createed your account");</script>';
+											echo '<script>document.location.href="student-login.php";</script>';
 										} else {
 											// Log the error message
 											error_log("Error: " . $sql . "<br>" . $conn->error);

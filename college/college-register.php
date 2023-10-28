@@ -76,7 +76,8 @@
 										$sql = "INSERT INTO college_users (firstname, lastname, email, password, profile) VALUES ('$firstname', '$lastname', '$email', '$password', 
 																									 '$filename')";
 										if (move_uploaded_file($tempname, $folder) && $conn->query($sql) === TRUE) {
-											header('Location: ../college/college-login.php');
+											echo '<script>alert("Successfully registered your account");</script>';
+				                            echo '<script>document.location.href="college-login.php";</script>';
 										} else {
 											echo "Error: " . $sql . "<br>" . $conn->error;
 										}
@@ -152,7 +153,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <input type="file" name="uploadfile">
+                            <div class="d-flex justify-content-center">
+                                <input type="file" name="uploadfile">
+                            </div>
 
                             <br>
 
