@@ -61,16 +61,21 @@
 ?>
 
 <?php 
+if (isset($_COOKIE['cid'])) {
+	$cid = $_COOKIE['cid'];
+}
+error_reporting(0);
 	if (isset($_POST['manage'])) {
 		$uploads = $_FILES["uploadfile"];
-		$sql = "INSERT INTO images (image_id, image_name) VALUES (?, ?)";
-		$stmt = $conn->prepare($sql);
-		$stmt->bind_param("ss", $cid, $filename);
 
 		for ($i = 0; $i < count($uploads["tmp_name"]); $i++) {
 		    $filename = $uploads["name"][$i];
 		    $tempname = $uploads["tmp_name"][$i];
 		    $folder = "../college-image/" . $filename;
+
+			$sql = "INSERT INTO images (image_id, image_name) VALUES (?, ?)";
+			$stmt = $conn->prepare($sql);
+			$stmt->bind_param("ss", $cid, $filename);
 
 		    if (move_uploaded_file($tempname, $folder)) {
 		        if ($stmt->execute() === TRUE) {
