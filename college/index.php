@@ -1,3 +1,5 @@
+<?php error_reporting(0); ?>
+
 <?php 
 	include_once "../backend-php/connect.php";
 	if (isset($_COOKIE['cid'])) {
