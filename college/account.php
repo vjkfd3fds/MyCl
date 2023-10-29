@@ -36,6 +36,7 @@
             
             if ($updateStmt->execute() === TRUE) {
                 echo '<script>alert("Successfully updated your info");</script>';
+				echo '<script>document.location.href="account.php";</script>';
             } else {
                 echo "Error: " . $updateStmt->error;
             }
