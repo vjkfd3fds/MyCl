@@ -116,7 +116,7 @@
 
                                     <div>
 
-                                        <select class="form-control" style="width: 17.6em;margin-left: 2em;" name="district " required>
+                                        <select class="form-control" style="width: 17.6em;margin-left: 2em;" name="district" required>
                                             <option>District</option>
                                             <option><?php echo $optionsHtmls ?></option>
                                         </select>

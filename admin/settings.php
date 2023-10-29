@@ -23,6 +23,7 @@
     $stmt1->bind_param('ss', $password, $username);
     if ($stmt1->execute() === TRUE) {
       echo '<script>alert("successfull updated the password");</script>';
+      echo '<script>document.location.href="admin-dashboard.php";</script>';
     } else {
       echo 'something went wrong' . $conn->error;
     }
