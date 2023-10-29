@@ -149,8 +149,8 @@
             </div>
 
             <div class="image-gallery">
-                <h2>Images</h2>
-                <img src="../uploads/<?php echo $row['certificate']; ?>" alt="College Certificate">
+                <h2>Certification</h2>
+                <img src="../certificate/<?php echo $row['certificate']; ?>" alt="College Certificate">
             </div>
             <div class="image-gallery">
                 <h2>Comments</h2>
