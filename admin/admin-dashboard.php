@@ -108,14 +108,6 @@
 
                 </a>
 
-                <a href="#" id="">
-                    <span class="material-icons-sharp">
-                        report_gmailerrorred
-                    </span>
-                    <h3>Reports</h3>
-
-                </a>
-
                 <a href="settings.php" id="">
                     <span class="material-icons-sharp">
                         settings
@@ -287,72 +279,6 @@
                     <p>Backend Developer</p>
                     <img src="admin-images/jxy.jpg" alt="">
                 </div>
-            </div>
-
-            <div class="reminders">
-                <div class="header">
-                    <h2>Reminders</h2>
-
-                    <span class="material-icons-sharp">
-                        notifications
-                    </span>
-                </div>
-
-
-                <div class="notification">
-
-                    <div class="icon">
-                        <span class="material-icons-sharp">
-                            volume_up
-                        </span>
-                    </div>
-
-                    <div class="content">
-                        <div class="info">
-                            <h3>Workshop</h3>
-                            <small class="text-muted">
-                                08:00 AM - 12:00 PM
-                            </small>
-                        </div>
-                        <span class="material-icons-sharp">
-                            more_vert
-                        </span>
-                    </div>
-
-                </div>
-
-                <div class="notification deactive">
-
-                    <div class="icon">
-                        <span class="material-icons-sharp">
-                            edit
-                        </span>
-                    </div>
-
-                    <div class="content">
-                        <div class="info">
-                            <h3>Workshop</h3>
-                            <small class="text-muted">
-                                08:00 AM - 12:00 PM
-                            </small>
-                        </div>
-                        <span class="material-icons-sharp">
-                            more_vert
-                        </span>
-                    </div>
-
-                </div>
-
-                <div class="notification add-reminder">
-
-                    <div>
-                        <span class="material-icons-sharp">
-                            add
-                        </span>  
-                    </div>
-                    <h3>Add Reminder</h3>
-                </div>
-
             </div>
 
         </div>
