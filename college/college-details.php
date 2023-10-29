@@ -122,20 +122,7 @@
                                         </select>
                                     </div>
 
-                                    <div>
-                                        <select class="form-control" style="width: 17.6em; margin-left: 2em;" name="city" required>
-                                            <option>City</option>
-                                            <option value="Anantapur">Anantapur, Andhra Pradesh</option>
-                                            <option value="Hindupur">Hindupur, Andhra Pradesh</option>
-                                            <option value="Kadiri">Kadiri, Andhra Pradesh</option>
-                                            <option value="Guwahati">Guwahati, Assam</option>
-                                            <option value="NorthGuwahati">North Guwahati, Assam</option>
-                                            <option value="Dispur">Dispur, Assam</option>
-                                            <option value="Tawang">Tawang, Arunachal Pradesh</option>
-                                            <option value="Bomdila">Bomdila, Arunachal Pradesh</option>
-                                            <option value="Dirang">Dirang, Arunachal Pradesh</option>
-                                        </select>
-                                    </div>
+                
 
 
                                 </div>

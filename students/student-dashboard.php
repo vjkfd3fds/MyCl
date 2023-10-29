@@ -120,8 +120,8 @@
         <div class="nav">
             <div class="user-control">
                 <a href="institution.php">Institutions</a>
-                <a href="">Programmes</a>
-                <a href="">Courses</a>
+                <a href="account.php">Account</a>
+                <a href="comments.php">Feedback</a>
 
                 <?php
                             if (isset($_COOKIE['id'])) {
@@ -152,17 +152,11 @@
                         <a href="../pages/home.php">
                             <li>Home</li>
                         </a>
-                        <a href="account.php">
-                            <li>Account</li>
-                        </a>
                         <a href="saved.php">
                             <li>Wishlists</li>
                         </a>
                         <a href="update-password.php">
                             <li>Settings</li>
-                        </a>
-                        <a href="comments.php">
-                            <li>Feedback</li>
                         </a>
 
                     </ul>
