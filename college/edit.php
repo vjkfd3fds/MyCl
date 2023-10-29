@@ -404,15 +404,6 @@ if (isset($_POST['manage'])) {
 											<!--//col-->
 										</div><!--//row-->
 									</div>
-									<div class="item border-bottom py-3">
-										<div class="row justify-content-between align-items-center">
-											<div class="col-auto">
-												<div class="item-label"><strong>Upload Images</strong></div>
-												<input type="file" class="item-data"name="uploadfile" multiple>
-											</div><!--//col-->
-											<!--//col-->
-										</div><!--//row-->
-									</div>
 								
 								</div><!--//app-card-body-->
 								<div class="app-card-footer p-4 mt-auto">
