@@ -26,12 +26,13 @@
                         $result = $conn->query($sql);
 
                         if ($result->num_rows > 0) {
-                            $row = $result->fetch_assoc();
-                            echo '<tr>';
-                            echo '<td>' . $row['institution'] . '</td>';
-                            echo '<td>' . $row['programs'] . '</td>';
-                            echo '<td>' . $row['course'] . '</td>';
-                            echo '</tr>';
+                            while ($row = $result->fetch_assoc()) {
+                                echo '<tr>';
+                                echo '<td>' . $row['institution'] . '</td>';
+                                echo '<td>' . $row['programs'] . '</td>';
+                                echo '<td>' . $row['course'] . '</td>';
+                                echo '</tr>';
+                            }
                         } else {
                             echo '<tr>';
                             echo '<td>No data found</td>';
