@@ -149,8 +149,23 @@
             </div>
 
             <div class="image-gallery">
-                <h2>Certification</h2>
-                <img src="../certificate/<?php echo $row['certificate']; ?>" alt="College Certificate">
+                <?php 
+                    if (isset($_COOKIE['cid'])) {
+                        $cid = $_COOKIE['cid'];
+                    }
+                    $sql = "SELECT * FROM images WHERE image_id = '$cid'";
+                    $stmt = $conn->prepare($sql);
+
+                    $stmt->execute();
+                    $result = $stmt->get_result();
+
+                    echo '<h2 style="font-family: monospace;">Images</h3>';
+                    while($row = $result->fetch_assoc()) {
+                ?>
+                    <img src="../college-image/<?php echo $row['image_name']; ?>" alt="" srcset=""> <br>
+                <?php
+                }
+            ?>
             </div>
             <div class="image-gallery">
                 <h2>Comments</h2>
