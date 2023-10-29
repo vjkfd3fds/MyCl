@@ -19,8 +19,8 @@ if (isset($_POST['submit'])) {
         $conn->query($sql);
      
         if (move_uploaded_file($tempname, $folder)) {
-            echo "<h3>Image uploaded successfully!</h3>";
-            header('Location: ' . $_SERVER['PHP_SELF']);
+            echo "<script>alert('Successfully uploaded new images');</script>";
+            echo '<script>document.location.href="upload.php";';
         } else {
             echo "<h3>Failed to upload image!</h3>";
         }
@@ -34,31 +34,38 @@ if (isset($_POST['submit'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Upload Images</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom CSS can be added here */
+    </style>
 </head>
 <body>
-    <form action="upload.php" method="post" enctype="multipart/form-data">
-        <h1 style="font-family: monospace;">Upload Images</h1>
-        <input type="file" name="uploadfile[]" multiple> <br> <br>
-        <input type="submit" name="submit">
-    </form>
-    <br>
-    <?php 
-        $sql = "SELECT * FROM images";
-        $stmt = $conn->prepare($sql);
-
-        $stmt->execute();
-        $result = $stmt->get_result();
-
-        echo '<h2 style="font-family: monospace;">Images</h3>';
-        while($row = $result->fetch_assoc()) {
-        ?>
-            <img src="../college-image/<?php echo $row['image_name']; ?>" alt="" srcset=""> <br>
-        <?php
-        }
-
-        $stmt->close();
-        $conn->close();
-    ?>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h1 class="text-center">Upload Images</h1>
+                    </div>
+                    <div class="card-body">
+                        <form action="upload.php" method="post" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label for="uploadfile" class="font-weight-bold">Select Image(s)</label>
+                                <input type="file" name="uploadfile[]" id="uploadfile" multiple class="form-control-file">
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" name="submit" class="btn btn-primary">Upload</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
