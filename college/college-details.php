@@ -76,7 +76,7 @@
 
                         <div>
 
-                            <form action="../backend-php/college-details-process.php" method="post" enctype="multipart/form-data"> 
+                            <form action="../backend-php/college-details-process.php" method="post" onsubmit="return validate();" enctype="multipart/form-data"> 
 
                                 <div>
 
@@ -680,7 +680,7 @@
 
                                     <div class="form-group d-flex justify-content-center" style="width: 30em;">
 
-                                        <input type="text" class="form-control" id="exampleFormControlInput1"
+                                        <input type="email" class="form-control" id="exampleFormControlInput1"
                                             placeholder="Email address" name="email" required>
 
 
@@ -751,6 +751,18 @@
     <!-- custom js -->
     <script src="js/custom.js"></script>
     <script src="https://kit.fontawesome.com/3cb1958bfd.js" crossorigin="anonymous"></script>
+    <script>
+    function validate() {
+        let phonenumber = document.getElementById('exampleFormControlInput1').value;
+
+        if (phonenumber.length <= 10) {
+            alert('Phone number should be more than 10 digits');
+            return false;
+        }
+        return true;
+    }
+</script>
+
 
 </body>
 
