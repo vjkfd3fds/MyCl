@@ -40,7 +40,7 @@
                         <input type="text" name="lastname" class="form-control" value="<?php echo $row['lastname']; ?>">
                     </div>
                     <div class="mb-3">
-                        <input type="text" name="email" class="form-control" value="<?php echo $row['email']; ?>">
+                        <input type="email" name="email" class="form-control" value="<?php echo $row['email']; ?>">
                     </div>
                     <a class="d-block text-center mb-3" href="update-password.php">Update password</a>
                     <div class="d-grid">

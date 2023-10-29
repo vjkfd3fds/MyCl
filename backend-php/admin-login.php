@@ -6,7 +6,7 @@
         $username = $_POST['username'];
         $password = $_POST['password'];
 
-        if ($username == 'admin' && $password == 'hopethisworks') {
+        if ($username == 'admin' && $password == 'admin123') {
             $sql = "SELECT * FROM administration WHERE username = ? AND password = ?";
             $stmt = $conn->prepare($sql);
 
