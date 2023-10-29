@@ -20,7 +20,7 @@ if (isset($_POST['submit'])) {
      
         if (move_uploaded_file($tempname, $folder)) {
             echo "<script>alert('Successfully uploaded new images');</script>";
-            echo '<script>document.location.href="upload.php";';
+            echo '<script>document.location.href="index.php";';
         } else {
             echo "<h3>Failed to upload image!</h3>";
         }
