@@ -21,10 +21,6 @@
 		}
 	}
 	
-
-?>
-
-<?php 
 	if (isset($_POST['manage'])) {
 		$university = $_POST['university'];
 		$institution = $_POST['institution'];
@@ -40,13 +36,13 @@
 		$management_seats = $_POST['management_seats'];
 		$about = $_POST['about'];
 
-		$sql = "UPDATE college_details SET university = ?, institution = ?, state = ?, district = ?, address = ?, 	  programs = ?, course = ?,
-				email = ?, number = ?, total_seats = ?, reserved_seats = ?, management_seats = ?, about = ?";
+		$sql = "UPDATE college_details SET university = ?, institution = ?, state = ?, district = ?, address = ?,  programs = ?, course = ?,
+				email = ?, number = ?, total_seats = ?, reserved_seats = ?, management_seats = ?, about = ? WHERE cid = ?";
 
 		$stmt = $conn->prepare($sql);
-		$stmt->bind_param("sssssssssssss", $university, $institution, $state, $district, $address, $programs, 
+		$stmt->bind_param("ssssssssssssss", $university, $institution, $state, $district, $address, $programs, 
 			$course, $email, $number, $total_seats, 
-			$reserved_seats, $management_seats, $about);
+			$reserved_seats, $management_seats, $about, $cid);
 		
 		if ($stmt->execute() === TRUE) {
 			header('Location: edit.php');
@@ -60,37 +56,36 @@
 	}
 ?>
 
-<?php 
+<?php
 if (isset($_COOKIE['cid'])) {
-	$cid = $_COOKIE['cid'];
+    $cid = $_COOKIE['cid'];
 }
-error_reporting(0);
-	if (isset($_POST['manage'])) {
-		$uploads = $_FILES["uploadfile"];
+if (isset($_POST['manage'])) {
+    $uploads = $_FILES["uploadfile"];
 
-		for ($i = 0; $i < count($uploads["tmp_name"]); $i++) {
-		    $filename = $uploads["name"][$i];
-		    $tempname = $uploads["tmp_name"][$i];
-		    $folder = "../college-image/" . $filename;
+    for ($i = 0; $i < count($uploads["tmp_name"]); $i++) {
+        $filename = $uploads["name"][$i];
+        $tempname = $uploads["tmp_name"][$i];
+        $folder = "../college-image/" . $filename;
 
-			$sql = "INSERT INTO images (image_id, image_name) VALUES (?, ?)";
-			$stmt = $conn->prepare($sql);
-			$stmt->bind_param("ss", $cid, $filename);
+        $sql = "INSERT INTO images (image_id, image_name) VALUES (?, ?)";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("ss", $cid, $filename);
 
-		    if (move_uploaded_file($tempname, $folder)) {
-		        if ($stmt->execute() === TRUE) {
-		            echo "<h3>Image uploaded successfully!</h3>";
-		        } else {
-		            echo "Failed to insert image information into the database: " . $stmt->error;
-					echo $conn->error;
-		        }
-		    } else {
-		        echo "<h3>Failed to upload image!</h3>";
-		    }
-		}
-	}
-
+        if (move_uploaded_file($tempname, $folder)) {
+            if ($stmt->execute() === TRUE) {
+                echo "<script>alert('uploaded your image');</script>";
+            } else {
+                echo "<script>console.log('Failed to insert image information into the database: '" . $stmt->error . "'); </script>";
+                echo $conn->error;
+            }
+        } else {
+            echo $conn->error;
+        }
+    }
+}
 ?>
+
 
 
 
@@ -263,7 +258,7 @@ error_reporting(0);
 		    <div class="container-xl">
 			    
 			    <h1 class="app-page-title">My Account</h1>
-				<form action="edit.php" method="post" onsubmit="validate();" enctype="multipart/form-data>
+				<form action="edit.php" method="post" onsubmit="validate();" enctype="multipart/form-data">
 					<div class="row gy-4">
 						<div class="col-12 col-lg-6">
 							<div class="app-card app-card-account shadow-sm d-flex flex-column align-items-start">
@@ -412,7 +407,7 @@ error_reporting(0);
 										<div class="row justify-content-between align-items-center">
 											<div class="col-auto">
 												<div class="item-label"><strong>Upload Images</strong></div>
-												<input type="file" class="item-data"name="uploadfile[]" multiple>
+												<input type="file" class="item-data"name="uploadfile" multiple>
 											</div><!--//col-->
 											<!--//col-->
 										</div><!--//row-->
