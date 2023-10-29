@@ -24,13 +24,20 @@
                         include('../backend-php/connect.php');
                         $sql = "SELECT * FROM college_details";
                         $result = $conn->query($sql);
-                        $row = $result->fetch_assoc();
 
-                        echo '<tr>';
-                        echo '<td>' . $row['institution'] . '</td>';
-                        echo '<td>' . $row['programs'] . '</td>';
-                        echo '<td>' . $row['course'] . '</td>';
-                        echo '</tr>';
+                        if ($result->num_rows > 0) {
+                            $row = $result->fetch_assoc();
+                            echo '<tr>';
+                            echo '<td>' . $row['institution'] . '</td>';
+                            echo '<td>' . $row['programs'] . '</td>';
+                            echo '<td>' . $row['course'] . '</td>';
+                            echo '</tr>';
+                        } else {
+                            echo '<tr>';
+                            echo '<td>No data found</td>';
+                            echo '<td>No data found</td>';
+                            echo  '<td>No data found</td>';
+                        }
                     ?>
                     </tbody>
                 </table>

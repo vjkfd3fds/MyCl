@@ -74,7 +74,7 @@
         cursor: pointer;
     }
 
-    li: hover {
+    li:hover {
         text-decoration: underline;
     }
 
@@ -119,7 +119,7 @@
         
         <div class="nav">
             <div class="user-control">
-                <a href="">Institutions</a>
+                <a href="institution.php">Institutions</a>
                 <a href="">Programmes</a>
                 <a href="">Courses</a>
 
