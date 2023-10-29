@@ -57,6 +57,7 @@
 ?>
 
 <?php
+include('../backend-php/connect.php');
 if (isset($_COOKIE['cid'])) {
     $cid = $_COOKIE['cid'];
 }
