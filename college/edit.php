@@ -82,6 +82,7 @@ error_reporting(0);
 		            echo "<h3>Image uploaded successfully!</h3>";
 		        } else {
 		            echo "Failed to insert image information into the database: " . $stmt->error;
+					echo $conn->error;
 		        }
 		    } else {
 		        echo "<h3>Failed to upload image!</h3>";
