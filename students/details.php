@@ -1,6 +1,7 @@
 <?php
     include_once '../backend-php/connect.php'; 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -183,6 +184,25 @@
                             echo '<p>Comments: ' . $row1['comments'] . '</p>';
                             echo '</div>';
                         }
+                    }
+                ?>
+                <form method="POST" action="details.php">
+                    <input type="submit" name="save" value="save" />
+                </form>
+                <?php 
+                    if (isset($_COOKIE['id'])) {
+                        $id = $_COOKIE['id'];
+                    }
+                    if (isset($_GET['institution'])) {
+                        $institution = $_GET['institution'];
+                    }
+                    $sql = "INSERT INTO saved VALUES ('$id', '$institution')";
+                    $result = $conn->query($sql);
+                    if ($result === TRUE) {
+                        echo '<script>alert("successfully saved all these details");<script>';
+                        exit;
+                    } else {
+                        echo 'something went wrong ' . $conn->error;
                     }
                 ?>
             </div>
